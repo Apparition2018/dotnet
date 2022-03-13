@@ -4,7 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>dotnet6._0</RootNamespace>
+        <RootNamespace>dotnet6</RootNamespace>
     </PropertyGroup>
 
 </Project>

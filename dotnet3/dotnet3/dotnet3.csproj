@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <RootNamespace>dotnet3._1</RootNamespace>
+        <RootNamespace>dotnet3</RootNamespace>
     </PropertyGroup>
 
 </Project>
