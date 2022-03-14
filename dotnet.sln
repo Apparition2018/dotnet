@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankyStuffLibrary", "dotnet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingTests", "dotnet3\MySuperBank\BankingTests\BankingTests.csproj", "{A157C3EC-2B59-44ED-8CD6-5FCCF606AA1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoCrafts", "dotnet3\ContosoCrafts\ContosoCrafts.csproj", "{03C3972B-D622-4D3E-A849-ED1CB60AD6F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,7 @@ Global
 		{CE4EFFA6-2450-443D-9F1F-2C72D635BCAC} = {D6B044D9-ADB8-4040-B495-60405234E545}
 		{334ED93A-E418-4942-819A-16EF6CAC8477} = {D6B044D9-ADB8-4040-B495-60405234E545}
 		{A157C3EC-2B59-44ED-8CD6-5FCCF606AA1D} = {D6B044D9-ADB8-4040-B495-60405234E545}
+		{03C3972B-D622-4D3E-A849-ED1CB60AD6F2} = {2341FB55-0500-4A71-83EE-CD912277EF40}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A027670F-9BC4-44A0-8AB7-FC6755BAD9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -57,5 +60,9 @@ Global
 		{A157C3EC-2B59-44ED-8CD6-5FCCF606AA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A157C3EC-2B59-44ED-8CD6-5FCCF606AA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A157C3EC-2B59-44ED-8CD6-5FCCF606AA1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C3972B-D622-4D3E-A849-ED1CB60AD6F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C3972B-D622-4D3E-A849-ED1CB60AD6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C3972B-D622-4D3E-A849-ED1CB60AD6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C3972B-D622-4D3E-A849-ED1CB60AD6F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

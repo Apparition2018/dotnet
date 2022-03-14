@@ -13,7 +13,7 @@ namespace dotnet3Tests.API.System
         {
             var list = new List<int> {1, 2};
             list.RemoveAt(1);
-            list.ForEach(Console.WriteLine);
+            list.ForEach(Console.WriteLine); // 1
         }
 
         [Test]
@@ -36,9 +36,9 @@ namespace dotnet3Tests.API.System
             var stack = new Stack<int>();
             stack.Push(1);
             stack.Push(2);
-            Console.WriteLine(stack.Peek());
+            Console.WriteLine(stack.Peek()); // 2
             stack.Pop();
-            Console.WriteLine(stack.Peek());
+            Console.WriteLine(stack.Peek()); // 1
         }
 
         [Test]
@@ -47,7 +47,8 @@ namespace dotnet3Tests.API.System
             var queue = new Queue<int>();
             queue.Enqueue(1);
             queue.Enqueue(2);
-            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue()); // 1
+            Console.WriteLine(queue.Dequeue()); // 2
         }
     }
 }
