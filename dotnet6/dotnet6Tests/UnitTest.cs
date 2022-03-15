@@ -1,4 +1,4 @@
-using System.IO;
+using System;
 using NUnit.Framework;
 
 namespace dotnet6Tests;
