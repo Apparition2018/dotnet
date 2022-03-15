@@ -15,6 +15,8 @@ Alt + Shift + 8                 Unit Tests
 ---
 ## Live Templates
 ```
+aae                             Assert.AreEqual($expected$, $actual$); (user)
 cw                              System.Console.WriteLine($END$);
 prop                            public $TYPE$ $NAME$ { get; set; }
+pvt                             [Test] public void $END$ (user)
 ```

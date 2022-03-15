@@ -2,7 +2,7 @@
 
 namespace dotnet3Tests
 {
-    public class Tests
+    public class UnitTests
     {
         [Test]
         public void Test()
