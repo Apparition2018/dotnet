@@ -9,6 +9,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet3", "dotnet3\dotnet3\dotnet3.csproj", "{C43FD4E7-1D45-48E9-836E-AA1209643A91}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MySuperBank", "MySuperBank", "{D6B044D9-ADB8-4040-B495-60405234E545}"
+	ProjectSection(SolutionItems) = preProject
+		dotnet3\MySuperBank\Readme.md = dotnet3\MySuperBank\Readme.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySuperBank", "dotnet3\MySuperBank\MySuperBank\MySuperBank.csproj", "{CE4EFFA6-2450-443D-9F1F-2C72D635BCAC}"
 EndProject
@@ -19,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoCrafts", "dotnet3\ContosoCrafts\ContosoCrafts.csproj", "{03C3972B-D622-4D3E-A849-ED1CB60AD6F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet6Tests", "dotnet6\dotnet6Tests\dotnet6Tests.csproj", "{17B368E9-0A0D-4989-A117-D26B415A8D41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "dotnet6\ContosoPizza\ContosoPizza.csproj", "{DDE73EDD-2B63-460B-810A-4C3AE11BD471}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +39,7 @@ Global
 		{A157C3EC-2B59-44ED-8CD6-5FCCF606AA1D} = {D6B044D9-ADB8-4040-B495-60405234E545}
 		{03C3972B-D622-4D3E-A849-ED1CB60AD6F2} = {2341FB55-0500-4A71-83EE-CD912277EF40}
 		{17B368E9-0A0D-4989-A117-D26B415A8D41} = {84E1F2BB-5BE5-4C6A-BBD3-8A054ADDEBE1}
+		{DDE73EDD-2B63-460B-810A-4C3AE11BD471} = {84E1F2BB-5BE5-4C6A-BBD3-8A054ADDEBE1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A027670F-9BC4-44A0-8AB7-FC6755BAD9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -64,5 +70,9 @@ Global
 		{17B368E9-0A0D-4989-A117-D26B415A8D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17B368E9-0A0D-4989-A117-D26B415A8D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17B368E9-0A0D-4989-A117-D26B415A8D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE73EDD-2B63-460B-810A-4C3AE11BD471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE73EDD-2B63-460B-810A-4C3AE11BD471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE73EDD-2B63-460B-810A-4C3AE11BD471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE73EDD-2B63-460B-810A-4C3AE11BD471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
