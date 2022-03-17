@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Text;
+﻿using System.Text;
+using System.Text.Json;
 using dotnet6.L;
 using NUnit.Framework;
 
@@ -21,5 +21,30 @@ public class FileTests : Demo
         File.AppendAllText(DemoPath, "demo", Encoding.UTF8);
         // static void          Delete(string path)             删除指定文件
         File.Delete(DemoPath);
+    }
+
+    [Test]
+    public void Test2()
+    {
+        // static FileStream    OpenWrite(string path)
+        // 打开现有文件或创建新文件以进行写入
+        FileStream fileStream = File.OpenWrite(DemoPath);
+        // 将由泛型类型参数指定的类型的 JSON 表示形式写入提供的 Writer
+        JsonSerializer.Serialize(new Utf8JsonWriter(fileStream,
+                new JsonWriterOptions
+                {
+                    SkipValidation = true,
+                    Indented = true
+                }),
+            "demo"
+        );
+        fileStream.Close();
+
+        // static StreamReader  OpenText(string path)
+        // 打开现有的 UTF-8 编译文本文件进行读取
+        StreamReader streamReader = File.OpenText(DemoPath);
+        // string               ReadToEnd()
+        // 读取从当前位置到流末尾的所有字符
+        Console.WriteLine(streamReader.ReadToEnd());
     }
 }

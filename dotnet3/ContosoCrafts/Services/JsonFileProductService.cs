@@ -19,7 +19,7 @@ namespace ContosoCrafts.Services
         public IEnumerable<Product> GetProducts()
         {
             using var jsonFileReader = File.OpenText(JsonFileName);
-            return JsonSerializer.Deserialize<Product[]>(jsonFileReader.ReadToEnd(), new JsonSerializerOptions()
+            return JsonSerializer.Deserialize<Product[]>(jsonFileReader.ReadToEnd(), new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });

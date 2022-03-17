@@ -35,3 +35,8 @@
         3.2 Shortcut: toduljh
         3.3 Description: TODO-LJH
 ---
+## Use preferred 'var' style ?
+    1. Inspection: "Use preferred 'var' style"
+    2. Configure code sytle
+    3. Use 'var'
+---

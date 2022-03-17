@@ -3,6 +3,8 @@ using NUnit.Framework;
 
 namespace dotnet6Tests.Packages;
 
+/// <summary>Humanizer</summary>
+/// <remarks>https://humanizr.net/</remarks>
 public class HumanizerTests
 {
     [SetUp]

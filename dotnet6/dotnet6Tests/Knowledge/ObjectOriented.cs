@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace dotnet6Tests.Knowledge;
 
@@ -57,19 +56,19 @@ public abstract class Pet
         Console.WriteLine(Name + "'s Age = " + _age);
     }
 
-    // virtual 虚拟 (方法、属性、索引器、事件)
+    // virtual 虚拟 (方法、属性、索引器、事件)，使其在派生类中被重写
     // https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/virtual
     // public virtual void Speak()
     // {
     //     Console.WriteLine("Pet is speaking");
     // }
 
-    /// <summary>abstract 抽象 (类、方法、属性、索引、事件)</summary>
-    /// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/abstract</remarks>
+    // abstract 抽象 (方法、属性、索引器、事件)
+    // https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/abstract
     public abstract void Speak();
 
-    /// <summary>运算符重载</summary>
-    /// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/operator-overloading</remarks>
+    // 运算符重载 (Operator overloading)
+    // https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/operator-overloading
     public static Pet operator ++(Pet pet)
     {
         ++pet._age;
@@ -77,13 +76,11 @@ public abstract class Pet
     }
 }
 
-/// <summary>
-/// 扩展方法
-/// 1.非嵌套、非泛型静态类
-/// 2.静态方法
-/// 3.第一个参数指定扩展那个类型，参数前面加 this
-/// </summary>
-/// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/extension-methods</remarks>
+// 扩展方法 (Extension Methods)
+//  1.非嵌套、非泛型静态类
+//  2.静态方法
+//  3.第一个参数指定扩展那个类型，参数前面加 this
+// https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/extension-methods
 internal static class PetGuide
 {
     public static void Feed(this Dog dog)
@@ -91,7 +88,6 @@ internal static class PetGuide
         Console.WriteLine("Feed dog ...");
     }
 }
-
 
 public class Dog : Pet
 {
@@ -104,25 +100,24 @@ public class Dog : Pet
         NewDog.Invoke();
     }
 
-    /// <summary>new 显示隐藏基类成员</summary>
-    /// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/new-modifier</remarks>
+    // new 可以显式隐藏从基类继承的成员
+    // https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/new-modifier
     public new void PrintName()
     {
         Console.WriteLine("Dog's name is " + Name);
     }
 
-    /// <summary>sealed 密闭</summary>
-    /// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/sealed</remarks>
+    // sealed 密闭，可阻止其他类继承自该类
+    // https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/sealed
     public sealed override void Speak()
     {
         Console.WriteLine(Name + " is speaking: wow");
     }
 
-    /// <summary>
-    /// implicit 隐式转换
-    /// explicit 显示转换
-    /// </summary>
-    /// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/user-defined-conversion-operators</remarks>
+    // 用户定义转换运算符
+    // https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/user-defined-conversion-operators
+    // implicit 隐式转换
+    // explicit 显示转换
     public static implicit operator Cat(Dog dog)
     {
         return new Cat(dog.Name);
@@ -150,8 +145,8 @@ public class Cat : Pet, ICatchMice, IClimbTree
     {
     }
 
-    /// <summary>override 重写 (方法、属性、索引器、事件)</summary>
-    /// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/override</remarks>
+    // override 重写 (方法、属性、索引器、事件)
+    // https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/override
     public override void Speak()
     {
         Console.WriteLine(Name + " is speaking: meow");
@@ -168,8 +163,8 @@ public class Cat : Pet, ICatchMice, IClimbTree
     }
 }
 
-/// <summary>struct 结构类型</summary>
-/// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/struct</remarks>
+// struct 结构类型，一种可封装数据和相关功能的值类型
+// https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/struct
 internal readonly struct Fish
 {
     public Fish(double weight)
@@ -181,8 +176,8 @@ internal readonly struct Fish
     public override string ToString() => $"({Weight})";
 }
 
-/// <summary>where 泛型类型约束</summary>
-/// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/where-generic-type-constraint</remarks>
+// where (generic type constraint 泛型类型约束)
+// https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
 internal class Cage<T> where T : Pet
 {
     private readonly T[] _array;

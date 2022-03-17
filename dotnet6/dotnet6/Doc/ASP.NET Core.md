@@ -33,7 +33,7 @@ public class XxxController : ControllerBase { ... }
 ```
 ---
 ## Web API apps
-### [APIController](https://docs.microsoft.com/zh-cn/aspnet/core/web-api/#apicontroller-attribute)
+### [ApiController](https://docs.microsoft.com/zh-cn/aspnet/core/web-api/#apicontroller-attribute)
 1. Attribute routing requirement：属性路由要求，`[Route("[controller]")]`
 2. Automatic HTTP 400 responses：自动 HTTP 400 响应
 3. Binding source parameter inference：绑定原参数推理

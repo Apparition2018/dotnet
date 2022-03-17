@@ -12,4 +12,11 @@ public class Demo
     protected static readonly string StartUpPath = Path.Combine(DotNet6Path, "Startup.cs");
     protected static readonly string MyDirPath = Path.Combine(DotNet6Path, "L");
     protected static readonly string DemoPath = Path.Combine(MyDirPath, "demo");
+
+    protected static readonly List<Person> PersonList = new(3)
+    {
+        // 对象初始值设定项
+        // https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers#object-initializers
+        new Person {Id = 1, Name = "张三"}, new Person {Id = 2, Name = "李四"}, new Person {Id = 3, Name = "王五"}
+    };
 }
