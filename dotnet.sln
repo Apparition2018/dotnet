@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet6Tests", "dotnet6\dot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "dotnet6\ContosoPizza\ContosoPizza.csproj", "{DDE73EDD-2B63-460B-810A-4C3AE11BD471}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaStore", "dotnet6\PizzaStore\PizzaStore.csproj", "{35DB1B03-9CA1-4ADF-AD8A-59172831E611}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,7 @@ Global
 		{03C3972B-D622-4D3E-A849-ED1CB60AD6F2} = {2341FB55-0500-4A71-83EE-CD912277EF40}
 		{17B368E9-0A0D-4989-A117-D26B415A8D41} = {84E1F2BB-5BE5-4C6A-BBD3-8A054ADDEBE1}
 		{DDE73EDD-2B63-460B-810A-4C3AE11BD471} = {84E1F2BB-5BE5-4C6A-BBD3-8A054ADDEBE1}
+		{35DB1B03-9CA1-4ADF-AD8A-59172831E611} = {84E1F2BB-5BE5-4C6A-BBD3-8A054ADDEBE1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A027670F-9BC4-44A0-8AB7-FC6755BAD9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -74,5 +77,9 @@ Global
 		{DDE73EDD-2B63-460B-810A-4C3AE11BD471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE73EDD-2B63-460B-810A-4C3AE11BD471}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDE73EDD-2B63-460B-810A-4C3AE11BD471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35DB1B03-9CA1-4ADF-AD8A-59172831E611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35DB1B03-9CA1-4ADF-AD8A-59172831E611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35DB1B03-9CA1-4ADF-AD8A-59172831E611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35DB1B03-9CA1-4ADF-AD8A-59172831E611}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

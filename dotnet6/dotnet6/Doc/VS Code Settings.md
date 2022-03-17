@@ -1,11 +1,11 @@
 # VS Code Settings
 
 ---
-## 参考网站
+## Reference
 1. [vscode 配置教程](https://zhuanlan.zhihu.com/p/113222681)
 ---
 ## Extensions
-- 自定义安装位置：快捷方式目标后添加 `--extensions-dir "D:\dev\.vscode\extensions"` 
+- 自定义安装位置：快捷方式目标后添加 `--extensions-dir "D:\dev\.vscode\extensions"`
 ---
 ## Settings JSON
 ```json5
