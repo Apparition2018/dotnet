@@ -66,8 +66,9 @@ const Main = () => {
   }, [])
 
   function fetchData() {
+    fetch("/pizza")
     // fetch("/api/pizza")
-    fetch("http://localhost:5259/pizza")
+    // fetch("http://localhost:5259/pizza")
       .then(response => response.json())
       .then(data => setPizzas(data))
   }

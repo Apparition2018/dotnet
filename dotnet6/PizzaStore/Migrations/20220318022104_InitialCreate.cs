@@ -21,6 +21,11 @@ namespace PizzaStore.Migrations
                 {
                     table.PrimaryKey("PK_Pizzas", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Pizzas",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[] { 1, "Classic Pepperoni Pizza", "Pepperoni" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

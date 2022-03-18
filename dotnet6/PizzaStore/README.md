@@ -8,16 +8,15 @@
 - EF Core In Memory：`dotnet add package Microsoft.EntityFrameworkCore.InMemory`
     - @see PizzaDb.cs
     - @see Program.cs：`builder.Services.AddDbContext<PizzaDb>(options => options.UseInMemoryDatabase("items"));`
-- EF Core SQLite：
-    ```
-    dotnet add package Microsoft.EntityFrameworkCore.Sqlite  
-    dotnet add package Microsoft.EntityFrameworkCore.Design
-    
-    # Migrations
-    dotnet tool install --global dotnet-ef
-        dotnet ef migrations add InitialCreate
-        dotnet ef database update
-    ```
+- EF Core SQLite：`dotnet add package Microsoft.EntityFrameworkCore.Sqlite`
+    - [.NET Core CLI](https://docs.microsoft.com/zh-cn/ef/core/cli/dotnet)
+        ```
+        dotnet add package Microsoft.EntityFrameworkCore.Design
+        
+        dotnet tool install --global dotnet-ef
+            dotnet ef migrations add InitialCreate
+            dotnet ef database update
+        ```
     - @see Program.cs
         ```
         var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";

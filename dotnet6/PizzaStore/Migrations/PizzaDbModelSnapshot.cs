@@ -31,6 +31,14 @@ namespace PizzaStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pizzas");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Classic Pepperoni Pizza",
+                            Name = "Pepperoni"
+                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -10,7 +10,7 @@ using PizzaStore.DB;
 namespace PizzaStore.Migrations
 {
     [DbContext(typeof(PizzaDb))]
-    [Migration("20220317161844_InitialCreate")]
+    [Migration("20220318022104_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,14 @@ namespace PizzaStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pizzas");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Classic Pepperoni Pizza",
+                            Name = "Pepperoni"
+                        });
                 });
 #pragma warning restore 612, 618
         }

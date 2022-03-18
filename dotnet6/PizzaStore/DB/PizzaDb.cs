@@ -14,6 +14,8 @@ public class PizzaDb : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // 数据种子设定
+        // https://docs.microsoft.com/zh-cn/ef/core/modeling/data-seeding
         modelBuilder.Entity<Pizza>().HasData(
             new Pizza {Id = 1, Name = "Pepperoni", Description = "Classic Pepperoni Pizza"});
     }
