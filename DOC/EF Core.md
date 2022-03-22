@@ -8,6 +8,9 @@
 3. [Entity Framework Core - Learn | Microsoft Docs](https://docs.microsoft.com/zh-cn/learn/browse/?expanded=dotnet&products=ef-core)
 4. [Entity Framework Core | Github](https://github.com/dotnet/efcore)
 ---
+## [EF Core vs EF6](https://docs.microsoft.com/zh-cn/ef/efcore-and-ef6/)
+- [Entity Framework 6](https://docs.microsoft.com/zh-cn/ef/ef6/)
+---
 ## Packages
 1. Microsoft.EntityFrameworkCore.SqlServer
 2. Microsoft.EntityFrameworkCore.Design

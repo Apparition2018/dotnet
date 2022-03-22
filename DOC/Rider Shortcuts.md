@@ -2,10 +2,10 @@
 
 ---
 ## Main Menu
->### Tests
->```
->Shift + Enter | Ctrl + R       Run Selected Tests
->```
+### Tests
+```
+Shift + Enter | Ctrl + R        Run Selected Tests
+```
 ---
 ## Tool Windows
 ```

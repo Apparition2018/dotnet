@@ -6,7 +6,7 @@ Alt + Shift + Click             Add or Remove Caret                 添加或移
 Ctrl + K, Ctrl + D              FormatDocument                      格式化文件
 Ctrl + K, Ctrl + C              CommentSelection                    注释选择
 Ctrl + K, Ctrl + U              UncommentSelection                  取消注释选择
-Ctrl + T                        GoToAll
+Ctrl + T                        GoToAll								转到所有
 F12                             GoToDefinition
 Alt + F12                       PeekDefinition
 Shift + F12                     FindAllReferences
