@@ -1,10 +1,9 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace dotnet6Tests.Knowledge;
 
 /// <summary>委托</summary>
-/// <remarks>https://docs.microsoft.com/en-us/dotnet/csharp/delegates-overview</remarks>
+/// <remarks>https://docs.microsoft.com/zh-cn/dotnet/csharp/delegates-overview</remarks>
 public class Delegates
 {
     private delegate void Action();

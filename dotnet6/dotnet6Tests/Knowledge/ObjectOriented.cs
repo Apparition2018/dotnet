@@ -93,11 +93,11 @@ public class Dog : Pet
 {
     public delegate void Handler();
 
-    public static event Handler NewDog = null!;
+    public static event Handler? NewDog;
 
     public Dog(string name) : base(name)
     {
-        NewDog.Invoke();
+        NewDog?.Invoke();
     }
 
     // new 可以显式隐藏从基类继承的成员
