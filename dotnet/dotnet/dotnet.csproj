@@ -1,0 +1,19 @@
+<!-- .NET 项目 SDK：https://learn.microsoft.com/zh-cn/dotnet/core/project-sdk/overview -->
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <!-- TargetFramework：目标框架版本，https://learn.microsoft.com/zh-cn/dotnet/core/project-sdk/msbuild-props#targetframework
+            Implicit using directives：隐式包引用，https://learn.microsoft.com/zh-cn/dotnet/core/project-sdk/overview#implicit-package-references -->
+        <TargetFramework>net8.0</TargetFramework>
+        <!-- C# 编译器选项：https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/compiler-options/
+            Nullable（可为空上下文）：https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/compiler-options/language#nullable -->
+        <Nullable>enable</Nullable>
+        <!-- 隐式 using：https://learn.microsoft.com/zh-cn/dotnet/core/project-sdk/msbuild-props#implicitusings -->
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\**" />
+    </ItemGroup>
+
+</Project>

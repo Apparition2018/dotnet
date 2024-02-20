@@ -1,0 +1,115 @@
+@using Microsoft.AspNetCore.Components.Web
+@using ContosoCrafts.WebSite.Models
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+
+<div class="card-columns">
+    @foreach (var product in ProductService.GetProducts())
+    {
+        <div class="card">
+            <div class="card-img" style="background-image: url('@product.Image');"></div>
+            <div class="card-body">
+                <h5 class="card-title">@product.Title</h5>
+            </div>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">
+                <button
+                    @onclick="e => SelectProduct(product.Id)"
+                    data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                    More Info
+                </button>
+            </small>
+        </div>
+    }
+</div>
+
+@if (_selectedProduct != null)
+{
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productTitle">@_selectedProduct.Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-img" style="background-image: url('@_selectedProduct.Image');">
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">@_selectedProduct.Description</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @if (_voteCount == 0)
+                    {
+                        <span>Be the first to vote!</span>
+                    }
+                    else
+                    {
+                        <span>@_voteCount @_voteLabel</span>
+                    }
+                    @for (int i = 1; i < 6; i++)
+                    {
+                        var currentStar = i;
+                        if (i <= _currentRating)
+                        {
+                            <span class="fa fa-star checked" @onclick="e => SubmitRating(currentStar)"></span>
+                        }
+                        else
+                        {
+                            <span class="fa fa-star" @onclick="e => SubmitRating(currentStar)"></span>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@code {
+    Product _selectedProduct;
+    string _selectedProductId;
+
+    void SelectProduct(string productId)
+    {
+        _selectedProductId = productId;
+        _selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
+        GetCurrentRating();
+    }
+
+    int _currentRating;
+    int _voteCount;
+    string _voteLabel;
+
+    void GetCurrentRating()
+    {
+        if (_selectedProduct?.Ratings == null)
+        {
+            _currentRating = 0;
+            _voteCount = 0;
+        }
+        else
+        {
+            _voteCount = _selectedProduct.Ratings.Length;
+            _voteLabel = _voteCount > 1 ? "Votes" : "Vote";
+            _currentRating = _selectedProduct.Ratings.Sum() / _voteCount;
+        }
+
+        Console.WriteLine($"Current rating for {_selectedProduct?.Id}: {_currentRating}");
+    }
+
+    void SubmitRating(int rating)
+    {
+        Console.WriteLine($"Rating received for {_selectedProduct?.Id}: {rating}");
+        if (_selectedProductId == null) return;
+        ProductService.AddRating(_selectedProductId, rating);
+        SelectProduct(_selectedProductId);
+    }
+}
