@@ -1,4 +1,5 @@
 using dotnet.L.Demo;
+using dotnetTest.Guide.LanguageReference.Keywords;
 
 namespace dotnetTest.Guide;
 
@@ -166,8 +167,7 @@ public class Cat : Pet, ICatchMice, IClimbTree
     }
 }
 
-// where (generic type constraint 泛型类型约束)
-// https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
+/// <seealso cref="Keywords.GenericTypeConstraintKeywords"/>
 internal class Cage<T> where T : Pet
 {
     private readonly T[] _array;

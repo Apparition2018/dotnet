@@ -1,6 +1,6 @@
 using dotnet.L.Demo;
 
-namespace dotnetTest.Guide.LanguageReference;
+namespace dotnetTest.Guide.LanguageReference.Keywords;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/">关键字</a>
@@ -91,6 +91,23 @@ public class Keywords
 
         private static void UseParams(params int[] list)
         {
+        }
+    }
+
+    /// <summary>泛型类型约束关键字</summary>
+    class GenericTypeConstraintKeywords
+    {
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/where-generic-type-constraint">where（泛型类型约束）</a>
+        /// 泛型定义中的 where 子句指定对用作泛型类型、方法、委托或本地函数中类型参数的参数类型的约束
+        /// </summary>
+        /// <seealso cref="Cage{T}"/>
+        [Test]
+        public void Where()
+        {
+            var cage = new Cage<Pet>(2);
+            cage.PutIn(new Dog("A"));
+            cage.PutIn(new Cat("B"));
         }
     }
 
