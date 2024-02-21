@@ -1,16 +1,16 @@
-namespace dotnetTest.API.System;
+namespace dotnetTest.API.System.Collections.Generic;
 
 /// <summary>
-/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/collections">集合</a>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.collections.generic">System.Collections.Generic</a>
 /// </summary>
-public class Collections
+public class CollectionsGenericTests
 {
     [Test]
     public void List()
     {
         var list = new List<int> { 1, 2 };
         list.RemoveAt(1);
-        list.ForEach(Console.WriteLine); // 1
+        list.ForEach(Console.WriteLine);
     }
 
     [Test]

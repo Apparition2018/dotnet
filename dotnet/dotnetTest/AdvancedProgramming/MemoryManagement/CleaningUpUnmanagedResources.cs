@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using dotnet.L.Demo;
 using Microsoft.Win32.SafeHandles;
 
 namespace dotnetTest.AdvancedProgramming.MemoryManagement;
@@ -85,7 +86,7 @@ public class CleaningUpUnmanagedResources
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/garbage-collection/using-objects">使用实现 IDisposable 的对象</a>
     /// </summary>
-    class UseObjectsThatImplementIDisposable
+    class UseObjectsThatImplementIDisposable : Demo
     {
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/garbage-collection/using-objects#tryfinally-block">try/finally</a>
@@ -99,8 +100,8 @@ public class CleaningUpUnmanagedResources
                 reader2 = null;
             try
             {
-                reader1 = new("file1.txt");
-                reader2 = new("file2.txt");
+                reader1 = new(DemoFilePath);
+                reader2 = new(DemoFilePath);
                 int charsRead1, charsRead2 = 0;
                 while (reader1.Peek() != -1 && reader2.Peek() != -1)
                 {
@@ -129,8 +130,8 @@ public class CleaningUpUnmanagedResources
             var buffer = new char[50];
             // 允许在单个语句中获取多个资源，它们将按声明的相反顺序释放
             using StreamReader
-                reader1 = new("file1.txt"),
-                reader2 = new("file2.txt");
+                reader1 = new(DemoFilePath),
+                reader2 = new(DemoFilePath);
             int charsRead1, charsRead2 = 0;
             while (reader1.Peek() != -1 && reader2.Peek() != -1)
             {

@@ -17,7 +17,7 @@ public class IoTests : Demo
         DirectoryInfo info = new DirectoryInfo(DemoDirPath);
         Assert.That(info.Name, Is.EqualTo(DemoDirName));
         Assert.That(info.FullName, Is.EqualTo(DemoDirPath));
-        Assert.That(info.CreationTime.ToString(CultureInfo.CurrentCulture), Is.EqualTo("2024/2/20 17:28:46"));
+        Assert.That(info.CreationTime.ToString(CultureInfo.CurrentCulture), Is.EqualTo("2024/2/21 8:13:51"));
     }
 
     /// <summary>
@@ -31,6 +31,6 @@ public class IoTests : Demo
         Assert.That(info.FullName, Is.EqualTo(DemoFilePath));
         Assert.That(info.DirectoryName, Is.EqualTo(DemoDirPath));
         Assert.That(info.Extension, Is.EqualTo(string.Empty));
-        Assert.That(info.CreationTime.ToString(CultureInfo.CurrentCulture), Is.EqualTo("2024/2/20 22:34:12"));
+        Assert.That(info.CreationTime.ToString(CultureInfo.CurrentCulture), Is.EqualTo("2024/2/21 8:13:51"));
     }
 }

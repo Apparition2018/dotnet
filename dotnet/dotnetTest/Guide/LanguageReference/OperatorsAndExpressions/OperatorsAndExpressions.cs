@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 
 /// <summary>
@@ -6,9 +8,35 @@ namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 public class OperatorsAndExpressions
 {
     /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/collection-expressions">集合表达式</a>
+    /// </summary>
+    class CollectionExpressions
+    {
+        private int Sum(IEnumerable<int> values) => values.Sum();
+
+        public void Example()
+        {
+            // As a parameter:
+            int sum = Sum([1, 2, 3, 4, 5]);
+        }
+
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/collection-expressions#spread-element">分布元素</a>
+        /// </summary>
+        [Test]
+        public void SpreadElement()
+        {
+            string[] vowels = ["a", "e", "i", "o", "u"];
+            string[] consonants =
+                ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
+            string[] alphabet = [.. vowels, .. consonants, "y"];
+        }
+    }
+
+    /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/type-testing-and-cast">类型</a> - 测试运算符 和 强制转换表达式
     /// </summary>
-    class Type
+    protected class Type
     {
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/type-testing-and-cast#typeof-operator">typeof 运算符</a>
@@ -18,6 +46,32 @@ public class OperatorsAndExpressions
         public void TypeofOperator()
         {
             Assert.That(typeof(int).ToString(), Is.EqualTo("System.Int32"));
+        }
+
+        class Base;
+
+        class Derived : Base;
+
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/type-testing-and-cast#is-operator">is 运算符</a>
+        /// 检查表达式结果的运行时类型是否与给定类型兼容
+        /// </summary>
+        [Test]
+        public void IsOperator()
+        {
+            object b = new Base();
+            Assert.That(b is Base, Is.EqualTo(true));
+            Assert.That(b is Derived, Is.EqualTo(false));
+
+            object d = new Derived();
+            Assert.That(d is Base, Is.EqualTo(true));
+            Assert.That(d is Derived, Is.EqualTo(true));
+
+            int i = 27;
+            Assert.That(i is IFormattable, Is.EqualTo(true));
+            object iBox = i;
+            Assert.That(iBox is int, Is.EqualTo(true));
+            Assert.That(iBox is long, Is.EqualTo(false));
         }
     }
 
@@ -38,7 +92,7 @@ public class OperatorsAndExpressions
         {
             Assert.That(default(int), Is.EqualTo(0));
             Assert.That(default(int?), Is.EqualTo(null));
-            Assert.That(default(System.Numerics.Complex).ToString(), Is.EqualTo("<0; 0>"));
+            Assert.That(default(Complex).ToString(), Is.EqualTo("<0; 0>"));
             Assert.That(default(List<int>), Is.EqualTo(null));
         }
 

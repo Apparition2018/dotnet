@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using dotnet.L.Demo;
 
-namespace dotnetTest.API.System;
+namespace dotnetTest.API.System.Diagnostics;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.diagnostics">System.Diagnostics</a>
