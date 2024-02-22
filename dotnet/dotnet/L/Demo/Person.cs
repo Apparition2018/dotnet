@@ -15,8 +15,6 @@ public class Person : ICloneable
         set;
     }
 
-    // null 包容运算符 (null-forgiving operator)
-    // https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/null-forgiving
     public string Name { get; set; } = null!;
     public int? Age { get; set; }
     [JsonPropertyName("sex")] public string? Gender { get; set; }

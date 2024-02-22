@@ -2,6 +2,8 @@ namespace dotnetTest.Guide.ProgrammingGuide;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/indexers/">索引器</a>
+/// 允许类或结构的实例就像数组一样进行索引。
+/// 无需显式指定类型或实例成员，即可设置或检索索引值。
 /// </summary>
 public class Indexers
 {

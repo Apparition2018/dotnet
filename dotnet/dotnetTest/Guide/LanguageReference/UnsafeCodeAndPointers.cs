@@ -1,4 +1,5 @@
 using dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
+using dotnetTest.Guide.LanguageReference.Statements;
 
 namespace dotnetTest.Guide.LanguageReference;
 
@@ -22,8 +23,19 @@ public class UnsafeCodeAndPointers
     /// <item>不同的指针类型之间、指针类型和整型之间 可以进行转换</item>
     /// <item>装箱和取消装箱不支持指针</item>
     /// </list>
+    /// 可对指针执行的运算符：<see cref="PointerRelatedOperators"/>
+    /// <para>
+    /// 可对指针执行的语句：
+    /// <list type="bullet">
+    /// <item>stackalloc：在堆栈上分配内存</item>
+    /// <item><see cref="FixedStatement"/>：临时固定变量以便找到其地址</item>
+    /// </list>
+    /// </para>
     /// </summary>
-    /// <seealso cref="PointerRelatedOperators"/>
+    /// <remarks>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/unsafe-code#how-to-use-pointers-to-copy-an-array-of-bytes">使用指针来复制字节数组</a>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/unsafe-code#function-pointers">函数指针</a>
+    /// </remarks>
     [Test]
     public void PointerTypes()
     {
@@ -37,12 +49,13 @@ public class UnsafeCodeAndPointers
             Console.Write("The 4 bytes of the integer:");
 
             // Display the 4 bytes of the int variable:
-            for (int i = 0 ; i < sizeof(int) ; ++i)
+            for (int i = 0; i < sizeof(int); ++i)
             {
                 Console.Write(" {0:X2}", *p);
                 // Increment the pointer:
                 p++;
             }
+
             Console.WriteLine();
             Console.WriteLine("The value of the integer: {0}", number);
 
@@ -52,4 +65,20 @@ public class UnsafeCodeAndPointers
             */
         }
     }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/unsafe-code#fixed-size-buffers">固定大小的缓冲区</a>
+    /// 主要用于处理与硬件交互或者对性能要求非常高的场景，尤其是在需要直接操作内存和避免垃圾收集影响的场合。
+    /// 固定大小的缓冲区允许开发者直接控制内存分配，避免动态内存分配和释放的开销，从而提高代码的性能。
+    /// <para>
+    /// 与常规数组的区别：
+    /// <list type="bullet">
+    /// <item>只能在 unsafe 上下文中使用</item>
+    /// <item>只能是 structs 的实例字段</item>
+    /// <item>只能是 vectors 或 一维数组</item>
+    /// <item>声明应包括长度，如 fixed char id[8]</item>
+    /// </list>
+    /// </para>
+    /// </summary>
+    class FixedSizeBuffers;
 }

@@ -12,11 +12,11 @@ public class CleaningUpUnmanagedResources
 {
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/garbage-collection/implementing-dispose#implement-the-dispose-pattern">实现释放模式</a>
-    ///     <list type="number">
-    ///     <item>调用 Dispose 方法的 Dispose(bool) 实现</item>
-    ///     <item>执行实际清理的 Dispose(bool) 方法</item>
-    ///     <item>从包装非托管资源的 SafeHandle 派生的类（推荐），或对 Object.Finalize 方法的重写</item>
-    ///     </list>
+    /// <list type="number">
+    /// <item>调用 Dispose 方法的 Dispose(bool) 实现</item>
+    /// <item>执行实际清理的 Dispose(bool) 方法</item>
+    /// <item>从包装非托管资源的 SafeHandle 派生的类（推荐），或对 Object.Finalize 方法的重写</item>
+    /// </list>
     /// </summary>
     class BaseClassWithSafeHandle : IDisposable
     {
@@ -51,10 +51,10 @@ public class CleaningUpUnmanagedResources
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/garbage-collection/implementing-dispose#implement-the-dispose-pattern-for-a-derived-class">实现派生类的释放模式</a>
-    ///     <list type="number">
-    ///     <item>protected override void Dispose(bool) 方法，用于替代基类方法并执行派生类的实际清理。 此方法还必须调用 base.Dispose(bool) 方法，并将释放状态（bool disposing 参数）作为参数传递给它。</item>
-    ///     <item>从包装非托管资源的 SafeHandle 派生的类（推荐），或对 Object.Finalize 方法的重写。</item>
-    ///     </list>
+    /// <list type="number">
+    /// <item>protected override void Dispose(bool) 方法，用于替代基类方法并执行派生类的实际清理。 此方法还必须调用 base.Dispose(bool) 方法，并将释放状态（bool disposing 参数）作为参数传递给它。</item>
+    /// <item>从包装非托管资源的 SafeHandle 派生的类（推荐），或对 Object.Finalize 方法的重写。</item>
+    /// </list>
     /// </summary>
     class DerivedClassWithSafeHandle : BaseClassWithSafeHandle
     {

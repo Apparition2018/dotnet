@@ -16,13 +16,13 @@ public class Keywords
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/method-parameters#reference-parameters">引用参数</a>
         /// <para>
-        /// 将以下修饰符之一应用于参数声明，以按引用而不是按值传递参数
-        ///     <list type="number">
-        ///     <item>ref：在调用方法之前必须初始化参数。该方法可以将新值赋给参数。</item>
-        ///     <item>readonly ref：在调用方法之前必须初始化参数。该方法无法向参数赋新值。</item>
-        ///     <item>out：该调用方法在调用方法之前不需要初始化参数。该方法必须向参数赋值。</item>
-        ///     <item>in：在调用方法之前必须初始化参数。该方法无法向参数赋新值。编译器可能会创建一个临时变量来保存 in 参数的自变量副本。???</item>
-        ///     </list>
+        /// 将以下修饰符之一应用于参数声明，以按引用而不是按值传递参数：
+        /// <list type="number">
+        /// <item>ref：在调用方法之前必须初始化参数。该方法可以将新值赋给参数。</item>
+        /// <item>readonly ref：在调用方法之前必须初始化参数。该方法无法向参数赋新值。</item>
+        /// <item>out：该调用方法在调用方法之前不需要初始化参数。该方法必须向参数赋值。</item>
+        /// <item>in：在调用方法之前必须初始化参数。该方法无法向参数赋新值。编译器可能会创建一个临时变量来保存 in 参数的自变量副本。???</item>
+        /// </list>
         /// </para>
         /// </summary>
         [Test]
@@ -72,16 +72,13 @@ public class Keywords
 
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/method-parameters#params-modifier">params 修饰符</a>
-        /// <para>
-        /// 并且只允许有一个 params 关键字
-        ///     <list type="bullet">
-        ///     <item>params 关键字修饰的参数称为 params 参数</item>
-        ///     <item>params 参数之后不允许有其他参数</item>
-        ///     <item>只允许有一个 params 参数</item>
-        ///     <item>params 参数的声明类型只能是一维数组，否者发生编译器错误 CS0225</item>
-        ///     <item>params 参数可以传入：①逗号分隔列表 ②数组 ③无参数</item>
-        ///     </list>
-        /// </para>
+        /// <list type="bullet">
+        /// <item>params 关键字修饰的参数称为 params 参数</item>
+        /// <item>params 参数之后不允许有其他参数</item>
+        /// <item>只允许有一个 params 参数</item>
+        /// <item>params 参数的声明类型只能是一维数组，否者发生编译器错误 CS0225</item>
+        /// <item>params 参数可以传入：①逗号分隔列表 ②数组 ③无参数</item>
+        /// </list>
         /// </summary>
         [Test]
         public void Params()

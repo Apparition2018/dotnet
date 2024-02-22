@@ -5,23 +5,23 @@ namespace dotnetTest.Fundamentals.FundamentalCodingComponents.BaseTypes;
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/type-conversion">类型转换</a>
 /// <para>
-/// 自动转换
-///     <list type="number">
-///     <item>派生类 → 基类</item>
-///     <item>基类 → 派生类，需要强制转换</item>
-///     <item>实现类 → 接口</item>
-///     <item>接口 → 实现类，需要强制转换</item>
-///     </list>
+/// 自动支持以下转换：
+/// <list type="number">
+/// <item>派生类 → 基类</item>
+/// <item>基类 → 派生类，需要强制转换</item>
+/// <item>实现类 → 接口</item>
+/// <item>接口 → 实现类，需要强制转换</item>
+/// </list>
 /// </para>
 /// <para>
-/// 自定义类型转换
-///     <list type="number">
-///     <item>Implicit 运算符：扩大转换、隐式转换</item>
-///     <item>Explicit 运算符：收缩转换、显示转换</item>
-///     <item>IConvertible 接口</item>
-///     <item>Convert 类</item>
-///     <item>TypeConverter 类</item>
-///     </list>
+/// 自定义类型转换：
+/// <list type="number">
+/// <item>Implicit 运算符：扩大转换、隐式转换</item>
+/// <item>Explicit 运算符：收缩转换、显示转换</item>
+/// <item>IConvertible 接口</item>
+/// <item>Convert 类</item>
+/// <item>TypeConverter 类</item>
+/// </list>
 /// </para>
 /// </summary>
 public class TypeConversion

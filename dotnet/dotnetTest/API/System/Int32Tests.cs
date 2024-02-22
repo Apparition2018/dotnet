@@ -1,7 +1,7 @@
 namespace dotnetTest.API.System;
 
 /// <summary>
-/// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.int32.tryparse">Int32</a>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.int32">Int32</a>
 /// </summary>
 public class Int32Tests
 {
