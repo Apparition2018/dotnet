@@ -1,5 +1,6 @@
 using dotnet.L.Demo;
 using dotnetTest.Guide.LanguageReference.Keywords;
+using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
 namespace dotnetTest.Guide;
 
@@ -80,11 +81,7 @@ public abstract class Pet
     }
 }
 
-// 扩展方法 (Extension Methods)
-//  1.非嵌套、非泛型静态类
-//  2.静态方法
-//  3.第一个参数指定扩展那个类型，参数前面加 this
-// https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/extension-methods
+/// <seealso cref="Method.ExtensionMethods"/>
 internal static class PetGuide
 {
     public static void Feed(this Dog dog)
@@ -167,7 +164,7 @@ public class Cat : Pet, ICatchMice, IClimbTree
     }
 }
 
-/// <seealso cref="Keywords.GenericTypeConstraintKeywords"/>
+/// <seealso cref="Keywords.GenericTypeConstraintKeywords.Where"/>
 internal class Cage<T> where T : Pet
 {
     private readonly T[] _array;

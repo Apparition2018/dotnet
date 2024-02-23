@@ -148,7 +148,7 @@ public class OperatorsAndExpressions
     /// stackalloc 表达式的结果可分配给以下变量：
     /// <list type="number">
     /// <item><see cref="Span{T}"/>或<see cref="ReadOnlySpan{T}"/></item>
-    /// <item>指针类型：<see cref="UnsafeCodeAndPointers"/></item>
+    /// <item><see cref="UnsafeCodeAndPointers.PointerTypes">指针类型</see></item>
     /// </list>
     /// </para>
     /// <para>

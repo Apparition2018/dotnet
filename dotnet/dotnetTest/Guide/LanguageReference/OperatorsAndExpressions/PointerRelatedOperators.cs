@@ -12,5 +12,4 @@ namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 /// </summary>
 public class PointerRelatedOperators
 {
-
 }

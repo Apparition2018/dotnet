@@ -23,7 +23,7 @@ public class UnsafeCodeAndPointers
     /// <item>不同的指针类型之间、指针类型和整型之间 可以进行转换</item>
     /// <item>装箱和取消装箱不支持指针</item>
     /// </list>
-    /// 可对指针执行的运算符：<see cref="PointerRelatedOperators"/>
+    /// <see cref="PointerRelatedOperators">可对指针执行的运算符</see>
     /// <para>
     /// 可对指针执行的语句：
     /// <list type="bullet">

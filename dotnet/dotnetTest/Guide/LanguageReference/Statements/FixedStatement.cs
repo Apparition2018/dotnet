@@ -10,7 +10,7 @@ namespace dotnetTest.Guide.LanguageReference.Statements;
 /// <item>带有变量的地址</item>
 /// <item>实现名为 GetPinnableReference 的方法的类型的实例</item>
 /// <item>字符串</item>
-/// <item>固定大小的缓冲区：<see cref="UnsafeCodeAndPointers.FixedSizeBuffers"/></item>
+/// <item><see cref="UnsafeCodeAndPointers.FixedSizeBuffers">固定大小的缓冲区</see></item>
 /// </list>
 /// </para>
 /// </summary>

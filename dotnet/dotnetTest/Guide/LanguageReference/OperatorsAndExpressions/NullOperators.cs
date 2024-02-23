@@ -23,7 +23,7 @@ public class NullOperators
 
             // ??=：左操作数为 null，才赋值
             (numbers ??= new List<int>()).Add(5);
-            Assert.That(string.Join(",", numbers), Is.EqualTo("5"));
+            Assert.That(string.Join(" ", numbers), Is.EqualTo("5"));
 
             // throw 表达式 作为右操作符，使参数检查代码更简洁
             int b = a ?? throw new ArgumentNullException(nameof(a), "cannot be null");

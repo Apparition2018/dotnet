@@ -10,16 +10,31 @@ using Range = (int Minimum, int Maximum);
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-types">值类型</a>
-///  </summary>
+/// <para>
+/// 种类：
+/// <list type="number">
+/// <item><see cref="StructureTypes">结构类型</see></item>
+/// <item><see cref="EnumerationTypes">枚举类型</see></item>
+/// </list>
+/// </para>
+/// <para>
+/// 所有简单值都是结构类型，与其他结构类型的区别：
+/// <list type="bullet">
+/// <item>可以使用文字为简单类型提供值。例如，<c>int i = 2001</c></item>
+/// <item>可以使用 const 关键字声明简单类型的常数。不能具有其他结构类型的常数。</item>
+/// <item>常数表达式的操作数都是简单类型的常数，在编译时进行评估。</item>
+/// </list>
+/// </para>
+/// </summary>
 public class ValueTypes
 {
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-types#built-in-value-types">内置值类型</a>
     /// <list type="number">
-    /// <item>整型数值类型 (Integral numeric types)</item>
-    /// <item>浮点型数值类型 (Floating-point numeric types)</item>
-    /// <item>bool (Boolean value)</item>
-    /// <item>char (Unicode UTF-16 character)</item>
+    /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/integral-numeric-types">整型数值类型</a></item>
+    /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types">浮点数值类型</a></item>
+    /// <item>bool</item>
+    /// <item><see cref="Char">char</see>：表示 Unicode UTF-16 字符</item>
     /// </list>
     /// </summary>
     class BuiltInValueTypes
@@ -42,12 +57,9 @@ public class ValueTypes
             Console.WriteLine($"nuint (UIntPtr)  : {nuint.MinValue} to {nuint.MaxValue}");
 
             Console.WriteLine("\n浮点数值类型");
-            Console.WriteLine(
-                $"float (Single)   : {float.MinValue} to {float.MaxValue} (with ~6-9 digits of precision)");
-            Console.WriteLine(
-                $"double (Double)  : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
-            Console.WriteLine(
-                $"decimal (Decimal): {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)");
+            Console.WriteLine($"float (Single)   : {float.MinValue} to {float.MaxValue} (with ~6-9 digits of precision)");
+            Console.WriteLine($"double (Double)  : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
+            Console.WriteLine($"decimal (Decimal): {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)");
 
             Console.WriteLine("");
             Console.WriteLine($"bool (Boolean)   : {bool.FalseString} and {bool.TrueString}");
@@ -67,42 +79,43 @@ public class ValueTypes
             var binaryLiteral = 0b_0010_1010;
             Assert.That(binaryLiteral, Is.EqualTo(42));
         }
-    }
 
-    /// <summary>
-    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types">浮点数值类型</a>
-    /// </summary>
-    [Test]
-    public void FloatingPointNumericTypes()
-    {
-        // double
-        Console.WriteLine(0.42e2); // 42
-        // float
-        Console.WriteLine(134.45E-2f); // 1.3445
-        // decimal
-        Console.WriteLine(1.5E6m); // 1500000
-    }
-
-    /// <summary>
-    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/char#literals">char</a>
-    /// </summary>
-    [Test]
-    public void Char()
-    {
-        var chars = new[]
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types#real-literals">真实文本</a>
+        /// </summary>
+        [Test]
+        public void RealLiterals()
         {
-            'j',
-            // Unicode
-            '\u006A',
-            // 十六进制
-            '\x006A',
-            (char)106,
-        };
-        Assert.That(string.Join(" ", chars), Is.EqualTo("j j j j"));
+            // double
+            Console.WriteLine(0.42e2); // 42
+            // float
+            Console.WriteLine(134.45E-2f); // 1.3445
+            // decimal
+            Console.WriteLine(1.5E6m); // 1500000
+        }
+
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/char#literals">char</a>
+        /// </summary>
+        [Test]
+        public void Char()
+        {
+            var chars = new[]
+            {
+                'j',
+                // Unicode
+                '\u006A',
+                // 十六进制
+                '\x006A',
+                (char)106,
+            };
+            Assert.That(string.Join(" ", chars), Is.EqualTo("j j j j"));
+        }
     }
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/enum">枚举类型</a>
+    /// 由基础整型数值类型的一组命名常量定义的值类型
     /// </summary>
     [Test]
     public void EnumerationTypes()
@@ -118,11 +131,15 @@ public class ValueTypes
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/struct">结构类型</a>
+    /// 一种可封装数据和相关功能的值类型
+    /// <para>
+    /// 设计限制：
     /// <list type="bullet">
     /// <item>不能从其他类或结构类型继承，也不能作为类的基础类型，可以实现接口</item>
     /// <item>不能在结构类型中声明 <see cref="Finalizers"/></item>
     /// <item>在 C# 11 之前，结构类型的构造函数必须初始化该类型的所有实例字段</item>
     /// </list>
+    /// </para>
     /// <para>
     /// readonly 结构：
     /// <list type="bullet">
@@ -242,7 +259,7 @@ public class ValueTypes
         /// 使用 using 指令指定元组类型的别名
         /// <see cref="GlobalUsings"/>
         /// </summary>
-        /// <seealso cref="NamespaceKeywords.UsingDirective.UsingAlias"/>
+        /// <seealso cref="Keywords.NamespaceKeywords.UsingDirective.UsingAlias"/>
         [Test]
         public void SpecifyAnAlias()
         {
@@ -298,12 +315,12 @@ public class ValueTypes
         {
             (int a, byte b) left = (5, 10);
             (long a, int b) right = (5, 10);
-            Assert.That(left == right, Is.EqualTo(true));
+            Assert.That(left == right);
 
             // 不会考虑元组字段名称
             var t1 = (A: 5, B: 10);
             var t2 = (B: 5, A: 10);
-            Assert.That(t1 == t2, Is.EqualTo(true));
+            Assert.That(t1 == t2);
         }
     }
 
@@ -366,7 +383,8 @@ public class ValueTypes
 
             // 一元运算符、二元运算符、值类型 T 支持的任何重载运算符
             // 如果一个或全部两个操作数为 null ，结果为 null
-            Assert.That(a + b, Is.EqualTo(null));
+            Assert.That(0 & b, Is.EqualTo(null));
+            Assert.That(a | b, Is.EqualTo(null));
 
             // <、>、<=、>=，如果一个或全部两个操作数为 null ，结果为 false
             Assert.That(a >= null, Is.EqualTo(false));

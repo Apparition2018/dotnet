@@ -17,7 +17,7 @@ public class DirectoryTests : Demo
         // static DirectoryInfo CreateDirectory(string path)    创建指定路径中的所有目录
         Directory.CreateDirectory(dirPath);
         // static bool          Exists(string path)             判断目录是否存在
-        Assert.That(Directory.Exists(dirPath), Is.EqualTo(true));
+        Assert.That(Directory.Exists(dirPath));
         // static void          Delete(string path, bool recursive)
         // 删除指定目录以及目录中的任何子目录和文件
         Directory.Delete(Path.Combine(Desktop, "a"), true);

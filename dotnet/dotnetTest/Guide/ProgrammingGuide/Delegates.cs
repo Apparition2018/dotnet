@@ -1,8 +1,8 @@
-namespace dotnetTest.Guide.Delegates_Events;
+namespace dotnetTest.Guide.ProgrammingGuide;
 
 /// <summary>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/delegates/">委托</a><br/>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/delegates-overview">委托</a>
-/// 提供后期绑定机制
 /// </summary>
 public class Delegates
 {
