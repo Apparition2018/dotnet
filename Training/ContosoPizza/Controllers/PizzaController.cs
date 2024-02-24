@@ -33,7 +33,7 @@ public class PizzaController : ControllerBase
     public IActionResult Create(Pizza pizza)
     {
         PizzaService.Add(pizza);
-        return CreatedAtAction(nameof(Create), new {id = pizza.Id}, pizza);
+        return CreatedAtAction(nameof(Create), new { id = pizza.Id }, pizza);
     }
 
     // put 3 -c  "{"id": 3, "name":"Hawaiian", "isGlutenFree":false}"

@@ -2,11 +2,10 @@ namespace dotnet.L.Demo;
 
 public struct Coords
 {
-    public Coords()
+    public Coords() : this(double.NaN, double.NaN)
     {
-        X = double.NaN;
-        Y = double.NaN;
     }
+
     public Coords(double x, double y)
     {
         X = x;

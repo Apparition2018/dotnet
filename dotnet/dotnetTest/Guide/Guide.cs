@@ -40,12 +40,12 @@ public class Guide : Demo
     }
 }
 
-public abstract class Pet
+public class Pet
 {
-    protected readonly string Name;
+    public readonly string Name;
     private int _age;
 
-    protected Pet(string name)
+    public Pet(string name)
     {
         Name = name;
         _age = 0;
@@ -61,16 +61,11 @@ public abstract class Pet
         Console.WriteLine(Name + "'s Age = " + _age);
     }
 
-    // virtual 虚拟 (方法、属性、索引器、事件)，使其在派生类中被重写
-    // https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/virtual
-    // public virtual void Speak()
-    // {
-    //     Console.WriteLine("Pet is speaking");
-    // }
-
-    // abstract 抽象 (方法、属性、索引器、事件)
-    // https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/abstract
-    public abstract void Speak();
+    /// <seealso cref="Modifiers.Virtual"/>
+    public virtual void Speak()
+    {
+        Console.WriteLine("Pet is speaking");
+    }
 
     // 运算符重载 (Operator overloading)
     // https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/operator-overloading

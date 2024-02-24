@@ -2,8 +2,11 @@ namespace dotnetTest.Guide.ProgrammingGuide;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/delegates/">委托</a><br/>
-/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/delegates-overview">委托</a>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/delegates-overview">委托</a><br/>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/generics/generic-delegates">泛型委托</a>
+/// 委托是事件的基础
 /// </summary>
+/// <seealso cref="Events"/>
 public class Delegates
 {
     private delegate void Action();

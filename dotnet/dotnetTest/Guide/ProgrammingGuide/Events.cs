@@ -3,7 +3,9 @@ namespace dotnetTest.Guide.ProgrammingGuide;
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/events/">事件</a><br/>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/events-overview">事件</a>
+/// 委托是事件的基础
 /// </summary>
+/// <seealso cref="Delegates"/>
 public class Events
 {
     [Test]

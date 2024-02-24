@@ -17,6 +17,6 @@ public class PizzaDb : DbContext
         // 数据种子设定
         // https://learn.microsoft.com/zh-cn/ef/core/modeling/data-seeding
         modelBuilder.Entity<Pizza>().HasData(
-            new Pizza {Id = 1, Name = "Pepperoni", Description = "Classic Pepperoni Pizza"});
+            new Pizza { Id = 1, Name = "Pepperoni", Description = "Classic Pepperoni Pizza" });
     }
 }

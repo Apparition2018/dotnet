@@ -8,6 +8,7 @@ public class Demo
 {
     protected static int[] Ints = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     protected const string HelloWorld = "Hello World!";
+    public const string MyName = "ljh";
     protected static readonly string Desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
     protected const string Dotnet = "dotnet";
