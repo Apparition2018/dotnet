@@ -10,6 +10,7 @@
     - SDK: 3.1
     - Type: Web App
 ### Adding Data [3 of 13]
+- @see [products.json](wwwroot/data/products.json)
 - `[JsonPropertyName("img")]`，@see [Product.cs](Models/Product.cs)
 ### Adding a Service [4 of 13]
 - wwwroot 绝对路径：`WebHostEnvironment.WebRootPath`，@see [JsonFileProductService.cs](Services/JsonFileProductService.cs)

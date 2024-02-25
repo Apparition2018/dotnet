@@ -3,9 +3,9 @@ using BankyStuffLibrary;
 
 namespace MySuperBank
 {
-    static class Program
+    class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             var account = new BankAccount("Kendra", 10000);
             Console.WriteLine($"Account {account.Number} was created from {account.Owner} with {account.Balance}.");
