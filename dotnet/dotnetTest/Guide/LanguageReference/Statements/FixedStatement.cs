@@ -14,6 +14,4 @@ namespace dotnetTest.Guide.LanguageReference.Statements;
 /// </list>
 /// </para>
 /// </summary>
-public class FixedStatement
-{
-}
+public class FixedStatement;

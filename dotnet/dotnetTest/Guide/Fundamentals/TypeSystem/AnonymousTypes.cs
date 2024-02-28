@@ -15,9 +15,6 @@ public class AnonymousTypes : Demo
             from person in PersonList
             select new { person.Id, person.Name };
 
-        foreach (var v in personQuery)
-        {
-            Console.WriteLine(v);
-        }
+        personQuery.ToList().ForEach(Console.WriteLine);
     }
 }

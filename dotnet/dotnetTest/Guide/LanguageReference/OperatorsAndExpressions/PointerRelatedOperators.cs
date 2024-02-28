@@ -10,6 +10,4 @@ namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 /// <item>比较运算符</item>
 /// </list>
 /// </summary>
-public class PointerRelatedOperators
-{
-}
+public class PointerRelatedOperators;

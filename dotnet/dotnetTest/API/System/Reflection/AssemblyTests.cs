@@ -22,8 +22,7 @@ public class AssemblyTests : Demo
 
         Assert.That(assembly.FullName, Is.EqualTo(assembly.GetName().ToString()));
         Assert.That(assembly.GetName().Name, Is.EqualTo("dotnetTest"));
-        Assert.That(assembly.Location,
-            Is.EqualTo(@"D:\Liang\git\dotnet\dotnet\dotnetTest\bin\Debug\net8.0\dotnetTest.dll"));
+        Assert.That(assembly.Location, Is.EqualTo(@"D:\Liang\git\dotnet\dotnet\dotnetTest\bin\Debug\net8.0\dotnetTest.dll"));
 
 
         // 获取程序集实例中具有指定名称的 Type 对象

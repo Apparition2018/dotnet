@@ -26,9 +26,7 @@ namespace BankingTests
         public void NeedMoneyToStart()
         {
             // Test that the initial balances must be positive
-            Assert.Throws<ArgumentOutOfRangeException>(
-                () => new BankAccount("invalid", -55)
-            );
+            Assert.Throws<ArgumentOutOfRangeException>(() => new BankAccount("invalid", -55));
         }
     }
 }

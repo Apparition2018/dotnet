@@ -78,12 +78,12 @@ namespace BankyStuffLibrary
         {
             var report = new StringBuilder();
             // HEADER
-            report.AppendLine("Date\t\tAmount\tNote");
+            report.AppendLine($"Date\t\t{"Amount",-30}Note");
             foreach (var transaction in _allTransactions)
             {
                 // ROWS
-                report.AppendLine(
-                    $"{transaction.Date.ToShortDateString()}\t{transaction.AmountForHumans}\t{transaction.Notes}");
+                report.AppendLine(String.Format("{0}\t{1,-30}{2}",
+                    transaction.Date.ToShortDateString(), transaction.AmountForHumans, transaction.Notes));
             }
 
             return report.ToString();

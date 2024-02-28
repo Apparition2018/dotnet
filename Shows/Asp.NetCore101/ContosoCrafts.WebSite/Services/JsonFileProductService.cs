@@ -10,8 +10,7 @@ namespace ContosoCrafts.WebSite.Services
     /// <summary>JSON 文件产品 Service</summary>
     public class JsonFileProductService
     {
-        public JsonFileProductService(IWebHostEnvironment webHostEnvironment) =>
-            WebHostEnvironment = webHostEnvironment;
+        public JsonFileProductService(IWebHostEnvironment webHostEnvironment) => WebHostEnvironment = webHostEnvironment;
 
         public IWebHostEnvironment WebHostEnvironment { get; }
 
