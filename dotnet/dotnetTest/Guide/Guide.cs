@@ -1,5 +1,6 @@
 using dotnet.L.Demo;
 using dotnetTest.Guide.LanguageReference.Keywords;
+using dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
 namespace dotnetTest.Guide;
@@ -67,8 +68,7 @@ public class Pet
         Console.WriteLine("Pet is speaking");
     }
 
-    // 运算符重载 (Operator overloading)
-    // https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/operator-overloading
+    /// <seealso cref="OperatorsAndExpressions.OperatorOverloading"/>
     public static Pet operator ++(Pet pet)
     {
         ++pet._age;
@@ -103,8 +103,7 @@ public class Dog : Pet
         Console.WriteLine("Dog's name is " + Name);
     }
 
-    // sealed 密闭，可阻止其他类继承自该类
-    // https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/sealed
+    /// <seealso cref="Modifiers.Sealed"/>
     public sealed override void Speak()
     {
         Console.WriteLine(Name + " is speaking: wow");

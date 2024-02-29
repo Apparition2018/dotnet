@@ -10,10 +10,4 @@ namespace dotnetTest.Fundamentals.RuntimeLibraries.Resources;
 /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/core/extensions/create-resource-files#resource-files-in-visual-studio">Visual Studio</a></item>
 /// </list>
 /// </summary>
-public class CreateResourceFiles
-{
-    [Test]
-    public void Test()
-    {
-    }
-}
+public class CreateResourceFiles;

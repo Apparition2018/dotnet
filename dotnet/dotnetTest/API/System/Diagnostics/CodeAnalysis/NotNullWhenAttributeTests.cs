@@ -8,7 +8,7 @@ namespace dotnetTest.API.System.Diagnostics.CodeAnalysis;
 /// </summary>
 public class NotNullWhenAttributeTests
 {
-    public string? GetMessage([NotNullWhenAttribute(true)] string? input)
+    private string? GetMessage([NotNullWhen(true)] string? input)
     {
         return (input != null) ? "You entered:" + input : null;
     }
@@ -16,8 +16,7 @@ public class NotNullWhenAttributeTests
     [Test]
     public void Test()
     {
-        string? input = "Hello";
-        string? message = GetMessage(input);
+        string? message = GetMessage("Hello");
         Assert.That(message, Is.EqualTo("You entered:Hello"));
     }
 }

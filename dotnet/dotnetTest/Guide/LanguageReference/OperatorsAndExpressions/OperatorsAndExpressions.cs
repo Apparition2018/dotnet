@@ -1,4 +1,5 @@
 using System.Numerics;
+using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
 namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 
@@ -127,7 +128,7 @@ public class OperatorsAndExpressions
                 array[i] = default;
             }
 
-            Assert.That(string.Join(",", array), Is.EqualTo("False,False,False,False"));
+            Assert.That(string.Join(" ", array), Is.EqualTo("False False False False"));
         }
     }
 
@@ -166,7 +167,7 @@ public class OperatorsAndExpressions
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/with-expression">with 表达式</a>
-    /// 使用修改的特定属性和字段生成其操作数的副本
+    /// 生成其操作数的副本，使用<see cref="ObjectAndCollectionInitializers">对象初始值设定项</see>语法修改指定的属性和字段
     /// </summary>
     [Test]
     public void WithExpression()
@@ -176,5 +177,71 @@ public class OperatorsAndExpressions
 
         var saleApples = apples with { Price = 0.79m };
         Console.WriteLine($"Sale: {saleApples}");
+    }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/operator-overloading">运算符重载</a>
+    /// 用户定义的类型可重载预定义的 C# 运算符。当一个或两个操作数都是某类型时，此类型可提供操作的自定义实现。
+    /// <para>
+    /// 使用 operator 关键字来声明运算符。 运算符声明必须符合以下规则：
+    /// <list type="number">
+    /// <item>同时包含 public 和 static 修饰符</item>
+    /// <item>一元运算符有一个输入参数。二元运算符有两个输入参数。在每种情况下，都至少有一个参数必须具有类型 T 或 T?，其中 T 是包含运算符声明的类型。</item>
+    /// </list>
+    /// </para>
+    /// </summary>
+    class OperatorOverloading
+    {
+        /// <summary>
+        /// 一个表示有理数的简单结构，重载一些算术运算符
+        /// </summary>
+        readonly struct Fraction
+        {
+            private readonly int _num;
+            private readonly int _den;
+
+            public Fraction(int numerator, int denominator)
+            {
+                if (denominator == 0)
+                {
+                    throw new ArgumentException("Denominator cannot be zero.", nameof(denominator));
+                }
+                _num = numerator;
+                _den = denominator;
+            }
+
+            public static Fraction operator +(Fraction a) => a;
+            public static Fraction operator -(Fraction a) => new(-a._num, a._den);
+
+            public static Fraction operator +(Fraction a, Fraction b)
+                => new(a._num * b._den + b._num * a._den, a._den * b._den);
+
+            public static Fraction operator -(Fraction a, Fraction b) => a + (-b);
+
+            public static Fraction operator *(Fraction a, Fraction b) => new(a._num * b._num, a._den * b._den);
+
+            public static Fraction operator /(Fraction a, Fraction b)
+            {
+                if (b._num == 0)
+                {
+                    throw new DivideByZeroException();
+                }
+                return new Fraction(a._num * b._den, a._den * b._num);
+            }
+
+            public override string ToString() => $"{_num} / {_den}";
+        }
+
+        [Test]
+        public void Test()
+        {
+            Fraction a = new Fraction(5, 4);
+            Fraction b = new Fraction(1, 2);
+            Assert.That((-a).ToString(), Is.EqualTo("-5 / 4"));
+            Assert.That((a + b).ToString(), Is.EqualTo("14 / 8"));
+            Assert.That((a - b).ToString(), Is.EqualTo("6 / 8"));
+            Assert.That((a * b).ToString(), Is.EqualTo("5 / 8"));
+            Assert.That((a / b).ToString(), Is.EqualTo("10 / 4"));
+        }
     }
 }

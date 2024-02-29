@@ -26,11 +26,12 @@ public class InteropServicesTests
         {
             Assert.That(Method(), Is.EqualTo("A"));
             Assert.That(Method("B"), Is.EqualTo("B"));
-        }
+            return;
 
-        private static string Method([Optional, DefaultParameterValue("A")] string str)
-        {
-            return str;
+            string Method([Optional, DefaultParameterValue("A")] string str)
+            {
+                return str;
+            }
         }
 
         /// <summary>与<see cref="Method.NamedAndOptionalArguments.OptionalArguments">可选参数</see> 的差异</summary>

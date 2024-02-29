@@ -25,6 +25,16 @@ public class Keywords
             /// </remarks>
             class UsingAlias;
         }
+
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/extern-alias">外部别名</a>
+        /// 引用具有相同的完全限定类型名称的程序集的两个版本。
+        /// <list type="bullet">
+        /// <item>在命令提示符下指定别名，如：<c>/r:GridV1=grid.dll</c>，<c>/r:GridV2=grid20.dll</c>。将创建外部别名 GridV1 和 GridV2</item>
+        /// <item>使用 <see cref="Modifiers.Extern">extern</see> 关键字引用别名：<c>extern alias GridV1</c>，<c>extern alias GridV2</c></item>
+        /// </list>
+        /// </summary>
+        class ExternAlias;
     }
 
     /// <summary>泛型类型约束关键字</summary>
@@ -51,10 +61,7 @@ public class Keywords
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/this">this</a>
         /// ① 指代类的当前实例 ②用作扩展方法的第一个参数的修饰符 ③声明索引器
         /// </summary>
-        [Test]
-        public void This()
-        {
-        }
+        class This;
     }
 
     /// <summary>上下文关键字</summary>
@@ -81,9 +88,6 @@ public class Keywords
         /// 在属性和索引器声明的 set 访问器中使用。
         /// 类似于方法的输入参数，引用客户端代码尝试分配给属性或索引器的值。
         /// </summary>
-        [Test]
-        public void Value()
-        {
-        }
+        class Value;
     }
 }

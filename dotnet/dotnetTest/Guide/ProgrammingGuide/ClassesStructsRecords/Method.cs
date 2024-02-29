@@ -1,4 +1,5 @@
 using dotnet.L.Demo;
+using dotnetTest.Guide.LanguageReference.Keywords;
 
 namespace dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
@@ -7,6 +8,39 @@ namespace dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 /// </summary>
 public class Method
 {
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/local-functions">局部函数</a>
+    /// <list type="bullet">
+    /// <item>一种嵌套在另一成员中的一种类型的方法：方法、构造函数、属性访问器、事件访问器、匿名方法、Lambda 表达式、终结器、其他局部函数</item>
+    /// <item>语法：<c>&lt;modifiers> &lt;return-type> &lt;method-name> &lt;parameter-list></c></item>
+    /// <item>modifiers：async、<see cref="Modifiers.Unsafe">unsafe</see>、static、<see cref="Modifiers.Extern">extern</see>（外部局部函数必须为 static）</item>
+    /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/local-functions#local-functions-and-exceptions">可以使异常立即出现</a></item>
+    /// </list>
+    /// </summary>
+    class LocalFunctions
+    {
+        public static int LocalFunctionFactorial(int n)
+        {
+            return NthFactorial(n);
+
+            int NthFactorial(int number) => number < 2 ? 1 : number * NthFactorial(number - 1);
+        }
+    }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables">隐式类型局部变量</a>
+    /// <list type="bullet">
+    /// <item>var 必须在声明时同时初始化，且不能为 null、方法组、匿名函数</item>
+    /// <item>var 不能用作类范围内的字段</item>
+    /// <item>var 声明不能使用初始化表达式，如：var i = (i = 20) 会产生编译时错误</item>
+    /// <item>不能在同一语句中初始化多个隐式类型变量</item>
+    /// </list>
+    /// </summary>
+    /// <remarks>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/coding-style/coding-conventions#implicitly-typed-local-variables">隐式类型局部变量</a>
+    /// </remarks>
+    class ImplicitlyTypedLocalVariables;
+
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/extension-methods">扩展方法</a>
     /// 使你能够向现有类型“添加”方法，而无需创建新的派生类型、重新编译或以其他方式修改原始类型

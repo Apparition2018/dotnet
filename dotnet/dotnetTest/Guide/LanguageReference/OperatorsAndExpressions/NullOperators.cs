@@ -42,7 +42,7 @@ public class NullOperators
     /// </summary>
     class NullForgivingOperator
     {
-        internal class Person
+        class Person
         {
             public Person(string name) => Name = name ?? throw new ArgumentNullException(nameof(name));
             public string Name { get; }
@@ -60,22 +60,20 @@ public class NullOperators
     /// 仅当操作数的计算结果为非 NULL 时，NULL 条件运算符才对其操作数应用成员访问 (?.) 或元素访问 (?[]) 操作；否则，它会返回 null。
     /// Null 条件成员访问运算符 (?.) 也称为 Elvis 运算符。
     /// </summary>
-    class NullConditionalOperators
+    [Test]
+    public void NullConditionalOperators()
     {
-        private double SumNumbers(List<double[]> setsOfNumbers, int indexOfSetToSum)
+        List<double[]?> numberSets =
+        [
+            [1.0, 2.0, 3.0],
+            null
+        ];
+        Assert.That(SumNumbers(numberSets!, 1), Is.EqualTo(double.NaN));
+        return;
+
+        double SumNumbers(List<double[]> setsOfNumbers, int indexOfSetToSum)
         {
             return setsOfNumbers?[indexOfSetToSum]?.Sum() ?? double.NaN;
-        }
-
-        [Test]
-        public void Test()
-        {
-            List<double[]?> numberSets =
-            [
-                [1.0, 2.0, 3.0],
-                null
-            ];
-            Assert.That(SumNumbers(numberSets!, 1), Is.EqualTo(double.NaN));
         }
     }
 }

@@ -1,8 +1,26 @@
+using System.Runtime.InteropServices;
+using dotnetTest.Fundamentals.MemoryManagement;
+
 namespace dotnetTest.Guide.LanguageReference.Keywords;
 
 /// <summary>修饰符</summary>
 public class Modifiers
 {
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/extern">extern</a>
+    /// 用于声明在外部实现的方法。
+    /// 常见用法：使用<see cref="ManagedCode.Interoperability">互操作</see>服务调用<see cref="ManagedCode">非托管代码</see>
+    /// </summary>
+    [Test]
+    public void Extern()
+    {
+        Console.WriteLine(MessageBox(0, "abc", "My Message Box", 0));
+        return;
+
+        [DllImport("User32.dll", CharSet = CharSet.Unicode)]
+        static extern int MessageBox(IntPtr h, string m, string c, int type);
+    }
+
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/override">override</a>
     /// 扩展或修改抽象或虚拟的方法、属性、索引器、事件
@@ -28,6 +46,13 @@ public class Modifiers
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords">了解何时使用 Override 和 New 关键字</a>
     /// </remarks>
     class Override;
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/sealed">sealed</a>
+    /// 修饰类时，阻止其他类继承自该类。
+    /// 修饰（基类中 virtual 修饰的）方法和属性时，必须与 overrider 结合使用，防止派生类重写该方法。
+    /// </summary>
+    class Sealed;
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/unsafe">unsafe</a>

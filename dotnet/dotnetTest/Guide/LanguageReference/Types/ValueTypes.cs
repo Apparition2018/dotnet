@@ -153,6 +153,7 @@ public class ValueTypes
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/struct#nondestructive-mutation">非破坏性变化</a>
         /// </summary>
+        /// <seealso cref="OperatorsAndExpressions.WithExpression"/>
         [Test]
         public void NondestructiveMutation()
         {
@@ -325,7 +326,7 @@ public class ValueTypes
     }
 
     /// <summary>
-    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types">可为空的值类型</a>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types">可为 null 的值类型</a>
     /// <list type="bullet">
     /// <item>可以为 null 的值类型 T? 表示其基础值类型T的所有值和一个 null 值。例如，将以下三个值中的任何一个分配给 bool?：true、false、null</item>
     /// <item>任何可为空的值类型都是泛型 System.Nullable 结构的实例</item>

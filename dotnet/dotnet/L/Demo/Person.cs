@@ -8,7 +8,7 @@ namespace dotnet.L.Demo;
 public class Person : ICloneable
 {
     public int Id
-        // 自动实现的属性 (Auto-Implemented Properties)
+        // 自动实现属性 (Auto-Implemented Properties)
         // https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties
     {
         get;
