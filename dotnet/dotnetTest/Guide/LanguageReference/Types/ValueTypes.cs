@@ -87,11 +87,12 @@ public class ValueTypes
         public void RealLiterals()
         {
             // double
-            Console.WriteLine(0.42e2); // 42
+            Assert.That(0.42e2.ToString(), Is.EqualTo("42"));
             // float
-            Console.WriteLine(134.45E-2f); // 1.3445
+            Assert.That(134.45E-2f.ToString(), Is.EqualTo("1.3445"));
             // decimal
-            Console.WriteLine(1.5E6m); // 1500000
+            Assert.That(1.5E6m.ToString(), Is.EqualTo("1500000"));
+            Assert.That(34.40M.ToString(), Is.EqualTo("34.40"));
         }
 
         /// <summary>

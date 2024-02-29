@@ -1,4 +1,5 @@
 using System.Numerics;
+using dotnetTest.Guide.LanguageReference.Keywords;
 using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
 namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
@@ -143,6 +144,39 @@ public class OperatorsAndExpressions
     }
 
     /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/new-operator">new 运算符</a>
+    /// 创建一个类型的新实例
+    /// </summary>
+    /// <seealso cref="Modifiers.NewModifier">成员声明修饰符</seealso>
+    /// <seealso cref="Keywords.GenericTypeConstraintKeywords.NewConstraint">泛型类型约束</seealso>
+    [Test]
+    public void NewOperator()
+    {
+        // 构造函数调用
+        var dict = new Dictionary<string, int>();
+
+        // Target-typed new：如果表达式的目标类型是已知的，则可以省略类型名称
+        List<int> xs = new();
+        List<int> ys = new(capacity: 10_000);
+        List<int> zs = new() { Capacity = 20_000 };
+        Dictionary<int, List<int>> lookup = new()
+        {
+            [1] = new() { 1, 2, 3 },
+            [2] = new() { 5, 8, 3 },
+            [5] = new() { 1, 0, 4 }
+        };
+
+        // 数组创建
+        var numbers = new int[3];
+        var a = new int[3] { 10, 20, 30 };
+        var b = new int[] { 10, 20, 30 };
+        var c = new[] { 10, 20, 30 };
+
+        // 匿名类型的实例化
+        var anonymous = new { Greeting = "Hello", Name = "World" };
+    }
+
+    /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/stackalloc">stackalloc 表达式</a>
     /// 在堆栈上分配内存块。 当该方法返回时，将自动丢弃在方法执行期间创建的已分配堆栈内存块。<br/>
     /// <para>
@@ -161,9 +195,7 @@ public class OperatorsAndExpressions
     /// </para>
     /// </summary>
     [Test]
-    public void StackallocExpression()
-    {
-    }
+    public void StackallocExpression() { }
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/with-expression">with 表达式</a>
@@ -206,6 +238,7 @@ public class OperatorsAndExpressions
                 {
                     throw new ArgumentException("Denominator cannot be zero.", nameof(denominator));
                 }
+
                 _num = numerator;
                 _den = denominator;
             }
@@ -226,6 +259,7 @@ public class OperatorsAndExpressions
                 {
                     throw new DivideByZeroException();
                 }
+
                 return new Fraction(a._num * b._den, a._den * b._num);
             }
 

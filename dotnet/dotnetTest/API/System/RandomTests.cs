@@ -10,6 +10,8 @@ public class RandomTests
     {
         // static Random        Shared { get; } = (Random) new Random.ThreadSafeRandom()
         // 提供一个线程安全的 Random 实例
+        // virtual int          Next(int minValue, int maxValue)
+        // 返回指定范围内的随机整数
         Console.WriteLine(Random.Shared.Next(0, 2));
     }
 }

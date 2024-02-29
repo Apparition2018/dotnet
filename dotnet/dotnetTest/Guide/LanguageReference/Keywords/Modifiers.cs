@@ -1,5 +1,7 @@
 using System.Runtime.InteropServices;
+using dotnet.L.Demo;
 using dotnetTest.Fundamentals.MemoryManagement;
+using dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 
 namespace dotnetTest.Guide.LanguageReference.Keywords;
 
@@ -19,6 +21,31 @@ public class Modifiers
 
         [DllImport("User32.dll", CharSet = CharSet.Unicode)]
         static extern int MessageBox(IntPtr h, string m, string c, int type);
+    }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/new-modifier">new 修饰符</a>
+    /// 显式隐藏从基类继承的成员，该成员的派生版本将替换基类版本。
+    /// <para>
+    /// 继承隐藏名称：
+    /// <list type="number">
+    /// <item>数字、字段、属性、类型 → 隐藏所有基类成员</item>
+    /// <item>方法 → 属性、字段、类型、相同签名的方法</item>
+    /// <item>索引器 → 索引器</item>
+    /// </list>
+    /// </para>
+    /// </summary>
+    /// <seealso cref="OperatorsAndExpressions.NewOperator">创建类型的实例</seealso>
+    /// <seealso cref="Keywords.GenericTypeConstraintKeywords.NewConstraint">泛型类型约束</seealso>
+    class NewModifier
+    {
+        class NewPerson : Person
+        {
+            public new string ToString()
+            {
+                return "new ToString";
+            }
+        }
     }
 
     /// <summary>
