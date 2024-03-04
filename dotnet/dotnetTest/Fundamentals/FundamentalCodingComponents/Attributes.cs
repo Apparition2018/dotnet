@@ -1,5 +1,5 @@
 using System.Reflection;
-using dotnet.L.Demo;
+using static dotnet.L.Demo.Demo;
 
 namespace dotnetTest.Fundamentals.FundamentalCodingComponents;
 
@@ -51,7 +51,7 @@ public class Attributes
     /// <item>指定特性的位置参数和命名参数</item>
     /// </list>
     /// </summary>
-    [Developer(Demo.MyName, "1", Reviewed = true)]
+    [Developer(MyName, "1", Reviewed = true)]
     private static int Add(int a, int b)
     {
         return a + b;
@@ -67,6 +67,6 @@ public class Attributes
         MethodInfo methodInfo = type.GetMethod(nameof(Add), BindingFlags.NonPublic | BindingFlags.Static)!;
         DeveloperAttribute myAttribute =
             (DeveloperAttribute)Attribute.GetCustomAttribute(methodInfo, typeof(DeveloperAttribute))!;
-        Assert.That(myAttribute.Name, Is.EqualTo(Demo.MyName));
+        Assert.That(myAttribute.Name, Is.EqualTo(MyName));
     }
 }

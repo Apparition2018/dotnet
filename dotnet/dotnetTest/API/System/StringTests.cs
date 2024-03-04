@@ -23,8 +23,18 @@ public class StringTests
         // string               PadRight(int totalWidth)
         Assert.That("123".PadRight(5, '*'), Is.EqualTo("123**"));
 
+        // string               Trim()
+        Assert.That(" 123 ".Trim(), Is.EqualTo("123"));
+        Assert.That(" 123 ".TrimStart(), Is.EqualTo("123 "));
+        Assert.That(" 123 ".TrimEnd(), Is.EqualTo(" 123"));
+
+        // string               Substring(int startIndex, int length)
+        Assert.That("123".Substring(1, 1), Is.EqualTo("2"));
+
         // string               Remove(int startIndex, int count)
         Assert.That("123".Remove(1, 1), Is.EqualTo("13"));
+        //  string              Insert(int startIndex, [NotNull] string value)
+        Assert.That("123".Insert(1, ""), Is.EqualTo("1023"));
         // unsafe string        Replace(string oldValue, string? newValue)
         Assert.That("123".Replace("2", string.Empty), Is.EqualTo("13"));
 

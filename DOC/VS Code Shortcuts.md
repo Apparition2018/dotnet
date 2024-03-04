@@ -73,6 +73,7 @@ F10                         Start Debugging and Stop on Entry                   
 F10                         Step Over
 F11                         Start Debugging and Stop on Entry                   开始调试并停在输入时停止
 F11                         Step Into
+Shift + F11                 Step Out
 ```
 ---
 ## File

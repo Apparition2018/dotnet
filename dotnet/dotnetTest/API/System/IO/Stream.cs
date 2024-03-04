@@ -23,8 +23,8 @@ public class Stream : Demo
 
             AddText(fileStream, "a");
             AddText(fileStream, "bc");
-            AddText(fileStream, "\r\ndef");
-            AddText(fileStream, "\r\n\r\nghi\r\n");
+            AddText(fileStream, $"{Environment.NewLine}def");
+            AddText(fileStream, $"{Environment.NewLine}ghi{Environment.NewLine}");
         }
 
         // static FileStream    OpenRead(string path)

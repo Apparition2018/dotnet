@@ -25,6 +25,12 @@ public class Keywords
             /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/proposals/csharp-12.0/using-alias-types">Allow using alias directive to reference any kind of Type</a>
             /// </remarks>
             class UsingAlias;
+
+            /// <summary>
+            /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/using-directive#static-modifier">static 修饰符</a>
+            /// 命名一个类型，该类型的静态成员和嵌套类型可以在不指定类型名的情况下访问
+            /// </summary>
+            class StaticModifier;
         }
 
         /// <summary>

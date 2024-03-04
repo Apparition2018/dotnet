@@ -15,15 +15,15 @@
 ---
 ## [.NET Core 101](https://learn.microsoft.com/zh-cn/shows/net-core-101/)
 ### Adding a Class Library [5 of 8]
-    Select Solution → Right Click → Add → New Project… → Class Library
+    Select Solution → Right-Click → Add → New Project… → Class Library
         Project name:   BankyStuffLibrary
-    Select BankyStuffLibrary → Right Click → Add → Reference… → BankyStuffLibrary
+    Select BankyStuffLibrary → Right-Click → Add → Reference… → BankyStuffLibrary
 ### Using a [NuGet](https://www.nuget.org/) Package [6 of 8]
-    Select BankyStuffLibrary → Right Click → Manage NuGet Packages
-    Select One Project → Dependencies → Select One Packages → Right Click → Delete…
+    Select BankyStuffLibrary → Right-Click → Manage NuGet Packages
+    Select One Project → Dependencies → Select One Packages → Right-Click → Delete…
 ### Unit Testing [7 of 8]
-    Select Solution → Right Click → Add → New Project… → Unit Test Project
+    Select Solution → Right-Click → Add → New Project… → Unit Test Project
         Type: xUnit
 ### Publishing an App [8 of 8]
-    Select MySuperBank Project → Right Click → Publish…
+    Select MySuperBank Project → Right-Click → Publish…
 ---

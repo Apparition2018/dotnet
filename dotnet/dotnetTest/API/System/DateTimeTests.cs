@@ -1,3 +1,6 @@
+using System.Globalization;
+using static System.Globalization.CultureInfo;
+
 namespace dotnetTest.API.System;
 
 /// <summary>
@@ -8,10 +11,20 @@ public class DateTimeTests
     [Test]
     public void Test()
     {
-        // static DateTime      Now                    获取一个当前日期和时间的 DateTime 对象，以本地时间表示
-        Console.WriteLine(DateTime.Now);
+        DateTime now = DateTime.Now;
+        Assert.That(new DateTime(now.Ticks), Is.EqualTo(now));
 
-        // DateTime             AddDays(double value)
-        Console.WriteLine(DateTime.Now.AddDays(1));
+        Assert.That(DateTime.MinValue.ToString(CurrentCulture), Is.EqualTo("0001/1/1 0:00:00"));
+        Assert.That(DateTime.MinValue.Ticks, Is.EqualTo(0));
+        Assert.That(DateTime.MaxValue.ToString(CurrentCulture), Is.EqualTo("9999/12/31 23:59:59"));
+        Assert.That(DateTime.MaxValue.Ticks, Is.EqualTo(3155378975999999999));
+
+        DateTime date = new DateTime(1979, 07, 28, 22, 35, 5, new CultureInfo("en-US", false).Calendar);
+        DateTime date2 = DateTime.Parse("1979-07-28 22:35:5");
+        Assert.That(date == date2, Is.EqualTo(true));
+        Assert.That(date.AddDays(1).Day, Is.EqualTo(29));
+
+        // 返回指定年的指定月份的天数
+        Assert.That(DateTime.DaysInMonth(date.Year, date.Month), Is.EqualTo(31));
     }
 }
