@@ -21,7 +21,7 @@ public class CovarianceAndContravariance
         dogAction(new Dog("A"));
     }
 
-    static object GetObject()
+    static object? GetObject()
     {
         return null;
     }

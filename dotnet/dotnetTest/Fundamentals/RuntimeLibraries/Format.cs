@@ -59,7 +59,7 @@ public class Format
                 return ToString(format, null);
             }
 
-            public string ToString(string format, IFormatProvider? provider)
+            public string ToString(string? format, IFormatProvider? provider)
             {
                 // Handle null or empty arguments.
                 if (string.IsNullOrEmpty(format))

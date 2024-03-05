@@ -34,7 +34,9 @@ public class InteropServicesTests
             }
         }
 
-        /// <summary>与<see cref="Method.NamedAndOptionalArguments.OptionalArguments">可选参数</see> 的差异</summary>
+        /// <summary>
+        /// 与<see cref="Method.NamedAndOptionalArguments.OptionalArguments">可选参数</see>的差异
+        /// </summary>
         class VsOptionalArguments
         {
             public static void MethodWithObjectDefaultAttr1([Optional, DefaultParameterValue(123)] object obj) { }
@@ -44,7 +46,7 @@ public class InteropServicesTests
             // 除字符串之外的引用类型的默认参数值只能使用 null 进行初始化
             // public static void MethodWithObjectDefaultParam1(object obj = 123) { }
             // public static void MethodWithObjectDefaultParam2(object obj = "abc") { }
-            public static void MethodWithObjectDefaultParam3(object obj = null) { }
+            public static void MethodWithObjectDefaultParam3(object? obj = null) { }
         }
     }
 }

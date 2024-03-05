@@ -370,7 +370,7 @@ public class ValueTypes
             Assert.That(d, Is.EqualTo(-1));
 
             // 显式强制转换
-            int e = (int)a;
+            int e = (int)a!;
             Assert.That(e, Is.EqualTo(28));
         }
 
