@@ -9,6 +9,20 @@ namespace dotnetTest.Guide.LanguageReference.Keywords;
 public class Modifiers
 {
     /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/async">async</a>
+    /// <list type="bullet">
+    /// <item>可以指定方法、lambda 表达式或匿名方法是异步的</item>
+    /// <item>异步方法同步运行，直到到达其第一个 await 表达式，此时该方法将挂起，直到等待的任务完成</item>
+    /// <item>如果 async 关键字修改的方法不包含 await 表达式或语句，则该方法将同步执行</item>
+    /// </list>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/async#return-types">返回类型</a>
+    /// </summary>
+    /// <remarks>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/">使用 async 和 await 异步编程</a>
+    /// </remarks>
+    class Async;
+
+    /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/extern">extern</a>
     /// 用于声明在外部实现的方法。
     /// 常见用法：使用<see cref="ManagedCode.Interoperability">互操作</see>服务调用<see cref="ManagedCode">非托管代码</see>

@@ -17,6 +17,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shows", "Shows", "{B24F4713-6963-4CA4-99D2-BB801C15467F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Training", "Training", "{2747AAFD-F29C-41D2-BBE9-7A3A99646E62}"
+	ProjectSection(SolutionItems) = preProject
+		Training\VS Code Debugging Tools for C#.md = Training\VS Code Debugging Tools for C#.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\ContosoPizza\ContosoPizza.csproj", "{75B1A898-2F46-4BD0-9638-9EAFC1EF3E07}"
 EndProject
