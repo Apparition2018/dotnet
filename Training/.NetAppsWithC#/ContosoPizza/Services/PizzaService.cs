@@ -2,17 +2,17 @@ using ContosoPizza.Models;
 
 namespace ContosoPizza.Services;
 
-public static class PizzaService
+public class PizzaService
 {
     static List<Pizza> Pizzas { get; }
-    static int nextId = 3;
+    static int _nextId = 3;
 
     static PizzaService()
     {
         Pizzas = new List<Pizza>
         {
-            new Pizza {Id = 1, Name = "Classic Italian", IsGlutenFree = false},
-            new Pizza {Id = 2, Name = "Veggie", IsGlutenFree = true}
+            new Pizza { Id = 1, Name = "Classic Italian", IsGlutenFree = false },
+            new Pizza { Id = 2, Name = "Veggie", IsGlutenFree = true }
         };
     }
 
@@ -22,7 +22,7 @@ public static class PizzaService
 
     public static void Add(Pizza pizza)
     {
-        pizza.Id = nextId++;
+        pizza.Id = _nextId++;
         Pizzas.Add(pizza);
     }
 

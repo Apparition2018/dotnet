@@ -61,4 +61,5 @@
     1. 将包元数据添加到项目文件
     2. 运行 pack 命令：`dotnet pack`
     3. 发布包
+> - [Working with C#](https://code.visualstudio.com/Docs/languages/csharp)
 ---

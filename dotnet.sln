@@ -17,11 +17,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shows", "Shows", "{B24F4713-6963-4CA4-99D2-BB801C15467F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Training", "Training", "{2747AAFD-F29C-41D2-BBE9-7A3A99646E62}"
-	ProjectSection(SolutionItems) = preProject
-		Training\VS Code Debugging Tools for C#.md = Training\VS Code Debugging Tools for C#.md
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\ContosoPizza\ContosoPizza.csproj", "{75B1A898-2F46-4BD0-9638-9EAFC1EF3E07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaStore", "Training\PizzaStore\PizzaStore.csproj", "{5F8AA25A-1D16-4852-904F-CC65887496D1}"
 EndProject
@@ -54,13 +49,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asp.NetCore101", "Asp.NetCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoCrafts.WebSite", "Shows\Asp.NetCore101\ContosoCrafts.WebSite\ContosoCrafts.WebSite.csproj", "{88893A73-6B68-402A-AF23-0923F7AEADA5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugC#", "DebugC#", "{9CE29869-648E-42A9-981C-F6FE0DA54F08}"
+	ProjectSection(SolutionItems) = preProject
+		Training\DebugC#\VS Code Debugging Tools.md = Training\DebugC#\VS Code Debugging Tools.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NetAppsWithC#", ".NetAppsWithC#", "{9B7A22E1-0485-49A5-806F-5A6D566941DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\.NetAppsWithC#\ContosoPizza\ContosoPizza.csproj", "{3E7866FF-E953-4470-AFA3-D220F2275F6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{75B1A898-2F46-4BD0-9638-9EAFC1EF3E07} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
 		{5F8AA25A-1D16-4852-904F-CC65887496D1} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
 		{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572} = {B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}
 		{F6490A0F-6E1F-4229-AE9F-90C00E957E6F} = {B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}
@@ -70,12 +73,11 @@ Global
 		{51BC2997-37CE-4654-9EB5-C405C6F5EDAC} = {BA1C1DF1-A393-4392-B4B6-DE3B0267025E}
 		{B0A81B8E-AF42-49F2-B7D0-815AD531A6F3} = {B24F4713-6963-4CA4-99D2-BB801C15467F}
 		{88893A73-6B68-402A-AF23-0923F7AEADA5} = {B0A81B8E-AF42-49F2-B7D0-815AD531A6F3}
+		{9CE29869-648E-42A9-981C-F6FE0DA54F08} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{9B7A22E1-0485-49A5-806F-5A6D566941DA} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{3E7866FF-E953-4470-AFA3-D220F2275F6F} = {9B7A22E1-0485-49A5-806F-5A6D566941DA}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{75B1A898-2F46-4BD0-9638-9EAFC1EF3E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75B1A898-2F46-4BD0-9638-9EAFC1EF3E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75B1A898-2F46-4BD0-9638-9EAFC1EF3E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75B1A898-2F46-4BD0-9638-9EAFC1EF3E07}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -104,5 +106,9 @@ Global
 		{88893A73-6B68-402A-AF23-0923F7AEADA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88893A73-6B68-402A-AF23-0923F7AEADA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88893A73-6B68-402A-AF23-0923F7AEADA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E7866FF-E953-4470-AFA3-D220F2275F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7866FF-E953-4470-AFA3-D220F2275F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7866FF-E953-4470-AFA3-D220F2275F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7866FF-E953-4470-AFA3-D220F2275F6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
