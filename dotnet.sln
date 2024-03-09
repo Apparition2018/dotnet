@@ -58,6 +58,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NetAppsWithC#", ".NetAppsW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\.NetAppsWithC#\ContosoPizza\ContosoPizza.csproj", "{3E7866FF-E953-4470-AFA3-D220F2275F6F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAppsWithAsp.NetCore", "WebAppsWithAsp.NetCore", "{12C50912-A0E1-4337-BB98-CEFA5B0D5F50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "simple-website", "simple-website", "{D3D4B6FE-BBCC-4340-A4A1-EA5A2701D468}"
+	ProjectSection(SolutionItems) = preProject
+		Training\WebAppsWithAsp.NetCore\simple-website\index.html = Training\WebAppsWithAsp.NetCore\simple-website\index.html
+		Training\WebAppsWithAsp.NetCore\simple-website\main.css = Training\WebAppsWithAsp.NetCore\simple-website\main.css
+		Training\WebAppsWithAsp.NetCore\simple-website\app.js = Training\WebAppsWithAsp.NetCore\simple-website\app.js
+		Training\WebAppsWithAsp.NetCore\simple-website\README.md = Training\WebAppsWithAsp.NetCore\simple-website\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +86,8 @@ Global
 		{9CE29869-648E-42A9-981C-F6FE0DA54F08} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
 		{9B7A22E1-0485-49A5-806F-5A6D566941DA} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
 		{3E7866FF-E953-4470-AFA3-D220F2275F6F} = {9B7A22E1-0485-49A5-806F-5A6D566941DA}
+		{12C50912-A0E1-4337-BB98-CEFA5B0D5F50} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{D3D4B6FE-BBCC-4340-A4A1-EA5A2701D468} = {12C50912-A0E1-4337-BB98-CEFA5B0D5F50}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
