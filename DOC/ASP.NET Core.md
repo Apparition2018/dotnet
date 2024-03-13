@@ -3,7 +3,7 @@
 ---
 ## Reference
 1. [ASP.NET 文档 | Microsoft Learn](https://learn.microsoft.com/zh-cn/aspnet/core/)
-2. [ASP.NET Core 101 | Microsoft Learn](https://learn.microsoft.com/zh-cn/shows/ASPNET-Core-101/)：@see ContosoCrafts/README.md
+2. [ASP.NET Core 101 | Microsoft Learn](https://learn.microsoft.com/zh-cn/shows/ASPNET-Core-101/)，@see [ContosoCrafts.WebSite](../Shows/Asp.NetCore101/ContosoCrafts.WebSite)
     - [repository](https://github.com/dotnet-presentations/ContosoCrafts)
 3. [了解 ASP.NET Core](https://dotnet.microsoft.com/zh-cn/learn/aspnet)
     - [什么是 ASP.NET Core?](https://dotnet.microsoft.com/zh-cn/learn/aspnet/what-is-aspnet-core)

@@ -1,6 +1,5 @@
 using dotnet.L.Demo;
 using dotnetTest.Fundamentals.MemoryManagement;
-using dotnetTest.Guide.LanguageReference.Types;
 
 namespace dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 

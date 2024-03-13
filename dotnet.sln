@@ -49,24 +49,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asp.NetCore101", "Asp.NetCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoCrafts.WebSite", "Shows\Asp.NetCore101\ContosoCrafts.WebSite\ContosoCrafts.WebSite.csproj", "{88893A73-6B68-402A-AF23-0923F7AEADA5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugC#", "DebugC#", "{9CE29869-648E-42A9-981C-F6FE0DA54F08}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugC#ConsoleApps", "DebugC#ConsoleApps", "{6B46D3B8-EADD-4A55-B821-C10393C27D30}"
 	ProjectSection(SolutionItems) = preProject
-		Training\DebugC#\VS Code Debugging Tools.md = Training\DebugC#\VS Code Debugging Tools.md
+		Training\DebugC#ConsoleApps\VSCodeDebuggingTools.md = Training\DebugC#ConsoleApps\VSCodeDebuggingTools.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NetAppsWithC#", ".NetAppsWithC#", "{9B7A22E1-0485-49A5-806F-5A6D566941DA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\.NetAppsWithC#\ContosoPizza\ContosoPizza.csproj", "{3E7866FF-E953-4470-AFA3-D220F2275F6F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAppsWithAsp.NetCore", "WebAppsWithAsp.NetCore", "{12C50912-A0E1-4337-BB98-CEFA5B0D5F50}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "simple-website", "simple-website", "{D3D4B6FE-BBCC-4340-A4A1-EA5A2701D468}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildWebAppsWithAsp.NetCore", "BuildWebAppsWithAsp.NetCore", "{78D65DC2-89A6-4DDD-A7D2-00462F4257FC}"
 	ProjectSection(SolutionItems) = preProject
-		Training\WebAppsWithAsp.NetCore\simple-website\index.html = Training\WebAppsWithAsp.NetCore\simple-website\index.html
-		Training\WebAppsWithAsp.NetCore\simple-website\main.css = Training\WebAppsWithAsp.NetCore\simple-website\main.css
-		Training\WebAppsWithAsp.NetCore\simple-website\app.js = Training\WebAppsWithAsp.NetCore\simple-website\app.js
-		Training\WebAppsWithAsp.NetCore\simple-website\README.md = Training\WebAppsWithAsp.NetCore\simple-website\README.md
+		Training\BuildWebAppsWithAsp.NetCore\WebAccessibility.md = Training\BuildWebAppsWithAsp.NetCore\WebAccessibility.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebDevelopment", "WebDevelopment", "{1B47240A-209D-4FC6-ADED-F10DAFD90874}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "simple-website", "simple-website", "{5E7DEB62-5FDB-4859-BF01-DAC2C242EE02}"
+	ProjectSection(SolutionItems) = preProject
+		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\app.js = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\app.js
+		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\main.css = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\main.css
+		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\index.html = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\index.html
+		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\README.md = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateWebUIWithAsp.NetCore", "CreateWebUIWithAsp.NetCore", "{9F042FEF-336F-4DAC-8A93-E67C8177362B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\BuildWebAppsWithAsp.NetCore\CreateWebUIWithAsp.NetCore\ContosoPizza\ContosoPizza.csproj", "{D77531FE-DC13-4280-BC43-6F58D0E64AE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateWebApiWithAsp.NetCore", "CreateWebApiWithAsp.NetCore", "{A27A4E11-9BB8-40BA-B712-19E97CE355D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\BuildWebAppsWithAsp.NetCore\CreateWebApiWithAsp.NetCore\ContosoPizza\ContosoPizza.csproj", "{2747E7B9-1D6B-491D-AE4D-74A7F3A8C6BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,11 +92,14 @@ Global
 		{51BC2997-37CE-4654-9EB5-C405C6F5EDAC} = {BA1C1DF1-A393-4392-B4B6-DE3B0267025E}
 		{B0A81B8E-AF42-49F2-B7D0-815AD531A6F3} = {B24F4713-6963-4CA4-99D2-BB801C15467F}
 		{88893A73-6B68-402A-AF23-0923F7AEADA5} = {B0A81B8E-AF42-49F2-B7D0-815AD531A6F3}
-		{9CE29869-648E-42A9-981C-F6FE0DA54F08} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{9B7A22E1-0485-49A5-806F-5A6D566941DA} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{3E7866FF-E953-4470-AFA3-D220F2275F6F} = {9B7A22E1-0485-49A5-806F-5A6D566941DA}
-		{12C50912-A0E1-4337-BB98-CEFA5B0D5F50} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{D3D4B6FE-BBCC-4340-A4A1-EA5A2701D468} = {12C50912-A0E1-4337-BB98-CEFA5B0D5F50}
+		{6B46D3B8-EADD-4A55-B821-C10393C27D30} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{78D65DC2-89A6-4DDD-A7D2-00462F4257FC} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{1B47240A-209D-4FC6-ADED-F10DAFD90874} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
+		{5E7DEB62-5FDB-4859-BF01-DAC2C242EE02} = {1B47240A-209D-4FC6-ADED-F10DAFD90874}
+		{9F042FEF-336F-4DAC-8A93-E67C8177362B} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
+		{D77531FE-DC13-4280-BC43-6F58D0E64AE6} = {9F042FEF-336F-4DAC-8A93-E67C8177362B}
+		{A27A4E11-9BB8-40BA-B712-19E97CE355D0} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
+		{2747E7B9-1D6B-491D-AE4D-74A7F3A8C6BE} = {A27A4E11-9BB8-40BA-B712-19E97CE355D0}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -118,9 +130,13 @@ Global
 		{88893A73-6B68-402A-AF23-0923F7AEADA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88893A73-6B68-402A-AF23-0923F7AEADA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88893A73-6B68-402A-AF23-0923F7AEADA5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E7866FF-E953-4470-AFA3-D220F2275F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E7866FF-E953-4470-AFA3-D220F2275F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E7866FF-E953-4470-AFA3-D220F2275F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E7866FF-E953-4470-AFA3-D220F2275F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D77531FE-DC13-4280-BC43-6F58D0E64AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77531FE-DC13-4280-BC43-6F58D0E64AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77531FE-DC13-4280-BC43-6F58D0E64AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77531FE-DC13-4280-BC43-6F58D0E64AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2747E7B9-1D6B-491D-AE4D-74A7F3A8C6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2747E7B9-1D6B-491D-AE4D-74A7F3A8C6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2747E7B9-1D6B-491D-AE4D-74A7F3A8C6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2747E7B9-1D6B-491D-AE4D-74A7F3A8C6BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

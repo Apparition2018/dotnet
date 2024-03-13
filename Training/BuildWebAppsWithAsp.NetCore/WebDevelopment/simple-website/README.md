@@ -20,6 +20,6 @@
     - 添加容错：`<noscript>You need to enable JavaScript to view the full site.</noscript>`
 - 修改 [app.js](app.js) 内容
 - [严格模式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)：`'use strict';`
-### [Reference](https://learn.microsoft.com/zh-cn/training/modules/get-started-with-web-development/7-summary)
+### [总结](https://learn.microsoft.com/zh-cn/training/modules/get-started-with-web-development/7-summary)
 
 ---

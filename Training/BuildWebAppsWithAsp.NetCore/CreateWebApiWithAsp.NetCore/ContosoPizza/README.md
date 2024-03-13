@@ -36,4 +36,7 @@
 - 使用 [.http 文件](ContosoPizza.http) 测试控制器
 ### CRUD 操作
 - 返回类型 IActionResult：可让客户端知道请求是否成功
+### 总结
+- [videos](https://learn.microsoft.com/zh-cn/training/modules/build-web-api-aspnet-core/9-summary#videos-for-learning-more)
+- [articles](https://learn.microsoft.com/zh-cn/training/modules/build-web-api-aspnet-core/9-summary#articles-for-learning-more)
 ---

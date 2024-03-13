@@ -14,9 +14,9 @@
 - `[JsonPropertyName("img")]`，@see [Product.cs](Models/Product.cs)
 ### Adding a Service [4 of 13]
 - wwwroot 绝对路径：`WebHostEnvironment.WebRootPath`，@see [JsonFileProductService.cs](Services/JsonFileProductService.cs)
-- 将 JsonFileProductService 服务添加到容器：@see [Startup.cs](Startup.cs) `services.AddTransient<JsonFileProductService>();`
+- 将 JsonFileProductService 服务添加到容器，@see [Startup.cs](Startup.cs) `services.AddTransient<JsonFileProductService>();`
 ### Data in a Razor Page [5 of 13]
-- 在 Razor Page 使用服务：@see [Index.cshtml.cs](Pages/Index.cshtml.cs)
+- 在 Razor Page 使用服务，@see [Index.cshtml.cs](Pages/Index.cshtml.cs)
     ```csharp
     public IndexModel(JsonFileProductService productService) { ProductService = productService;}
     public void OnGet() => Products = ProductService.GetProducts();
@@ -33,7 +33,7 @@
     a.navbar-brand { font-family: 'Yellowtail', cursive; }
     ```
 ### Making a Simple API [7 of 13]
-- 配置 HTTP 请求管道：@see [Startup.cs](Startup.cs)
+- 配置 HTTP 请求管道，@see [Startup.cs](Startup.cs)
     ```csharp
     app.UseEndpoints(endpoints =>
     {
@@ -46,14 +46,14 @@
     });
     ```
 ### Enhancing your Web API [8/9 of 13]
-- Add → Scaffolded Item… → API Controller：@see [ProductsControllers.cs](Controller/ProductsController.cs)
-- 将控制器的服务添加到 IServiceCollection：@see [Startup.cs](Startup.cs) `services.AddControllers();`
-- 将控制器操作的终结点添加到 IEndpointRouteBuilder，而不指定任何路由：@see [Startup.cs](Startup.cs) `endpoints.MapControllers();`
-- 将 Blazor Hub 映射到默认路径：@see [Startup.cs](Startup.cs) `endpoints.MapBlazorHub();`
-- 增加评级：@see [JsonFileProductService.cs](Services/JsonFileProductService.cs) AddRating，@see [ProductsControllers.cs](Controller/ProductsController.cs) Patch
+- Add → Scaffolded Item… → API Controller，@see [ProductsControllers.cs](Controller/ProductsController.cs)
+- 将控制器的服务添加到 IServiceCollection，@see [Startup.cs](Startup.cs) `services.AddControllers();`
+- 将控制器操作的终结点添加到 IEndpointRouteBuilder，而不指定任何路由，@see [Startup.cs](Startup.cs) `endpoints.MapControllers();`
+- 将 Blazor Hub 映射到默认路径，@see [Startup.cs](Startup.cs) `endpoints.MapBlazorHub();`
+- 增加评级，@see [JsonFileProductService.cs](Services/JsonFileProductService.cs) AddRating，@see [ProductsControllers.cs](Controller/ProductsController.cs) Patch
 ### Introducing Blazor [10/11/12 of 13]
-- Add → Blazor Component → Component：@see [ProductList.razor](Components/ProductList.razor)
-- 将服务器端 Blazor 服务添加到服务集合：@see [Startup.cs](Startup.cs) `services.AddServerSideBlazor();`
+- Add → Blazor Component → Component，@see [ProductList.razor](Components/ProductList.razor)
+- 将服务器端 Blazor 服务添加到服务集合，@see [Startup.cs](Startup.cs) `services.AddServerSideBlazor();`
 - @see Index.cshtml：
     ```
     @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
