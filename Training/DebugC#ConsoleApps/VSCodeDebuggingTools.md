@@ -11,7 +11,7 @@
     7. 当前执行步骤
     8. 调试控制台：显示来自调试器的消息
 ### 在调试环境运行代码
-- Ctrl + Shift + P → .NET 生成用于生成和调试的资产：`.net: g`
+- Ctrl + Shift + P → `.net:g`：生成用于生成和调试的资产
 ### 断点配置选项
 - 右键断点 → 编辑断点…：①条件断点（表达式） ②命中次数 ③日志点（日志消息） ④等待断点
 ### [launch 配置文件](https://learn.microsoft.com/zh-cn/training/modules/implement-visual-studio-code-debugging-tools/6-examine-launch-configurations)

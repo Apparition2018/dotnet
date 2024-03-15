@@ -5,7 +5,7 @@
 1. `npx create-react-app pizza-web`
 2. `cd pizza-web && yarn start`
 3. `yarn add styled-components`
-4. @see package.json：
+4. @see [package.json](package.json)：
     ```json
     {
         "resolutions": {
@@ -14,8 +14,8 @@
         "proxy": "http://localhost:5259"
     }
     ```
-5. @see Main.js，@see App.js
-6. @see db.json && `npx json-server --watch --port 5259 db.json`
+5. @see [Main.js](src/Main.js)，@see [App.js](src/App.js)
+6. @see [db.json](db.json) && `npx json-server --watch --port 5259 db.json`
 ---
 # Getting Started with Create React App
 

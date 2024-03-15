@@ -3,7 +3,8 @@
 ---
 ## Reference
 1. [ASP.NET 文档 | Microsoft Learn](https://learn.microsoft.com/zh-cn/aspnet/core/)
-2. [ASP.NET Core 101 | Microsoft Learn](https://learn.microsoft.com/zh-cn/shows/ASPNET-Core-101/)，@see [ContosoCrafts.WebSite](../Shows/Asp.NetCore101/ContosoCrafts.WebSite)
+2. [ASP.NET Core 101 | Microsoft Learn](https://learn.microsoft.com/zh-cn/shows/ASPNET-Core-101/)
+    - [ContosoCrafts.WebSite](../Shows/Asp.NetCore101/ContosoCrafts.WebSite)
     - [repository](https://github.com/dotnet-presentations/ContosoCrafts)
 3. [了解 ASP.NET Core](https://dotnet.microsoft.com/zh-cn/learn/aspnet)
     - [什么是 ASP.NET Core?](https://dotnet.microsoft.com/zh-cn/learn/aspnet/what-is-aspnet-core)
@@ -15,7 +16,7 @@
 ## [Routing](https://learn.microsoft.com/zh-cn/aspnet/core/mvc/controllers/routing)
 ### [Routing Fundamental](https://learn.microsoft.com/zh-cn/aspnet/core/fundamentals/routing)
 ### [Conventional Route](https://learn.microsoft.com/zh-cn/aspnet/core/mvc/controllers/routing#attribute-routing-for-rest-apis)
-```
+```csharp
 /** Program.cs */
 app.MapControllerRoute(
     "default",
@@ -25,12 +26,12 @@ app.MapControllerRoute(
 // app.MapDefaultControllerRoute();
 ```
 ### [Attribute Route](https://learn.microsoft.com/zh-cn/aspnet/core/mvc/controllers/routing#attribute-routing-for-rest-apis)
-```
+```csharp
 /** Program.cs */
 app.MapControllers();
 ```
 - Token replacement：标记替换，`[controller]`，`[action]`，`[area]`
-```
+```csharp
 /** XxxController.cs */
 [ApiController]
 [Route("[controller]/[action]", Name = "[controller]_[action]")]

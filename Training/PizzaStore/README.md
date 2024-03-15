@@ -4,29 +4,29 @@
 ## Gists
 - 创建项目：`dotnet new web -o PizzaStore -f net6.0`
 - Swagger：`dotnet add package Swashbuckle.AspNetCore`
-    - @see Program.cs
+    - @see [Program.cs](Program.cs)
 - EF Core In Memory：`dotnet add package Microsoft.EntityFrameworkCore.InMemory`
-    - @see PizzaDb.cs
-    - @see Program.cs：`builder.Services.AddDbContext<PizzaDb>(options => options.UseInMemoryDatabase("items"));`
+    - @see [PizzaDb.cs](Pizzas.db)
+    - @see [Program.cs](Program.cs)：`builder.Services.AddDbContext<PizzaDb>(options => options.UseInMemoryDatabase("items"));`
 - EF Core SQLite：`dotnet add package Microsoft.EntityFrameworkCore.Sqlite`
     - [.NET Core CLI](https://learn.microsoft.com/zh-cn/ef/core/cli/dotnet)
-        ```
-        dotnet add package Microsoft.EntityFrameworkCore.Design
-        
-        dotnet tool install --global dotnet-ef
-            dotnet ef migrations add InitialCreate
-            dotnet ef database update
-        ```
-    - @see Program.cs
-        ```
-        var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";
-        builder.Services.AddDbContext<PizzaDb>(options => options.UseSqlite(connectionString));
-        ```
-- CORS：@see Program.cs
+    ```bash
+    dotnet add package Microsoft.EntityFrameworkCore.Design
+
+    dotnet tool install --global dotnet-ef
+        dotnet ef migrations add InitialCreate
+        dotnet ef database update
     ```
-    const string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
-    builder.Services.AddCors(options =>
-        options.AddPolicy(name: myAllowSpecificOrigins, corsPolicyBuilder => { corsPolicyBuilder.WithOrigins("*"); }));
-    app.UseCors(myAllowSpecificOrigins);
+    - @see [Program.cs](Program.cs)
+    ```csharp
+    var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";
+    builder.Services.AddDbContext<PizzaDb>(options => options.UseSqlite(connectionString));
     ```
+- CORS，@see [Program.cs](Program.cs)
+```csharp
+const string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+    options.AddPolicy(name: myAllowSpecificOrigins, corsPolicyBuilder => { corsPolicyBuilder.WithOrigins("*"); }));
+app.UseCors(myAllowSpecificOrigins);
+```
 ---
