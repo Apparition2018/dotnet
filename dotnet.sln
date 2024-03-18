@@ -88,6 +88,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InteractWithData", "Interac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\InteractWithData\BlazingPizza\BlazingPizza.csproj", "{B1979021-A5B3-4CA7-A68A-553012056872}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImproveNavigation", "ImproveNavigation", "{F749FE5B-4263-4DB9-999F-104CC4487AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\ImproveNavigation\BlazingPizza\BlazingPizza.csproj", "{506D0D33-0CE7-4128-A764-BC635B96AF4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +119,8 @@ Global
 		{D9C32328-FBAD-4DE4-9D62-C92F507AC6E6} = {1481348C-814F-47EE-A0AC-666D0D18567C}
 		{9560759F-154A-47B1-A227-FC8B4744B4A9} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
 		{B1979021-A5B3-4CA7-A68A-553012056872} = {9560759F-154A-47B1-A227-FC8B4744B4A9}
+		{F749FE5B-4263-4DB9-999F-104CC4487AFC} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{506D0D33-0CE7-4128-A764-BC635B96AF4A} = {F749FE5B-4263-4DB9-999F-104CC4487AFC}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -161,5 +167,9 @@ Global
 		{B1979021-A5B3-4CA7-A68A-553012056872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1979021-A5B3-4CA7-A68A-553012056872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1979021-A5B3-4CA7-A68A-553012056872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{506D0D33-0CE7-4128-A764-BC635B96AF4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{506D0D33-0CE7-4128-A764-BC635B96AF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{506D0D33-0CE7-4128-A764-BC635B96AF4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{506D0D33-0CE7-4128-A764-BC635B96AF4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

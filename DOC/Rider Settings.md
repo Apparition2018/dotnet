@@ -2,6 +2,11 @@
 - -n: New
 - -e: Every Time
 ---
+## Code Style (-n)
+    1. Settings → Editor → Code Style
+    2. HTML → Other
+        2.1 Do not indent children of: 取调 body
+---
 ## TODO (-n)
     1. Settings → Editor → TODO
         1.1 Patterns → +

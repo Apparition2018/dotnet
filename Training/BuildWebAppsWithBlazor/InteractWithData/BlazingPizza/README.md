@@ -9,7 +9,7 @@
 - 创建 Blazor 组件
     - 创建 Blazor 服务器应用：`dotnet new blazorserver -o BlazingPizzaSite --no-https -f net6.0`
     - 将新组件添加到现有 Web 应用：`dotnet new razorcomponent -n PizzaBrowser -o Pages -f net6.0`
-- 克隆项目 [Blazing Pizza](https://github.com/MicrosoftDocs/mslearn-interact-with-data-blazor-web-apps)
+- 克隆项目 `git clone https://github.com/MicrosoftDocs/mslearn-interact-with-data-blazor-web-apps.git BlazingPizza`
     - 修改 [Index.razor](Pages/Index.razor) 内容
 ### [从 Blazor 组件访问数据](https://learn.microsoft.com/zh-cn/training/modules/interact-with-data-blazor-web-apps/5-exercise-access-data-from-blazor-components)
 - 添加包以支持数据库访问
@@ -39,7 +39,7 @@ dotnet add package System.Net.Http.Json --version 6.0.0
     }
     ```
 - 使用数据库显示披萨
-    - @see [Index.razor](Pages/Index.razor)
+    - @see [Index.razor](Pages/Index.razor)：将 `OnInitialized()` 替换为 `OnInitializedAsync()`
     ```razor
     @inject HttpClient HttpClient
     @inject NavigationManager NavigationManager
@@ -75,7 +75,7 @@ dotnet add package System.Net.Http.Json --version 6.0.0
 ……
 @if (showingConfigureDialog)
 {
-    <ConfigurePizzaDialog Pizza="configuringPizza" />
+    <ConfigurePizzaDialog Pizza="configuringPizza"/>
 }
 @code {
     Pizza configuringPizza;
@@ -128,16 +128,16 @@ dotnet add package System.Net.Http.Json --version 6.0.0
         <ConfigurePizzaDialog
             Pizza="OrderState.ConfiguringPizza"
             OnCancel="OrderState.CancelConfigurePizzaDialog"
-            OnConfirm="OrderState.ConfirmConfigurePizzaDialog" />
+            OnConfirm="OrderState.ConfirmConfigurePizzaDialog"/>
     }
     ```
 ### 在 Blazor 应用程序中将控件绑定到数据
 - `@bind` 使用样例
 ```razor
-<input @bind="favPizza" />
-<input @bind-value="favPizza" @bind-value:event="oninput" />
-<input @bind="birthdate" @bind:format="dd-MM-yyyy" />
-<input @bind="ApprovalRating" />
+<input @bind="favPizza"/>
+<input @bind-value="favPizza" @bind-value:event="oninput"/>
+<input @bind="birthdate" @bind:format="dd-MM-yyyy"/>
+<input @bind="ApprovalRating"/>
 @code {
     private decimal approvalRating = 1.0;
     private NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign;
@@ -173,7 +173,7 @@ dotnet add package System.Net.Http.Json --version 6.0.0
 - 动态配置披萨大小
     - @see [ConfigurePizzaDialog.razor](Shared/ConfigurePizzaDialog.razor)
     ```razor
-    <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" @bind:event="oninput" />
+    <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" @bind:event="oninput"/>
     ……
     Price: <span class="price">@(Pizza.GetFormattedTotalPrice())</span>
     ```

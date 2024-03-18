@@ -99,7 +99,7 @@ public IActionResult OnPost()
 - 将客户端验证脚本注入页面，@see [PizzaList.cshtml](Pages/PizzaList.cshtml)
 ```cshtml
 @section Scripts {
-<partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationScriptsPartial"/>
 }
 ```
 - 向 [PizzaList.cshtml.cs](Pages/PizzaList.cshtml.cs) 添加 用于删除 Pizza 的 page handles

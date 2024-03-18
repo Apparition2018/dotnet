@@ -35,18 +35,18 @@
 }
 ```
 ```Home.razor
-<Counter IncrementAmount="10" />
+<Counter IncrementAmount="10"/>
 ```
 ### Reference
 - [Blazor 项目结构](https://learn.microsoft.com/zh-cn/aspnet/core/blazor/project-structure)
 ---
 ## [使用 Blazor 生成一个待办事项列表](https://learn.microsoft.com/zh-cn/training/modules/build-blazor-todo-list/)
 ### 数据绑定和事件
-- 呈现 C# 表达式值：使用前导 @ 字符，如 `@currentCount`
+- 呈现 C# 表达式值：使用前导 `@` 字符，如 `@currentCount`
 - 控制流：`@if`、`@foreach`
 - 处理事件：`@on`
 - 数据绑定：`@bind`
-- 启用交互性：`@rendermode` or `<Counter @rendermode="InteractiveServer" />`
+- 启用交互性：`@rendermode` or `<Counter @rendermode="InteractiveServer"/>`
 ### 创建待办事项列表
 - 创建 [Todo 组件](Components/Pages/Todo.razor)：`dotnet new razorcomponent -n Todo -o Components/Pages`，顶部添加代码
 ```razor
@@ -81,7 +81,7 @@
     ```
 - 添加待办事项，@see [Todo.razor](Components/Pages/Todo.razor)
 ```razor
-<input @bind="newTodo" />
+<input @bind="newTodo"/>
 <button @onclick="AddTodo">Add todo</button>
 
 @code {
@@ -106,8 +106,8 @@
     @foreach (var todo in todos)
     {
         <li>
-            <input type="checkbox" @bind="todo.IsDone" />
-            <input @bind="todo.Title" />
+            <input type="checkbox" @bind="todo.IsDone"/>
+            <input @bind="todo.Title"/>
         </li>
     }
 </ul>
