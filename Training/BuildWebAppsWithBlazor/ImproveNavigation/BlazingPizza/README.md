@@ -4,7 +4,7 @@
 - 使用 `@page` 指令
 - [获取位置信息，并使用 NavigationManager 导航](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/2-use-router-component-control-apps-navigation#obtaining-location-information-and-navigating-with-navigationmanager)
 - [使用 NavLink 组件](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/2-use-router-component-control-apps-navigation#use-navlink-components)
-### [使用 @page 指令更改 Blazor 应用中的导航](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/3-exercise-change-navigation-blazor-using-page-directive)
+### [练习 - 使用 @page 指令更改 Blazor 应用中的导航](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/3-exercise-change-navigation-blazor-using-page-directive)
 - 克隆项目 `git clone https://github.com/MicrosoftDocs/mslearn-blazor-navigation.git BlazingPizza`
 - 添加结账页
     - @see [Checkout.razor](Pages/Checkout.razor)
@@ -103,7 +103,7 @@
 ```razor
 @page "/FavoritePizza/{*favorites}"
 ```
-### [使用路由参数改进应用导航](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/5-exercise-route-parameters-improve-apps-navigation)
+### [练习 - 使用路由参数改进应用导航](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/5-exercise-route-parameters-improve-apps-navigation)
 - 创建订单详情页
     - @see [OrderDetail.razor](Pages/OrderDetail.razor)
     - @see [OrdersController.cs](OrdersController.cs) `GetOrderWithStatus(int orderId)`
@@ -119,7 +119,7 @@
     - 使用 `@layout` 指令引用布局，组件的 HTML 将在 `@Body` 指令的位置呈现
     - [_Imports.razor](_Imports.razor)：Blazor 编译器找到此文件时，会自动在文件夹中的所有组件中包含其指令
     - 默认布局：@see [App.razor](App.razor) `<RouteView RouteData="@routeData" DefaultLayout="@typeof(BlazingPizzasMainLayout)"/>`
-### [添加 Blazor 布局以减少代码中的重复](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/7-exercise-add-blazor-layouts-reduce-duplicate-code)
+### [练习 - 添加 Blazor 布局以减少代码中的重复](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/7-exercise-add-blazor-layouts-reduce-duplicate-code)
 - 添加 MainLayout 组件
     - @see [MainLayout.razor](Shared/MainLayout.razor)
     - @see [_Host.cshtml](Pages/_Host.cshtml) `<component type="typeof(App)" render-mode="ServerPrerendered"/>`

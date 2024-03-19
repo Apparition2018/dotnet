@@ -11,7 +11,7 @@
     - 将新组件添加到现有 Web 应用：`dotnet new razorcomponent -n PizzaBrowser -o Pages -f net6.0`
 - 克隆项目 `git clone https://github.com/MicrosoftDocs/mslearn-interact-with-data-blazor-web-apps.git BlazingPizza`
     - 修改 [Index.razor](Pages/Index.razor) 内容
-### [从 Blazor 组件访问数据](https://learn.microsoft.com/zh-cn/training/modules/interact-with-data-blazor-web-apps/5-exercise-access-data-from-blazor-components)
+### [练习 - 从 Blazor 组件访问数据](https://learn.microsoft.com/zh-cn/training/modules/interact-with-data-blazor-web-apps/5-exercise-access-data-from-blazor-components)
 - 添加包以支持数据库访问
 ```bash
 dotnet add package Microsoft.EntityFrameworkCore --version 6.0.8
@@ -68,6 +68,7 @@ dotnet add package System.Net.Http.Json --version 6.0.0
         }
         ```
     3. [AppState](https://learn.microsoft.com/zh-cn/training/modules/interact-with-data-blazor-web-apps/6-share-data-in-blazor-applications#share-information-by-using-appstate)
+### 练习 - 在 Blazor 应用程序中共享数据
 - 添加新的订单配置对话框：@see [ConfigurePizzaDialog.razor](Shared/ConfigurePizzaDialog.razor)
 - 订购披萨：@see [Index.razor](Pages/Index.razor)
 ```razor
@@ -156,6 +157,7 @@ dotnet add package System.Net.Http.Json --version 6.0.0
     }
 }
 ```
+### 练习 - 在 Blazor 应用程序中将控件绑定到数据
 - 显示客户的披萨订单：@see [Index.razor](Pages/Index.razor)
 ```razor
 <div class="sidebar"/>

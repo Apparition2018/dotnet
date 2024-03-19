@@ -52,11 +52,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugC#ConsoleApps", "DebugC#ConsoleApps", "{6B46D3B8-EADD-4A55-B821-C10393C27D30}"
 	ProjectSection(SolutionItems) = preProject
 		Training\DebugC#ConsoleApps\VSCodeDebuggingTools.md = Training\DebugC#ConsoleApps\VSCodeDebuggingTools.md
+		Training\DebugC#ConsoleApps\README.md = Training\DebugC#ConsoleApps\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildWebAppsWithAsp.NetCore", "BuildWebAppsWithAsp.NetCore", "{78D65DC2-89A6-4DDD-A7D2-00462F4257FC}"
 	ProjectSection(SolutionItems) = preProject
 		Training\BuildWebAppsWithAsp.NetCore\WebAccessibility.md = Training\BuildWebAppsWithAsp.NetCore\WebAccessibility.md
+		Training\BuildWebAppsWithAsp.NetCore\README.md = Training\BuildWebAppsWithAsp.NetCore\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebDevelopment", "WebDevelopment", "{1B47240A-209D-4FC6-ADED-F10DAFD90874}"
@@ -72,6 +74,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildWebAppsWithBlazor", "BuildWebAppsWithBlazor", "{A641D761-05BA-44D9-8CEF-3DFBD2650513}"
 	ProjectSection(SolutionItems) = preProject
 		Training\BuildWebAppsWithBlazor\IntroBlazor.md = Training\BuildWebAppsWithBlazor\IntroBlazor.md
+		Training\BuildWebAppsWithBlazor\README.md = Training\BuildWebAppsWithBlazor\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "Training\BuildWebAppsWithBlazor\BlazorApp\BlazorApp.csproj", "{694EF256-170A-422E-AFC7-2B6EA24BED1D}"
@@ -91,6 +94,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImproveNavigation", "ImproveNavigation", "{F749FE5B-4263-4DB9-999F-104CC4487AFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\ImproveNavigation\BlazingPizza\BlazingPizza.csproj", "{506D0D33-0CE7-4128-A764-BC635B96AF4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImproveFormsAndValidation", "ImproveFormsAndValidation", "{505DCE57-6297-42B1-A325-6CC8F08787C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\ImproveFormsAndValidation\BlazingPizza\BlazingPizza.csproj", "{B5858083-A489-412F-9F1A-5E4704CB0AE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +128,8 @@ Global
 		{B1979021-A5B3-4CA7-A68A-553012056872} = {9560759F-154A-47B1-A227-FC8B4744B4A9}
 		{F749FE5B-4263-4DB9-999F-104CC4487AFC} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
 		{506D0D33-0CE7-4128-A764-BC635B96AF4A} = {F749FE5B-4263-4DB9-999F-104CC4487AFC}
+		{505DCE57-6297-42B1-A325-6CC8F08787C8} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{B5858083-A489-412F-9F1A-5E4704CB0AE0} = {505DCE57-6297-42B1-A325-6CC8F08787C8}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -171,5 +180,9 @@ Global
 		{506D0D33-0CE7-4128-A764-BC635B96AF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{506D0D33-0CE7-4128-A764-BC635B96AF4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{506D0D33-0CE7-4128-A764-BC635B96AF4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5858083-A489-412F-9F1A-5E4704CB0AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5858083-A489-412F-9F1A-5E4704CB0AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5858083-A489-412F-9F1A-5E4704CB0AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5858083-A489-412F-9F1A-5E4704CB0AE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

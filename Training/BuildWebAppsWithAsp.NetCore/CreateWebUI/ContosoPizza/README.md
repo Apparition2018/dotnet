@@ -9,7 +9,7 @@
     - 想要生成动态 Web UI
     - 更喜欢也页面为中心的方法（page-focused approach）
     - 希望减少部分视图（partial views）的重复
-### [自定义项目](https://learn.microsoft.com/zh-cn/training/modules/create-razor-pages-aspnet-core/3-exercise-customize-project)
+### [练习 - 自定义项目](https://learn.microsoft.com/zh-cn/training/modules/create-razor-pages-aspnet-core/3-exercise-customize-project)
 - 克隆项目 [mslearn-create-razor-pages-aspnet-core](https://github.com/MicrosoftDocs/mslearn-create-razor-pages-aspnet-core)
 - `dotnet new webapp` 生成的项目结构：
     - Pages/：Razor Pages 及其支持文件。每个 Razor 页面都有一个 .cshtml 文件和一个 .cshtml.cs PageModel 类文件
@@ -45,7 +45,7 @@
     <h1 class="display-4">Welcome to Contoso Pizza</h1>
     <p class="lead">The best pizza in town for @Convert.ToInt32(timeInBusiness.TotalDays) days!</p>
     ```
-### 添加新的 Razor 页面
+### 练习 - 添加新的 Razor 页面
 - 创建 [PizzaList](Pages/PizzaList.cshtml) 页面：`dotnet new page --name PizzaList --namespace ContosoPizza.Pages --output
   Pages`
 - 将 PizzaList 页面添加到导航菜单：@see [_Layout.cshtml](Pages/Shared/_Layout.cshtml)
@@ -67,7 +67,7 @@
 - Page Handles：PageModel 为 HTTP 请求和用于呈现页面的数据定义 page handles
     1. OnGet：页面初始化
     2. OnPost：表单请求
-### 添加新的 Pizza 表单
+### 练习 - 添加新的 Pizza 表单
 - 向 [PizzaList.cshtml.cs](Pages/PizzaList.cshtml.cs) 添加属性
 ```csharp
 // 将 NewPizza 属性绑定到 Razor 页面，发出 HTTP POST 请求时，将使用用户输入填充 NewPizza 属性

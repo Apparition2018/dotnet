@@ -2,7 +2,7 @@
 
 ---
 ## [使用 Blazor 生成第一个 Web 应用](https://learn.microsoft.com/zh-cn/training/modules/build-your-first-blazor-web-app/)
-### 创建并运行 Blazor Web 应用
+### 练习 - 创建并运行 Blazor Web 应用
 - 创建
     - C# Dev Kit：Ctrl + Shift + P → `.net:n`：新建项目… → Blazor Web 应用 → BlazorApp
     - .NET CLI：创建 BlazorApp 文件夹 → `dotnet new blazor`
@@ -21,7 +21,7 @@
 - 使用组件：添加一个 HTML-style tag，名称与组件的名称一致，`<MyButton />`
 - 组件参数：通过向具有 `[Parameter]` 属性的组件添加公共 C# 属性来定义
 - @code：跟踪组件状态、添加组件参数、实现组件生命周期事件和定义事件处理程序
-### [修改组件](https://learn.microsoft.com/zh-cn/training/modules/build-your-first-blazor-web-app/5-exercise-add-component#modify-a-component)
+### [练习 - 修改组件](https://learn.microsoft.com/zh-cn/training/modules/build-your-first-blazor-web-app/5-exercise-add-component#modify-a-component)
 - 在 [Counter 组件](Components/Pages/Counter.razor) 上定义一个参数，用于指定每次单击按钮时递增的量
 ```Counter.razor
 @code {
@@ -47,7 +47,7 @@
 - 处理事件：`@on`
 - 数据绑定：`@bind`
 - 启用交互性：`@rendermode` or `<Counter @rendermode="InteractiveServer"/>`
-### 创建待办事项列表
+### 练习 - 创建待办事项列表
 - 创建 [Todo 组件](Components/Pages/Todo.razor)：`dotnet new razorcomponent -n Todo -o Components/Pages`，顶部添加代码
 ```razor
 @page "/todo"
