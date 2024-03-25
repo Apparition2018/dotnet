@@ -1,9 +1,6 @@
-# BlazingPizza
-
----
 ## [与 Blazor Web 应用中的数据交互](https://learn.microsoft.com/zh-cn/training/modules/interact-with-data-blazor-web-apps/)
 ### 使用 Blazor 组件创建用户界面
-- 两种托管模型
+- 两种[托管模型](https://learn.microsoft.com/zh-cn/aspnet/core/blazor/hosting-models)
     1. Blazor Server：在 ASP.NET Core 应用的 Web 服务器上执行。（本模块）
     2. Blazor WebAssembly：Blazor 应用、其依赖项以及 .NET 运行时均在浏览器中下载并运行
 - 创建 Blazor 组件
@@ -52,7 +49,7 @@ dotnet add package System.Net.Http.Json --version 6.0.0
     }
     ```
     - @see [Program.cs](Program.cs)：`app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");`
-### 在 Blazor 应用程序中共享数据
+### [在 Blazor 应用程序中共享数据](https://learn.microsoft.com/zh-cn/training/modules/interact-with-data-blazor-web-apps/6-share-data-in-blazor-applications)
 - 共享信息方式
     1. 组件参数：`[Parameter]`
     2. 级联参数：在父组件中使用 `<CascadingValue>` tag，tag 内的所有组件都能访问该值
@@ -172,13 +169,12 @@ dotnet add package System.Net.Http.Json --version 6.0.0
     ```razor
     <a @onclick="@(() => OrderState.RemoveConfiguredPizza(configuredPizza))" class="delete-item">x</a>
     ```
-- 动态配置披萨大小
-    - @see [ConfigurePizzaDialog.razor](Shared/ConfigurePizzaDialog.razor)
-    ```razor
-    <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" @bind:event="oninput"/>
-    ……
-    Price: <span class="price">@(Pizza.GetFormattedTotalPrice())</span>
-    ```
+- 动态配置披萨大小，@see [ConfigurePizzaDialog.razor](Shared/ConfigurePizzaDialog.razor)
+```razor
+<input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" @bind:event="oninput"/>
+……
+Price: <span class="price">@(Pizza.GetFormattedTotalPrice())</span>
+```
 ### Reference
 - [Blazor](https://learn.microsoft.com/zh-cn/aspnet/core/blazor/)
 - [Razor 组件](https://learn.microsoft.com/zh-cn/aspnet/core/blazor/components/)

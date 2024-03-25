@@ -36,23 +36,21 @@
     - @see [Checkout.razor](Pages/Checkout.razor)：`<div class="main">` 呈现为两列（① `<div class="checkout-cols">` ②`</button>`）
     - @see [OrderReview.razor](Shared/OrderReview.razor)
     - @see [AddressEditor.razor](Shared/AddressEditor.razor)
-- 提高表单的可用性：提交订单后聚焦到 Name input 上
-    - @see [AddressEditor.razor](Shared/AddressEditor.razor)
-    ```razor
-            <input @ref="startName" @bind="Address.Name"/>
+- 提高表单的可用性：提交订单后聚焦到 Name input 上，@see [AddressEditor.razor](Shared/AddressEditor.razor)
+```razor
+        <input @ref="startName" @bind="Address.Name"/>
+……
+@code {
     ……
-    @code {
-        ……
-        private ElementReference startName;
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender) {
-                await startName.FocusAsync();
-            }
+    private ElementReference startName;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender) {
+            await startName.FocusAsync();
         }
     }
-    ```
+}
+```
 ### [利用 Blazor 表单的强大功能](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/4-take-advantage-power-blazor-forms)
 - EditForm
     - [数据绑定](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/4-take-advantage-power-blazor-forms#create-an-editform-with-data-binding)：可将对象与 EditForm 关联
@@ -74,38 +72,36 @@
         }
     }
     ```
-- 将 HTML 元素替换为 Blazor 组件
-    - @see [AddressEditor.razor](Shared/AddressEditor.razor)
-        - `<input` 替换为 `<InputText`
-        - `@bind=` 替换为 `@bind-Value=`
-        - 仅 HTML 元素支持 FocusAsync：删除 `@ref="startName"`、startName、OnAfterRenderAsync()
-- 提交表单前检查是否存在空字段
-    - @see [Checkout.razor](Pages/Checkout.razor)
-    ```razor
-                    @if (isError)
-                    {
-                        <div class="alert alert-danger">Please enter a name and address.</div>
-                    }
+- 将 HTML 元素替换为 Blazor 组件，@see [AddressEditor.razor](Shared/AddressEditor.razor)
+    - `<input` 替换为 `<InputText`
+    - `@bind=` 替换为 `@bind-Value=`
+    - 仅 HTML 元素支持 FocusAsync：删除 `@ref="startName"`、startName、OnAfterRenderAsync()
+- 提交表单前检查是否存在空字段，@see [Checkout.razor](Pages/Checkout.razor)
+```razor
+                @if (isError)
+                {
+                    <div class="alert alert-danger">Please enter a name and address.</div>
+                }
+……
+@code {
     ……
-    @code {
-        ……
-        bool isError = false;
+    bool isError = false;
 
-        private async Task CheckSubmission(EditContext editContext)
+    private async Task CheckSubmission(EditContext editContext)
+    {
+        isSubmitting = true;
+        var model = editContext.Model as Address;
+        isError = string.IsNullOrWhiteSpace(model?.Name)
+                  || string.IsNullOrWhiteSpace(model?.Line1)
+                  || string.IsNullOrWhiteSpace(model?.PostalCode);
+        if (!isError)
         {
-            isSubmitting = true;
-            var model = editContext.Model as Address;
-            isError = string.IsNullOrWhiteSpace(model?.Name)
-                      || string.IsNullOrWhiteSpace(model?.Line1)
-                      || string.IsNullOrWhiteSpace(model?.PostalCode);
-            if (!isError)
-            {
-                await PlaceOrder();
-            }
-            isSubmitting = false;
+            await PlaceOrder();
         }
+        isSubmitting = false;
     }
-    ```
+}
+```
 ### [隐式验证用户输入，而无需编写验证代码](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/6-validate-user-input-implicitly)
 - 多种验证选项
     - 使用注释属性，告诉 Blazor 何时需要值，以及它们应采用什么格式

@@ -1,0 +1,56 @@
+﻿@page "/myorders"
+@inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
+@using BlazingPizza.Components
+
+<div class="main">
+    @if (ordersWithStatus is null)
+    {
+        <text>Loading...</text>
+    }
+    else if (!ordersWithStatus.Any())
+    {
+        <h2>No orders placed</h2>
+        <a class="btn btn-success" href="">Order some pizza</a>
+    }
+    else
+    {
+        <PaginationComponent TItem="OrderWithStatus"
+                             Items="ordersWithStatus.OrderBy(o => o.Order.CreatedTime).ToList()"
+                             ItemLabel='item => new($"{item.Order.CreatedTime:ddd, MMM. d, yyyy}")'>
+            <ItemContent>
+                <div class="list-group-item bg-secondary text-white">
+                    <div class="col">
+                        <h5>@($"{context.Order.CreatedTime:dddd, MMMM d, yyyy hh:mm tt}")</h5>
+                        Items:
+                        <strong>@context.Order.Pizzas.Count</strong>
+                    </div>
+                    <div class="col">
+                        Status: <strong>@context.StatusText</strong>
+                    </div>
+                    @if (@context.StatusText != "Delivered")
+                    {
+                        <div class="col flex-grow-0">
+                            <a href="myorders/@context.Order.OrderId" class="btn btn-success">
+                                Track &gt;
+                            </a>
+                        </div>
+                    }
+                </div>
+                <div class="list-group-item">
+                    <div class="col">
+                        <OrderReview Order="@context.Order" />
+                    </div>
+                </div>
+            </ItemContent>
+        </PaginationComponent>
+    }
+</div>
+
+@code {
+    List<OrderWithStatus>? ordersWithStatus = new();
+
+    protected override async Task OnParametersSetAsync() =>
+        ordersWithStatus = await HttpClient.GetFromJsonAsync<List<OrderWithStatus>>(
+            $"{NavigationManager.BaseUri}orders");
+}

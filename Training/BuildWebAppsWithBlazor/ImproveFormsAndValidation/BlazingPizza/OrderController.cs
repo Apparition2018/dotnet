@@ -9,7 +9,6 @@ namespace BlazingPizza
 {
     [Route("orders")]
     [ApiController]
-
     public class OrdersController : Controller
     {
         private readonly PizzaStoreContext _db;
@@ -59,12 +58,12 @@ namespace BlazingPizza
                 .Include(o => o.Pizzas).ThenInclude(p => p.Special)
                 .Include(o => o.Pizzas).ThenInclude(p => p.Toppings).ThenInclude(t => t.Topping)
                 .SingleOrDefaultAsync();
-        
+
             if (order == null)
             {
                 return NotFound();
             }
-        
+
             return OrderWithStatus.FromOrder(order);
         }
     }

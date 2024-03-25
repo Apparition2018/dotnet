@@ -40,7 +40,5 @@ namespace BlazingPizza
                 StatusText = statusText
             };
         }
-
-
     }
 }

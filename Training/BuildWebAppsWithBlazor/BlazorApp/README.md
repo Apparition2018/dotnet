@@ -1,6 +1,3 @@
-# BlazorApp
-
----
 ## [使用 Blazor 生成第一个 Web 应用](https://learn.microsoft.com/zh-cn/training/modules/build-your-first-blazor-web-app/)
 ### 练习 - 创建并运行 Blazor Web 应用
 - 创建
@@ -24,14 +21,12 @@
 ### [练习 - 修改组件](https://learn.microsoft.com/zh-cn/training/modules/build-your-first-blazor-web-app/5-exercise-add-component#modify-a-component)
 - 在 [Counter 组件](Components/Pages/Counter.razor) 上定义一个参数，用于指定每次单击按钮时递增的量
 ```Counter.razor
-@code {
-    [Parameter]
-    public int IncrementAmount { get; set; } = 1;
+[Parameter]
+public int IncrementAmount { get; set; } = 1;
 
-    private void IncrementCount()
-    {
-        currentCount += IncrementAmount;
-    }
+private void IncrementCount()
+{
+    currentCount += IncrementAmount;
 }
 ```
 ```Home.razor

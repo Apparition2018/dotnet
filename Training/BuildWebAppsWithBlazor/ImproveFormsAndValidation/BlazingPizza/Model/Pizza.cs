@@ -31,7 +31,7 @@ namespace BlazingPizza
 
         public decimal GetTotalPrice()
         {
-            return GetBasePrice(); 
+            return GetBasePrice();
         }
 
         public string GetFormattedTotalPrice()
