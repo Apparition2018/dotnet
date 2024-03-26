@@ -39,7 +39,7 @@
                 </div>
                 <div class="list-group-item">
                     <div class="col">
-                        <OrderReview Order="@context.Order" />
+                        <OrderReview Order="@context.Order"/>
                     </div>
                 </div>
             </ItemContent>
@@ -53,4 +53,5 @@
     protected override async Task OnParametersSetAsync() =>
         ordersWithStatus = await HttpClient.GetFromJsonAsync<List<OrderWithStatus>>(
             $"{NavigationManager.BaseUri}orders");
+
 }

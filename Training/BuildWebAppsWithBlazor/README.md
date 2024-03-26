@@ -6,5 +6,6 @@
 ### [使用页面、路由和布局改进 Blazor 导航](ImproveNavigation/BlazingPIzza/README.md)
 ### [改进表单和验证在 Blazor Web 应用中的工作方式](ImproveFormsAndValidation/BlazingPizza/README.md)
 ### [在 Blazor Web 应用中构建丰富的交互式组件](BuildRichInteractiveComponents/BlazingPizza/README.md)
+### [使用 Blazor 生成可重用组件](BuildReusableComponents/FirstClassLibrary/README.md)
 
 ---
