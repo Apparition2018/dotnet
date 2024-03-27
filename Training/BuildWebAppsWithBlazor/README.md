@@ -7,5 +7,6 @@
 ### [改进表单和验证在 Blazor Web 应用中的工作方式](ImproveFormsAndValidation/BlazingPizza/README.md)
 ### [在 Blazor Web 应用中构建丰富的交互式组件](BuildRichInteractiveComponents/BlazingPizza/README.md)
 ### [使用 Blazor 生成可重用组件](BuildReusableComponents/FirstClassLibrary/README.md)
+### [使用 Blazor 构建四子棋游戏](BuildConnectFourGame/ConnectFour/README.md)
 
 ---
