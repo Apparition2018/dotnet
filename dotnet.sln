@@ -15,10 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{8E9CC5EA-3C1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shows", "Shows", "{B24F4713-6963-4CA4-99D2-BB801C15467F}"
+	ProjectSection(SolutionItems) = preProject
+		Shows\Shows.md = Shows\Shows.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Training", "Training", "{2747AAFD-F29C-41D2-BBE9-7A3A99646E62}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaStore", "Training\PizzaStore\PizzaStore.csproj", "{5F8AA25A-1D16-4852-904F-CC65887496D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tutorial", "Tutorial", "{CEC56004-9FA5-4FBB-AAED-A04D3DF39A71}"
 	ProjectSection(SolutionItems) = preProject
@@ -116,13 +117,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildConnectFourGame", "Bui
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectFour", "Training\BuildWebAppsWithBlazor\BuildConnectFourGame\ConnectFour\ConnectFour.csproj", "{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateWebAppsWithMinimalApi", "CreateWebAppsWithMinimalApi", "{3DDA003A-ECA5-42BA-94E8-FF552C49DF83}"
+	ProjectSection(SolutionItems) = preProject
+		Training\CreateWebAppsWithMinimalApi\README.md = Training\CreateWebAppsWithMinimalApi\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaStore", "Training\CreateWebAppsWithMinimalApi\PizzaStore\PizzaStore.csproj", "{EA7B9BA8-513A-4A29-93A2-63B6250101D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5F8AA25A-1D16-4852-904F-CC65887496D1} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
 		{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572} = {B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}
 		{F6490A0F-6E1F-4229-AE9F-90C00E957E6F} = {B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}
 		{BA1C1DF1-A393-4392-B4B6-DE3B0267025E} = {B24F4713-6963-4CA4-99D2-BB801C15467F}
@@ -154,12 +161,10 @@ Global
 		{5FDC4882-E1D8-4065-BA61-6EB44BF64EF5} = {BC136FFC-CB09-444B-A209-B3D26B94D362}
 		{A65283ED-4FDF-43ED-BA99-20AEA28D4814} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
 		{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4} = {A65283ED-4FDF-43ED-BA99-20AEA28D4814}
+		{3DDA003A-ECA5-42BA-94E8-FF552C49DF83} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{EA7B9BA8-513A-4A29-93A2-63B6250101D8} = {3DDA003A-ECA5-42BA-94E8-FF552C49DF83}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F8AA25A-1D16-4852-904F-CC65887496D1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -224,5 +229,9 @@ Global
 		{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7B9BA8-513A-4A29-93A2-63B6250101D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7B9BA8-513A-4A29-93A2-63B6250101D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7B9BA8-513A-4A29-93A2-63B6250101D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7B9BA8-513A-4A29-93A2-63B6250101D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
