@@ -41,7 +41,7 @@
 - 将数据连接到路由
     - @see [Program.cs](Program.cs)
     ```csharp
-    using PizzaStore;
+    using PizzaStore.DB;
     ……
     app.MapGet("/pizzas/{id}", (int id) => PizzaDB.GetPizza(id));
     app.MapGet("/pizzas", () => PizzaDB.GetPizzas());
@@ -50,4 +50,82 @@
     app.MapDelete("/pizzas/{id}", (int id) => PizzaDB.RemovePizza(id));
     ```
     - `http://localhost:{PORT}/swagger`
+---
+## [结合使用数据库和最小 API、Entity Framework Core 和 ASP.NET Core](https://learn.microsoft.com/zh-cn/training/modules/build-web-api-minimal-database/)
+### [练习 - 将 EF Core 添加到最小 API](https://learn.microsoft.com/zh-cn/training/modules/build-web-api-minimal-database/3-exercise-add-entity-framework-core)
+- 添加 Model：@see [Pizza.cs](Models/Pizza.cs)
+- 将 EF Core 添加到项目
+    - 添加 EF Core InMemory 包：`dotnet add package Microsoft.EntityFrameworkCore.InMemory`
+    - 设置内存数据库：@see [Pizza.cs](Models/Pizza.cs)
+    ```
+    class PizzaDb : DbContext
+    {
+        public PizzaDb(DbContextOptions options) : base(options) { }
+        public DbSet<Pizza> Pizzas { get; set; } = null!;
+    }
+    ```
+    - @see [Program.cs](Program.cs)：`builder.Services.AddDbContext<PizzaDb>(options => options.UseInMemoryDatabase("items"));`
+- 创建新项
+    - @see [Program.cs](Program.cs)
+    ```csharp
+    app.MapPost("/pizza", async (PizzaDb db, Pizza pizza) =>
+    {
+        await db.Pizzas.AddAsync(pizza);
+        await db.SaveChangesAsync();
+        return Results.Created($"/pizza/{pizza.Id}", pizza);
+    });
+    ```
+    - `http://localhost:{PORT}/swagger` → POST /pizza
+    ```json
+    {
+        "name": "Pepperoni",
+        "description": "A classic pepperoni pizza"
+    }
+    ```
+- RUD：@see [Program.cs](Program.cs)
+```csharp
+app.MapGet("/pizzas", async (PizzaDb db) => await db.Pizzas.ToListAsync());
+app.MapGet("/pizza/{id}", async (PizzaDb db, int id) => await db.Pizzas.FindAsync(id));
+app.MapPut("/pizza/{id}", async (PizzaDb db, Pizza updatepizza, int id) =>
+{
+    var pizza = await db.Pizzas.FindAsync(id);
+    if (pizza is null) return Results.NotFound();
+    pizza.Name = updatepizza.Name;
+    pizza.Description = updatepizza.Description;
+    await db.SaveChangesAsync();
+    return Results.NoContent();
+});
+app.MapDelete("/pizza/{id}", async (PizzaDb db, int id) =>
+{
+    var pizza = await db.Pizzas.FindAsync(id);
+    if (pizza is null)
+    {
+        return Results.NotFound();
+    }
+    db.Pizzas.Remove(pizza);
+    await db.SaveChangesAsync();
+    return Results.Ok();
+});
+```
+### [添加新数据库提供程序的步骤](https://learn.microsoft.com/zh-cn/training/modules/build-web-api-minimal-database/4-add-sqlite-database-provider)
+1. 将一个或多个 NuGet 包添加到项目中，以包含数据库提供程序。
+2. 配置数据库连接。
+3. 在 ASP.NET Core 服务中配置数据库提供程序。
+4. 执行数据库迁移。
+### [练习 - 将 SQLite 数据库提供程序与 EF Core 结合使用](https://learn.microsoft.com/zh-cn/training/modules/build-web-api-minimal-database/5-exercise-use-sqlite-database)
+- 设置 SQLite 数据库
+    - 添加 EF Core SQLite 包：`dotnet add package Microsoft.EntityFrameworkCore.Sqlite`
+    - 安装 EF Core 工具：`dotnet tool install --global dotnet-ef`
+    - 添加 EF Core Design 包：`dotnet add package Microsoft.EntityFrameworkCore.Design`
+- 启用数据库创建
+    - @see [Program.cs](Program.cs)
+    ```csharp
+    var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";
+    builder.Services.AddSqlite<PizzaDb>(connectionString);
+    ```
+    - 添加一个名为 `InitialCreate` 数据库迁移：`dotnet ef migrations add InitialCreate`
+    - 将迁移应用到数据库：`dotnet ef database update`
+### 继续了解最小 API
+- [最小 API 入门](https://minimal-apis.github.io/)
+- [最小 API playground](https://github.com/DamianEdwards/MinimalApiPlayground)
 ---
