@@ -1,6 +1,3 @@
-# simple-website
-
----
 ## [使用 Visual Studio Code 进行 Web 开发](https://learn.microsoft.com/zh-cn/training/modules/get-started-with-web-development/)
 ### 设置 web 应用结构
 - Ctrl + N 新建文件：index.html、main.css、app.js

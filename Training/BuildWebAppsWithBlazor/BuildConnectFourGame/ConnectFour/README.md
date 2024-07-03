@@ -13,7 +13,7 @@
         </HeadContent>
         ```
 ### [练习 - Blazor](https://learn.microsoft.com/zh-cn/training/modules/dotnet-connect-four/3-exercise-blazor)
-- 创建新的 Blazor 项目（VS 2022）
+- 创建新的 Blazor 项目 (Visual Studio 2022)
     1. 文件 → 新建 → 项目
     2. 模板选择 Blazor Web App → 下一步
     3. 项目名称：ConnectFour → 下一步

@@ -1,6 +1,3 @@
-# ContosoPizza
-
----
 ## [使用 ASP.NET Core 控制器创建 Web API](https://learn.microsoft.com/zh-cn/learn/modules/build-web-api-aspnet-core/)
 ### [ASP.NET Core 中的 REST](https://learn.microsoft.com/zh-cn/training/modules/build-web-api-aspnet-core/2-what-is-rest-in-aspnet)
 - 在 ASP.NET Core 中创建 API 的好处
