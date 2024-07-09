@@ -2,7 +2,7 @@
 
 ---
 ## [C# 101](https://learn.microsoft.com/zh-cn/shows/csharp-101/)
-- [Object Oriented Programming | C# 101 - YouTube](https://www.youtube.com/watch?v=TzgxcAiHCWA&list=PLdo4fOcmZ0oVxKLQCHpiUWun7vlJJvUiN&index=18&ab_channel=dotnet)
+- [C# for Beginners - YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVxKLQCHpiUWun7vlJJvUiN)
 ### Objects and Classes [16 of 19
     New Solution… → Console Application
         Solution name:  .NetCore101

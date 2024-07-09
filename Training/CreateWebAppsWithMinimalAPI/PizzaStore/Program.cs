@@ -14,6 +14,17 @@ builder.Services.AddSwaggerGen(c =>
 var connectionString = builder.Configuration.GetConnectionString("Pizzas") ?? "Data Source=Pizzas.db";
 builder.Services.AddSqlite<PizzaDb>(connectionString);
 
+string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        builder =>
+        {
+            builder.WithOrigins(
+                "http://example.com", "*");
+        });
+});
+
 // 创建 WebApplication
 // 在 Services 属性中，你告知 API 这是一项可用的功能。与之相反，app 实例用于实际使用它。
 var app = builder.Build();
@@ -22,6 +33,8 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "PizzaStore API V1");
 });
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.MapGet("/", () => "Hello World!");
 

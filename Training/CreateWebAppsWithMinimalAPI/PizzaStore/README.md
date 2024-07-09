@@ -37,7 +37,7 @@
     ```
     - `http://localhost:{PORT}/swagger`
 ### [练习 - 添加路由](https://learn.microsoft.com/zh-cn/training/modules/build-web-api-minimal-api/5-exercise-advanced-commands)
-- 添加数据：@see [DB.cs](Db.cs)
+- 添加数据：@see [DB.cs](DB/Db.cs)
 - 将数据连接到路由
     - @see [Program.cs](Program.cs)
     ```csharp
