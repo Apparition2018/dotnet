@@ -3,7 +3,7 @@
 ---
 ## [C# 101](https://learn.microsoft.com/zh-cn/shows/csharp-101/)
 - [C# for Beginners - YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVxKLQCHpiUWun7vlJJvUiN)
-### Objects and Classes [16 of 19
+### Objects and Classes [16 of 19]
     New Solution… → Console Application
         Solution name:  .NetCore101
         Project name:   MySuperBank
