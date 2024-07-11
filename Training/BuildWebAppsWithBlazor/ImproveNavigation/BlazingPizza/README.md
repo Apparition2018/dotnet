@@ -9,38 +9,38 @@
 - 添加结账页
     - @see [Checkout.razor](Pages/Checkout.razor)
     - @see [Index.razor](Pages/Index.razor)
-    ```
-    <div class="top-bar">
-        <a class="logo" href="">
-            <img src="img/logo.svg"/>
-        </a>
+        ```
+        <div class="top-bar">
+            <a class="logo" href="">
+                <img src="img/logo.svg"/>
+            </a>
 
-        <a href="" class="nav-tab active">
-            <img src="img/pizza-slice.svg"/>
-            <div>Get Pizza</div>
-        </a>
-    </div>
-    ```
+            <a href="" class="nav-tab active">
+                <img src="img/pizza-slice.svg"/>
+                <div>Get Pizza</div>
+            </a>
+        </div>
+        ```
 - 允许客户下单：@see [Checkout.razor](Pages/Checkout.razor)
-```razor
-    <button class="checkout-button btn btn-warning" @onclick="PlaceOrder" disabled=@isSubmitting>
-        Place order
-    </button>
-……
-@code {
+    ```razor
+        <button class="checkout-button btn btn-warning" @onclick="PlaceOrder" disabled=@isSubmitting>
+            Place order
+        </button>
     ……
-    bool isSubmitting;
+    @code {
+        ……
+        bool isSubmitting;
 
-    async Task PlaceOrder()
-    {
-        isSubmitting = true;
-        var response = await HttpClient.PostAsJsonAsync(NavigationManager.BaseUri + "orders", OrderState.Order);
-        var newOrderId = await response.Content.ReadFromJsonAsync<int>();
-        OrderState.ResetOrder();
-        NavigationManager.NavigateTo("/");
+        async Task PlaceOrder()
+        {
+            isSubmitting = true;
+            var response = await HttpClient.PostAsJsonAsync(NavigationManager.BaseUri + "orders", OrderState.Order);
+            var newOrderId = await response.Content.ReadFromJsonAsync<int>();
+            OrderState.ResetOrder();
+            NavigationManager.NavigateTo("/");
+        }
     }
-}
-```
+    ```
 - 为订单和披萨添加实体框架支持
     - @see [PizzaStoreContext.cs](PizzaStoreContext.cs)
     - @see [OrdersController.cs](OrdersController.cs)：`[Route("orders")]` Blazor 属性允许此类处理对 /orders 和 /orders/{orderId} 的传入 HTTP 请求
@@ -49,60 +49,60 @@
     - @see [MyOrders.razor](Pages/MyOrders.razor)
     - 使用 NavLink 组件，替换 [MyOrders.razor](Pages/MyOrders.razor)、[Checkout.razor](Pages/Checkout.razor)、[Index.razor](Pages/Index.razor) 导航。
       active css 类现在由 NavLink 组件自动添加到页面
-    ```razor
-    <div class="top-bar">
-        <a class="logo" href="">
-            <img src="img/logo.svg"/>
-        </a>
+        ```razor
+        <div class="top-bar">
+            <a class="logo" href="">
+                <img src="img/logo.svg"/>
+            </a>
 
-        <NavLink href="" class="nav-tab" Match="NavLinkMatch.All">
-            <img src="img/pizza-slice.svg"/>
-            <div>Get Pizza</div>
-        </NavLink>
+            <NavLink href="" class="nav-tab" Match="NavLinkMatch.All">
+                <img src="img/pizza-slice.svg"/>
+                <div>Get Pizza</div>
+            </NavLink>
 
-        <NavLink href="myorders" class="nav-tab">
-            <img src="img/bike.svg"/>
-            <div>My Orders</div>
-        </NavLink>
-    </div>
-    ```
+            <NavLink href="myorders" class="nav-tab">
+                <img src="img/bike.svg"/>
+                <div>My Orders</div>
+            </NavLink>
+        </div>
+        ```
     - @see [Checkout.razor](Pages/Checkout.razor)
-    ```razor
-    async Task PlaceOrder()
-    {
-        isSubmitting = true;
-        var response = await HttpClient.PostAsJsonAsync($"{NavigationManager.BaseUri}orders", OrderState.Order);
-        var newOrderId = await response.Content.ReadFromJsonAsync<int>();
-        OrderState.ResetOrder();
-        NavigationManager.NavigateTo("/myorders");
-    }
-    ```
+        ```razor
+        async Task PlaceOrder()
+        {
+            isSubmitting = true;
+            var response = await HttpClient.PostAsJsonAsync($"{NavigationManager.BaseUri}orders", OrderState.Order);
+            var newOrderId = await response.Content.ReadFromJsonAsync<int>();
+            OrderState.ResetOrder();
+            NavigationManager.NavigateTo("/myorders");
+        }
+        ```
 ### [路由参数如何影响 Blazor 应用的路由](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/4-explore-route-parameters-effect-apps-routing)
 - 路由参数/可选路由参数：http://www.contoso.com/favoritepizza/hawaiian
-```razor
-@page "/FavoritePizzas/{favorite?}"
+    ```razor
+    @page "/FavoritePizzas/{favorite?}"
 
-<h1>Choose a Pizza</h1>
-<p>Your favorite pizza is: @Favorite</p>
+    <h1>Choose a Pizza</h1>
+    <p>Your favorite pizza is: @Favorite</p>
 
-@code {
-	[Parameter]
-	public string Favorite { get; set; }
+    @code {
+    	[Parameter]
+    	public string Favorite { get; set; }
 
-	protected override void OnInitialized()
-	{
-		Favorite ??= "Fiorentina";
-	}
-}
-```
+    	protected override void OnInitialized()
+    	{
+    		Favorite ??= "Fiorentina";
+    	}
+    }
+    ```
 - 路由约束：http://www.contoso.com/favoritepizza/2
-```razor
-@page "/FavoritePizza/{preferredsize:int}"
-```
+    ```razor
+    @page "/FavoritePizza/{preferredsize:int}"
+    ```
 - 捕获全部路由参数：http://www.contoso.com/favoritepizza/margherita/hawaiian
-```razor
-@page "/FavoritePizza/{*favorites}"
-```
+    ```razor
+    @page "/FavoritePizza/{*favorites}"
+    ```
 ### [练习 - 使用路由参数改进应用导航](https://learn.microsoft.com/zh-cn/training/modules/use-pages-routing-layouts-control-blazor-navigation/5-exercise-route-parameters-improve-apps-navigation)
 - 创建订单详情页
     - @see [OrderDetail.razor](Pages/OrderDetail.razor)

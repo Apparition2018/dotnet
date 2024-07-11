@@ -17,18 +17,18 @@
 - Lighthouse：Google 研发的网站分析工具，已添加至许多浏览器的开发者工具中。Lighthouse 可以检查页面的搜索引擎优化 (SEO)、负载性能和其他最佳做法。 Lighthouse 还可分析页面，并为页面当前的可访问性打分。
 ### 确保链接和图像可供访问
 - 链接文本
-```html
-<!-- 错误示范 -->
-<p>小企鹅有时又称神仙企鹅，是世界上体型最小的企鹅。 详情请<a href="https://en.wikipedia.org/wiki/Little_penguin">单击此处</a></p>
-<p>小企鹅有时又称神仙企鹅，是世界上体型最小的企鹅。 详情请访问<a href="https://en.wikipedia.org/wiki/Little_penguin">https://en.wikipedia.org/wiki/Little_penguin</a></p>
-<!-- 正确示范 -->
-<p><a href="https://en.wikipedia.org/wiki/Little_penguin">小企鹅</a>有时又称神仙企鹅，是世界上体型最小的企鹅。</p>
-```
+    ```html
+    <!-- 错误示范 -->
+    <p>小企鹅有时又称神仙企鹅，是世界上体型最小的企鹅。 详情请<a href="https://en.wikipedia.org/wiki/Little_penguin">单击此处</a></p>
+    <p>小企鹅有时又称神仙企鹅，是世界上体型最小的企鹅。 详情请访问<a href="https://en.wikipedia.org/wiki/Little_penguin">https://en.wikipedia.org/wiki/Little_penguin</a></p>
+    <!-- 正确示范 -->
+    <p><a href="https://en.wikipedia.org/wiki/Little_penguin">小企鹅</a>有时又称神仙企鹅，是世界上体型最小的企鹅。</p>
+    ```
 - [ARIA](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA)
 - 图像的替换文本
-```html
-<img src="" alt="demo">
-```
+    ```html
+    <img src="" alt="demo">
+    ```
 ### 无障碍设计
 
 ### Reference

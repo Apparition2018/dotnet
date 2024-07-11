@@ -16,7 +16,7 @@
         - Pages 目录结构和路由请求
 
       | URL                            | Maps to Razor page           |
-              |--------------------------------|------------------------------|
+      |--------------------------------|------------------------------|
       | www.domain.com                 | Pages/Index.cshtml           |
       | www.domain.com/Index           | Pages/Index.cshtml           |
       | www.domain.com/Privacy         | Pages/Privacy.cshtml         |
@@ -26,7 +26,7 @@
         - 布局和其他共享文件
 
       | File                                          | Description                            |
-              |-----------------------------------------------|----------------------------------------|
+      |-----------------------------------------------|----------------------------------------|
       | _ViewImports.cshtml                           | 导入跨多个页面使用的命名空间和类                       |
       | _ViewStart.cshtml                             | 指定所有 Razor 页面的默认布局                     |
       | Pages/Shared/_Layout.cshtml                   | _ViewStart.cshtml文件指定的布局。跨多个页面实现通用布局元素 |
@@ -36,24 +36,24 @@
     - Program.cs：充当应用的入口点，并配置应用行为
 - 自定义登录页面
     - [Index.cshtml](Pages/Index.cshtml)，将 C# 代码块的代码替换为
-    ```cshtml
-    ViewData["Title"] = "The Home for Pizza Lovers";
-    TimeSpan timeInBusiness = DateTime.Now - new DateTime(2018, 8, 14);
-    ```
+        ```cshtml
+        ViewData["Title"] = "The Home for Pizza Lovers";
+        TimeSpan timeInBusiness = DateTime.Now - new DateTime(2018, 8, 14);
+        ```
     - 修改 HTML
-    ```cshtml
-    <h1 class="display-4">Welcome to Contoso Pizza</h1>
-    <p class="lead">The best pizza in town for @Convert.ToInt32(timeInBusiness.TotalDays) days!</p>
-    ```
+        ```cshtml
+        <h1 class="display-4">Welcome to Contoso Pizza</h1>
+        <p class="lead">The best pizza in town for @Convert.ToInt32(timeInBusiness.TotalDays) days!</p>
+        ```
 ### 练习 - 添加新的 Razor 页面
 - 创建 [PizzaList](Pages/PizzaList.cshtml) 页面：`dotnet new page --name PizzaList --namespace ContosoPizza.Pages --output
   Pages`
 - 将 PizzaList 页面添加到导航菜单：@see [_Layout.cshtml](Pages/Shared/_Layout.cshtml)
-```cshtml
-<li class="nav-item">
-    <a class="nav-link text-dark" asp-area="" asp-page="/PizzaList">Pizza List 🍕</a>
-</li>
-```
+    ```cshtml
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/PizzaList">Pizza List 🍕</a>
+    </li>
+    ```
 - 向依赖注入容器，注册 PizzaService 类，@see [Program.cs](Program.cs) `builder.Services.AddScoped<PizzaService>();`
 - 显示 PizzaList
     - @see [PizzaList.cshtml.cs](Pages/PizzaList.cshtml.cs)
@@ -69,50 +69,50 @@
     2. OnPost：表单请求
 ### 练习 - 添加新的 Pizza 表单
 - 向 [PizzaList.cshtml.cs](Pages/PizzaList.cshtml.cs) 添加属性
-```csharp
-// 将 NewPizza 属性绑定到 Razor 页面，发出 HTTP POST 请求时，将使用用户输入填充 NewPizza 属性
-[BindProperty]
-public Pizza NewPizza { get; set; } = default!;
-```
+    ```csharp
+    // 将 NewPizza 属性绑定到 Razor 页面，发出 HTTP POST 请求时，将使用用户输入填充 NewPizza 属性
+    [BindProperty]
+    public Pizza NewPizza { get; set; } = default!;
+    ```
 - 向 [PizzaList.cshtml.cs](Pages/PizzaList.cshtml.cs) 添加 page handles
-```csharp
-public IActionResult OnPost()
-{
-    // ModelState.IsValid 属性用于确定用户输入是否有效
-    // 验证规则是根据 Models\Pizza.cs 中 Pizza 类上的特性（例如 Required 和 Range）推断出来的
-    // 如果用户输入无效，则调用 Page 方法来重新呈现页面
-    if (!ModelState.IsValid || NewPizza == null)
+    ```csharp
+    public IActionResult OnPost()
     {
-        return Page();
-    }
+        // ModelState.IsValid 属性用于确定用户输入是否有效
+        // 验证规则是根据 Models\Pizza.cs 中 Pizza 类上的特性（例如 Required 和 Range）推断出来的
+        // 如果用户输入无效，则调用 Page 方法来重新呈现页面
+        if (!ModelState.IsValid || NewPizza == null)
+        {
+            return Page();
+        }
 
-    _service.AddPizza(NewPizza);
-    // 将用户重定向到 Get page handles
-    return RedirectToAction("Get");
-}
-```
+        _service.AddPizza(NewPizza);
+        // 将用户重定向到 Get page handles
+        return RedirectToAction("Get");
+    }
+    ```
 - [添加表单](https://learn.microsoft.com/zh-cn/training/modules/create-razor-pages-aspnet-core/6-exercise-add-new-pizza-form#add-a-form-to-create-new-pizzas)，@see [PizzaList.cshtml](Pages/PizzaList.cshtml) `<form>`
     - `asp-validation-summary`：显示整个 Model 的验证错误
     - `asp-for`：绑定 NewPizza 属性
     - `asp-validation-for`：显示每个表单字段的任何验证错误
     - `@Html.DisplayNameFor`：显示属性的 display name
 - 将客户端验证脚本注入页面，@see [PizzaList.cshtml](Pages/PizzaList.cshtml)
-```cshtml
-@section Scripts {
-    <partial name="_ValidationScriptsPartial"/>
-}
-```
+    ```cshtml
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial"/>
+    }
+    ```
 - 向 [PizzaList.cshtml.cs](Pages/PizzaList.cshtml.cs) 添加 用于删除 Pizza 的 page handles
-```csharp
-// PizzaList.cshtml 中“删除”按钮上的 asp-page-handler 属性已设置为 Delete
-// PizzaList.cshtml 中“删除”按钮上的 asp-route-id 属性将 id 参数绑定到 URL 中的 id 路由值
-public IActionResult OnPostDelete(int id)
-{
-    _service.DeletePizza(id);
+    ```csharp
+    // PizzaList.cshtml 中“删除”按钮上的 asp-page-handler 属性已设置为 Delete
+    // PizzaList.cshtml 中“删除”按钮上的 asp-route-id 属性将 id 参数绑定到 URL 中的 id 路由值
+    public IActionResult OnPostDelete(int id)
+    {
+        _service.DeletePizza(id);
 
-    return RedirectToAction("Get");
-}
-```
+        return RedirectToAction("Get");
+    }
+    ```
 ### 总结
 - [Next Steps](https://learn.microsoft.com/zh-cn/training/modules/create-razor-pages-aspnet-core/7-summary#next-steps)
 ---

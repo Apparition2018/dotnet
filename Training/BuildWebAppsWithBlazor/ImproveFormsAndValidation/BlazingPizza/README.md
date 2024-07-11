@@ -6,25 +6,25 @@
 - [JavaScript 事件处理 vs Blazor 事件处理](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/2-attach-csharp-code-dom-events-blazor-event-handlers#understand-event-handling-in-javascript-versus-event-handling-with-blazor)
 - [以异步方式处理事件](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/2-attach-csharp-code-dom-events-blazor-event-handlers#handle-events-asynchronously)：`async`、`await`
 - 使用事件聚焦到 DOM 元素
-```razor
-<button class="btn btn-primary" @onclick="ChangeFocus">Click me to change focus</button>
-<input @ref=InputField @onfocus="HandleFocus" value="@data"/>
+    ```razor
+    <button class="btn btn-primary" @onclick="ChangeFocus">Click me to change focus</button>
+    <input @ref=InputField @onfocus="HandleFocus" value="@data"/>
 
-@code {
-    private ElementReference InputField;
-    private string data;
+    @code {
+        private ElementReference InputField;
+        private string data;
 
-    private async Task ChangeFocus()
-    {
-        await InputField.FocusAsync();
+        private async Task ChangeFocus()
+        {
+            await InputField.FocusAsync();
+        }
+
+        private async Task HandleFocus()
+        {
+            data = "Received focus";
+        }
     }
-
-    private async Task HandleFocus()
-    {
-        data = "Received focus";
-    }
-}
-```
+    ```
 - 内联事件处理程序：Lambda
 - [覆盖事件的默认 DOM 操作](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/2-attach-csharp-code-dom-events-blazor-event-handlers#override-default-dom-actions-for-events)
     - preventDefault
@@ -37,20 +37,20 @@
     - @see [OrderReview.razor](Shared/OrderReview.razor)
     - @see [AddressEditor.razor](Shared/AddressEditor.razor)
 - 提高表单的可用性：提交订单后聚焦到 Name input 上，@see [AddressEditor.razor](Shared/AddressEditor.razor)
-```razor
-        <input @ref="startName" @bind="Address.Name"/>
-……
-@code {
+    ```razor
+            <input @ref="startName" @bind="Address.Name"/>
     ……
-    private ElementReference startName;
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender) {
-            await startName.FocusAsync();
+    @code {
+        ……
+        private ElementReference startName;
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender) {
+                await startName.FocusAsync();
+            }
         }
     }
-}
-```
+    ```
 ### [利用 Blazor 表单的强大功能](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/4-take-advantage-power-blazor-forms)
 - EditForm
     - [数据绑定](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/4-take-advantage-power-blazor-forms#create-an-editform-with-data-binding)：可将对象与 EditForm 关联
@@ -60,48 +60,48 @@
 ### 练习 - 使用 Blazor 组件创建地址表单
 - 添加 Blazor EditForm 组件
     - @see [Checkout.razor](Pages/Checkout.razor)：删除 `</button>` @onclick 事件；从 `PlaceOrder()` 方法中删除 `isSubmitting = true`
-    ```razor
-        <EditForm Model=Order.DeliveryAddress OnSubmit=CheckSubmission>
-    ……
-    @code {
-        private async Task CheckSubmission()
-        {
-            isSubmitting = true;
-            await PlaceOrder();
-            isSubmitting = false;
+        ```razor
+            <EditForm Model=Order.DeliveryAddress OnSubmit=CheckSubmission>
+        ……
+        @code {
+            private async Task CheckSubmission()
+            {
+                isSubmitting = true;
+                await PlaceOrder();
+                isSubmitting = false;
+            }
         }
-    }
-    ```
+        ```
 - 将 HTML 元素替换为 Blazor 组件，@see [AddressEditor.razor](Shared/AddressEditor.razor)
     - `<input` 替换为 `<InputText`
     - `@bind=` 替换为 `@bind-Value=`
     - 仅 HTML 元素支持 FocusAsync：删除 `@ref="startName"`、startName、OnAfterRenderAsync()
 - 提交表单前检查是否存在空字段，@see [Checkout.razor](Pages/Checkout.razor)
-```razor
-                @if (isError)
-                {
-                    <div class="alert alert-danger">Please enter a name and address.</div>
-                }
-……
-@code {
+    ```razor
+                    @if (isError)
+                    {
+                        <div class="alert alert-danger">Please enter a name and address.</div>
+                    }
     ……
-    bool isError = false;
+    @code {
+        ……
+        bool isError = false;
 
-    private async Task CheckSubmission(EditContext editContext)
-    {
-        isSubmitting = true;
-        var model = editContext.Model as Address;
-        isError = string.IsNullOrWhiteSpace(model?.Name)
-                  || string.IsNullOrWhiteSpace(model?.Line1)
-                  || string.IsNullOrWhiteSpace(model?.PostalCode);
-        if (!isError)
+        private async Task CheckSubmission(EditContext editContext)
         {
-            await PlaceOrder();
+            isSubmitting = true;
+            var model = editContext.Model as Address;
+            isError = string.IsNullOrWhiteSpace(model?.Name)
+                      || string.IsNullOrWhiteSpace(model?.Line1)
+                      || string.IsNullOrWhiteSpace(model?.PostalCode);
+            if (!isError)
+            {
+                await PlaceOrder();
+            }
+            isSubmitting = false;
         }
-        isSubmitting = false;
     }
-}
-```
+    ```
 ### [隐式验证用户输入，而无需编写验证代码](https://learn.microsoft.com/zh-cn/training/modules/blazor-improve-how-forms-work/6-validate-user-input-implicitly)
 - 多种验证选项
     - 使用注释属性，告诉 Blazor 何时需要值，以及它们应采用什么格式
@@ -118,69 +118,69 @@
 - 向 Blazor 模型添加数据注释
     - @See [Address.cs](Model/Address.cs)
     - @see [Checkout.razor](Pages/Checkout.razor)：删除 `CheckSubmission()`
-    ```razor
-        <EditForm Model=Order.DeliveryAddress OnValidSubmit=PlaceOrder>
-    ……
-            <ValidationSummary/>
-            <DataAnnotationsValidator/>
-    ```
+        ```razor
+            <EditForm Model=Order.DeliveryAddress OnValidSubmit=PlaceOrder>
+        ……
+                <ValidationSummary/>
+                <DataAnnotationsValidator/>
+        ```
 - 改进 EditFrom 错误消息
     - @see [Checkout.razor](Pages/Checkout.razor)：删除 `<ValidationSummary/>`
     - @see [AddressEditor.razor](Shared/AddressEditor.razor) 每个 `<ValidationMessage>`
     - 自定义错误消息：@See [Address.cs](Model/Address.cs) ErrorMessage
 - 还原整个错误信息并禁用“提交”按钮
     - @see [Checkout.razor](Pages/Checkout.razor)：`OnInvalidSubmit=ShowError`、`ShowError()`
-    ```razor
-        …… OnInvalidSubmit=ShowError>
-    ……
-    @code {
+        ```razor
+            …… OnInvalidSubmit=ShowError>
         ……
-        async Task PlaceOrder()
-        {
-            isError = false;
-            isSubmitting = true;
-            var response = await HttpClient.PostAsJsonAsync($"{NavigationManager.BaseUri}orders", OrderState.Order);
-            var newOrderId= await response.Content.ReadFromJsonAsync<int>();
-            OrderState.ResetOrder();
-            NavigationManager.NavigateTo($"myorders/{newOrderId}");
-        }
+        @code {
+            ……
+            async Task PlaceOrder()
+            {
+                isError = false;
+                isSubmitting = true;
+                var response = await HttpClient.PostAsJsonAsync($"{NavigationManager.BaseUri}orders", OrderState.Order);
+                var newOrderId= await response.Content.ReadFromJsonAsync<int>();
+                OrderState.ResetOrder();
+                NavigationManager.NavigateTo($"myorders/{newOrderId}");
+            }
 
-        protected void ShowError()
-        {
-            isError = true;
+            protected void ShowError()
+            {
+                isError = true;
+            }
         }
-    }
-    ```
+        ```
 - 当所有字段都正确时，启用“提交”按钮
     - @see [Checkout.razor](Pages/Checkout.razor)：更改 EditForm 以使用 EditContext（而不是模型；删除 isSubmitting；在 `PlaceOrder()` 删除 `isError = false;`
-    ```razor
-    @implements IDisposable
-    ……
-        <EditForm EditContext=editContext OnValidSubmit=PlaceOrder>
-    ……
-            <button class="checkout-button btn btn-warning" type="Submit" disabled=@isError>
-    @code {
+        ```razor
+        @implements IDisposable
         ……
-        private EditContext editContext;
+            <EditForm EditContext=editContext OnValidSubmit=PlaceOrder>
+        ……
+                <button class="checkout-button btn btn-warning" type="Submit" disabled=@isError>
+        @code {
+            ……
+            private EditContext editContext;
 
-        protected override void OnInitialized()
-        {
-            editContext = new(Order.DeliveryAddress);
-            editContext.OnFieldChanged += HandleFieldChanged;
-        }
+            protected override void OnInitialized()
+            {
+                editContext = new(Order.DeliveryAddress);
+                editContext.OnFieldChanged += HandleFieldChanged;
+            }
 
-        private void HandleFieldChanged(object sender, FieldChangedEventArgs e)
-        {
-            isError = !editContext.Validate();
-            StateHasChanged();
-        }
+            private void HandleFieldChanged(object sender, FieldChangedEventArgs e)
+            {
+                isError = !editContext.Validate();
+                StateHasChanged();
+            }
 
-        public void Dispose()
-        {
-            editContext.OnFieldChanged -= HandleFieldChanged;
+            public void Dispose()
+            {
+                editContext.OnFieldChanged -= HandleFieldChanged;
+            }
         }
-    }
-    ```
+        ```
 ### Reference
 - [Blazor 事件处理](https://learn.microsoft.com/zh-cn/aspnet/core/blazor/components/event-handling)
 - [Blazor 表单概述](https://learn.microsoft.com/zh-cn/aspnet/core/blazor/forms/)

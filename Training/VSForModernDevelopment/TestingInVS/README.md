@@ -1,22 +1,22 @@
 ## [Visual Studio 中的 C# 测试](https://learn.microsoft.com/zh-cn/training/modules/visual-studio-test-tools/)
 ### [三A](https://learn.microsoft.com/zh-cn/training/modules/visual-studio-test-tools/2-create-test#the-three-as)
-```csharp
-[TestMethod]
-public void AddTest()
-{
-    // Arrange 用于声明测试可能需要的任何变量
-    var calculator = new Calculator();
+    ```csharp
+    [TestMethod]
+    public void AddTest()
+    {
+        // Arrange 用于声明测试可能需要的任何变量
+        var calculator = new Calculator();
 
-    // Act 用于调用需要测试的代码
-    var actual = calculator.Add(1, 1);
+        // Act 用于调用需要测试的代码
+        var actual = calculator.Add(1, 1);
 
-    // Assert 用于检查操作结果是否符合
-    Assert.AreEqual(2, actual);
-}
-```
+        // Assert 用于检查操作结果是否符合
+        Assert.AreEqual(2, actual);
+    }
+    ```
 ### [练习 - 编写测试](https://learn.microsoft.com/zh-cn/training/modules/visual-studio-test-tools/2-create-test)
 - 设置要测试的产品代码
-    - 新建一个名为 [LearnMyCalculatorApp](LearnMyCalculatorApp) 的 .NET 控制台项目
+    - 新建一个名为 [LearnMyCalculatorApp](LearnMyCalculatorApp) 的 .NET 控制台应用
     - @see [Calculator.cs](LearnMyCalculatorApp/Calculator.cs)
 - 创建测试项目：新建一个名为 [LearnMyCalculatorApp.Tests](LearnMyCalculatorApp.Tests) 的 MSTest 单元测试项目
 - 添加引用：`Select LearnMyCalculatorApp.Tests → Right-Click → Add → Reference… → LearnMyCalculatorApp`
