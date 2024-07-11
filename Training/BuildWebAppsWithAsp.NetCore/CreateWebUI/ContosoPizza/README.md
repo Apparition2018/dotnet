@@ -11,7 +11,7 @@
     - 希望减少部分视图（partial views）的重复
 ### [练习 - 自定义项目](https://learn.microsoft.com/zh-cn/training/modules/create-razor-pages-aspnet-core/3-exercise-customize-project)
 - 克隆项目 [mslearn-create-razor-pages-aspnet-core](https://github.com/MicrosoftDocs/mslearn-create-razor-pages-aspnet-core)
-- `dotnet new webapp` 生成的项目结构：
+- Razor Pages 项目结构（`dotnet new webapp` 命令生成的项目结构）
     - Pages/：Razor Pages 及其支持文件。每个 Razor 页面都有一个 .cshtml 文件和一个 .cshtml.cs PageModel 类文件
         - Pages 目录结构和路由请求
 
@@ -32,7 +32,7 @@
       | Pages/Shared/_Layout.cshtml                   | _ViewStart.cshtml文件指定的布局。跨多个页面实现通用布局元素 |
       | Pages/Shared/_ValidationScriptsPartial.cshtml | 为所有页面提供验证功能                            |
     - wwwroot/：静态资产文件
-    - ContosoPizza.csproj：项目配置元数据
+    - <project_name>.csproj：项目配置元数据
     - Program.cs：充当应用的入口点，并配置应用行为
 - 自定义登录页面
     - [Index.cshtml](Pages/Index.cshtml)，将 C# 代码块的代码替换为

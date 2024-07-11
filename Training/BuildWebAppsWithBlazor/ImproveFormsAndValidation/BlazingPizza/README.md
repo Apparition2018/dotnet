@@ -116,7 +116,7 @@
     - OnValidSubmit 和 OnInvalidSubmit
 ### 练习 - 将服务器端和客户端数据验证添加到地址表单
 - 向 Blazor 模型添加数据注释
-    - @See [Address.cs](Model/Address.cs)
+    - @see [Address.cs](Model/Address.cs)
     - @see [Checkout.razor](Pages/Checkout.razor)：删除 `CheckSubmission()`
         ```razor
             <EditForm Model=Order.DeliveryAddress OnValidSubmit=PlaceOrder>
@@ -127,7 +127,7 @@
 - 改进 EditFrom 错误消息
     - @see [Checkout.razor](Pages/Checkout.razor)：删除 `<ValidationSummary/>`
     - @see [AddressEditor.razor](Shared/AddressEditor.razor) 每个 `<ValidationMessage>`
-    - 自定义错误消息：@See [Address.cs](Model/Address.cs) ErrorMessage
+    - 自定义错误消息：@see [Address.cs](Model/Address.cs) ErrorMessage
 - 还原整个错误信息并禁用“提交”按钮
     - @see [Checkout.razor](Pages/Checkout.razor)：`OnInvalidSubmit=ShowError`、`ShowError()`
         ```razor
