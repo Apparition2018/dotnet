@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Training", "Training", "{27
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tutorial", "Tutorial", "{CEC56004-9FA5-4FBB-AAED-A04D3DF39A71}"
 	ProjectSection(SolutionItems) = preProject
-		Tutorial\Tutorial.md = Tutorial\Tutorial.md
+		Tutorial\.NET.md = Tutorial\.NET.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}"

@@ -34,9 +34,7 @@ public class MemberAccessOperatorsAndExpressions
     [Test]
     public void IndexFromEndOperator()
     {
-        string word = "Twenty";
-        Index index = ^2;
-        Assert.That(word[index], Is.EqualTo('t'));
+        Assert.That("Twenty"[^2], Is.EqualTo('t'));
     }
 
     /// <summary>

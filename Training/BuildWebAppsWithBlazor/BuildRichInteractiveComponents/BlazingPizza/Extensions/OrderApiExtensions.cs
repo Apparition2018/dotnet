@@ -11,7 +11,7 @@ public static class OrderApiExtensions
         });
 
         var orders = builder.MapGroup("orders");
-        orders.MapGet("", static async (PizzaStoreContext db) =>
+        orders.MapGet(string.Empty, static async (PizzaStoreContext db) =>
         {
             var orders = await db.Orders
                 .Include(o => o.DeliveryAddress)
@@ -23,7 +23,7 @@ public static class OrderApiExtensions
             return TypedResults.Ok(orders.Select(o => OrderWithStatus.FromOrder(o)).ToList());
         });
 
-        orders.MapPost("", static async (PizzaStoreContext db, Order order) =>
+        orders.MapPost(string.Empty, static async (PizzaStoreContext db, Order order) =>
         {
             order.CreatedTime = DateTime.Now;
 

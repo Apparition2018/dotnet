@@ -32,7 +32,7 @@ public class CovarianceAndContravariance
 
     static string GetString()
     {
-        return "";
+        return string.Empty;
     }
 
     static void SetString(string str)

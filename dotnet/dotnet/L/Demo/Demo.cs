@@ -23,7 +23,11 @@ public class Demo
     protected static readonly string DesktopDemoFilePath = Path.Combine(Desktop, DemoFileName);
 
     protected static readonly List<Person> PersonList =
-        [new Person { Id = 1, Name = "张三" }, new Person { Id = 2, Name = "李四" }, new Person { Id = 3, Name = "王五" }];
+    [
+        new Person { Id = 1, Name = "张三", Age = 18 },
+        new Person { Id = 2, Name = "李四", Age = 20 },
+        new Person { Id = 3, Name = "王五", Age = 18 }
+    ];
 
     protected static readonly JsonSerializerOptions SerializerOptions = new()
     {

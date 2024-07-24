@@ -8,6 +8,8 @@ public class StringTests
     [Test]
     public void Test()
     {
+        Assert.That(string.Empty, Is.EqualTo(""));
+
         // unsafe char[]        ToCharArray()
         Assert.That("123".ToCharArray().Length, Is.EqualTo(3));
 
@@ -34,7 +36,7 @@ public class StringTests
         // string               Remove(int startIndex, int count)
         Assert.That("123".Remove(1, 1), Is.EqualTo("13"));
         //  string              Insert(int startIndex, [NotNull] string value)
-        Assert.That("123".Insert(1, ""), Is.EqualTo("1023"));
+        Assert.That("123".Insert(0, "0"), Is.EqualTo("0123"));
         // unsafe string        Replace(string oldValue, string? newValue)
         Assert.That("123".Replace("2", string.Empty), Is.EqualTo("13"));
 

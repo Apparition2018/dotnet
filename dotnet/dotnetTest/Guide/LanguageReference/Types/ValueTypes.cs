@@ -61,7 +61,7 @@ public class ValueTypes
             Console.WriteLine($"double (Double)  : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
             Console.WriteLine($"decimal (Decimal): {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)");
 
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.WriteLine($"bool (Boolean)   : {bool.FalseString} and {bool.TrueString}");
             Console.WriteLine($"char (Char)      : {char.MinValue} to {char.MaxValue}");
         }

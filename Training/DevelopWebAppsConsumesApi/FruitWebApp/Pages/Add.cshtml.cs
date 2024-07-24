@@ -33,7 +33,7 @@ namespace FruitWebApp.Pages
 
             // Execute the POST request and store the response. The parameters in PostAsync
             // direct the POST to use the base address and passes the serialized data to the API
-            using HttpResponseMessage response = await httpClient.PostAsync("", jsonContent);
+            using HttpResponseMessage response = await httpClient.PostAsync(string.Empty, jsonContent);
 
             // Return to the home (Index) page and add a temporary success/failure
             // message to the page.

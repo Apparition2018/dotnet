@@ -31,7 +31,7 @@ namespace FruitWebApp.Pages
 
             // Perform the GET request and store the response. The empty parameter
             // in GetAsync doesn't modify the base address set in the client factory
-            using HttpResponseMessage response = await httpClient.GetAsync("");
+            using HttpResponseMessage response = await httpClient.GetAsync(string.Empty);
 
             // If the request is successful deserialize the results into the data model
             if (response.IsSuccessStatusCode)

@@ -1,6 +1,6 @@
 ## [在 ASP.NET Core Razor Pages 中呈现 API 响应](https://learn.microsoft.com/zh-cn/training/modules/render-api-responses-razor-pages/)
 ### Razor Pages 项目结构
-- @see [ContosoPizza/README.md Razor#Razor Pages 项目结构](../../BuildWebAppsWithAsp.NetCore/CreateWebUI/ContosoPizza/README.md#练习---自定义项目)
+- @see [ContosoPizza/README.md Razor#Razor Pages 项目结构](../BuildWebAppsWithAsp.NetCore/CreateWebUI/ContosoPizza/README.md#练习---自定义项目)
 ### [发现 Razor Pages 语法](https://learn.microsoft.com/zh-cn/training/modules/render-api-responses-razor-pages/3-discover-razor-syntax)
 - [Razor 语法](https://learn.microsoft.com/zh-cn/aspnet/core/mvc/views/razor#razor-syntax)
 ```cshtml
@@ -13,7 +13,7 @@
 <!- 包含电子邮件地址的 HTML 属性和内容不将 @ 符号视为转换字符 ->
 <a href="mailto:Support@contoso.com">Support@contoso.com</a>
 ```
-- @see [BlazorApp/README.md#数据绑定和事件](../../BuildWebAppsWithBlazor/BlazorApp/README.md#数据绑定和事件)
+- @see [BlazorApp/README.md#数据绑定和事件](../BuildWebAppsWithBlazor/BlazorApp/README.md#数据绑定和事件)
 ### [练习 - 在 Razor Pages 中呈现 API 响应](https://microsoftlearning.github.io/APL-2002-develop-aspnet-core-consumes-api/Instructions/Labs/03-render-api-results-razor-pages.html)
 - 分别启动 [FruitAPI](FruitAPI) 和 [FruitWebApp](FruitWebApp) 项目
 - 实现代码以在索引页面上呈现数据：@see [Index.cshtml](FruitWebApp/Pages/Index.cshtml) render API data code block

@@ -8,8 +8,9 @@ public class CollectionsGenericTests
     [Test]
     public void List()
     {
-        var list = new List<int> { 1, 2 };
+        var list = new List<int> { 0, 1, 2, 3 };
         list.RemoveAt(1);
+        Assert.That(list.IndexOf(2), Is.EqualTo(1));
         list.ForEach(Console.WriteLine);
     }
 
