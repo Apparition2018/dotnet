@@ -12,8 +12,8 @@ public class AnonymousTypes : Demo
     public void LinQ()
     {
         var personQuery =
-            from person in PersonList
-            select new { person.Id, person.Name };
+            from person in Persons
+            select new { Id = person.ID, person.Name };
 
         personQuery.ToList().ForEach(Console.WriteLine);
     }

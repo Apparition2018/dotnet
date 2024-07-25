@@ -3,7 +3,8 @@ using dotnet.L.Demo;
 namespace dotnetTest.API.System.LINQ;
 
 /// <summary>
-/// <a href="https://localhost:6291/101-linq-samples/index.md#projection-operators-the-select-keyword">LINQ - Projection Operators</a>
+/// <a href="https://localhost:6291/101-linq-samples/index.md#projection-operators-the-select-keyword">LINQ - Projection Operators</a><br/>
+/// <a href="https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/projection-operations">投影运算</a>
 /// </summary>
 /// <remarks>
 /// select 子句投影输出序列。它将每个输入元素转换为输出序列的形状
@@ -53,20 +54,41 @@ public class ProjectionOperators : Demo
     }
 
     /// <summary>
-    /// <a href="https://localhost:6291/101-linq-samples/docs/projections-4.md#select-from-multiple-input-sequences">Select 多个输入序列</a>
+    /// <a href="https://localhost:6291/101-linq-samples/docs/projections-4.md#select-from-multiple-input-sequences">Select 多个输入序列</a><br/>
     /// <a href="https://localhost:6291/101-linq-samples/docs/projections-4.md#select-from-related-input-sequences">Select 相关输入序列</a>
     /// </summary>
     [Test]
     public void SelectFromMultipleAndRelatedInputSequences()
     {
-        var personList =
-            from p in PersonList where p.Id != 0
-            from infos in p.OtherInfo where infos.Length == 0
-            select (p.Id, p.Name);
+        var studentList =
+            from student in Students
+            from score in student.Scores where score > 80
+            select (student.ID, student.FirstName, score);
 
-        foreach (var person in personList)
+        foreach (var student in studentList)
         {
-            Console.WriteLine(person);
+            Console.WriteLine(student);
+        }
+    }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/projection-operations#selectmany">SelectMany</a><br/>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/projection-operations#select-versus-selectmany">Select 与 SelectMany</a>
+    /// </summary>
+    [Test]
+    public void SelectMany()
+    {
+        List<string> phrases = ["an apple a day", "the quick brown fox"];
+
+        var query = from phrase in phrases
+            from word in phrase.Split(' ')
+            select word;
+
+        query = phrases.SelectMany(p => p.Split(' '));
+
+        foreach (string s in query)
+        {
+            Console.WriteLine(s);
         }
     }
 }

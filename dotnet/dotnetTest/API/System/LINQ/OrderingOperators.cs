@@ -1,29 +1,35 @@
+using dotnet.L.Demo;
+
 namespace dotnetTest.API.System.LINQ;
 
 /// <summary>
-/// <a href="https://localhost:6291/101-linq-samples/index.md#ordering-operators">LINQ - Ordering Operators</a>
+/// <a href="https://localhost:6291/101-linq-samples/index.md#ordering-operators">LINQ - Ordering Operators</a><br/>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/sorting-data">对数据排序</a>
 /// </summary>
 /// <remarks>
 /// orderby 子句对输出序列进行排序。您可以控制用于排序的属性，并指定升序或降序
 /// </remarks>
-public class OrderingOperators
+public class OrderingOperators : Demo
 {
-    private static readonly string[] Digits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-
     /// <summary>
-    /// <a href="https://localhost:6291/101-linq-samples/docs/orderings-3.md#multiple-ordering-descending">多字段降序排序</a>
+    /// <a href="https://localhost:6291/101-linq-samples/docs/orderings-3.md#linq-ordering-operators">按多个属性排序</a><br/>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/sorting-data#secondary-ascending-sort">次要升序排序</a>
     /// </summary>
     [Test]
-    public void MultipleOrderingDescending()
+    public void OrderbyMultipleProperties()
     {
-        var sortedDigits = from digit in Digits
-            orderby digit.Length descending, digit
-            select digit;
+        var query = from teacher in Teachers
+            orderby teacher.City, teacher.Last
+            select (teacher.Last, teacher.City);
 
-        Console.WriteLine("Sorted digits:");
-        foreach (var d in sortedDigits)
+        query = Teachers
+            .OrderBy(teacher => teacher.City)
+            .ThenBy(teacher => teacher.Last)
+            .Select(teacher => (teacher.Last, teacher.City));
+
+        foreach ((string last, string city) in query)
         {
-            Console.WriteLine(d);
+            Console.WriteLine($"City: {city}, Last Name: {last}");
         }
     }
 
@@ -33,6 +39,8 @@ public class OrderingOperators
     [Test]
     public void ReverseTheSequence()
     {
+        string[] Digits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+
         var reversedIDigits = (
                 from digit in Digits
                 where digit[1] == 'i'

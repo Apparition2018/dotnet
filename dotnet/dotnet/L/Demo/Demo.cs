@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using dotnetTest.API.System.LINQ.Model;
 
 namespace dotnet.L.Demo;
 
@@ -22,11 +23,31 @@ public class Demo
     protected static readonly string DemoFilePath = Path.Combine(DemoDirPath, DemoFileName);
     protected static readonly string DesktopDemoFilePath = Path.Combine(Desktop, DemoFileName);
 
-    protected static readonly List<Person> PersonList =
+    protected static readonly List<Person> Persons =
     [
-        new Person { Id = 1, Name = "张三", Age = 18 },
-        new Person { Id = 2, Name = "李四", Age = 20 },
-        new Person { Id = 3, Name = "王五", Age = 18 }
+        new Person { ID = 1, Name = "张三", Age = 18 },
+        new Person { ID = 2, Name = "李四", Age = 20 },
+        new Person { ID = 3, Name = "王五", Age = 18 }
+    ];
+
+    protected static readonly List<Student> Students =
+    [
+        new Student { ID = 1, FirstName = "Michael", LastName = "Johnson", Year = GradeLevel.FirstYear, DepartmentID = 1, Scores = [71, 86, 77, 97] },
+        new Student { ID = 2, FirstName = "Elizabeth", LastName = "Smith", Year = GradeLevel.SecondYear, DepartmentID = 2, Scores = [75, 73, 78, 83] },
+        new Student { ID = 3, FirstName = "William", LastName = "Davis", Year = GradeLevel.FirstYear, DepartmentID = 1, Scores = [84, 82, 96, 80] },
+    ];
+
+    protected static readonly List<Teacher> Teachers =
+    [
+        new Teacher { ID = 1, First = "Jessica", Last = "Thompson", City = "New York" },
+        new Teacher { ID = 2, First = "Christopher", Last = "Brown", City = "Los Angeles" },
+        new Teacher { ID = 3, First = "Michael", Last = "Johnson", City = "Chicago"}
+    ];
+
+    protected static readonly List<Department> Departments =
+    [
+        new Department { ID = 1, Name = "Apple", TeacherID = 1 },
+        new Department { ID = 2, Name = "Banana", TeacherID = 2 },
     ];
 
     protected static readonly JsonSerializerOptions SerializerOptions = new()

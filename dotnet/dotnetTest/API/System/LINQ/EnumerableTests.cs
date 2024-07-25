@@ -20,6 +20,6 @@ public class EnumerableTests : Demo
 
         // static TSource                   First<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         // 返回序列中满足指定条件的第一个元素
-        Assert.That(PersonList.First(x => x.Id == 1).Name, Is.EqualTo("张三"));
+        Assert.That(Persons.First(x => x.ID == 1).Name, Is.EqualTo("张三"));
     }
 }

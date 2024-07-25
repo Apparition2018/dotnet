@@ -42,7 +42,8 @@ public class SequenceOperations
     }
 
     /// <summary>
-    /// <a href="https://localhost:6291/101-linq-samples/docs/sequence-operations.md#combine-sequences-with-zip">使用 zip 组合序列</a>
+    /// <a href="https://localhost:6291/101-linq-samples/docs/sequence-operations.md#combine-sequences-with-zip">使用 zip 组合序列</a><br/>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/projection-operations#zip">Zip</a>
     /// </summary>
     [Test]
     public void CombineSequencesWithZip()

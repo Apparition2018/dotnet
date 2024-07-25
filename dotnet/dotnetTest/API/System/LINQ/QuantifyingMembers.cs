@@ -3,7 +3,8 @@ using dotnet.L.Demo;
 namespace dotnetTest.API.System.LINQ;
 
 /// <summary>
-/// <a href="https://localhost:6291/101-linq-samples/index.md#quantifying-members">LINQ - Quantifiers</a>
+/// <a href="https://localhost:6291/101-linq-samples/index.md#quantifying-members">LINQ - Quantifiers</a><br/>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/quantifier-operations">限定符运算</a>
 /// </summary>
 /// <remarks>
 /// Any 和 All 方法确定所有元素或任何元素匹配条件
@@ -29,14 +30,13 @@ public class QuantifyingMembers : Demo
     [Test]
     public void GroupByAnyElementsMatchingCondition()
     {
-        var personList = from p in PersonList
-            group p by p.Name into g
-            where g.Any(p => p.Age > 0)
-            select g;
+        var studentList = from student in Students
+            where student.Scores.Any(score => score > 90)
+            select $"{student.FirstName} {student.LastName}: {string.Join(", ", student.Scores.Select(s => s.ToString()))}";
 
-        foreach (var person in personList)
+        foreach (string name in studentList)
         {
-            Console.WriteLine(person);
+            Console.WriteLine($"{name}");
         }
     }
 
@@ -59,14 +59,29 @@ public class QuantifyingMembers : Demo
     [Test]
     public void GroupByAllElementsMatchingCondition()
     {
-        var personList = from p in PersonList
-            group p by p.Name into g
-            where g.All(p => p.Age > 0)
-            select g;
+        var studentList = from student in Students
+            where student.Scores.All(score => score > 70)
+            select $"{student.FirstName} {student.LastName}: {string.Join(", ", student.Scores.Select(s => s.ToString()))}";
 
-        foreach (var person in personList)
+        foreach (string name in studentList)
         {
-            Console.WriteLine(person);
+            Console.WriteLine($"{name}");
+        }
+    }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/quantifier-operations#contains">包含</a>
+    /// </summary>
+    [Test]
+    public void Contains()
+    {
+        var studentList = from student in Students
+            where student.Scores.Contains(77)
+            select $"{student.FirstName} {student.LastName}: {string.Join(", ", student.Scores.Select(s => s.ToString()))}";
+
+        foreach (string name in studentList)
+        {
+            Console.WriteLine($"{name}");
         }
     }
 }

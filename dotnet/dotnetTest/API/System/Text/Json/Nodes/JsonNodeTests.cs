@@ -14,6 +14,6 @@ public class JsonNodeTests : Demo
     {
         // static JsonNode?     SerializeToNode<TValue>(TValue value, JsonSerializerOptions? options = null)
         // 将提供的值转换为 JsonNode
-        JsonNode jsonNode = JsonSerializer.SerializeToNode(PersonList[0], SerializerOptions)!;
+        JsonNode jsonNode = JsonSerializer.SerializeToNode(Persons[0], SerializerOptions)!;
     }
 }

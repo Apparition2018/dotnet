@@ -1,7 +1,8 @@
 namespace dotnetTest.API.System.LINQ;
 
 /// <summary>
-/// <a href="https://localhost:6291/101-linq-samples/index.md#conversion-operators">LINQ - Conversion Operators</a>
+/// <a href="https://localhost:6291/101-linq-samples/index.md#conversion-operators">LINQ - Conversion Operators</a><br/>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/converting-data-types">转换数据类型</a>
 /// </summary>
 /// <remarks>
 /// ToArray、ToList、ToDictionary 和 OfType 方法提供了将 LINQ 结果转换为集合的方法

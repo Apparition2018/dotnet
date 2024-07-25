@@ -1,7 +1,8 @@
 namespace dotnetTest.API.System.LINQ;
 
 /// <summary>
-/// <a href="https://localhost:6291/101-linq-samples/index.md#partition-operators">LINQ - Partition Operators</a>
+/// <a href="https://localhost:6291/101-linq-samples/index.md#partition-operators">LINQ - Partition Operators</a><br/>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/standard-query-operators/partitioning-data">将数据分区</a>
 /// </summary>
 /// <remarks>
 /// Take、Skip、TakeWhile 和 SkipWhile 方法对输出序列进行分区。您可以使用这些来限制传输到输出序列的输入序列部分
@@ -11,7 +12,7 @@ public class PartitionOperators
     private static readonly int[] Numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     /// <summary>
-    /// <a href="https://localhost:6291/101-linq-samples/docs/partitions.md#take-elements">Take 获取前几个元素</a>
+    /// <a href="https://localhost:6291/101-linq-samples/docs/partitions.md#take-elements">Take 获取前几个元素</a><br/>
     /// <a href="https://localhost:6291/101-linq-samples/docs/partitions.md#skip-elements">Skip 获取前几个元素以外的所有元素</a>
     /// </summary>
     [Test]
@@ -33,7 +34,7 @@ public class PartitionOperators
     }
 
     /// <summary>
-    /// <a href="https://localhost:6291/101-linq-samples/docs/partitions-2.md#takewhile-syntax">TakeWhile 获取前几个元素</a>
+    /// <a href="https://localhost:6291/101-linq-samples/docs/partitions-2.md#takewhile-syntax">TakeWhile 获取前几个元素</a><br/>
     /// <a href="https://localhost:6291/101-linq-samples/docs/partitions-2.md#skipwhile-syntax">SkipWhile 获取前几个元素以外的所有元素</a>
     /// </summary>
     [Test]
@@ -51,6 +52,21 @@ public class PartitionOperators
         foreach (var n in laterNumbers)
         {
             Console.WriteLine(n);
+        }
+    }
+
+    /// <summary>拆分序列</summary>
+    [Test]
+    public void Chunk()
+    {
+        foreach (int[] chunk in Numbers.Chunk(3))
+        {
+            foreach (int item in chunk)
+            {
+                Console.WriteLine($"    {item}");
+            }
+
+            Console.WriteLine();
         }
     }
 }

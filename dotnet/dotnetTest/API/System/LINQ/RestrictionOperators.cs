@@ -16,8 +16,8 @@ public class RestrictionOperators : Demo
     [Test]
     public void FilterElementsOnProperty()
     {
-        var personList = from person in PersonList
-            where person.Id > 1
+        var personList = from person in Persons
+            where person.ID > 1
             select person;
 
         foreach (var person in personList)

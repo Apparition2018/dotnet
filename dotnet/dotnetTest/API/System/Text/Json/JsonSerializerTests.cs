@@ -17,7 +17,7 @@ public class JsonSerializerTests : Demo
     {
         // static string        Serialize<TValue>(TValue value, JsonSerializerOptions? options = null)
         // 将泛型类型参数指定的类型的值转换为 JSON 字符串
-        _json = JsonSerializer.Serialize(PersonList[0], SerializerOptions);
+        _json = JsonSerializer.Serialize(Persons[0], SerializerOptions);
         // static TValue?       Deserialize<TValue>([StringSyntax("Json")] string json, JsonSerializerOptions? options = null)
         // 将表示单个 JSON 值的文本分析为泛型类型参数指定的类型的实例
         JsonSerializer.Deserialize<Person>(_json);

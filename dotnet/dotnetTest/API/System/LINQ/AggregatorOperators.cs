@@ -29,7 +29,7 @@ public class AggregatorOperators : Demo
     [Test]
     public void CountAllElementsThatAreMembersOfGroup()
     {
-        var ageCounts = from p in PersonList
+        var ageCounts = from p in Persons
             group p by p.Age into g
             select (g.Key, g.Count());
 
@@ -58,7 +58,7 @@ public class AggregatorOperators : Demo
     [Test]
     public void SumAllElementsThatAreMembersOfGroup()
     {
-        var ages = from p in PersonList
+        var ages = from p in Persons
             group p by p.Age into g
             select (g.Key, g.Sum(p => p.Age));
 
@@ -74,7 +74,7 @@ public class AggregatorOperators : Demo
     [Test]
     public void FindAllElementsMatchingTheMinimum()
     {
-        var ages = from p in PersonList
+        var ages = from p in Persons
             group p by p.Age into g
             let minNameLen = g.Min(p => p.Name.Length)
             select (g.Key, minNamePersonList: g.Where(p => p.Name.Length == minNameLen));

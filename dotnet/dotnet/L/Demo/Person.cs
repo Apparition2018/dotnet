@@ -7,7 +7,7 @@ namespace dotnet.L.Demo;
 [Serializable]
 public class Person : ICloneable
 {
-    public int Id
+    public int ID
         // 自动实现属性 (Auto-Implemented Properties)
         // https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties
     {
@@ -31,7 +31,7 @@ public class Person : ICloneable
     public override string ToString()
     {
         return
-            $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Age)}: {Age}, {nameof(Gender)}: {Gender}, {nameof(OtherInfo)}: {OtherInfo}, {nameof(Home)}: {Home}";
+            $"{nameof(ID)}: {ID}, {nameof(Name)}: {Name}, {nameof(Age)}: {Age}, {nameof(Gender)}: {Gender}, {nameof(OtherInfo)}: {OtherInfo}, {nameof(Home)}: {Home}";
     }
 }
 
