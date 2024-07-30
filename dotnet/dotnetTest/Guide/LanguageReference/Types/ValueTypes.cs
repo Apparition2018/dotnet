@@ -142,7 +142,7 @@ public class ValueTypes
     /// </list>
     /// </para>
     /// <para>
-    /// readonly 结构：
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/struct#readonly-struct">readonly struct</a>：
     /// <list type="bullet">
     /// <item>任何字段声明都必须具有 readonly 修饰符（除构造函数外的其他实例成员是隐式 readonly）</item>
     /// <item>任何属性（包括自动实现的属性）都必须是只读的或仅 init</item>
@@ -329,14 +329,14 @@ public class ValueTypes
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types">可为 null 的值类型</a>
     /// <list type="bullet">
-    /// <item>可以为 null 的值类型 T? 表示其基础值类型T的所有值和一个 null 值。例如，将以下三个值中的任何一个分配给 bool?：true、false、null</item>
-    /// <item>任何可为空的值类型都是泛型 System.Nullable 结构的实例</item>
+    /// <item>可为 null 的值类型 T? 表示其基础值类型T的所有值和一个 null 值。例如，将以下三个值中的任何一个分配给 bool?：true、false、null</item>
+    /// <item>任何可为 null 的值类型都是泛型 System.Nullable 结构的实例</item>
     /// </list>
     /// </summary>
     class NullableValueTypes
     {
         /// <summary>
-        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types#examination-of-an-instance-of-a-nullable-value-type">检查可为空值类型的实例</a>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types#examination-of-an-instance-of-a-nullable-value-type">检查可为 null 的值类型的实例</a>
         /// </summary>
         [Test]
         public void Examination()
@@ -354,7 +354,7 @@ public class ValueTypes
         }
 
         /// <summary>
-        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types#conversion-from-a-nullable-value-type-to-an-underlying-type">可为空的值类型 → 基础类型</a>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types#conversion-from-a-nullable-value-type-to-an-underlying-type">可为 null 的值类型 转换为 基础类型</a>
         /// </summary>
         /// <seealso cref="NullOperators.NullCoalescingOperators"/>
         [Test]
@@ -395,7 +395,7 @@ public class ValueTypes
 
 
         /// <summary>
-        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types#how-to-identify-a-nullable-value-type">识别可为空的值类型</a>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types#how-to-identify-a-nullable-value-type">识别可为 null 的值类型</a>
         /// </summary>
         [Test]
         public void IdentifyANullableValueType()
@@ -405,9 +405,9 @@ public class ValueTypes
 
             int? a = 14;
             int b = 17;
-            // 不要使用 Object.GetType 方法 判断实例是否为可为空的值类型
+            // 不要使用 Object.GetType 方法 判断实例是否为可为 null 的值类型
             Assert.That(a.GetType().FullName, Is.EqualTo("System.Int32"));
-            // 无法使用 is 运算符 判断实例是否为可为空的值类型
+            // 无法使用 is 运算符 判断实例是否为可为 null 的值类型
             Assert.That(a is int, Is.EqualTo(true));
             Assert.That(b is int?, Is.EqualTo(true));
         }

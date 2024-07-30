@@ -7,7 +7,7 @@ public class NullOperators
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/null-coalescing-operator">null 合并运算符</a>
     /// <list type="bullet">
     /// <item>??= 左操作数必须是变量、属性、索引器</item>
-    /// <item>?? 和 ??= 左操作数的类型必须是可为空的值类型</item>
+    /// <item>?? 和 ??= 左操作数的类型必须是可为 null 的值类型</item>
     /// </list>
     /// </summary>
     class NullCoalescingOperators

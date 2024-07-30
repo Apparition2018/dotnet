@@ -268,11 +268,14 @@ public class ReferenceTypes
     /// <para>
     /// 设置可为 null 的上下文：
     /// <list type="number">
-    /// <item>项目级别：<c>&lt;Nullable>enable&gt;/Nullable></c></item>
+    /// <item>项目级别：<c>&lt;Nullable>enable&lt;/Nullable></c></item>
     /// <item>单个源文件：#nullable enable</item>
     /// </list>
     /// </para>
     /// </summary>
+    /// <remarks>
+    /// <a href="https://learn.microsoft.com/zh-cn/ef/core/miscellaneous/nullable-reference-types">使用可为 null 引用类型</a>
+    /// </remarks>
     class NullableReferenceTypes;
 
     /// <summary>

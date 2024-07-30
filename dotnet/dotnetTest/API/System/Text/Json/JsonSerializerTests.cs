@@ -7,6 +7,9 @@ namespace dotnetTest.API.System.Text.Json;
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.text.json.jsonserializer">JsonSerializer</a>
 /// </summary>
+/// <remarks>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/serialization/">.NET 中的序列化</a>
+/// </remarks>
 public class JsonSerializerTests : Demo
 {
     private string? _json;

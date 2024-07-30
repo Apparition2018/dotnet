@@ -50,7 +50,12 @@ public class MemberAccessOperatorsAndExpressions
     public void RangeOperator()
     {
         int[] numbers = [0, 10, 20, 30, 40, 50];
-        int[] subset = numbers[1..^1];
-        Assert.That(string.Join(" ", subset), Is.EqualTo("10 20 30 40"));
+        // 表达式 ^end 属于 System.Index 类型
+        Index index = ^1;
+        // 表达式 a..b 属于 System.Range 类型
+        Range range = 1..index;
+        Assert.That(string.Join(" ", numbers[range]), Is.EqualTo("10 20 30 40"));
+        Assert.That(string.Join(" ", numbers[..^1]), Is.EqualTo("0 10 20 30 40"));
+        Assert.That(string.Join(" ", numbers[1..]), Is.EqualTo("10 20 30 40 50"));
     }
 }

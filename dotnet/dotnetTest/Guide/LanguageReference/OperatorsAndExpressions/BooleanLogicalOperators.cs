@@ -66,7 +66,7 @@ public class BooleanLogicalOperators
     }
 
     /// <summary>
-    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/boolean-logical-operators#nullable-boolean-logical-operators">可以为 null 的布尔逻辑运算符</a><br/>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/boolean-logical-operators#nullable-boolean-logical-operators">可为 null 的布尔逻辑运算符</a><br/>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/bool#three-valued-boolean-logic">三值布尔逻辑</a>
     /// </summary>
     [Test]
