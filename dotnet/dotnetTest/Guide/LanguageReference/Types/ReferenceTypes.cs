@@ -28,10 +28,10 @@ public class ReferenceTypes
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type">字符串类型</a>
         /// </summary>
-        /// <seealso cref="MemberAccessOperatorsAndExpressions.RangeOperator">[] 运算符访问字符</seealso>
         /// <remarks>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/reference-types#utf-8-string-literals">UTF-8 字符串字面量</a>
         /// </remarks>
+        /// <seealso cref="MemberAccessOperatorsAndExpressions.RangeOperator">[] 运算符访问字符</seealso>
         class StringType
         {
             /// <summary>相等</summary>

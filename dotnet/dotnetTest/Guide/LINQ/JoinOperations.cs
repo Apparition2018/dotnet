@@ -43,7 +43,7 @@ public class JoinOperations : Demo
                     (teacher, student) => $"{teacher.First} {teacher.Last}"
                 );
 
-            string result = "The following people are both teachers and students:\r\n";
+            string result = $"The following people are both teachers and students:{Environment.NewLine}";
             foreach (string name in query)
             {
                 result += $"{name}\r\n";

@@ -36,7 +36,7 @@ public class OperatorsAndExpressions
     }
 
     /// <summary>
-    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/type-testing-and-cast">类型</a> - 测试运算符 和 强制转换表达式
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/type-testing-and-cast">类型 - 测试运算符 和 强制转换表达式</a>
     /// </summary>
     class Type
     {
@@ -97,7 +97,19 @@ public class OperatorsAndExpressions
     }
 
     /// <summary>
-    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/default">默认值表达式</a>：生成类型的默认值
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/await">await 运算符</a> - 异步等待任务完成
+    /// <list type="bullet">
+    /// <item>暂停对其所属的 async 方法的求值，直到其操作数表示的异步操作完成</item>
+    /// <item>只能在 async 修改的方法、lambda 表达式或匿名方法中使用 await 运算符</item>
+    /// <item>在异步方法中，不能在同步函数的本地主体、lock 语句块内以及不安全的上下文中使用 await 运算符</item>
+    /// </list>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/await#asynchronous-streams-and-disposables">异步流和可释放对象</a>
+    /// </summary>
+    /// <seealso cref="Modifiers.Async"/>
+    class Await;
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/default">默认值表达式</a> - 生成类型的默认值
     /// <list type="number">
     /// <item>default 运算符</item>
     /// <item>default 文本</item>
