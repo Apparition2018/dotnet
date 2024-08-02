@@ -41,13 +41,22 @@ public class OperatorsAndExpressions
     class Type
     {
         /// <summary>
-        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/type-testing-and-cast#typeof-operator">typeof 运算符</a>
-        /// 用于获取某个类型的 System.Type 实例
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/type-testing-and-cast#as-operator">as 运算符</a>
+        /// <list type="bullet">
+        /// <item>将表达式结果显式转换为给定的引用或可以为 null 值的类型</item>
+        /// <item>如果无法进行转换，则返回 null</item>
+        /// <item>与强制转换表达式不同，as 运算符永远不会引发异常</item>
+        /// </list>
         /// </summary>
         [Test]
-        public void TypeofOperator()
+        public void AsOperator()
         {
-            Assert.That(typeof(int).ToString(), Is.EqualTo("System.Int32"));
+            IEnumerable<int> numbers = new List<int> {10, 20, 30};
+            IList<int> indexable = (numbers as IList<int>)!;
+            if (indexable != null)
+            {
+                Console.WriteLine(indexable[0] + indexable[^1]);
+            }
         }
 
         /// <summary>
@@ -93,6 +102,16 @@ public class OperatorsAndExpressions
                     Assert.That(a + b, Is.EqualTo(30));
                 }
             }
+        }
+
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/type-testing-and-cast#typeof-operator">typeof 运算符</a>
+        /// 用于获取某个类型的 System.Type 实例
+        /// </summary>
+        [Test]
+        public void TypeofOperator()
+        {
+            Assert.That(typeof(int).ToString(), Is.EqualTo("System.Int32"));
         }
     }
 

@@ -3,7 +3,7 @@ namespace dotnetTest.Guide.AsynchronousPrograming;
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/">使用 async 和 await 异步编程</a>
 /// </summary>
-public class AsynchronousPrograming
+public class AsynchronousProgramming
 {
     [Test]
     public async Task Test()

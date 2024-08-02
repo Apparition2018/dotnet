@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
 
-namespace dotnetTest.AdvancedProgramming.ParallelProgramming;
+namespace dotnetTest.AdvancedProgramming.ParallelProgramming.TaskParallelLibrary;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/parallel-programming/data-parallelism-task-parallel-library">数据并行</a>
@@ -124,6 +124,7 @@ public class DataParallelism
     public void SpeedUpSmallLoopBodies()
     {
         long totalSize = 0;
+        // 为委托主体提供一个顺序循环，以便每个分区仅调用一次委托，而不是每个迭代调用一次委托
         var rangePartitioner = Partitioner.Create(0, Files.Length);
         Parallel.ForEach(rangePartitioner,
             (range, _) =>

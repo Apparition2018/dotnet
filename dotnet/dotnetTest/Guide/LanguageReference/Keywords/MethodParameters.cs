@@ -15,7 +15,7 @@ public class MethodParameters
     /// <list type="number">
     /// <item>ref：在调用方法之前必须初始化参数。该方法可以将新值赋给参数。</item>
     /// <item>readonly ref：在调用方法之前必须初始化参数。该方法无法向参数赋新值。</item>
-    /// <item>out：该调用方法在调用方法之前不需要初始化参数。该方法必须向参数赋值。</item>
+    /// <item>out：在调用方法之前不需要初始化参数。该方法必须向参数赋值。</item>
     /// <item>in：在调用方法之前必须初始化参数。该方法无法向参数赋新值。编译器可能会创建一个临时变量来保存 in 参数的自变量副本。</item>
     /// </list>
     /// </para>
@@ -60,9 +60,9 @@ public class MethodParameters
 
         var product = new Product(1, "toy1");
         RefChangeByVal(product);
-        Assert.That(product.Id, Is.EqualTo(1));
+        Assert.That(product.ID, Is.EqualTo(1));
         RefChangeByRef(ref product);
-        Assert.That(product.Id, Is.EqualTo(2));
+        Assert.That(product.ID, Is.EqualTo(2));
     }
 
     /// <summary>
