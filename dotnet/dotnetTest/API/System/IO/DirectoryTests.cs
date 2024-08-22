@@ -34,7 +34,7 @@ public class DirectoryTests : Demo
 
         DividingLine();
 
-        //static IEnumerable<string>    EnumerateFiles(string path)
+        // static IEnumerable<string>   EnumerateFiles(string path)
         // 返回指定路径中完整文件名的可枚举集合
         IEnumerable<string> files = Directory.EnumerateFiles(DotnetPath);
         files.ToList().ForEach(Console.WriteLine);
