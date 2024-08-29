@@ -1,5 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{8E9CC5EA-3C1C-46BA-B326-DBA741082434}"
 	ProjectSection(SolutionItems) = preProject
 		DOC\.NET.md = DOC\.NET.md
@@ -31,29 +33,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{B7969B
 		dotnet\global.json = dotnet\global.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet", "dotnet\dotnet\dotnet.csproj", "{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet", "dotnet\dotnet\dotnet.csproj", "{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetTest", "dotnet\dotnetTest\dotnetTest.csproj", "{F6490A0F-6E1F-4229-AE9F-90C00E957E6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnetTest", "dotnet\dotnetTest\dotnetTest.csproj", "{F6490A0F-6E1F-4229-AE9F-90C00E957E6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NetCore101", ".NetCore101", "{BA1C1DF1-A393-4392-B4B6-DE3B0267025E}"
 	ProjectSection(SolutionItems) = preProject
 		Shows\.NetCore101\README.md = Shows\.NetCore101\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankyStuffLibrary", "Shows\.NetCore101\BankyStuffLibrary\BankyStuffLibrary.csproj", "{79458E5F-8E21-4535-9193-31FD1AA8CD1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankyStuffLibrary", "Shows\.NetCore101\BankyStuffLibrary\BankyStuffLibrary.csproj", "{79458E5F-8E21-4535-9193-31FD1AA8CD1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingTests", "Shows\.NetCore101\BankingTests\BankingTests.csproj", "{0E76D3CA-FD90-43DB-81CA-F2CD6B3F11B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingTests", "Shows\.NetCore101\BankingTests\BankingTests.csproj", "{0E76D3CA-FD90-43DB-81CA-F2CD6B3F11B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySuperBank", "Shows\.NetCore101\MySuperBank\MySuperBank.csproj", "{51BC2997-37CE-4654-9EB5-C405C6F5EDAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySuperBank", "Shows\.NetCore101\MySuperBank\MySuperBank.csproj", "{51BC2997-37CE-4654-9EB5-C405C6F5EDAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asp.NetCore101", "Asp.NetCore101", "{B0A81B8E-AF42-49F2-B7D0-815AD531A6F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoCrafts.WebSite", "Shows\Asp.NetCore101\ContosoCrafts.WebSite\ContosoCrafts.WebSite.csproj", "{88893A73-6B68-402A-AF23-0923F7AEADA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCrafts.WebSite", "Shows\Asp.NetCore101\ContosoCrafts.WebSite\ContosoCrafts.WebSite.csproj", "{88893A73-6B68-402A-AF23-0923F7AEADA5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildWebAppsWithAsp.NetCore", "BuildWebAppsWithAsp.NetCore", "{78D65DC2-89A6-4DDD-A7D2-00462F4257FC}"
 	ProjectSection(SolutionItems) = preProject
-		Training\BuildWebAppsWithAsp.NetCore\WebAccessibility.md = Training\BuildWebAppsWithAsp.NetCore\WebAccessibility.md
 		Training\BuildWebAppsWithAsp.NetCore\README.md = Training\BuildWebAppsWithAsp.NetCore\README.md
+		Training\BuildWebAppsWithAsp.NetCore\WebAccessibility.md = Training\BuildWebAppsWithAsp.NetCore\WebAccessibility.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebDevelopment", "WebDevelopment", "{1B47240A-209D-4FC6-ADED-F10DAFD90874}"
@@ -61,8 +63,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "simple-website", "simple-website", "{5E7DEB62-5FDB-4859-BF01-DAC2C242EE02}"
 	ProjectSection(SolutionItems) = preProject
 		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\app.js = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\app.js
-		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\main.css = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\main.css
 		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\index.html = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\index.html
+		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\main.css = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\main.css
 		Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\README.md = Training\BuildWebAppsWithAsp.NetCore\WebDevelopment\simple-website\README.md
 	EndProjectSection
 EndProject
@@ -72,66 +74,66 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildWebAppsWithBlazor", "B
 		Training\BuildWebAppsWithBlazor\README.md = Training\BuildWebAppsWithBlazor\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "Training\BuildWebAppsWithBlazor\BlazorApp\BlazorApp.csproj", "{694EF256-170A-422E-AFC7-2B6EA24BED1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "Training\BuildWebAppsWithBlazor\BlazorApp\BlazorApp.csproj", "{694EF256-170A-422E-AFC7-2B6EA24BED1D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateWebApi", "CreateWebApi", "{5508662E-BF9F-4372-AA18-A4640CB1FC79}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateWebUI", "CreateWebUI", "{1481348C-814F-47EE-A0AC-666D0D18567C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\BuildWebAppsWithAsp.NetCore\CreateWebApi\ContosoPizza\ContosoPizza.csproj", "{A3F0325C-4CBC-4822-8FFE-2BA2B2AC4AD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoPizza", "Training\BuildWebAppsWithAsp.NetCore\CreateWebApi\ContosoPizza\ContosoPizza.csproj", "{A3F0325C-4CBC-4822-8FFE-2BA2B2AC4AD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoPizza", "Training\BuildWebAppsWithAsp.NetCore\CreateWebUI\ContosoPizza\ContosoPizza.csproj", "{D9C32328-FBAD-4DE4-9D62-C92F507AC6E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoPizza", "Training\BuildWebAppsWithAsp.NetCore\CreateWebUI\ContosoPizza\ContosoPizza.csproj", "{D9C32328-FBAD-4DE4-9D62-C92F507AC6E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InteractWithData", "InteractWithData", "{9560759F-154A-47B1-A227-FC8B4744B4A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\InteractWithData\BlazingPizza\BlazingPizza.csproj", "{B1979021-A5B3-4CA7-A68A-553012056872}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\InteractWithData\BlazingPizza\BlazingPizza.csproj", "{B1979021-A5B3-4CA7-A68A-553012056872}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImproveNavigation", "ImproveNavigation", "{F749FE5B-4263-4DB9-999F-104CC4487AFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\ImproveNavigation\BlazingPizza\BlazingPizza.csproj", "{506D0D33-0CE7-4128-A764-BC635B96AF4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\ImproveNavigation\BlazingPizza\BlazingPizza.csproj", "{506D0D33-0CE7-4128-A764-BC635B96AF4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImproveFormsAndValidation", "ImproveFormsAndValidation", "{505DCE57-6297-42B1-A325-6CC8F08787C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\ImproveFormsAndValidation\BlazingPizza\BlazingPizza.csproj", "{B5858083-A489-412F-9F1A-5E4704CB0AE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\ImproveFormsAndValidation\BlazingPizza\BlazingPizza.csproj", "{B5858083-A489-412F-9F1A-5E4704CB0AE0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildRichInteractiveComponents", "BuildRichInteractiveComponents", "{20D69D4B-10D6-4843-BE11-E5CCAB88A668}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\BuildRichInteractiveComponents\BlazingPizza\BlazingPizza.csproj", "{C1B73D65-E822-4BF6-9288-9879212141BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingPizza", "Training\BuildWebAppsWithBlazor\BuildRichInteractiveComponents\BlazingPizza\BlazingPizza.csproj", "{C1B73D65-E822-4BF6-9288-9879212141BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildReusableComponents", "BuildReusableComponents", "{BC136FFC-CB09-444B-A209-B3D26B94D362}"
 	ProjectSection(SolutionItems) = preProject
 		Training\BuildWebAppsWithBlazor\BuildReusableComponents\README.md = Training\BuildWebAppsWithBlazor\BuildReusableComponents\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstClassLibrary", "Training\BuildWebAppsWithBlazor\BuildReusableComponents\FirstClassLibrary\FirstClassLibrary.csproj", "{F509D2BA-5885-4946-9962-23CA7957C76A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstClassLibrary", "Training\BuildWebAppsWithBlazor\BuildReusableComponents\FirstClassLibrary\FirstClassLibrary.csproj", "{F509D2BA-5885-4946-9962-23CA7957C76A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBlazorApp", "Training\BuildWebAppsWithBlazor\BuildReusableComponents\MyBlazorApp\MyBlazorApp.csproj", "{5FDC4882-E1D8-4065-BA61-6EB44BF64EF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlazorApp", "Training\BuildWebAppsWithBlazor\BuildReusableComponents\MyBlazorApp\MyBlazorApp.csproj", "{5FDC4882-E1D8-4065-BA61-6EB44BF64EF5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildConnectFourGame", "BuildConnectFourGame", "{A65283ED-4FDF-43ED-BA99-20AEA28D4814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectFour", "Training\BuildWebAppsWithBlazor\BuildConnectFourGame\ConnectFour\ConnectFour.csproj", "{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectFour", "Training\BuildWebAppsWithBlazor\BuildConnectFourGame\ConnectFour\ConnectFour.csproj", "{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateWebAppsWithMinimalApi", "CreateWebAppsWithMinimalApi", "{3DDA003A-ECA5-42BA-94E8-FF552C49DF83}"
 	ProjectSection(SolutionItems) = preProject
 		Training\CreateWebAppsWithMinimalApi\README.md = Training\CreateWebAppsWithMinimalApi\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaStore", "Training\CreateWebAppsWithMinimalApi\PizzaStore\PizzaStore.csproj", "{EA7B9BA8-513A-4A29-93A2-63B6250101D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaStore", "Training\CreateWebAppsWithMinimalApi\PizzaStore\PizzaStore.csproj", "{EA7B9BA8-513A-4A29-93A2-63B6250101D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishToAzure", "PublishToAzure", "{94A4E749-30B7-44A0-B8FE-7B8B95ECBBD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlpineSkiHouse", "Training\BuildWebAppsWithAsp.NetCore\PublishToAzure\AlpineSkiHouse\AlpineSkiHouse.csproj", "{80DB39BF-ED11-43D9-82CA-DE15C13B001D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlpineSkiHouse", "Training\BuildWebAppsWithAsp.NetCore\PublishToAzure\AlpineSkiHouse\AlpineSkiHouse.csproj", "{80DB39BF-ED11-43D9-82CA-DE15C13B001D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugConsoleApps", "DebugConsoleApps", "{6B46D3B8-EADD-4A55-B821-C10393C27D30}"
 	ProjectSection(SolutionItems) = preProject
-		Training\DebugConsoleApps\VSCodeDebuggingTools.md = Training\DebugConsoleApps\VSCodeDebuggingTools.md
 		Training\DebugConsoleApps\README.md = Training\DebugConsoleApps\README.md
+		Training\DebugConsoleApps\VSCodeDebuggingTools.md = Training\DebugConsoleApps\VSCodeDebuggingTools.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSForModernDevelopment", "VSForModernDevelopment", "{C8049FEC-1087-40CC-ACAF-264946C77838}"
 	ProjectSection(SolutionItems) = preProject
-		Training\VSForModernDevelopment\README.md = Training\VSForModernDevelopment\README.md
 		Training\VSForModernDevelopment\IntroTesting.md = Training\VSForModernDevelopment\IntroTesting.md
+		Training\VSForModernDevelopment\README.md = Training\VSForModernDevelopment\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateFullStackApp", "CreateFullStackApp", "{DA3961F5-D89D-425E-A194-AF9DCE54DE55}"
@@ -143,78 +145,34 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestingInVS", "TestingInVS"
 		Training\VSForModernDevelopment\TestingInVS\README.md = Training\VSForModernDevelopment\TestingInVS\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnMyCalculatorApp", "Training\VSForModernDevelopment\TestingInVS\LearnMyCalculatorApp\LearnMyCalculatorApp.csproj", "{4AE52DE2-53CC-45D9-8742-E7BAE086D397}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnMyCalculatorApp", "Training\VSForModernDevelopment\TestingInVS\LearnMyCalculatorApp\LearnMyCalculatorApp.csproj", "{4AE52DE2-53CC-45D9-8742-E7BAE086D397}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnMyCalculatorApp.Tests", "Training\VSForModernDevelopment\TestingInVS\LearnMyCalculatorApp.Tests\LearnMyCalculatorApp.Tests.csproj", "{A86A6B2D-0EC6-4CED-8800-91837FC578FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnMyCalculatorApp.Tests", "Training\VSForModernDevelopment\TestingInVS\LearnMyCalculatorApp.Tests\LearnMyCalculatorApp.Tests.csproj", "{A86A6B2D-0EC6-4CED-8800-91837FC578FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InteractivelyDebug", "InteractivelyDebug", "{A151FBDA-F44B-4BD2-A164-EB8BDAEA0C28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDebugging", "Training\VSForModernDevelopment\InteractivelyDebug\DotNetDebugging\DotNetDebugging.csproj", "{C0EE4968-24F4-4E4E-BA63-32EB2405D61C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetDebugging", "Training\VSForModernDevelopment\InteractivelyDebug\DotNetDebugging\DotNetDebugging.csproj", "{C0EE4968-24F4-4E4E-BA63-32EB2405D61C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevelopWebAppsConsumesApi", "DevelopWebAppsConsumesApi", "{93D7AE85-B4DE-4421-806C-2C27AA8B671E}"
 	ProjectSection(SolutionItems) = preProject
-		Training\DevelopWebAppsConsumesApi\README.md = Training\DevelopWebAppsConsumesApi\README.md
-		Training\DevelopWebAppsConsumesApi\InteractWithMinimalApi.md = Training\DevelopWebAppsConsumesApi\InteractWithMinimalApi.md
 		Training\DevelopWebAppsConsumesApi\HttpOperations.md = Training\DevelopWebAppsConsumesApi\HttpOperations.md
+		Training\DevelopWebAppsConsumesApi\InteractWithMinimalApi.md = Training\DevelopWebAppsConsumesApi\InteractWithMinimalApi.md
+		Training\DevelopWebAppsConsumesApi\README.md = Training\DevelopWebAppsConsumesApi\README.md
 		Training\DevelopWebAppsConsumesApi\RenderApiResponseInRazorPages.md = Training\DevelopWebAppsConsumesApi\RenderApiResponseInRazorPages.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitAPI", "Training\DevelopWebAppsConsumesApi\FruitAPI\FruitAPI.csproj", "{778E9EFF-7F19-4D8C-A04E-74A2E2111F04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FruitAPI", "Training\DevelopWebAppsConsumesApi\FruitAPI\FruitAPI.csproj", "{778E9EFF-7F19-4D8C-A04E-74A2E2111F04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitWebApp", "Training\DevelopWebAppsConsumesApi\FruitWebApp\FruitWebApp.csproj", "{2B2BC491-7BE1-4A88-AB6B-750587378A12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FruitWebApp", "Training\DevelopWebAppsConsumesApi\FruitWebApp\FruitWebApp.csproj", "{2B2BC491-7BE1-4A88-AB6B-750587378A12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Video", "Video", "{21D153C3-54B5-4011-A727-C416ABF3B3AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-Demo", "Video\WPF-Demo\WPF-Demo.csproj", "{FC6E08A0-9AAA-40DC-A51F-526A801F5AE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572} = {B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}
-		{F6490A0F-6E1F-4229-AE9F-90C00E957E6F} = {B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}
-		{BA1C1DF1-A393-4392-B4B6-DE3B0267025E} = {B24F4713-6963-4CA4-99D2-BB801C15467F}
-		{B0A81B8E-AF42-49F2-B7D0-815AD531A6F3} = {B24F4713-6963-4CA4-99D2-BB801C15467F}
-		{79458E5F-8E21-4535-9193-31FD1AA8CD1A} = {BA1C1DF1-A393-4392-B4B6-DE3B0267025E}
-		{0E76D3CA-FD90-43DB-81CA-F2CD6B3F11B0} = {BA1C1DF1-A393-4392-B4B6-DE3B0267025E}
-		{51BC2997-37CE-4654-9EB5-C405C6F5EDAC} = {BA1C1DF1-A393-4392-B4B6-DE3B0267025E}
-		{88893A73-6B68-402A-AF23-0923F7AEADA5} = {B0A81B8E-AF42-49F2-B7D0-815AD531A6F3}
-		{78D65DC2-89A6-4DDD-A7D2-00462F4257FC} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{A641D761-05BA-44D9-8CEF-3DFBD2650513} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{3DDA003A-ECA5-42BA-94E8-FF552C49DF83} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{6B46D3B8-EADD-4A55-B821-C10393C27D30} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{C8049FEC-1087-40CC-ACAF-264946C77838} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{93D7AE85-B4DE-4421-806C-2C27AA8B671E} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
-		{5508662E-BF9F-4372-AA18-A4640CB1FC79} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
-		{1481348C-814F-47EE-A0AC-666D0D18567C} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
-		{94A4E749-30B7-44A0-B8FE-7B8B95ECBBD8} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
-		{1B47240A-209D-4FC6-ADED-F10DAFD90874} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
-		{5E7DEB62-5FDB-4859-BF01-DAC2C242EE02} = {1B47240A-209D-4FC6-ADED-F10DAFD90874}
-		{694EF256-170A-422E-AFC7-2B6EA24BED1D} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
-		{A65283ED-4FDF-43ED-BA99-20AEA28D4814} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
-		{BC136FFC-CB09-444B-A209-B3D26B94D362} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
-		{20D69D4B-10D6-4843-BE11-E5CCAB88A668} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
-		{505DCE57-6297-42B1-A325-6CC8F08787C8} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
-		{F749FE5B-4263-4DB9-999F-104CC4487AFC} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
-		{9560759F-154A-47B1-A227-FC8B4744B4A9} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
-		{A3F0325C-4CBC-4822-8FFE-2BA2B2AC4AD1} = {5508662E-BF9F-4372-AA18-A4640CB1FC79}
-		{D9C32328-FBAD-4DE4-9D62-C92F507AC6E6} = {1481348C-814F-47EE-A0AC-666D0D18567C}
-		{B1979021-A5B3-4CA7-A68A-553012056872} = {9560759F-154A-47B1-A227-FC8B4744B4A9}
-		{506D0D33-0CE7-4128-A764-BC635B96AF4A} = {F749FE5B-4263-4DB9-999F-104CC4487AFC}
-		{B5858083-A489-412F-9F1A-5E4704CB0AE0} = {505DCE57-6297-42B1-A325-6CC8F08787C8}
-		{C1B73D65-E822-4BF6-9288-9879212141BF} = {20D69D4B-10D6-4843-BE11-E5CCAB88A668}
-		{F509D2BA-5885-4946-9962-23CA7957C76A} = {BC136FFC-CB09-444B-A209-B3D26B94D362}
-		{5FDC4882-E1D8-4065-BA61-6EB44BF64EF5} = {BC136FFC-CB09-444B-A209-B3D26B94D362}
-		{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4} = {A65283ED-4FDF-43ED-BA99-20AEA28D4814}
-		{EA7B9BA8-513A-4A29-93A2-63B6250101D8} = {3DDA003A-ECA5-42BA-94E8-FF552C49DF83}
-		{80DB39BF-ED11-43D9-82CA-DE15C13B001D} = {94A4E749-30B7-44A0-B8FE-7B8B95ECBBD8}
-		{DA3961F5-D89D-425E-A194-AF9DCE54DE55} = {3DDA003A-ECA5-42BA-94E8-FF552C49DF83}
-		{7FC18D7D-DCDA-46B4-BEF9-994816EEDAF2} = {DA3961F5-D89D-425E-A194-AF9DCE54DE55}
-		{75A066B6-1FCD-49A0-B6EC-9A348A816F42} = {C8049FEC-1087-40CC-ACAF-264946C77838}
-		{4AE52DE2-53CC-45D9-8742-E7BAE086D397} = {75A066B6-1FCD-49A0-B6EC-9A348A816F42}
-		{A86A6B2D-0EC6-4CED-8800-91837FC578FF} = {75A066B6-1FCD-49A0-B6EC-9A348A816F42}
-		{A151FBDA-F44B-4BD2-A164-EB8BDAEA0C28} = {C8049FEC-1087-40CC-ACAF-264946C77838}
-		{C0EE4968-24F4-4E4E-BA63-32EB2405D61C} = {A151FBDA-F44B-4BD2-A164-EB8BDAEA0C28}
-		{778E9EFF-7F19-4D8C-A04E-74A2E2111F04} = {93D7AE85-B4DE-4421-806C-2C27AA8B671E}
-		{2B2BC491-7BE1-4A88-AB6B-750587378A12} = {93D7AE85-B4DE-4421-806C-2C27AA8B671E}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -309,5 +267,64 @@ Global
 		{2B2BC491-7BE1-4A88-AB6B-750587378A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B2BC491-7BE1-4A88-AB6B-750587378A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B2BC491-7BE1-4A88-AB6B-750587378A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC6E08A0-9AAA-40DC-A51F-526A801F5AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6E08A0-9AAA-40DC-A51F-526A801F5AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6E08A0-9AAA-40DC-A51F-526A801F5AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6E08A0-9AAA-40DC-A51F-526A801F5AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21D9EDAF-BA90-4A29-9A25-82DBD0E8D572} = {B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}
+		{F6490A0F-6E1F-4229-AE9F-90C00E957E6F} = {B7969BF8-EA0C-4AC7-BE24-30E836E1F5A1}
+		{BA1C1DF1-A393-4392-B4B6-DE3B0267025E} = {B24F4713-6963-4CA4-99D2-BB801C15467F}
+		{79458E5F-8E21-4535-9193-31FD1AA8CD1A} = {BA1C1DF1-A393-4392-B4B6-DE3B0267025E}
+		{0E76D3CA-FD90-43DB-81CA-F2CD6B3F11B0} = {BA1C1DF1-A393-4392-B4B6-DE3B0267025E}
+		{51BC2997-37CE-4654-9EB5-C405C6F5EDAC} = {BA1C1DF1-A393-4392-B4B6-DE3B0267025E}
+		{B0A81B8E-AF42-49F2-B7D0-815AD531A6F3} = {B24F4713-6963-4CA4-99D2-BB801C15467F}
+		{88893A73-6B68-402A-AF23-0923F7AEADA5} = {B0A81B8E-AF42-49F2-B7D0-815AD531A6F3}
+		{78D65DC2-89A6-4DDD-A7D2-00462F4257FC} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{1B47240A-209D-4FC6-ADED-F10DAFD90874} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
+		{5E7DEB62-5FDB-4859-BF01-DAC2C242EE02} = {1B47240A-209D-4FC6-ADED-F10DAFD90874}
+		{A641D761-05BA-44D9-8CEF-3DFBD2650513} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{694EF256-170A-422E-AFC7-2B6EA24BED1D} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{5508662E-BF9F-4372-AA18-A4640CB1FC79} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
+		{1481348C-814F-47EE-A0AC-666D0D18567C} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
+		{A3F0325C-4CBC-4822-8FFE-2BA2B2AC4AD1} = {5508662E-BF9F-4372-AA18-A4640CB1FC79}
+		{D9C32328-FBAD-4DE4-9D62-C92F507AC6E6} = {1481348C-814F-47EE-A0AC-666D0D18567C}
+		{9560759F-154A-47B1-A227-FC8B4744B4A9} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{B1979021-A5B3-4CA7-A68A-553012056872} = {9560759F-154A-47B1-A227-FC8B4744B4A9}
+		{F749FE5B-4263-4DB9-999F-104CC4487AFC} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{506D0D33-0CE7-4128-A764-BC635B96AF4A} = {F749FE5B-4263-4DB9-999F-104CC4487AFC}
+		{505DCE57-6297-42B1-A325-6CC8F08787C8} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{B5858083-A489-412F-9F1A-5E4704CB0AE0} = {505DCE57-6297-42B1-A325-6CC8F08787C8}
+		{20D69D4B-10D6-4843-BE11-E5CCAB88A668} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{C1B73D65-E822-4BF6-9288-9879212141BF} = {20D69D4B-10D6-4843-BE11-E5CCAB88A668}
+		{BC136FFC-CB09-444B-A209-B3D26B94D362} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{F509D2BA-5885-4946-9962-23CA7957C76A} = {BC136FFC-CB09-444B-A209-B3D26B94D362}
+		{5FDC4882-E1D8-4065-BA61-6EB44BF64EF5} = {BC136FFC-CB09-444B-A209-B3D26B94D362}
+		{A65283ED-4FDF-43ED-BA99-20AEA28D4814} = {A641D761-05BA-44D9-8CEF-3DFBD2650513}
+		{DB6EDC27-3DB0-4D97-A408-8A2EEC2EF9C4} = {A65283ED-4FDF-43ED-BA99-20AEA28D4814}
+		{3DDA003A-ECA5-42BA-94E8-FF552C49DF83} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{EA7B9BA8-513A-4A29-93A2-63B6250101D8} = {3DDA003A-ECA5-42BA-94E8-FF552C49DF83}
+		{94A4E749-30B7-44A0-B8FE-7B8B95ECBBD8} = {78D65DC2-89A6-4DDD-A7D2-00462F4257FC}
+		{80DB39BF-ED11-43D9-82CA-DE15C13B001D} = {94A4E749-30B7-44A0-B8FE-7B8B95ECBBD8}
+		{6B46D3B8-EADD-4A55-B821-C10393C27D30} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{C8049FEC-1087-40CC-ACAF-264946C77838} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{DA3961F5-D89D-425E-A194-AF9DCE54DE55} = {3DDA003A-ECA5-42BA-94E8-FF552C49DF83}
+		{7FC18D7D-DCDA-46B4-BEF9-994816EEDAF2} = {DA3961F5-D89D-425E-A194-AF9DCE54DE55}
+		{75A066B6-1FCD-49A0-B6EC-9A348A816F42} = {C8049FEC-1087-40CC-ACAF-264946C77838}
+		{4AE52DE2-53CC-45D9-8742-E7BAE086D397} = {75A066B6-1FCD-49A0-B6EC-9A348A816F42}
+		{A86A6B2D-0EC6-4CED-8800-91837FC578FF} = {75A066B6-1FCD-49A0-B6EC-9A348A816F42}
+		{A151FBDA-F44B-4BD2-A164-EB8BDAEA0C28} = {C8049FEC-1087-40CC-ACAF-264946C77838}
+		{C0EE4968-24F4-4E4E-BA63-32EB2405D61C} = {A151FBDA-F44B-4BD2-A164-EB8BDAEA0C28}
+		{93D7AE85-B4DE-4421-806C-2C27AA8B671E} = {2747AAFD-F29C-41D2-BBE9-7A3A99646E62}
+		{778E9EFF-7F19-4D8C-A04E-74A2E2111F04} = {93D7AE85-B4DE-4421-806C-2C27AA8B671E}
+		{2B2BC491-7BE1-4A88-AB6B-750587378A12} = {93D7AE85-B4DE-4421-806C-2C27AA8B671E}
+		{FC6E08A0-9AAA-40DC-A51F-526A801F5AE8} = {21D153C3-54B5-4011-A727-C416ABF3B3AF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B720420E-C6F1-42A7-8592-42C213862389}
 	EndGlobalSection
 EndGlobal

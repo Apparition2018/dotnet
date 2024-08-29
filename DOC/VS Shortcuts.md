@@ -27,6 +27,7 @@ Ctrl + K, Ctrl + F              FormatSelection                     设置选定
 Ctrl + K, Ctrl + H              ToogleTaskListShortcut              切换任务列表快捷方式
 Ctrl + K, Ctrl + I              QuickInfo                           快速信息
 Ctrl + K, Ctrl + S              SurroundWith                        外侧代码
+Ctrl + W                        SelectCurrentWord
 Ctrl + Shift + ↑/↓              Previous/NextHighlightedReference   上/下一个突出显示的引用
 Shift + F12                     FindAllReferences                   查找所有引用
 Shift + Alt + E                 ExpandSelectionToEntireLine         将所选内容扩展到行
@@ -136,6 +137,7 @@ Ctrl + Shift + -                NavigateForward                     向前导航
 Ctrl + Shift + F12              NextError                           下一次错误
 Ctrl + Shift + .                ZoomIn                              缩小
 Ctrl + Shift + ,                ZoomOut                             放大
+Shift + Alt + Enter             FullScreen                          全屏幕
 
 F4                              PropertiesWindow                    属性窗口
 Ctrl + K, Ctrl + W              BookmarkWindow                      书签窗口
