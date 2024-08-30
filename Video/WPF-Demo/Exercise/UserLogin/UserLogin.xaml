@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF_Demo.Exercise.UserLogin"
+        xmlns:local="clr-namespace:WPF_Demo"
         mc:Ignorable="d"
         Title="管理员登录" Height="450" Width="500" WindowStartupLocation="CenterScreen">
     <Grid>
@@ -11,6 +11,33 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="140*"/>
         </Grid.RowDefinitions>
+        <!-- 图片属性 Build Action 要设为 Resource -->
         <Image Source="Images/adminLogin.png" Grid.Row="0" Width="500" Height="130"/>
+        <GroupBox Header="图书管系统用户注册" Grid.Row="1" Margin="5" BorderBrush="Black">
+            <Canvas>
+                <TextBlock Text="用户账号：" Canvas.Left="19" Canvas.Top="18"/>
+                <TextBox Name="txtUid" Canvas.Left="84" Canvas.Top="14" Width="360" Height="23" MaxLength="20" VerticalContentAlignment="Center"/>
+                <TextBlock Text="用户口令：" Canvas.Left="19" Canvas.Top="59"/>
+                <TextBox Name="txtPwd" Canvas.Left="84" Canvas.Top="55" Width="360" Height="23" MaxLength="20" VerticalContentAlignment="Center"/>
+                <TextBlock Text="用户口令：" Canvas.Left="19" Canvas.Top="100"/>
+                <PasswordBox Name="txtPwdConfirm" Canvas.Left="84" Canvas.Top="95" Width="360" Height="23" MaxLength="20" VerticalContentAlignment="Center"/>
+                <GroupBox Canvas.Left="19" Canvas.Top="138" Width="425">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/userRight.ico" Width="16"/>
+                            <TextBox Text="用户权限分配"/>
+                        </StackPanel>
+                    </GroupBox.Header>
+                    <WrapPanel>
+                        <CheckBox Name="ckRIghtA" Content="用户管理" Margin="10"/>
+                        <CheckBox Name="ckRIghtB" Content="读者管理" Margin="10"/>
+                        <CheckBox Name="ckRIghtC" Content="书籍管理" Margin="10"/>
+                        <CheckBox Name="ckRIghtD" Content="借阅管理" Margin="10"/>
+                    </WrapPanel>
+                </GroupBox>
+                <Button x:Name="btnRegist" Content="注册" Canvas.Left="140" Canvas.Top="213" Width="80" Height="25"/>
+                <Button x:Name="btnExit" Content="关闭" Canvas.Right="140" Canvas.Top="213" Width="80" Height="25"/>
+            </Canvas>
+        </GroupBox>
     </Grid>
 </Window>
