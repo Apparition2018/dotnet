@@ -24,7 +24,7 @@
                 <GroupBox Canvas.Left="19" Canvas.Top="138" Width="425">
                     <GroupBox.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Images/userRight.ico" Width="16"/>
+                            <Image Source="Images/userRight.png" Width="16"/>
                             <TextBox Text="用户权限分配"/>
                         </StackPanel>
                     </GroupBox.Header>

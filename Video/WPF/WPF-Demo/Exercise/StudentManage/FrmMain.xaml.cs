@@ -44,5 +44,15 @@ namespace WPF_Demo.Exercise.StudentManage
         {
             this.Close();
         }
+
+        /// <summary>
+        /// 学员管理
+        /// </summary>
+        private void btnStudentManage_Click(object sender, RoutedEventArgs e)
+        {
+            gridContent.Children.Clear();
+            FrmManageStudent manageStudent = new FrmManageStudent();
+            gridContent.Children.Add(manageStudent);
+        }
     }
 }

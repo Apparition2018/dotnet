@@ -2,6 +2,13 @@
 - 工具 → 选项 → 环境 → 键盘
 - `Ctrl + K, K (user)`
 ---
+## Build（生成）
+```
+Ctrl + B                        BuildSelection                      生成选定内容
+Ctrl + Shift + B                BuildSolution                       生成解决方案
+Ctrl + F7                       Compile                             编译
+```
+---
 ## Debug（调试）
 ```
 F5                              Start                               启动
@@ -27,7 +34,7 @@ Ctrl + K, Ctrl + F              FormatSelection                     设置选定
 Ctrl + K, Ctrl + H              ToogleTaskListShortcut              切换任务列表快捷方式
 Ctrl + K, Ctrl + I              QuickInfo                           快速信息
 Ctrl + K, Ctrl + S              SurroundWith                        外侧代码
-Ctrl + W                        SelectCurrentWord
+Ctrl + W                        SelectCurrentWord                   选择当前字
 Ctrl + Shift + ↑/↓              Previous/NextHighlightedReference   上/下一个突出显示的引用
 Shift + F12                     FindAllReferences                   查找所有引用
 Shift + Alt + E                 ExpandSelectionToEntireLine         将所选内容扩展到行

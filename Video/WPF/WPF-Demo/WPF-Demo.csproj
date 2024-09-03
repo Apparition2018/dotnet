@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>WPF_Demo</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Exercise\StudentManage\Images\addStudent.png" />
+    <None Remove="Exercise\StudentManage\Images\administrator.png" />
+    <None Remove="Exercise\StudentManage\Images\adminLoginBg.png" />
+    <None Remove="Exercise\StudentManage\Images\asc.png" />
+    <None Remove="Exercise\StudentManage\Images\attendance.png" />
+    <None Remove="Exercise\StudentManage\Images\banner.png" />
+    <None Remove="Exercise\StudentManage\Images\close.png" />
+    <None Remove="Exercise\StudentManage\Images\delete.png" />
+    <None Remove="Exercise\StudentManage\Images\desc.png" />
+    <None Remove="Exercise\StudentManage\Images\edit.png" />
+    <None Remove="Exercise\StudentManage\Images\export.png" />
+    <None Remove="Exercise\StudentManage\Images\print.png" />
+    <None Remove="Exercise\StudentManage\Images\query.png" />
+    <None Remove="Exercise\StudentManage\Images\score.png" />
+    <None Remove="Exercise\UserLogin\Images\adminLogin.png" />
+    <None Remove="Exercise\UserLogin\Images\userRight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Exercise\StudentManage\Images\addStudent.png" />
+    <Resource Include="Exercise\StudentManage\Images\administrator.png" />
+    <Resource Include="Exercise\StudentManage\Images\adminLoginBg.png" />
+    <Resource Include="Exercise\StudentManage\Images\asc.png" />
+    <Resource Include="Exercise\StudentManage\Images\attendance.png" />
+    <Resource Include="Exercise\StudentManage\Images\banner.png" />
+    <Resource Include="Exercise\StudentManage\Images\close.png" />
+    <Resource Include="Exercise\StudentManage\Images\delete.png" />
+    <Resource Include="Exercise\StudentManage\Images\desc.png" />
+    <Resource Include="Exercise\StudentManage\Images\export.png" />
+    <Resource Include="Exercise\StudentManage\Images\edit.png" />
+    <Resource Include="Exercise\StudentManage\Images\print.png" />
+    <Resource Include="Exercise\StudentManage\Images\query.png" />
+    <Resource Include="Exercise\StudentManage\Images\score.png" />
+    <Resource Include="Exercise\UserLogin\Images\adminLogin.png" />
+    <Resource Include="Exercise\UserLogin\Images\userRight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+</Project>
