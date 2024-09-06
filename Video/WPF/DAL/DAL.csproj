@@ -7,7 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Models\Models.csproj" />
+        <ProjectReference Include="..\Models\Models.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.Data.OleDb" Version="8.0.0"/>
+        <PackageReference Include="System.Data.SqlClient" Version="4.8.6"/>
+        <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
     </ItemGroup>
 
 </Project>

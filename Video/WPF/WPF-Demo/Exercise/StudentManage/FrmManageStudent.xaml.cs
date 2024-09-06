@@ -1,3 +1,6 @@
+using DAL;
+using Models;
+using Models.Ext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,14 +23,28 @@ namespace WPF_Demo.Exercise.StudentManage
     /// </summary>
     public partial class FrmManageStudent : UserControl
     {
+        private StudentClassService classService = new StudentClassService();
+        private StudentService studentService = new StudentService();
+        private List<StudentExt>? studentList = null;
+
         public FrmManageStudent()
         {
             InitializeComponent();
+            this.cboClass.ItemsSource = classService.GetAllClasses();
+            this.cboClass.DisplayMemberPath = "ClassName";
+            this.cboClass.SelectedValuePath = "ClassId";
+            this.cboClass.SelectedIndex = -1;
         }
 
         private void btnQueryList_Click(object sender, RoutedEventArgs e)
         {
-
+            if (this.cboClass.SelectedIndex == -1)
+            {
+                MessageBox.Show("请首先选择一个班级！", "查询提示");
+                return;
+            }
+            studentList = studentService.GetStudentByClass(this.cboClass.Text);
+            this.dgvStudentList.ItemsSource = studentList;
         }
 
         private void btnNameAsc_Click(object sender, RoutedEventArgs e)
