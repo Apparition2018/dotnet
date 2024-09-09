@@ -32,52 +32,52 @@ public partial class App : Application
         string createStudentTableSql = @"
                 create table if not exists Student
                     (
-                        StudentId int identity(100000,1) primary key,
-                        StudentName varchar(20) not null,
-                        Gender char(2) not null,
-                        Birthday smalldatetime not null,
-                        StudentIdNo numeric(18,0) not null unique check (length(StudentIdNo)=18),
-                        CardNo varchar(20) not null unique,
+                        StudentId integer primary key autoincrement,
+                        StudentName text not null,
+                        Gender text not null check (Gender in ('男', '女')),
+                        Birthday text not null,
+                        StudentIdNo text not null unique,
+                        CardNo text not null unique,
                         StuImage text null,
-                        Age int not null check (Age between 18 and 35),
-                        PhoneNumber varchar(50),
-                        StudentAddress varchar(500) default '地址不详',
-                        ClassId int not null,
+                        Age integer not null check (Age between 18 and 35),
+                        PhoneNumber text,
+                        StudentAddress text default '地址不详',
+                        ClassId integer not null,
                         foreign key (ClassId) references StudentClass(ClassId)
                     );";
 
         string createStudentClassTableSql = @"
                 create table if not exists StudentClass
                     (
-	                    ClassId int primary key,
-                        ClassName varchar(20) not null
+	                    ClassId integer primary key autoincrement,
+                        ClassName text not null
                     );";
 
         string createScoreListTableSql = @"
                 create table if not exists ScoreList
                     (
-                        Id int identity(1,1) primary key,
-                        StudentId int not null,
-                        CSharp int null,
-                        SQLServerDB int null,
-                        UpdateTime smalldatetime not null default (datetime('now')),
+                        Id integer primary key autoincrement,
+                        StudentId integer not null,
+                        CSharp integer null,
+                        SQLServerDB integer null,
+                        UpdateTime text null,
                         foreign key (StudentId) references Student(StudentId)
                     );";
 
         string createAttendanceTableSql = @"
                 create table if not exists Attendance
                     (
-	                    Id int identity(100000,1) primary key,
-                        CardNo varchar(20) not null,
-                        DTime smalldatetime not null default (datetime('now'))
+	                    Id integer primary key autoincrement,
+                        CardNo text not null,
+                        DTime text null
                     );";
 
         string createAdminTableSql = @"
                 create table if not exists Admin
                     (
-	                    LoginId int identity(1000,1) primary key,
-                        LoginPwd varchar(20) not null,
-                        AdminName varchar(20) not null
+	                    LoginId integer primary key autoincrement,
+                        LoginPwd text not null,
+                        AdminName text not null
                     );";
 
         string insertStudentClassSql = @"
