@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 using dotnet.L.Demo;
 using dotnetTest.Fundamentals.MemoryManagement;
 using dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
+using dotnetTest.Guide.ProgrammingGuide;
 
 namespace dotnetTest.Guide.LanguageReference.Keywords;
 
@@ -22,6 +23,37 @@ public class Modifiers
     /// </remarks>
     /// <seealso cref="OperatorsAndExpressions.Await"/>
     class Async;
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/event">event</a>
+    /// <list type="bullet">
+    /// <item>用于在发布者类中声明事件</item>
+    /// <item>事件是一种特殊的<see cref="Delegates.MulticastDelegates">多播委托</see>，仅可以从声明事件的类及其派生类或 struct（即发布者类）中对其进行调用</item>
+    /// </list>
+    /// </summary>
+    class Event
+    {
+        private class SampleEventArgs(string text)
+        {
+            public string Text { get; } = text;
+        }
+
+        private class Publisher
+        {
+            // 声明委托
+            public delegate void SampleEventHandler(object sender, SampleEventArgs e);
+
+            // 声明事件（类型必须为委托类型）
+            public event SampleEventHandler? SampleEvent;
+
+            // 将事件包装在 protected virtual 方法中，以使派生类能够引发事件
+            protected virtual void RaiseSampleEvent()
+            {
+                // 使用 ?. 操作符以线程安全的方式引发事件
+                SampleEvent?.Invoke(this, new SampleEventArgs("Hello"));
+            }
+        }
+    }
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/extern">extern</a>

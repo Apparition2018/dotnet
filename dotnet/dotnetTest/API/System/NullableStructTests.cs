@@ -1,7 +1,7 @@
 namespace dotnetTest.API.System;
 
 /// <summary>
-/// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.nullable-1">Nullable&lt;T> 结构</a>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.nullable-1">Nullable&lt;T> Struct</a>
 /// </summary>
 public class NullableStructTests
 {

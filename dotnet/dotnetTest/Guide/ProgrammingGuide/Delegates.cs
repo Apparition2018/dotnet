@@ -1,4 +1,5 @@
 using dotnet.L.Demo;
+using dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 using dotnetTest.Guide.LanguageReference.Types;
 
 namespace dotnetTest.Guide.ProgrammingGuide;
@@ -14,7 +15,6 @@ namespace dotnetTest.Guide.ProgrammingGuide;
 /// <item>委托允许将方法作为参数进行传递 / 委托可用于定义回调方法</item>
 /// <item><see cref="MulticastDelegates">委托可以链接在一起</see></item>
 /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates">方法不必与委托类型完全匹配</a></item>
-/// <item>委托是事件的基础</item>
 /// </list>
 /// </summary>
 /// <seealso cref="Events"/>
@@ -32,6 +32,7 @@ public class Delegates : Demo
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/delegates/how-to-declare-instantiate-and-use-a-delegate">声明委托</a>
     /// </summary>
+    /// <seealso cref="OperatorsAndExpressions.DelegateOperator"/>
     [Test]
     public void Declare()
     {
@@ -45,6 +46,7 @@ public class Delegates : Demo
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates">多播委托</a>
+    /// + 运算符可将多个对象分配到一个委托实例，- 运算符可从多播委托中删除组件委托
     /// </summary>
     [Test]
     public void MulticastDelegates()
@@ -61,6 +63,7 @@ public class Delegates : Demo
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/delegates-strongly-typed">强类型委托</a>
+    /// .NET Core 框架包含的，在需要委托类型时可重用的类型
     /// <list type="bullet">
     /// <item>Action：封装方法返回值为 void，用于使用委托参数执行操作的情况</item>
     /// <item>Func：封装的方法返回指定类型，用于将委托参数转换为其他结果的情况</item>

@@ -4,7 +4,7 @@ using dotnetTest.Fundamentals.RuntimeLibraries.WorkWithStrings;
 namespace dotnetTest.API.System.Text;
 
 /// <summary>
-/// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.text.rune">Rune 结构</a>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.text.rune">Rune Struct</a>
 /// <see cref="CharacterEncoding.UnicodeScalarValues">Unicode 标量值</see>（[ U+0000..U+D7FF ]，[ U+E000..U+10FFFF ]）
 /// </summary>
 public class RuneTests

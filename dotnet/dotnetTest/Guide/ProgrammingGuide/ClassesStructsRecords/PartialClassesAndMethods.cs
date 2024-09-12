@@ -2,7 +2,7 @@ namespace dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods">分部类和方法par</a>
-/// 可以将类、结构、接口或方法的定义拆分为两个或多个源文件，在编译应用程序时会组合所有部分
+/// 可以将类、struct、接口或方法的定义拆分为两个或多个源文件，在编译应用程序时会组合所有部分
 /// <para>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods#restrictions">分部类限制</a>：
 /// <list type="bullet">
