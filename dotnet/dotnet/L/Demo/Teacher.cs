@@ -1,4 +1,4 @@
-namespace dotnetTest.API.System.LINQ.Model;
+namespace dotnet.L.Demo;
 
 /// <summary>教师</summary>
 public class Teacher

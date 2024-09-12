@@ -1,4 +1,4 @@
-namespace dotnetTest.API.System.LINQ.Model;
+namespace dotnet.L.Demo;
 
 /// <summary>部门</summary>
 public class Department

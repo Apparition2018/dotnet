@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 
+namespace FruitAPI;
+
 class FruitDb : DbContext
 {
     public FruitDb(DbContextOptions<FruitDb> options) : base(options) { }

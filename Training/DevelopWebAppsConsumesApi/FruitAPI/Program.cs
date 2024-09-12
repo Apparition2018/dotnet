@@ -1,3 +1,4 @@
+using FruitAPI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -26,7 +27,7 @@ using (var scope = app.Services.CreateScope())
 
  app.MapGet("/fruitlist",  async (FruitDb db) =>
     await db.Fruits.ToListAsync())
-    .WithTags("Get all fruit"); 
+    .WithTags("Get all fruit");
 
 app.MapGet("/fruitlist/instock", async (FruitDb db) =>
     await db.Fruits.Where(t => t.Instock).ToListAsync())

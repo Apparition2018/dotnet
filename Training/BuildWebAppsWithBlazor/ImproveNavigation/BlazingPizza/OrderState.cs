@@ -1,3 +1,5 @@
+using BlazingPizza.Model;
+
 namespace BlazingPizza;
 
 public class OrderState

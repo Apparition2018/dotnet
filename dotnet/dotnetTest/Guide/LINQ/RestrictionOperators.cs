@@ -1,6 +1,6 @@
 using dotnet.L.Demo;
 
-namespace dotnetTest.API.System.LINQ;
+namespace dotnetTest.Guide.LINQ;
 
 /// <summary>
 /// <a href="https://localhost:6291/101-linq-samples/index.md#restriction-operators-the-where-keyword">LINQ - Restriction Operators</a>

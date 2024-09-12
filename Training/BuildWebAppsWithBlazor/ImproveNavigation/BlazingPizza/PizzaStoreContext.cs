@@ -1,5 +1,7 @@
-using BlazingPizza;
+using BlazingPizza.Model;
 using Microsoft.EntityFrameworkCore;
+
+namespace BlazingPizza;
 
 public class PizzaStoreContext : DbContext
 {

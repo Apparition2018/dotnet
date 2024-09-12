@@ -1,3 +1,5 @@
+using BlazingPizza.Model;
+
 namespace BlazingPizza.Data;
 
 public class SeedData

@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using System.Text.Json;
 using FruitWebApp.Models;
-using System.Text.Json;
-using Microsoft.Net.Http.Headers;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FruitWebApp.Pages
 {

@@ -1,9 +1,3 @@
-using Microsoft.AspNetCore.Http.Json;
-using Microsoft.Extensions.Options;
-using Microsoft.Net.Http.Headers;
-using System.Net.Http.Headers;
-using System.Text.Json;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

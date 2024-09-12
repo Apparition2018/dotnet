@@ -1,4 +1,4 @@
-namespace dotnetTest.API.System.LINQ.Model;
+namespace dotnet.L.Demo;
 
 /// <summary>年级</summary>
 public enum GradeLevel

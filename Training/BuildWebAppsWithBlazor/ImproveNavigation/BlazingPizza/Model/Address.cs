@@ -1,4 +1,4 @@
-﻿namespace BlazingPizza;
+﻿namespace BlazingPizza.Model;
 
 public class Address
 {
@@ -16,4 +16,3 @@ public class Address
 
     public string PostalCode { get; set; }
 }
-

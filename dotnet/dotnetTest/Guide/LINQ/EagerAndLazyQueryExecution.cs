@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Http.Features;
-
-namespace dotnetTest.API.System.LINQ;
+namespace dotnetTest.Guide.LINQ;
 
 /// <summary>
 /// <a href="https://localhost:6291/101-linq-samples/index.md#eager-and-lazy-query-execution">LINQ - lazy and eager execution</a>

@@ -1,4 +1,4 @@
-namespace dotnetTest.API.System.LINQ;
+namespace dotnetTest.Guide.LINQ;
 
 /// <summary>
 /// <a href="https://localhost:6291/101-linq-samples/index.md#generate-sequences">LINQ - Generate elements</a>

@@ -1,7 +1,6 @@
 using dotnet.L.Demo;
-using dotnetTest.API.System.LINQ.Model;
 
-namespace dotnetTest.API.System.LINQ;
+namespace dotnetTest.Guide.LINQ;
 
 /// <summary>
 /// <a href="https://localhost:6291/101-linq-samples/index.md#grouping-operators">LINQ - Grouping operators</a><br/>

@@ -1,6 +1,6 @@
 using dotnet.L.Demo;
 
-namespace dotnetTest.API.System.LINQ;
+namespace dotnetTest.Guide.LINQ;
 
 /// <summary>
 /// <a href="https://localhost:6291/101-linq-samples/index.md#projection-operators-the-select-keyword">LINQ - Projection Operators</a><br/>

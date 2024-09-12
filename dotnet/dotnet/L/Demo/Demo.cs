@@ -1,6 +1,5 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using dotnetTest.API.System.LINQ.Model;
 
 namespace dotnet.L.Demo;
 
