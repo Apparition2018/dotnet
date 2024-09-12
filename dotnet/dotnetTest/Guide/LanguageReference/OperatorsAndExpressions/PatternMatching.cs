@@ -15,10 +15,11 @@ namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/functional/pattern-matching">模式匹配</a><br/>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/tutorials/pattern-matching">教程：使用模式匹配来生成类型驱动和数据驱动的算法</a>
 /// </remarks>
-public class PatternMatching
+public abstract class PatternMatching
 {
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/is">is 运算符</a>
+    /// 检查表达式的结果是否与给定的类型相匹配
     /// </summary>
     /// <seealso cref="OperatorsAndExpressions.Type.IsOperator"/>
     class IsOperator
@@ -47,5 +48,29 @@ public class PatternMatching
             Assert.That(even is [2, _, 6], Is.EqualTo(false));
             Assert.That(even is [2, .., 6], Is.EqualTo(false));
         }
+    }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/patterns#discard-pattern">弃元模式</a>
+    /// 可使用弃元模式 _ 来匹配任何表达式，包括 null
+    /// </summary>
+    [Test]
+    public void DiscardPattern()
+    {
+        Console.WriteLine(GetDiscountInPercent(DayOfWeek.Friday));
+        Console.WriteLine(GetDiscountInPercent(null));
+        Console.WriteLine(GetDiscountInPercent((DayOfWeek)10));
+
+        static decimal GetDiscountInPercent(DayOfWeek? dayOfWeek) => dayOfWeek switch
+        {
+            DayOfWeek.Monday => 0.5m,
+            DayOfWeek.Tuesday => 12.5m,
+            DayOfWeek.Wednesday => 7.5m,
+            DayOfWeek.Thursday => 12.5m,
+            DayOfWeek.Friday => 5.0m,
+            DayOfWeek.Saturday => 2.5m,
+            DayOfWeek.Sunday => 2.0m,
+            _ => 0.0m,
+        };
     }
 }

@@ -1,5 +1,6 @@
 using System.Numerics;
 using dotnetTest.Guide.LanguageReference.Keywords;
+using dotnetTest.Guide.ProgrammingGuide;
 using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
 namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
@@ -163,6 +164,23 @@ public class OperatorsAndExpressions
             Assert.That(string.Join(" ", array), Is.EqualTo("False False False False"));
         }
     }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/delegate-operator">delegate</a>
+    /// <list type="bullet">
+    /// <item>delegate 运算符创建一个可以转换为委托类型的<see cref="Delegates.Declare">匿名方法</see></item>
+    /// <item>delegate 关键字声明委托类型</item>
+    /// </list>
+    /// <para>
+    /// 匿名方法 vs lambda
+    /// <list type="bullet">
+    /// <item>lambda 本身就是匿名方法</item>
+    /// <item>lambda 允许参数不指定类型</item>
+    /// <item>lambda 方法体允许是单一表达式</item>
+    /// </list>
+    /// </para>
+    /// </summary>
+    class DelegateOperator;
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/nameof">nameof 表达式</a>

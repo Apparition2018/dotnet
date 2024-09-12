@@ -2,8 +2,8 @@ using System.Text.Json.Serialization;
 
 namespace dotnet.L.Demo;
 
-// 基本序列化 (Basic serialization)
-// https://learn.microsoft.com/zh-cn/dotnet/standard/serialization/basic-serialization
+// SerializableAttribute：指示可以使用二进制或 XML 序列化对类进行序列化
+// https://learn.microsoft.com/zh-cn/dotnet/api/system.serializableattribute
 [Serializable]
 public class Person : ICloneable
 {
@@ -17,9 +17,20 @@ public class Person : ICloneable
 
     public string Name { get; set; } = null!;
     public int? Age { get; set; }
-    [JsonPropertyName("sex")] public string? Gender { get; set; }
+
+    // JsonPropertyNameAttribute：指定序列化和反序列化时 JSON 中存在的属性名称
+    // https://learn.microsoft.com/zh-cn/dotnet/api/system.text.json.serialization.jsonpropertynameattribute
+    [JsonPropertyName("sex")]
+    public string? Gender { get; set; }
     public IEnumerable<string>? OtherInfo { get; set; }
     public Home? Home { get; set; }
+
+    public void Deconstruct(out int id, out string name, out int? age)
+    {
+        id = ID;
+        name = Name;
+        age = Age;
+    }
 
     public object Clone()
     {

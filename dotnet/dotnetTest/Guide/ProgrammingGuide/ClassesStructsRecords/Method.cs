@@ -47,12 +47,11 @@ public class Method
     /// <para>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method#to-define-and-call-the-extension-method">定义和调用扩展方法</a>：
     /// <list type="number">
-    /// <item>非嵌套、非泛型静态类，对客户端代码可见</item>
-    /// <item>静态方法，可见性至少与所在类的可见性相同</item>
-    /// <item>第一个参数指定方法所操作的类型，参数前面必须加上 this 修饰符</item>
-    /// <item>添加 using 指令，用于指定包含扩展方法类的命名空间</item>
-    /// <item>添加 using 指令，用于指定包含扩展方法类的命名空间</item>
-    /// <item>使用实例方法语法调用</item>
+    /// <item>定义包含扩展方法的非嵌套、非泛型静态类，此类必须对客户端代码可见</item>
+    /// <item>将扩展方法实现为静态方法，并且使其可见性至少与所在类的可见性相同</item>
+    /// <item>第一个参数指定方法所操作的类型，此参数前面必须加上 this 修饰符</item>
+    /// <item>在调用代码中，添加 using 指令，用于指定包含扩展方法类的命名空间</item>
+    /// <item>使用实例方法语法调用扩展方法</item>
     /// </list>
     /// </para>
     /// </summary>
