@@ -199,4 +199,49 @@ public class StudentService
     }
 
     #endregion
+
+    /// <summary>
+    /// 基于事务保存所有对象
+    /// </summary>
+    /// <param name="studentList">包含添加、修改、删除和查询出来的对象</param>
+    public bool SaveStudents(List<StudentExt> studentList)
+    {
+        StringBuilder insertSql = new StringBuilder();
+        insertSql.Append("insert into Student(studentName,Gender,Birthday,");
+        insertSql.Append("StudentIdNo,Age,PhoneNumber,StudentAddress,CardNo,ClassId,StuImage)");
+        insertSql.Append(" values('{0}','{1}','{2}',{3},{4},'{5}','{6}','{7}',{8},'{9}');");
+
+        StringBuilder updateSql = new StringBuilder();
+        updateSql.Append("update Student set studentName='{0}',Gender='{1}',Birthday='{2}',");
+        updateSql.Append("StudentIdNo={3},Age={4},PhoneNumber='{5}',StudentAddress='{6}',CardNo='{7}',ClassId={8},StuImage='{9}'");
+        updateSql.Append(" where StudentId={10}");
+
+        String deleteSql = "delete from Student where StudentId={0}";
+
+        List<String> sqlList = new List<string>();
+        foreach (StudentExt s in studentList)
+        {
+            if (s.OperateStatus == OperateStatus.Insert)
+            {
+                string sql = string.Format(insertSql.ToString(), s.StudentName, s.Gender, s.Birthday.ToString("yyyy-MM-dd"),
+                    s.StudentIdNo, s.Age, s.PhoneNumber, s.StudentAddress, s.CardNo, s.ClassId, s.StuImage);
+                sqlList.Add(sql);
+            }
+
+            if (s.OperateStatus == OperateStatus.Update)
+            {
+                string sql = string.Format(updateSql.ToString(), s.StudentName, s.Gender, s.Birthday.ToString("yyyy-MM-dd"),
+                    s.StudentIdNo, s.Age, s.PhoneNumber, s.StudentAddress, s.CardNo, s.ClassId, s.StuImage, s.StudentId);
+                sqlList.Add(sql);
+            }
+
+            if (s.OperateStatus == OperateStatus.Delete)
+            {
+                string sql = string.Format(deleteSql, s.StudentId);
+                sqlList.Add(sql);
+            }
+        }
+
+        return SQLiteHelper.UpdateByTran(sqlList);
+    }
 }

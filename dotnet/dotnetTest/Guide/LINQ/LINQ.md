@@ -1,9 +1,15 @@
-# LINQ
-- Language Integrated Query
+# [LINQ](https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/)
+- Language Integrated Query（语言集成查询）
 ---
-## Reference
-1. [语言集成查询 (LINQ) | Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/)
-2. [C# 高级 | Microsoft Learn](https://learn.microsoft.com/zh-cn/shows/c-advanced/)
+## [查询表达式](https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/get-started/query-expression-basics)
+- 定义：以 Query Syntax（查询语法）表示的查询
+- 必须以 `from` 子句开头，且必须以 `select` 或 `group` 子句结尾
+### [查询关键字](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/query-keywords)
+- `into` 上下文关键字创建临时标识符，将 `group`、`join` 或 `select` 子句的结果存储至新标识符
+- `let` 关键字创建一个新的范围变量，并通过提供的表达式结果初始化该变量
+### 查询变量
+- 定义：存储查询，而不是存储查询结果。始终是可枚举类型
+- @see [EagerAndLazyQueryExecution](EagerAndLazyQueryExecution.cs) `LazyQuery` vs `EagerQuery`
 ---
 ## try-samples
 - 安装 dotnet-try

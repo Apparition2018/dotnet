@@ -6,6 +6,10 @@ namespace Models;
 [Serializable]
 public class Student
 {
+    public Student()
+    {
+        OperateStatus = OperateStatus.Select;
+    }
     public int StudentId { get; set; }
     public string StudentName { get; set; }
     public string Gender { get; set; }
@@ -23,4 +27,5 @@ public class Student
     public string CardNo { get; set; }
     public int ClassId { get; set; }
     public string ClassName { get; set; }
+    public OperateStatus OperateStatus { get; set; }
 }

@@ -14,6 +14,7 @@ public class EagerAndLazyQueryExecution
     public void LazyQuery()
     {
         int i = 0;
+        // 查询变量
         var q = from n in Numbers select ++i;
 
         foreach (var v in q)
@@ -29,6 +30,7 @@ public class EagerAndLazyQueryExecution
     public void EagerQuery()
     {
         int i = 0;
+        // 查询结果。像 ToList() 这样的方法会导致查询立即执行
         var q = (from n in Numbers select ++i).ToList();
 
         foreach (var v in q)
@@ -43,7 +45,6 @@ public class EagerAndLazyQueryExecution
     [Test]
     public void ReuseQueriesWithNewResults()
     {
-
         var lowNumbers = from n in Numbers
             where n <= 3
             select n;

@@ -1,6 +1,6 @@
 using dotnet.L.Demo;
 
-namespace dotnetTest.Guide.LanguageReference.Types;
+namespace dotnetTest.Guide.LanguageReference.BuiltinTypes;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/unmanaged-types">非托管类型</a>

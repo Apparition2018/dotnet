@@ -4,7 +4,7 @@ using dotnetTest.Guide.LanguageReference.Keywords;
 using dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
-namespace dotnetTest.Guide.LanguageReference.Types;
+namespace dotnetTest.Guide.LanguageReference.BuiltinTypes;
 
 using Range = (int Minimum, int Maximum);
 
@@ -145,7 +145,7 @@ public class ValueTypes
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/struct#readonly-struct">readonly struct</a>：
     /// <list type="bullet">
     /// <item>任何字段声明都必须具有 readonly 修饰符（除构造函数外的其他实例成员是隐式 readonly）</item>
-    /// <item>任何属性（包括自动实现的属性）都必须是只读的或仅 init</item>
+    /// <item>任何属性（包括<see cref="Person.ID">自动实现的属性</see>）都必须是只读的或仅 init</item>
     /// </list>
     /// </para>
     /// </summary>

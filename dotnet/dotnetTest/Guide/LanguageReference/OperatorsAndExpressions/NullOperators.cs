@@ -37,7 +37,7 @@ public class NullOperators
     }
 
     /// <summary>
-    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/null-forgiving">! （null 包容）运算符</a>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/null-forgiving">!（null 包容）运算符</a>
     /// 取消表达式的所有可为 null 警告
     /// </summary>
     class NullForgivingOperator

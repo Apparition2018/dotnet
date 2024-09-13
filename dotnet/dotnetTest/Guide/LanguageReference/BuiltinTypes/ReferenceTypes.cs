@@ -1,10 +1,11 @@
 using dotnet.L.Demo;
+using dotnetTest.Guide.Fundamentals.FunctionalTechniques;
 using dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 using dotnetTest.Guide.LanguageReference.Statements;
 using dotnetTest.Guide.ProgrammingGuide;
 using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
-namespace dotnetTest.Guide.LanguageReference.Types;
+namespace dotnetTest.Guide.LanguageReference.BuiltinTypes;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types">引用类型</a>
@@ -96,8 +97,8 @@ public class ReferenceTypes
             object obj = 1;
             dyn = dyn + 3;
             // obj = obj + 3; // Cannot apply operator '+' to operands of type 'object' and 'int'
-            Console.WriteLine(dyn.GetType());
-            Console.WriteLine(obj.GetType());
+            Assert.That(dyn.GetType(), Is.EqualTo(typeof(Int32)));
+            Assert.That(obj.GetType(), Is.EqualTo(typeof(Int32)));
         }
     }
 
@@ -126,11 +127,11 @@ public class ReferenceTypes
         /// <para>
         /// 当为属性定义使用位置语法时，编译器将创建以下内容：
         /// <list type="bullet">
-        /// <item>为每个位置参数提供一个公共的<a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties">自动实现的属性</a>：
+        /// <item>为每个位置参数提供一个公共的<see cref="Person.ID">自动实现的属性</see>：
         /// record/readonly record struct：init-only；record struct：read-write</item>
-        /// <item>一个主构造函数</item>
+        /// <item>一个<see cref="Constructors.InstanceConstructors.PrimaryConstructors">主构造函数</see></item>
         /// <item>对于 record struct，一个无参构造函数，将每个字段设置为默认值</item>
-        /// <item>一个解构方法 ???</item>
+        /// <item>一个 <see cref="Deconstructing.DeconstructingUserDefinedType">Deconstruct 方法</see></item>
         /// </list>
         /// </para>
         /// </summary>
@@ -241,7 +242,7 @@ public class ReferenceTypes
     /// 接口继承：
     /// <list type="bullet">
     /// <item>不允许使用实例字段</item>
-    /// <item>不支持实例自动实现属性，因为会隐式声明字段</item>
+    /// <item>不支持实例<see cref="Person.ID">自动属性</see>，因为会隐式声明字段</item>
     /// <item>可以继承一个或多个接口，重写基接口的方法时，必须使用<see cref="Interfaces.ExplicitInterfaceImplementation">显示接口实现</see>语法</item>
     /// <item>基类型列表包含基类和接口时，基类必须位于列表的第一位 ???</item>
     /// <item>实现接口的类可以显式实现该接口的成员。显式实现的成员不能通过类实例访问，只能通过接口实例访问</item>

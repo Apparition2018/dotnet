@@ -1,5 +1,5 @@
 using dotnet.L.Demo;
-using dotnetTest.Guide.LanguageReference.Types;
+using dotnetTest.Guide.LanguageReference.BuiltinTypes;
 
 namespace dotnetTest.Guide.Fundamentals.FunctionalTechniques;
 

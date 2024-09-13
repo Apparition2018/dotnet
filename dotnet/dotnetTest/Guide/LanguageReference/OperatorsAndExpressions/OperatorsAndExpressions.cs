@@ -2,6 +2,8 @@ using System.Numerics;
 using dotnetTest.Guide.LanguageReference.Keywords;
 using dotnetTest.Guide.ProgrammingGuide;
 using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
+using dotnetTest.Guide.ProgrammingGuide.StatementsExpressionsEquality;
+using NUnit.Framework.Constraints;
 
 namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 
@@ -130,27 +132,47 @@ public class OperatorsAndExpressions
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/default">默认值表达式</a> - 生成类型的默认值
-    /// <list type="number">
-    /// <item>default 运算符</item>
-    /// <item>default 文本</item>
-    /// </list>
     /// </summary>
     class DefaultValueExpressions
     {
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/default#default-operator">default 运算符</a>
+        /// default 运算符的实参必须是类型或类型形参的名称
         /// </summary>
+        /// <remarks>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/default-values">内置类型的默认值</a>
+        /// </remarks>
         [Test]
         public void DefaultOperator()
         {
+            // 值类型
             Assert.That(default(int), Is.EqualTo(0));
+            // 引用类型
+            Assert.That(default(object), Is.EqualTo(null));
+            // bool
+            Assert.That(default(bool), Is.EqualTo(false));
+            // char
+            Assert.That(default(char), Is.EqualTo('\0'));
+            // enum
+            Assert.That(default(DayOfWeek), Is.EqualTo((DayOfWeek)0));
+            // struct
+            Assert.That(default(Complex), Is.EqualTo(new Complex(0, 0)));
+            // 可为 null 的值类型
             Assert.That(default(int?), Is.EqualTo(null));
-            Assert.That(default(Complex).ToString(), Is.EqualTo("<0; 0>"));
-            Assert.That(default(List<int>), Is.EqualTo(null));
         }
 
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/default#default-literal">default 文本</a>
+        /// 当编译器可以推断表达式类型时，可以使用 default 文本生成类型的默认值
+        /// <para>
+        /// 可以在以下情况使用 default 文本
+        /// <list type="bullet">
+        /// <item>对变量进行赋值或初始化时</item>
+        /// <item>在声明<see cref="Method.NamedAndOptionalArguments.OptionalArguments">可选方法参数</see>的默认值时</item>
+        /// <item>在方法调用中提供参数值时</item>
+        /// <item>在 return 语句中或作为<see cref="ExpressionBodiedMembers">表达式主体成员</see>中的表达式时</item>
+        /// </list>
+        /// </para>
         /// </summary>
         [Test]
         public void DefaultLiteral()

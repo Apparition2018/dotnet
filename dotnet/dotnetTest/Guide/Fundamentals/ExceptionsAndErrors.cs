@@ -1,7 +1,7 @@
 using dotnetTest.Guide.LanguageReference.Statements;
 using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
-namespace dotnetTest.Guide.LanguageReference;
+namespace dotnetTest.Guide.Fundamentals;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/exceptions/">异常和异常处理</a>
