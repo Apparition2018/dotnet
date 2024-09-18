@@ -160,6 +160,7 @@ Ctrl + Alt + K					CallHierarchy                       调用层次结构
 Ctrl + Alt + L                  SolutionExplorer                    解决方案资源管理器
 Ctrl + Alt + O                  Output                              输出
 Ctrl + Alt + T					DocumentOutline                     文档大纲
+Ctrl + Alt + X                  Toolbox                             工具箱
 Ctrl + Alt + F3                 Branch                              分支
 Ctrl + Alt + F4                 Repository                          存储库
 Ctrl + Shift + C				ClassView                           类视图

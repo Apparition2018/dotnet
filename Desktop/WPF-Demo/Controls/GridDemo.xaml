@@ -1,0 +1,29 @@
+<Window x:Class="WPF_Demo.Controls.GridDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo"
+        mc:Ignorable="d"
+        Title="GridDemo" Height="250" Width="400" WindowStartupLocation="CenterScreen">
+    <!-- Grid：定义由列和行组成的灵活的网络区域 -->
+    <!-- https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.controls.grid -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="148*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="65*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="请输入您的留言" Grid.Row="0" Grid.Column="0" Height="25" Margin="5,2"/>
+        <ComboBox x:Name="comboBox" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="5"/>
+        <TextBox x:Name="textBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="5,0"/>
+        <Button x:Name="btnSumbit" Content="提交" Grid.Row="2" Grid.Column="2" Margin="5"/>
+        <Button x:Name="btnClear" Content="清除" Grid.Row="2" Grid.Column="3" Margin="5"/>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+<!-- WindowStyle            指定窗口的边框类型 -->
+<!-- ResizeMode             指定窗口是否可以调整大小 -->
+<Window x:Class="WPF_Demo.Exercise.StudentManagement.FrmAdminLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Demo.Exercise.StudentManagement"
+        mc:Ignorable="d"
+        Title="FrmAdminLogin" Height="260" Width="390" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        ResizeMode="NoResize" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/adminLoginBg.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Canvas>
+            <Label Content="登录账号：" Canvas.Left="65" Canvas.Top="124"/>
+            <TextBox x:Name="txtLoginId" Canvas.Left="138" Canvas.Top="124" Width="180" Height="23" VerticalContentAlignment="Center" BorderBrush="#5050FF"/>
+            <Label Content="登录密码：" Canvas.Left="65" Canvas.Top="160"/>
+            <PasswordBox x:Name="txtLoginPwd" Canvas.Left="138" Canvas.Top="160" Width="180" Height="23" VerticalContentAlignment="Center" BorderBrush="#5050FF"/>
+            <CheckBox x:Name="ckbSavePwd" Content="记录密码（10天有效）" Canvas.Left="65" Canvas.Top="205"/>
+            <Button x:Name="btnLogin" Content="登录系统" Canvas.Left="213" Canvas.Top="198" Width="105" Height="28" Background="#5050FF" BorderBrush="#5050FF" Foreground="White"
+                    Click="btnLogin_Click"/>
+            <Button x:Name="btnExit" Content="×" Canvas.Left="360" Width="30" Height="30" FontSize="20" Background="#5050FF" BorderBrush="#5050FF" Foreground="White"
+                    Click="btnExit_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
+    </Grid>
+</Window>
