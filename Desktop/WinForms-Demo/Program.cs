@@ -1,3 +1,5 @@
+using WinForms_Demo.Exercise.StudentManagement;
+
 namespace WinForms_Demo
 
 {
@@ -12,7 +14,7 @@ namespace WinForms_Demo
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new WinForms_Demo.Exercise.StudentManagement.FrmMain());
+            Application.Run(new FrmUserLogin());
         }
     }
 }
