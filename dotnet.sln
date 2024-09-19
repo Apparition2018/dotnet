@@ -11,10 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{8E9CC5EA-3C1
 		DOC\NuGet.md = DOC\NuGet.md
 		DOC\Rider Settings.md = DOC\Rider Settings.md
 		DOC\Rider Shortcuts.md = DOC\Rider Shortcuts.md
-		Video.md = Video.md
 		DOC\VS Features.md = DOC\VS Features.md
 		DOC\VS Settings.md = DOC\VS Settings.md
 		DOC\VS Shortcuts.md = DOC\VS Shortcuts.md
+		DOC\Video.md = DOC\Video.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shows", "Shows", "{B24F4713-6963-4CA4-99D2-BB801C15467F}"
