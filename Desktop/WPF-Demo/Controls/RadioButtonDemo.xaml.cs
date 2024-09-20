@@ -3,11 +3,11 @@
 namespace WPF_Demo.Controls
 {
     /// <summary>
-    /// Interaction logic for WrapPanelDemo.xaml
+    /// Interaction logic for RadioButtonDemo.xaml
     /// </summary>
-    public partial class WrapPanelDemo : Window
+    public partial class RadioButtonDemo : Window
     {
-        public WrapPanelDemo()
+        public RadioButtonDemo()
         {
             InitializeComponent();
         }

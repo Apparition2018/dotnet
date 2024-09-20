@@ -1,6 +1,6 @@
 using System.Windows;
 
-namespace WPF_Demo.Controls
+namespace WPF_Demo.Controls.Layout
 {
     /// <summary>
     /// StackPanelDemo.xaml 的交互逻辑

@@ -1,9 +1,9 @@
-<Window x:Class="WPF_Demo.Controls.StackPanelDemo"
+<Window x:Class="WPF_Demo.Controls.Layout.StackPanelDemo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF_Demo.Controls"
+        xmlns:local="clr-namespace:WPF_Demo.Controls.Layout"
         mc:Ignorable="d"
         Title="StackPanelDemo" Height="175" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
@@ -16,7 +16,6 @@
                 <CheckBox Content="C. WPF快速编程"/>
                 <CheckBox Content="D. APS.NET-MVC"/>
                 <!-- Orientation：指示子元素的堆叠维度 -->
-                <!-- HorizontalAlignment：在父元素中组合此元素时所应用的水平对齐特征 -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Name="btnSumbit" Content="提交" Width="40" Margin="5"/>
                     <Button Name="btnReset" Content="重选" Width="40" Margin="5"/>

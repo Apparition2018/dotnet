@@ -10,6 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Common\Images\auto-save.png" />
+    <None Remove="Common\Images\new.png" />
+    <None Remove="Common\Images\save.png" />
+    <None Remove="Exercise\MahjongSolitaire\Images\copper.png" />
+    <None Remove="Exercise\MahjongSolitaire\Images\gold.png" />
+    <None Remove="Exercise\MahjongSolitaire\Images\silver.png" />
     <None Remove="Exercise\StudentManagement\Images\addStudent.png" />
     <None Remove="Exercise\StudentManagement\Images\administrator.png" />
     <None Remove="Exercise\StudentManagement\Images\adminLoginBg.png" />
@@ -29,6 +35,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Common\Images\auto-save.png" />
+    <Resource Include="Common\Images\new.png" />
+    <Resource Include="Common\Images\save.png" />
+    <Resource Include="Exercise\MahjongSolitaire\Images\copper.png" />
+    <Resource Include="Exercise\MahjongSolitaire\Images\gold.png" />
+    <Resource Include="Exercise\MahjongSolitaire\Images\silver.png" />
     <Resource Include="Exercise\StudentManagement\Images\addStudent.png" />
     <Resource Include="Exercise\StudentManagement\Images\administrator.png" />
     <Resource Include="Exercise\StudentManagement\Images\adminLoginBg.png" />

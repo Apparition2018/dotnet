@@ -1,5 +1,6 @@
-using Models;
 using System.Windows;
+using Models;
+using WPF_Demo.Controls;
 using WPF_Demo.Exercise.StudentManagement;
 
 namespace WPF_Demo
@@ -11,12 +12,16 @@ namespace WPF_Demo
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            Window window = new ToolBarDemo();
+            window.Show();
+
             FrmMain mainForm = new FrmMain();
             FrmAdminLogin loginForm = new FrmAdminLogin();
             if (loginForm.ShowDialog() == true)
             {
                 mainForm.Show();
-            } else
+            }
+            else
             {
                 mainForm.Close();
             }
