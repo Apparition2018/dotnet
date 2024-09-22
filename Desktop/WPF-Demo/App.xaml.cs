@@ -1,6 +1,7 @@
 using System.Windows;
 using Models;
 using WPF_Demo.Controls;
+using WPF_Demo.Exercise.MultiWindows;
 using WPF_Demo.Exercise.StudentManagement;
 
 namespace WPF_Demo
@@ -12,7 +13,7 @@ namespace WPF_Demo
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            Window window = new ToolBarDemo();
+            Window window = new EntranceWindow();
             window.Show();
 
             FrmMain mainForm = new FrmMain();
