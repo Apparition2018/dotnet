@@ -114,7 +114,7 @@ public class OperatorsAndExpressions
         [Test]
         public void TypeofOperator()
         {
-            Assert.That(typeof(int).ToString(), Is.EqualTo("System.Int32"));
+            Assert.That(typeof(int).ToString(), Is.EqualTo("System_.Int32"));
         }
     }
 

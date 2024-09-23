@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF_Demo.Exercise.StudentManagement"
         mc:Ignorable="d"
         Title="学员管理信息系统" Height="768" Width="1280" WindowStartupLocation="CenterScreen" WindowStyle="None"
         ResizeMode="NoResize" Background="#9a9aFF" Padding="0"
