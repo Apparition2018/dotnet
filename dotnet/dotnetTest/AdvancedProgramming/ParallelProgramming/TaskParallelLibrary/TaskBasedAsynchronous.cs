@@ -204,7 +204,7 @@ public class TaskBasedAsynchronous
                 stopwatch.Stop();
                 Console.WriteLine(
                     $"Attempt number: {attemptNumber}\n" +
-                    $"Retrieved value: {tasks.Result.Aggregate("", (current, next) => current + " " + next)}\n" +
+                    $"Retrieved value: {tasks.Result.Aggregate(string.Empty, (current, next) => current + " " + next)}\n" +
                     $"Elapsed retrieval time: {stopwatch.ElapsedMilliseconds:#,0} milliseconds.\n");
             }
         }

@@ -43,7 +43,7 @@ public class AssemblyTests : Demo
         var assemblyName = assembly.GetName();
         using var stream =
             // 从此程序集加载指定的清单资源
-            assembly.GetManifestResourceStream($"{assemblyName.Name}.Resources.{DemoDirName}.{DemoFileName}")!;
+            assembly.GetManifestResourceStream($"{assemblyName.Name}.{ResourcesDirName}.{DemoDirName}.{DemoFileName}")!;
         using var streamReader = new StreamReader(stream, Encoding.UTF8);
         Console.WriteLine(streamReader.ReadToEnd());
     }

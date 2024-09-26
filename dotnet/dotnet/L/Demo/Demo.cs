@@ -14,11 +14,12 @@ public class Demo
     protected const string Dotnet = "dotnet";
     protected static readonly string GitPath = Path.Combine("D:", "Liang", "git");
     protected static readonly string DotnetPath = Path.Combine(GitPath, Dotnet, Dotnet, Dotnet);
-
+    protected const string ResourcesDirName = "Resources";
     protected const string DemoDirName = "demo";
     protected const string DemoFileName = "demo";
-    private static readonly string ResourcesPath = Path.Combine(DotnetPath, "Resources");
+    private static readonly string ResourcesPath = Path.Combine(DotnetPath, ResourcesDirName);
     protected static readonly string DemoDirPath = Path.Combine(ResourcesPath, DemoDirName);
+    protected static readonly string DemoDirAssemblyPath = $"{Dotnet}.{ResourcesDirName}.{DemoDirName}";
     protected static readonly string DemoFilePath = Path.Combine(DemoDirPath, DemoFileName);
     protected static readonly string DesktopDemoFilePath = Path.Combine(Desktop, DemoFileName);
 
