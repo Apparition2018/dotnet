@@ -11,10 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{8E9CC5EA-3C1
 		DOC\NuGet.md = DOC\NuGet.md
 		DOC\Rider Settings.md = DOC\Rider Settings.md
 		DOC\Rider Shortcuts.md = DOC\Rider Shortcuts.md
+		DOC\Video.md = DOC\Video.md
 		DOC\VS Features.md = DOC\VS Features.md
 		DOC\VS Settings.md = DOC\VS Settings.md
 		DOC\VS Shortcuts.md = DOC\VS Shortcuts.md
-		DOC\Video.md = DOC\Video.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shows", "Shows", "{B24F4713-6963-4CA4-99D2-BB801C15467F}"
@@ -174,7 +174,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Desktop\Models\Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF-Demo", "Desktop\WPF-Demo\WPF-Demo.csproj", "{13884388-9BFD-4B20-BE4B-DF84DC2B8B91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms-Demo", "Desktop\WinForms-Demo\WinForms-Demo.csproj", "{5959334B-3EFF-4F45-98A6-282BFF80AAD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForms-Demo", "Desktop\WinForms-Demo\WinForms-Demo.csproj", "{5959334B-3EFF-4F45-98A6-282BFF80AAD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

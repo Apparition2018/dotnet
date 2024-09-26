@@ -1,7 +1,7 @@
 namespace dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
 /// <summary>
-/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods">分部类和方法par</a>
+/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods">分部类和方法</a>
 /// 可以将类、struct、接口或方法的定义拆分为两个或多个源文件，在编译应用程序时会组合所有部分
 /// <para>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods#restrictions">分部类限制</a>：
@@ -14,17 +14,7 @@ namespace dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 /// </summary>
 public class PartialClassesAndMethods
 {
-    partial class Coords
-    {
-        private int x;
-        private int y;
-
-        public Coords(int x, int y)
-        {
-            this.x = x;
-            this.y = y;
-        }
-    }
+    partial class Coords(int x, int y);
 
     partial class Coords
     {

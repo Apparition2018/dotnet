@@ -6,7 +6,7 @@ public class Interfaces
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/interfaces/explicit-interface-implementation">显示接口实现</a>
     /// </summary>
-    class ExplicitInterfaceImplementation()
+    class ExplicitInterfaceImplementation
     {
         interface IControl
         {

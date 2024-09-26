@@ -4,12 +4,12 @@
 @implements IDisposable
 
 <div class="main">
-    @if (invalidOrder)
+    @if (_invalidOrder)
     {
         <h2>Order not found</h2>
         <p>We're sorry but this order no longer exists.</p>
     }
-    else if (orderWithStatus is null)
+    else if (_orderWithStatus is null)
     {
         <div class="track-order">
             <div class="track-order-title">
@@ -24,10 +24,10 @@
         <div class="track-order">
             <div class="track-order-title">
                 <h2>
-                    Order placed @orderWithStatus.Order.CreatedTime.ToLongDateString()
+                    Order placed @_orderWithStatus.Order.CreatedTime.ToLongDateString()
                 </h2>
                 <p class="ml-auto mb-0">
-                    Status: <strong>@orderWithStatus.StatusText</strong>
+                    Status: <strong>@_orderWithStatus.StatusText</strong>
                 </p>
             </div>
             <div class="track-order-body">
@@ -38,7 +38,7 @@
                             <span class="sr-only">Checking your order status...</span>
                         </div>
                     }
-                    @foreach (var pizza in orderWithStatus.Order.Pizzas)
+                    @foreach (var pizza in _orderWithStatus.Order.Pizzas)
                     {
                         <p>
                             <strong>
@@ -56,11 +56,11 @@
 
 @code {
     [Parameter] public int OrderId { get; set; }
-    bool IsOrderIncomplete => orderWithStatus is null || orderWithStatus.IsDelivered == false;
-    PeriodicTimer timer = new(TimeSpan.FromSeconds(3));
+    bool IsOrderIncomplete => _orderWithStatus is null || _orderWithStatus.IsDelivered == false;
+    readonly PeriodicTimer _timer = new(TimeSpan.FromSeconds(3));
 
-    OrderWithStatus? orderWithStatus;
-    bool invalidOrder = false;
+    OrderWithStatus? _orderWithStatus;
+    bool _invalidOrder;
 
     protected override async Task OnParametersSetAsync() => await GetLatestOrderStatusUpdatesAsync();
 
@@ -71,24 +71,24 @@
     {
         try
         {
-            orderWithStatus = await HttpClient.GetFromJsonAsync<OrderWithStatus>(
+            _orderWithStatus = await HttpClient.GetFromJsonAsync<OrderWithStatus>(
                 $"{NavigationManager.BaseUri}orders/{OrderId}");
         }
         catch (Exception ex)
         {
-            invalidOrder = true;
+            _invalidOrder = true;
             Console.Error.WriteLine(ex);
         }
     }
 
     async Task StartPollingTimerAsync()
     {
-        while (IsOrderIncomplete && await timer.WaitForNextTickAsync())
+        while (IsOrderIncomplete && await _timer.WaitForNextTickAsync())
         {
             await GetLatestOrderStatusUpdatesAsync();
             StateHasChanged();
         }
     }
 
-    public void Dispose() => timer.Dispose();
+    public void Dispose() => _timer.Dispose();
 }

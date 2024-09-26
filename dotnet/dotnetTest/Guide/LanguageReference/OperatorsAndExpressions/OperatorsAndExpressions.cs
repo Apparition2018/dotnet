@@ -3,7 +3,6 @@ using dotnetTest.Guide.LanguageReference.Keywords;
 using dotnetTest.Guide.ProgrammingGuide;
 using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 using dotnetTest.Guide.ProgrammingGuide.StatementsExpressionsEquality;
-using NUnit.Framework.Constraints;
 
 namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 
@@ -114,7 +113,7 @@ public class OperatorsAndExpressions
         [Test]
         public void TypeofOperator()
         {
-            Assert.That(typeof(int).ToString(), Is.EqualTo("System.Int32"));
+            Assert.That(typeof(int).ToString(), Is.EqualTo("System_.Int32"));
         }
     }
 

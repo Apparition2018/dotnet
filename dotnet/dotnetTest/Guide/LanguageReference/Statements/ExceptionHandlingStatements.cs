@@ -25,7 +25,7 @@ public class ExceptionHandlingStatements
     }
 
     /// <summary>try 语句</summary>
-    class TryStatement()
+    class TryStatement
     {
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/statements/exception-handling-statements#a-when-exception-filter">when 异常筛选器</a>

@@ -6,16 +6,16 @@ namespace BlazingPizza
     {
         public static void Initialize(PizzaStoreContext db)
         {
-            var specials = new PizzaSpecial[]
+            var specials = new[]
             {
-                new PizzaSpecial()
+                new PizzaSpecial
                 {
                     Name = "Basic Cheese Pizza",
                     Description = "It's cheesy and delicious. Why wouldn't you want one?",
                     BasePrice = 9.99m,
                     ImageUrl = "img/pizzas/cheese.jpg",
                 },
-                new PizzaSpecial()
+                new PizzaSpecial
                 {
                     Id = 2,
                     Name = "The Baconatorizor",
@@ -23,7 +23,7 @@ namespace BlazingPizza
                     BasePrice = 11.99m,
                     ImageUrl = "img/pizzas/bacon.jpg",
                 },
-                new PizzaSpecial()
+                new PizzaSpecial
                 {
                     Id = 3,
                     Name = "Classic pepperoni",
@@ -31,7 +31,7 @@ namespace BlazingPizza
                     BasePrice = 10.50m,
                     ImageUrl = "img/pizzas/pepperoni.jpg",
                 },
-                new PizzaSpecial()
+                new PizzaSpecial
                 {
                     Id = 4,
                     Name = "Buffalo chicken",
@@ -39,7 +39,7 @@ namespace BlazingPizza
                     BasePrice = 12.75m,
                     ImageUrl = "img/pizzas/meaty.jpg",
                 },
-                new PizzaSpecial()
+                new PizzaSpecial
                 {
                     Id = 5,
                     Name = "Mushroom Lovers",
@@ -47,7 +47,7 @@ namespace BlazingPizza
                     BasePrice = 11.00m,
                     ImageUrl = "img/pizzas/mushroom.jpg",
                 },
-                new PizzaSpecial()
+                new PizzaSpecial
                 {
                     Id = 7,
                     Name = "Veggie Delight",
@@ -55,7 +55,7 @@ namespace BlazingPizza
                     BasePrice = 11.50m,
                     ImageUrl = "img/pizzas/salad.jpg",
                 },
-                new PizzaSpecial()
+                new PizzaSpecial
                 {
                     Id = 8,
                     Name = "Margherita",

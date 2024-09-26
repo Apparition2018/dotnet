@@ -177,14 +177,14 @@ public class GroupingOperators : Demo
 
     private class AnagramEqualityComparer : IEqualityComparer<string>
     {
-        public bool Equals(string x, string y) => getCanonicalString(x) == getCanonicalString(y);
+        public bool Equals(string x, string y) => GetCanonicalString(x) == GetCanonicalString(y);
 
-        public int GetHashCode(string obj) => getCanonicalString(obj).GetHashCode();
+        public int GetHashCode(string obj) => GetCanonicalString(obj).GetHashCode();
 
-        private string getCanonicalString(string word)
+        private string GetCanonicalString(string word)
         {
             char[] wordChars = word.ToCharArray();
-            Array.Sort<char>(wordChars);
+            Array.Sort(wordChars);
             return new string(wordChars);
         }
     }

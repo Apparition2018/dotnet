@@ -196,7 +196,7 @@ public class TaskBasedAsynchronous
                     await Task.Delay(1000);
                     cached.TryAdd(key, new Random().Next(10));
                     return cached.GetValueOrDefault(key);
-                })!;
+                });
             }
 
             void StopAndLogElapsedTime(int attemptNumber, Task<int[]> tasks)

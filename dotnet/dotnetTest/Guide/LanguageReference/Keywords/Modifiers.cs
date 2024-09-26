@@ -180,43 +180,38 @@ public class Modifiers
     /// </remarks>
     class Virtual
     {
-        class Shape
+        private class Shape
         {
-            protected double _x, _y;
+            protected readonly double X;
+            protected readonly double Y;
 
-            public Shape() { }
-
-            public Shape(double x, double y)
+            protected Shape(double x, double y)
             {
-                _x = x;
-                _y = y;
+                X = x;
+                Y = y;
             }
 
             public virtual double Area()
             {
-                return _x * _y;
+                return X * Y;
             }
         }
 
         /// <summary>球体</summary>
-        class Sphere : Shape
+        private class Sphere(double r) : Shape(r, 0)
         {
-            public Sphere(double r) : base(r, 0) { }
-
             public override double Area()
             {
-                return 4 * Math.PI * _x * _x;
+                return 4 * Math.PI * X * X;
             }
         }
 
         /// <summary>圆柱</summary>
-        class Cylinder : Shape
+        private class Cylinder(double r, double h) : Shape(r, h)
         {
-            public Cylinder(double r, double h) : base(r, h) { }
-
             public override double Area()
             {
-                return 2 * Math.PI * _x * _x + 2 * Math.PI * _x * _y;
+                return 2 * Math.PI * X * X + 2 * Math.PI * X * Y;
             }
         }
 

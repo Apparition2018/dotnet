@@ -7,12 +7,12 @@ namespace WPF_Demo.Exercise.StudentManagement
     /// <summary>
     /// Interaction logic for FrmAdminLogin.xaml
     /// </summary>
-    public partial class FrmAdminLogin : Window
+    public partial class FrmAdminLogin
     {
         public FrmAdminLogin()
         {
             InitializeComponent();
-            this.txtLoginId.Focus();
+            TxtLoginId.Focus();
         }
 
         #region 无边框窗体拖动
@@ -25,17 +25,17 @@ namespace WPF_Demo.Exercise.StudentManagement
             }
         }
         #endregion
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             // 调用登录逻辑…
             // 保存登录对象
-            App.currentAdmin = new Admin();
+            App.CurrentAdmin = new Admin();
             this.DialogResult = true;
         }
 
-        private void btnExit_Click(object sender, RoutedEventArgs e)
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = false;
+            DialogResult = false;
         }
     }
 }

@@ -4,10 +4,10 @@ namespace dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/nested-types">嵌套类型</a>
 /// 在 class、struct、interface 中定义的类型称为嵌套类型，默认为 private。
 /// </summary>
-public class NestedTypes
+public abstract class NestedTypes
 {
     /// <summary>outer type</summary>
-    public class Container
+    public abstract class Container
     {
         /// <summary>inner type</summary>
         public class Nested
@@ -19,7 +19,7 @@ public class NestedTypes
             /// 要访问 outer type，将其作为参数传递给 inner type 的构造函数
             public Nested(Container parent)
             {
-                this._parent = parent;
+                _parent = parent;
             }
         }
     }

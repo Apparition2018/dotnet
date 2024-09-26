@@ -60,7 +60,7 @@ public class SQLiteHelper
             conn.Open();
             return cmd.ExecuteReader(CommandBehavior.CloseConnection);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             conn.Close();
             throw;

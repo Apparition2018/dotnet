@@ -1,7 +1,6 @@
 using System.Windows;
 using Models;
-using WPF_Demo.Controls;
-using WPF_Demo.Exercise.MultiWindows;
+using WPF_Demo.API.System_.Windows;
 using WPF_Demo.Exercise.StudentManagement;
 
 namespace WPF_Demo
@@ -9,13 +8,13 @@ namespace WPF_Demo
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            Window window = new EntranceWindow();
+            Window window = new UIElementDemo();
             window.Show();
-
+            return;
             FrmMain mainForm = new FrmMain();
             FrmAdminLogin loginForm = new FrmAdminLogin();
             if (loginForm.ShowDialog() == true)
@@ -28,6 +27,6 @@ namespace WPF_Demo
             }
         }
 
-        public static Admin? currentAdmin = null;
+        public static Admin? CurrentAdmin = null;
     }
 }

@@ -28,4 +28,4 @@ public class Order
 [JsonSerializable(typeof(List<Topping>))]
 [JsonSerializable(typeof(Topping))]
 [JsonSerializable(typeof(Dictionary<string, string>))]
-public partial class OrderContext : JsonSerializerContext { }
+public partial class OrderContext : JsonSerializerContext;

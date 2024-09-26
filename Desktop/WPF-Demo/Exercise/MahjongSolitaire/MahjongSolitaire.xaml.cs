@@ -7,7 +7,7 @@ namespace WPF_Demo.Exercise.MahjongSolitaire
     /// <summary>
     /// Interaction logic for MahjongSolitaire.xaml
     /// </summary>
-    public partial class MahjongSolitaire : Window
+    public partial class MahjongSolitaire
     {
         public MahjongSolitaire()
         {

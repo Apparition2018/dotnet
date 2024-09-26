@@ -43,10 +43,7 @@ public class JoinOperations : Demo
                 );
 
             string result = $"The following people are both teachers and students:{Environment.NewLine}";
-            foreach (string name in query)
-            {
-                result += $"{name}\r\n";
-            }
+            result = query.Aggregate(result, (current, name) => current + $"{name}\r\n");
 
             Console.Write(result);
         }

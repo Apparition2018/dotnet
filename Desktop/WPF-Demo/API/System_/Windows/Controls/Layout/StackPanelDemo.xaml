@@ -1,0 +1,25 @@
+<Window x:Class="WPF_Demo.API.System_.Windows.Controls.Layout.StackPanelDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="StackPanelDemo" Height="175" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="请选择您喜欢的课程名称" BorderBrush="Black" Margin="10">
+            <!-- StackPanel：将子元素排列成水平或垂直的一行 -->
+            <!-- https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.controls.stackpanel -->
+            <StackPanel Margin="5">
+                <CheckBox Content="A. C#面向对象编程"/>
+                <CheckBox Content="B. WCF通信框架"/>
+                <CheckBox Content="C. WPF快速编程"/>
+                <CheckBox Content="D. APS.NET-MVC"/>
+                <!-- Orientation：指示子元素的堆叠维度 -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="BtnSubmit" Content="提交" Width="40" Margin="5"/>
+                    <Button Name="BtnReset" Content="重选" Width="40" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

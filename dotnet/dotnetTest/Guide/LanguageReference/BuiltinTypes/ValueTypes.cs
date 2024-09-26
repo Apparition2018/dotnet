@@ -261,7 +261,7 @@ public class ValueTypes
         /// 使用 using 指令指定元组类型的别名
         /// <see cref="GlobalUsings"/>
         /// </summary>
-        /// <seealso cref="Keywords.NamespaceKeywords.UsingDirective.UsingAlias"/>
+        /// <seealso cref="Keywords.NamespaceKeywords.UsingDirective">UsingAlias</seealso>
         [Test]
         public void SpecifyAnAlias()
         {
@@ -406,7 +406,7 @@ public class ValueTypes
             int? a = 14;
             int b = 17;
             // 不要使用 Object.GetType 方法 判断实例是否为可为 null 的值类型
-            Assert.That(a.GetType().FullName, Is.EqualTo("System.Int32"));
+            Assert.That(a.GetType().FullName, Is.EqualTo("System_.Int32"));
             // 无法使用 is 运算符 判断实例是否为可为 null 的值类型
             Assert.That(a is int, Is.EqualTo(true));
             Assert.That(b is int?, Is.EqualTo(true));

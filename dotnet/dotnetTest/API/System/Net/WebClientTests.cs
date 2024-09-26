@@ -17,7 +17,7 @@ public class WebClientTests
         string uri = "http://www.gutenberg.org/files/54700/54700-0.txt";
         string s = new WebClient().DownloadString(uri);
         string[] splits = s.Split(
-            new char[] { ' ', '\u000A', ',', '.', ';', ':', '-', '_', '/' },
+            new[] { ' ', '\u000A', ',', '.', ';', ':', '-', '_', '/' },
             StringSplitOptions.RemoveEmptyEntries);
         foreach (var split in splits)
         {

@@ -21,9 +21,9 @@
 
         public List<PizzaTopping> Toppings { get; set; }
 
-        public decimal GetBasePrice()
+        private decimal GetBasePrice()
         {
-            return ((decimal)Size / (decimal)DefaultSize) * Special.BasePrice;
+            return ((decimal)Size / DefaultSize) * Special.BasePrice;
         }
 
         public decimal GetTotalPrice()

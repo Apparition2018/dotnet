@@ -112,12 +112,12 @@ public class AsynchronousProgramming
     }
 }
 
-internal class Bacon { }
+internal class Bacon;
 
-internal class Coffee { }
+internal class Coffee;
 
-internal class Egg { }
+internal class Egg;
 
-internal class Juice { }
+internal class Juice;
 
-internal class Toast { }
+internal class Toast;

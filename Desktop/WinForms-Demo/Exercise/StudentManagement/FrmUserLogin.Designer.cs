@@ -1,4 +1,4 @@
-﻿namespace WinForms_Demo.Exercise.StudentManagement
+namespace WinForms_Demo.Exercise.StudentManagement
 {
     partial class FrmUserLogin
     {
@@ -48,7 +48,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -108,7 +107,6 @@
             button2.Text = "退出  ";
             button2.TextAlign = ContentAlignment.MiddleRight;
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // FrmUserLogin
             // 

@@ -100,6 +100,7 @@ Ctrl + M, Ctrl + U              StopHidingCurrent                   停止隐藏
 ### CodeWindow（代码窗口）
 ```
 Ctrl + K, T						ViewCallHierarchy                   查看调用层次结构
+Ctrl + R, Ctrl + G              RemoveAndSort
 ```
 ### FileHealthIndicator（文件运行状况指示器）
 ```

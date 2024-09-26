@@ -43,17 +43,15 @@ namespace ContosoCrafts.WebSite.Services
                 query.Ratings = ratings.ToArray();
             }
 
-            using (var outputStream = File.OpenWrite(JsonFileName))
-            {
-                JsonSerializer.Serialize(
-                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
-                    {
-                        SkipValidation = true,
-                        Indented = true
-                    }),
-                    products
-                );
-            }
+            using var outputStream = File.OpenWrite(JsonFileName);
+            JsonSerializer.Serialize(
+                new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                {
+                    SkipValidation = true,
+                    Indented = true
+                }),
+                products
+            );
         }
     }
 }

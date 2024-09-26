@@ -1,0 +1,22 @@
+<Window x:Class="WPF_Demo.API.System_.Windows.Controls.Layout.WrapPanelDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="WrapPanelDemo" Height="200" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <!-- WrapPanel：按从左到右的顺序位置定位子元素，在包含框的边缘处将内容切换到下一行 -->
+        <!-- https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.controls.wrappanel -->
+        <WrapPanel>
+            <Button Content="A" Width="60" Height="60"/>
+            <Button Content="B" Width="60" Height="60"/>
+            <Button Content="C" Width="60" Height="60"/>
+            <Button Content="D" Width="60" Height="60"/>
+            <Button Content="E" Width="60" Height="60"/>
+            <Button Content="F" Width="60" Height="60"/>
+            <Button Content="G" Width="60" Height="60"/>
+            <Button Content="H" Width="60" Height="60"/>
+        </WrapPanel>
+    </Grid>
+</Window>

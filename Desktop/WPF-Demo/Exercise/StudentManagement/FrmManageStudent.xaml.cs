@@ -1,5 +1,4 @@
 using System.Windows;
-using System.Windows.Controls;
 using DAL;
 using Models.Ext;
 
@@ -8,58 +7,58 @@ namespace WPF_Demo.Exercise.StudentManagement
     /// <summary>
     /// Interaction logic for FrmManageStudent.xaml
     /// </summary>
-    public partial class FrmManageStudent : UserControl
+    public partial class FrmManageStudent
     {
-        private StudentClassService classService = new StudentClassService();
-        private StudentService studentService = new StudentService();
-        private List<StudentExt>? studentList = null;
+        private readonly StudentClassService _classService = new();
+        private readonly StudentService _studentService = new();
+        private List<StudentExt>? _studentList;
 
         public FrmManageStudent()
         {
             InitializeComponent();
-            this.cboClass.ItemsSource = classService.GetAllClasses();
-            this.cboClass.DisplayMemberPath = "ClassName";
-            this.cboClass.SelectedValuePath = "ClassId";
-            this.cboClass.SelectedIndex = -1;
+            CbbClass.ItemsSource = _classService.GetAllClasses();
+            CbbClass.DisplayMemberPath = "ClassName";
+            CbbClass.SelectedValuePath = "ClassId";
+            CbbClass.SelectedIndex = -1;
         }
 
-        private void btnQueryList_Click(object sender, RoutedEventArgs e)
+        private void BtnQueryList_Click(object sender, RoutedEventArgs e)
         {
-            if (this.cboClass.SelectedIndex == -1)
+            if (CbbClass.SelectedIndex == -1)
             {
                 MessageBox.Show("请首先选择一个班级！", "查询提示");
                 return;
             }
-            studentList = studentService.GetStudentByClass(this.cboClass.Text);
-            this.dgvStudentList.ItemsSource = studentList;
+            _studentList = _studentService.GetStudentByClass(this.CbbClass.Text);
+            DgStudentList.ItemsSource = _studentList;
         }
 
-        private void btnNameAsc_Click(object sender, RoutedEventArgs e)
+        private void BtnNameAsc_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnNameDesc_Click(object sender, RoutedEventArgs e)
+        private void BtnNameDesc_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnDel_Click(object sender, RoutedEventArgs e)
+        private void BtnDel_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnExport_Click(object sender, RoutedEventArgs e)
+        private void BtnExport_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        private void BtnPrint_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -67,9 +66,9 @@ namespace WPF_Demo.Exercise.StudentManagement
         /// <summary>
         /// 关闭当前窗体
         /// </summary>
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
+            Visibility = Visibility.Hidden;
         }
     }
 }

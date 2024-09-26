@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF_Demo.Exercise.StudentManagement"
         mc:Ignorable="d"
         Title="学员管理信息系统" Height="768" Width="1280" WindowStartupLocation="CenterScreen" WindowStyle="None"
         ResizeMode="NoResize" Background="#9a9aFF" Padding="0"
@@ -55,27 +54,27 @@
                         <TextBlock FontSize="14" Foreground="White" FontWeight="Bold" VerticalAlignment="Center">添加学员</TextBlock>
                     </DockPanel>
                 </Button>
-                <Button x:Name="btnStudentManage" Grid.Row="3" Grid.Column="1" Margin="7,2,14,2"
-                        Background="#9A9AFF" BorderBrush="#5050FF" Click="btnStudentManage_Click">
+                <Button x:Name="BtnStudentManage" Grid.Row="3" Grid.Column="1" Margin="7,2,14,2"
+                        Background="#9A9AFF" BorderBrush="#5050FF" Click="BtnStudentManage_Click">
                     <DockPanel>
                         <Image Source="Images/administrator.png" Width="16" Margin="0,5,5,5"/>
                         <TextBlock FontSize="14" Foreground="White" FontWeight="Bold" VerticalAlignment="Center">学员管理</TextBlock>
                     </DockPanel>
                 </Button>
-                <Button x:Name="btnScoreManage" Grid.Row="5" Margin="14,2,7,2" Background="#9A9AFF" BorderBrush="#5050FF">
+                <Button x:Name="BtnScoreManage" Grid.Row="5" Margin="14,2,7,2" Background="#9A9AFF" BorderBrush="#5050FF">
                     <DockPanel>
                         <Image Source="Images/score.png" Width="16" Margin="0,5,5,5"/>
                         <TextBlock FontSize="14" Foreground="White" FontWeight="Bold" VerticalAlignment="Center">成绩管理</TextBlock>
                     </DockPanel>
                 </Button>
-                <Button x:Name="btnBalance" Grid.Row="5" Grid.Column="1" Margin="7,2,14,2" Background="#9A9AFF" BorderBrush="#5050FF">
+                <Button x:Name="BtnBalance" Grid.Row="5" Grid.Column="1" Margin="7,2,14,2" Background="#9A9AFF" BorderBrush="#5050FF">
                     <DockPanel>
                         <Image Source="Images/attendance.png" Width="16" Margin="0,5,5,5"/>
                         <TextBlock FontSize="14" Foreground="White" FontWeight="Bold" VerticalAlignment="Center">考勤管理</TextBlock>
                     </DockPanel>
                 </Button>
             </Grid>
-            <Grid x:Name="gridContent" Width="1016" Height="676" Margin="0,0,8,0"/>
+            <Grid x:Name="GridContent" Width="1016" Height="676" Margin="0,0,8,0"/>
         </DockPanel>
     </Grid>
 </Window>
