@@ -1,4 +1,4 @@
-﻿namespace WPF_Demo.API.System_.Windows.Controls
+namespace WPF_Demo.API.System_.Windows.Controls
 {
     /// <summary>
     /// Interaction logic for ToolBarDemo.xaml

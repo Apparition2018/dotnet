@@ -62,9 +62,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             mainContainer.Panel2.SuspendLayout();
             mainContainer.SuspendLayout();
             SuspendLayout();
-            // 
+            //
             // menuStrip1
-            // 
+            //
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { 系统ToolStripMenuItem, 学院管理MToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
@@ -73,69 +73,69 @@ namespace WinForms_Demo.Exercise.StudentManagement
             menuStrip1.Size = new Size(1263, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            // 
+            //
             // 系统ToolStripMenuItem
-            // 
+            //
             系统ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tsmiPwdModify, toolStripSeparator2, 推出系统ToolStripMenuItem });
             系统ToolStripMenuItem.Name = "系统ToolStripMenuItem";
             系统ToolStripMenuItem.Size = new Size(72, 24);
             系统ToolStripMenuItem.Text = "系统(S&)";
-            // 
+            //
             // tsmiPwdModify
-            // 
+            //
             tsmiPwdModify.Image = (Image)resources.GetObject("tsmiPwdModify.Image");
             tsmiPwdModify.Name = "tsmiPwdModify";
             tsmiPwdModify.Size = new Size(171, 26);
             tsmiPwdModify.Text = "密码修改(&P)";
             tsmiPwdModify.Click += TsmiPwdModify_Click;
-            // 
+            //
             // toolStripSeparator2
-            // 
+            //
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(168, 6);
-            // 
+            //
             // 推出系统ToolStripMenuItem
-            // 
+            //
             推出系统ToolStripMenuItem.Image = (Image)resources.GetObject("推出系统ToolStripMenuItem.Image");
             推出系统ToolStripMenuItem.Name = "推出系统ToolStripMenuItem";
             推出系统ToolStripMenuItem.Size = new Size(171, 26);
             推出系统ToolStripMenuItem.Text = "推出系统(&E)";
-            // 
+            //
             // 学院管理MToolStripMenuItem
-            // 
+            //
             学院管理MToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 添加学员AToolStripMenuItem, 批量导入学院IToolStripMenuItem, toolStripSeparator1, 学员信息管理ToolStripMenuItem });
             学院管理MToolStripMenuItem.Name = "学院管理MToolStripMenuItem";
             学院管理MToolStripMenuItem.Size = new Size(108, 24);
             学院管理MToolStripMenuItem.Text = "学院管理(&M)";
-            // 
+            //
             // 添加学员AToolStripMenuItem
-            // 
+            //
             添加学员AToolStripMenuItem.Image = (Image)resources.GetObject("添加学员AToolStripMenuItem.Image");
             添加学员AToolStripMenuItem.Name = "添加学员AToolStripMenuItem";
             添加学员AToolStripMenuItem.Size = new Size(196, 26);
             添加学员AToolStripMenuItem.Text = "添加学员(&A)";
-            // 
+            //
             // 批量导入学院IToolStripMenuItem
-            // 
+            //
             批量导入学院IToolStripMenuItem.Image = (Image)resources.GetObject("批量导入学院IToolStripMenuItem.Image");
             批量导入学院IToolStripMenuItem.Name = "批量导入学院IToolStripMenuItem";
             批量导入学院IToolStripMenuItem.Size = new Size(196, 26);
             批量导入学院IToolStripMenuItem.Text = "批量导入学员(&I)";
-            // 
+            //
             // toolStripSeparator1
-            // 
+            //
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(193, 6);
-            // 
+            //
             // 学员信息管理ToolStripMenuItem
-            // 
+            //
             学员信息管理ToolStripMenuItem.Image = (Image)resources.GetObject("学员信息管理ToolStripMenuItem.Image");
             学员信息管理ToolStripMenuItem.Name = "学员信息管理ToolStripMenuItem";
             学员信息管理ToolStripMenuItem.Size = new Size(196, 26);
             学员信息管理ToolStripMenuItem.Text = "学员信息管理";
-            // 
+            //
             // statusStrip1
-            // 
+            //
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel2 });
             statusStrip1.Location = new Point(0, 695);
@@ -144,30 +144,30 @@ namespace WinForms_Demo.Exercise.StudentManagement
             statusStrip1.Size = new Size(1263, 26);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
-            // 
+            //
             // toolStripStatusLabel1
-            // 
+            //
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(101, 20);
             toolStripStatusLabel1.Text = "版本号：V2.0";
-            // 
+            //
             // toolStripStatusLabel2
-            // 
+            //
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             toolStripStatusLabel2.Size = new Size(127, 20);
             toolStripStatusLabel2.Text = "   [当前用户：***]";
-            // 
+            //
             // mainContainer
-            // 
+            //
             mainContainer.BorderStyle = BorderStyle.Fixed3D;
             mainContainer.Dock = DockStyle.Fill;
             mainContainer.FixedPanel = FixedPanel.Panel1;
             mainContainer.Location = new Point(0, 28);
             mainContainer.Margin = new Padding(4);
             mainContainer.Name = "mainContainer";
-            // 
+            //
             // mainContainer.Panel1
-            // 
+            //
             mainContainer.Panel1.Controls.Add(button6);
             mainContainer.Panel1.Controls.Add(button8);
             mainContainer.Panel1.Controls.Add(button5);
@@ -177,9 +177,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             mainContainer.Panel1.Controls.Add(button2);
             mainContainer.Panel1.Controls.Add(btnAddStudent);
             mainContainer.Panel1.Controls.Add(monthCalendar1);
-            // 
+            //
             // mainContainer.Panel2
-            // 
+            //
             mainContainer.Panel2.BackgroundImage = (Image)resources.GetObject("mainContainer.Panel2.BackgroundImage");
             mainContainer.Panel2.BackgroundImageLayout = ImageLayout.Stretch;
             mainContainer.Panel2.Controls.Add(label1);
@@ -187,9 +187,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             mainContainer.SplitterDistance = 328;
             mainContainer.SplitterWidth = 5;
             mainContainer.TabIndex = 2;
-            // 
+            //
             // button6
-            // 
+            //
             button6.ImageAlign = ContentAlignment.MiddleLeft;
             button6.ImageIndex = 5;
             button6.ImageList = imageList1;
@@ -201,9 +201,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button6.Text = "考勤打卡 ";
             button6.TextAlign = ContentAlignment.MiddleRight;
             button6.UseVisualStyleBackColor = true;
-            // 
+            //
             // imageList1
-            // 
+            //
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
             imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
             imageList1.TransparentColor = Color.Transparent;
@@ -217,9 +217,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             imageList1.Images.SetKeyName(7, "SysIco.ico");
             imageList1.Images.SetKeyName(8, "TABLE.ICO");
             imageList1.Images.SetKeyName(9, "修改.bmp");
-            // 
+            //
             // button8
-            // 
+            //
             button8.ImageAlign = ContentAlignment.MiddleLeft;
             button8.ImageIndex = 9;
             button8.ImageList = imageList1;
@@ -231,9 +231,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button8.Text = "密码修改 ";
             button8.TextAlign = ContentAlignment.MiddleRight;
             button8.UseVisualStyleBackColor = true;
-            // 
+            //
             // button5
-            // 
+            //
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.ImageIndex = 0;
             button5.ImageList = imageList1;
@@ -245,9 +245,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button5.Text = "成绩分析 ";
             button5.TextAlign = ContentAlignment.MiddleRight;
             button5.UseVisualStyleBackColor = true;
-            // 
+            //
             // button7
-            // 
+            //
             button7.ImageAlign = ContentAlignment.MiddleLeft;
             button7.ImageIndex = 1;
             button7.ImageList = imageList1;
@@ -259,9 +259,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button7.Text = "退出系统 ";
             button7.TextAlign = ContentAlignment.MiddleRight;
             button7.UseVisualStyleBackColor = true;
-            // 
+            //
             // button4
-            // 
+            //
             button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.ImageIndex = 8;
             button4.ImageList = imageList1;
@@ -273,9 +273,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button4.Text = "成绩浏览 ";
             button4.TextAlign = ContentAlignment.MiddleRight;
             button4.UseVisualStyleBackColor = true;
-            // 
+            //
             // btnStuManagement
-            // 
+            //
             btnStuManagement.ImageAlign = ContentAlignment.MiddleLeft;
             btnStuManagement.ImageIndex = 4;
             btnStuManagement.ImageList = imageList1;
@@ -288,9 +288,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             btnStuManagement.TextAlign = ContentAlignment.MiddleRight;
             btnStuManagement.UseVisualStyleBackColor = true;
             btnStuManagement.Click += BtnStuManagement_Click;
-            // 
+            //
             // button2
-            // 
+            //
             button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.ImageIndex = 2;
             button2.ImageList = imageList1;
@@ -302,9 +302,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button2.Text = "批量导入 ";
             button2.TextAlign = ContentAlignment.MiddleRight;
             button2.UseVisualStyleBackColor = true;
-            // 
+            //
             // btnAddStudent
-            // 
+            //
             btnAddStudent.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddStudent.ImageIndex = 3;
             btnAddStudent.ImageList = imageList1;
@@ -317,16 +317,16 @@ namespace WinForms_Demo.Exercise.StudentManagement
             btnAddStudent.TextAlign = ContentAlignment.MiddleRight;
             btnAddStudent.UseVisualStyleBackColor = true;
             btnAddStudent.Click += BtnAddStudent_Click;
-            // 
+            //
             // monthCalendar1
-            // 
+            //
             monthCalendar1.Location = new Point(33, 33);
             monthCalendar1.Margin = new Padding(12, 11, 12, 11);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 0;
-            // 
+            //
             // label1
-            // 
+            //
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("SimHei", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 134);
@@ -336,9 +336,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label1.Size = new Size(459, 44);
             label1.TabIndex = 0;
             label1.Text = "欢迎使用学员管理系统";
-            // 
+            //
             // FrmMain
-            // 
+            //
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1263, 721);
