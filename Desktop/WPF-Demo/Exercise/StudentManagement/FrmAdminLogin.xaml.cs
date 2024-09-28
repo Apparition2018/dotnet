@@ -19,9 +19,9 @@ namespace WPF_Demo.Exercise.StudentManagement
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Point point =  e.GetPosition(this);
-            if (point.X >= 0 && point.X <= this.ActualWidth && point.Y >= 0 && point.Y <= this.ActualHeight)
+            if (point.X >= 0 && point.X <= ActualWidth && point.Y >= 0 && point.Y <= ActualHeight)
             {
-                this.DragMove();
+                DragMove();
             }
         }
         #endregion
@@ -30,7 +30,7 @@ namespace WPF_Demo.Exercise.StudentManagement
             // 调用登录逻辑…
             // 保存登录对象
             App.CurrentAdmin = new Admin();
-            this.DialogResult = true;
+            DialogResult = true;
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
