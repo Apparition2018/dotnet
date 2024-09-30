@@ -41,7 +41,8 @@ namespace WinForms_Demo.Exercise.StudentManagement
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = (Image)resources.GetObject("Login.Image");
+            pictureBox1.InitialImage = null;
             pictureBox1.Location = new Point(25, 25);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(203, 162);
@@ -86,25 +87,25 @@ namespace WinForms_Demo.Exercise.StudentManagement
             // 
             // button1
             // 
-            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Image = Properties.Resources.lklLogin2_Image;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(257, 137);
             button1.Name = "button1";
             button1.Size = new Size(100, 40);
             button1.TabIndex = 3;
-            button1.Text = "登录  ";
+            button1.Text = "登 录  ";
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Image = Properties.Resources.Close_Image;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.Location = new Point(411, 137);
             button2.Name = "button2";
             button2.Size = new Size(100, 40);
             button2.TabIndex = 4;
-            button2.Text = "退出  ";
+            button2.Text = "退 出  ";
             button2.TextAlign = ContentAlignment.MiddleRight;
             button2.UseVisualStyleBackColor = true;
             // 

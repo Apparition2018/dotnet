@@ -60,9 +60,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
-            //
+            // 
             // label1
-            //
+            // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
             label1.ForeColor = Color.Purple;
@@ -71,27 +71,27 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label1.Size = new Size(205, 48);
             label1.TabIndex = 0;
             label1.Text = "添加新学员";
-            //
+            // 
             // pictureBox1
-            //
+            // 
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(40, 95);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(250, 250);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            //
+            // 
             // pictureBox2
-            //
+            // 
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
             pictureBox2.Location = new Point(520, 95);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(250, 250);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
-            //
+            // 
             // button1
-            //
+            // 
             button1.ForeColor = Color.Black;
             button1.Location = new Point(355, 95);
             button1.Name = "button1";
@@ -99,9 +99,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button1.TabIndex = 2;
             button1.Text = "启动摄像头";
             button1.UseVisualStyleBackColor = true;
-            //
+            // 
             // button2
-            //
+            // 
             button2.ForeColor = Color.Black;
             button2.Location = new Point(355, 165);
             button2.Name = "button2";
@@ -109,9 +109,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button2.TabIndex = 2;
             button2.Text = "开始拍照";
             button2.UseVisualStyleBackColor = true;
-            //
+            // 
             // button3
-            //
+            // 
             button3.ForeColor = Color.Black;
             button3.Location = new Point(355, 235);
             button3.Name = "button3";
@@ -119,9 +119,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button3.TabIndex = 2;
             button3.Text = "清除照片";
             button3.UseVisualStyleBackColor = true;
-            //
+            // 
             // button4
-            //
+            // 
             button4.ForeColor = Color.Black;
             button4.Location = new Point(355, 305);
             button4.Name = "button4";
@@ -129,9 +129,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button4.TabIndex = 2;
             button4.Text = "选择图片";
             button4.UseVisualStyleBackColor = true;
-            //
+            // 
             // groupBox1
-            //
+            // 
             groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(radioButton2);
@@ -155,26 +155,26 @@ namespace WinForms_Demo.Exercise.StudentManagement
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "[学员基本信息]";
-            //
+            // 
             // comboBox1
-            //
+            // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(90, 90);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(220, 28);
             comboBox1.TabIndex = 4;
-            //
+            // 
             // dateTimePicker1
-            //
+            // 
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(560, 40);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(170, 27);
             dateTimePicker1.TabIndex = 3;
-            //
+            // 
             // radioButton2
-            //
+            // 
             radioButton2.AutoSize = true;
             radioButton2.ForeColor = Color.Black;
             radioButton2.Location = new Point(418, 41);
@@ -184,9 +184,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             radioButton2.TabStop = true;
             radioButton2.Text = "女";
             radioButton2.UseVisualStyleBackColor = true;
-            //
+            // 
             // radioButton1
-            //
+            // 
             radioButton1.AutoSize = true;
             radioButton1.ForeColor = Color.Black;
             radioButton1.Location = new Point(374, 41);
@@ -196,44 +196,44 @@ namespace WinForms_Demo.Exercise.StudentManagement
             radioButton1.TabStop = true;
             radioButton1.Text = "男";
             radioButton1.UseVisualStyleBackColor = true;
-            //
+            // 
             // textBox4
-            //
+            // 
             textBox4.Location = new Point(480, 140);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(250, 27);
             textBox4.TabIndex = 1;
-            //
+            // 
             // textBox2
-            //
+            // 
             textBox2.Location = new Point(480, 91);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(250, 27);
             textBox2.TabIndex = 1;
-            //
+            // 
             // textBox5
-            //
+            // 
             textBox5.Location = new Point(90, 190);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(640, 27);
             textBox5.TabIndex = 1;
-            //
+            // 
             // textBox3
-            //
+            // 
             textBox3.Location = new Point(90, 140);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(220, 27);
             textBox3.TabIndex = 1;
-            //
+            // 
             // textBox1
-            //
+            // 
             textBox1.Location = new Point(90, 40);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(220, 27);
             textBox1.TabIndex = 1;
-            //
+            // 
             // label3
-            //
+            // 
             label3.AutoSize = true;
             label3.ForeColor = Color.Black;
             label3.Location = new Point(325, 43);
@@ -241,9 +241,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label3.Size = new Size(54, 20);
             label3.TabIndex = 0;
             label3.Text = "性别：";
-            //
+            // 
             // label4
-            //
+            // 
             label4.AutoSize = true;
             label4.ForeColor = Color.Black;
             label4.Location = new Point(467, 43);
@@ -251,9 +251,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label4.Size = new Size(84, 20);
             label4.TabIndex = 0;
             label4.Text = "出生日期：";
-            //
+            // 
             // label8
-            //
+            // 
             label8.AutoSize = true;
             label8.ForeColor = Color.Black;
             label8.Location = new Point(385, 143);
@@ -261,9 +261,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label8.Size = new Size(84, 20);
             label8.TabIndex = 0;
             label8.Text = "联系电话：";
-            //
+            // 
             // label6
-            //
+            // 
             label6.AutoSize = true;
             label6.ForeColor = Color.Black;
             label6.Location = new Point(385, 94);
@@ -271,9 +271,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label6.Size = new Size(84, 20);
             label6.TabIndex = 0;
             label6.Text = "身份证号：";
-            //
+            // 
             // label9
-            //
+            // 
             label9.AutoSize = true;
             label9.ForeColor = Color.Black;
             label9.Location = new Point(0, 193);
@@ -281,9 +281,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label9.Size = new Size(84, 20);
             label9.TabIndex = 0;
             label9.Text = "家庭地址：";
-            //
+            // 
             // label7
-            //
+            // 
             label7.AutoSize = true;
             label7.ForeColor = Color.Black;
             label7.Location = new Point(0, 143);
@@ -291,9 +291,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label7.Size = new Size(84, 20);
             label7.TabIndex = 0;
             label7.Text = "考勤卡号：";
-            //
+            // 
             // label5
-            //
+            // 
             label5.AutoSize = true;
             label5.ForeColor = Color.Black;
             label5.Location = new Point(0, 94);
@@ -301,9 +301,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label5.Size = new Size(84, 20);
             label5.TabIndex = 0;
             label5.Text = "所在班级：";
-            //
+            // 
             // label2
-            //
+            // 
             label2.AutoSize = true;
             label2.ForeColor = Color.Black;
             label2.Location = new Point(0, 43);
@@ -311,11 +311,11 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label2.Size = new Size(84, 20);
             label2.TabIndex = 0;
             label2.Text = "学员姓名：";
-            //
+            // 
             // button5
-            //
+            // 
             button5.ForeColor = Color.Black;
-            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.Image = Properties.Resources.MngIncdown_Image;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.Location = new Point(520, 29);
             button5.Name = "button5";
@@ -324,11 +324,11 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button5.Text = "确认添加 ";
             button5.TextAlign = ContentAlignment.MiddleRight;
             button5.UseVisualStyleBackColor = true;
-            //
+            // 
             // btnClose
-            //
+            // 
             btnClose.ForeColor = Color.Black;
-            btnClose.Image = (Image)resources.GetObject("btnClose.Image");
+            btnClose.Image = Properties.Resources.Close2_Image;
             btnClose.ImageAlign = ContentAlignment.MiddleLeft;
             btnClose.Location = new Point(670, 29);
             btnClose.Name = "btnClose";
@@ -338,9 +338,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             btnClose.TextAlign = ContentAlignment.MiddleRight;
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += BtnClose_Click;
-            //
+            // 
             // FrmAddStudent
-            //
+            // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(810, 653);

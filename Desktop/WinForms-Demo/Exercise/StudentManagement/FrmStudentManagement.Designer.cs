@@ -28,12 +28,10 @@ namespace WinForms_Demo.Exercise.StudentManagement
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentManagement));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentManagement));
             label1 = new Label();
             btnClose = new Button();
-            imageList1 = new ImageList(components);
             groupBox1 = new GroupBox();
             button4 = new Button();
             button3 = new Button();
@@ -57,9 +55,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            //
+            // 
             // label1
-            //
+            // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
             label1.ForeColor = Color.Purple;
@@ -68,13 +66,12 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label1.Size = new Size(242, 48);
             label1.TabIndex = 1;
             label1.Text = "学员信息管理";
-            //
+            // 
             // btnClose
-            //
+            // 
             btnClose.ForeColor = Color.Black;
+            btnClose.Image = Properties.Resources.Close2_Image;
             btnClose.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClose.ImageIndex = 0;
-            btnClose.ImageList = imageList1;
             btnClose.Location = new Point(685, 29);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(100, 40);
@@ -83,21 +80,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             btnClose.TextAlign = ContentAlignment.MiddleRight;
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += BtnClose_Click;
-            //
-            // imageList1
-            //
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "关闭.bmp");
-            imageList1.Images.SetKeyName(1, "Query.ico");
-            imageList1.Images.SetKeyName(2, "MngDowndown.bmp");
-            imageList1.Images.SetKeyName(3, "修改.bmp");
-            imageList1.Images.SetKeyName(4, "删除.bmp");
-            imageList1.Images.SetKeyName(5, "打印.BMP");
-            //
+            // 
             // groupBox1
-            //
+            // 
             groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(button2);
@@ -111,13 +96,12 @@ namespace WinForms_Demo.Exercise.StudentManagement
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "[按照班级查询]";
-            //
+            // 
             // button4
-            //
+            // 
             button4.ForeColor = Color.Red;
+            button4.Image = Properties.Resources.Delete_Image;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.ImageIndex = 4;
-            button4.ImageList = imageList1;
             button4.Location = new Point(670, 30);
             button4.Name = "button4";
             button4.Size = new Size(90, 30);
@@ -125,13 +109,12 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button4.Text = "删除学员";
             button4.TextAlign = ContentAlignment.MiddleRight;
             button4.UseVisualStyleBackColor = true;
-            //
+            // 
             // button3
-            //
+            // 
             button3.ForeColor = Color.Black;
+            button3.Image = Properties.Resources.Modify_Image;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.ImageIndex = 3;
-            button3.ImageList = imageList1;
             button3.Location = new Point(570, 31);
             button3.Name = "button3";
             button3.Size = new Size(90, 30);
@@ -139,13 +122,12 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button3.Text = "修改学员";
             button3.TextAlign = ContentAlignment.MiddleRight;
             button3.UseVisualStyleBackColor = true;
-            //
+            // 
             // button2
-            //
+            // 
             button2.ForeColor = Color.Black;
+            button2.Image = Properties.Resources.MngDowndown_Image;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.ImageIndex = 2;
-            button2.ImageList = imageList1;
             button2.Location = new Point(460, 31);
             button2.Name = "button2";
             button2.Size = new Size(90, 30);
@@ -153,13 +135,12 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button2.Text = "学号降序";
             button2.TextAlign = ContentAlignment.MiddleRight;
             button2.UseVisualStyleBackColor = true;
-            //
+            // 
             // button1
-            //
+            // 
             button1.ForeColor = Color.Black;
+            button1.Image = Properties.Resources.MngDowndown_Image;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.ImageIndex = 2;
-            button1.ImageList = imageList1;
             button1.Location = new Point(360, 31);
             button1.Name = "button1";
             button1.Size = new Size(90, 30);
@@ -167,13 +148,12 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button1.Text = "姓名降序";
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
-            //
+            // 
             // button5
-            //
+            // 
             button5.ForeColor = Color.Black;
+            button5.Image = Properties.Resources.Query2_Image;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.ImageIndex = 1;
-            button5.ImageList = imageList1;
             button5.Location = new Point(250, 31);
             button5.Name = "button5";
             button5.Size = new Size(90, 30);
@@ -181,17 +161,17 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button5.Text = "查询 ";
             button5.TextAlign = ContentAlignment.MiddleRight;
             button5.UseVisualStyleBackColor = true;
-            //
+            // 
             // comboBox1
-            //
+            // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(91, 32);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(150, 28);
             comboBox1.TabIndex = 6;
-            //
+            // 
             // label5
-            //
+            // 
             label5.AutoSize = true;
             label5.ForeColor = Color.Black;
             label5.Location = new Point(5, 36);
@@ -199,9 +179,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label5.Size = new Size(84, 20);
             label5.TabIndex = 5;
             label5.Text = "所在班级：";
-            //
+            // 
             // groupBox2
-            //
+            // 
             groupBox2.Controls.Add(button10);
             groupBox2.Controls.Add(comboBox2);
             groupBox2.Controls.Add(label2);
@@ -211,9 +191,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             groupBox2.TabIndex = 5;
             groupBox2.TabStop = false;
             groupBox2.Text = "[按学号精确查询]";
-            //
+            // 
             // button10
-            //
+            // 
             button10.ForeColor = Color.Black;
             button10.Location = new Point(278, 31);
             button10.Name = "button10";
@@ -221,17 +201,17 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button10.TabIndex = 5;
             button10.Text = "提交查询";
             button10.UseVisualStyleBackColor = true;
-            //
+            // 
             // comboBox2
-            //
+            // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(99, 32);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(170, 28);
             comboBox2.TabIndex = 6;
-            //
+            // 
             // label2
-            //
+            // 
             label2.AutoSize = true;
             label2.ForeColor = Color.Black;
             label2.Location = new Point(5, 36);
@@ -239,13 +219,12 @@ namespace WinForms_Demo.Exercise.StudentManagement
             label2.Size = new Size(99, 20);
             label2.TabIndex = 5;
             label2.Text = "请输入学号：";
-            //
+            // 
             // button6
-            //
+            // 
             button6.ForeColor = Color.Black;
+            button6.Image = Properties.Resources.Print_Image;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.ImageIndex = 5;
-            button6.ImageList = imageList1;
             button6.Location = new Point(635, 206);
             button6.Name = "button6";
             button6.Size = new Size(150, 30);
@@ -253,9 +232,9 @@ namespace WinForms_Demo.Exercise.StudentManagement
             button6.Text = "打印当前学员信息";
             button6.TextAlign = ContentAlignment.MiddleRight;
             button6.UseVisualStyleBackColor = true;
-            //
+            // 
             // dataGridView1
-            //
+            // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonFace;
@@ -275,49 +254,49 @@ namespace WinForms_Demo.Exercise.StudentManagement
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(760, 355);
             dataGridView1.TabIndex = 6;
-            //
+            // 
             // StudentId
-            //
+            // 
             StudentId.HeaderText = "学号";
             StudentId.MinimumWidth = 6;
             StudentId.Name = "StudentId";
             StudentId.ReadOnly = true;
             StudentId.Width = 155;
-            //
+            // 
             // StudentName
-            //
+            // 
             StudentName.HeaderText = "姓名";
             StudentName.MinimumWidth = 6;
             StudentName.Name = "StudentName";
             StudentName.ReadOnly = true;
             StudentName.Width = 155;
-            //
+            // 
             // Gender
-            //
+            // 
             Gender.HeaderText = "性别";
             Gender.MinimumWidth = 6;
             Gender.Name = "Gender";
             Gender.ReadOnly = true;
             Gender.Width = 80;
-            //
+            // 
             // Birthday
-            //
+            // 
             Birthday.HeaderText = "出生日期";
             Birthday.MinimumWidth = 6;
             Birthday.Name = "Birthday";
             Birthday.ReadOnly = true;
             Birthday.Width = 155;
-            //
+            // 
             // Column2
-            //
+            // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column2.HeaderText = "所在班级";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
-            //
+            // 
             // FrmStudentManagement
-            //
+            // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(810, 653);
@@ -347,7 +326,6 @@ namespace WinForms_Demo.Exercise.StudentManagement
         private ComboBox comboBox1;
         private Label label5;
         private Button button5;
-        private ImageList imageList1;
         private Button button2;
         private Button button1;
         private Button button3;
