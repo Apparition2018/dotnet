@@ -40,9 +40,9 @@ namespace WinForms_Demo.Exercise.MIS
             BtnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
+            //
             // pictureBox1
-            // 
+            //
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(0, 0);
@@ -50,9 +50,9 @@ namespace WinForms_Demo.Exercise.MIS
             pictureBox1.Size = new Size(390, 90);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
+            //
             // label1
-            // 
+            //
             label1.BackColor = Color.FromArgb(0, 155, 213);
             label1.Font = new Font("微软雅黑", 24F, FontStyle.Regular, GraphicsUnit.Point, 134);
             label1.ForeColor = Color.White;
@@ -62,9 +62,9 @@ namespace WinForms_Demo.Exercise.MIS
             label1.TabIndex = 1;
             label1.Text = "企业级MIS综合平台";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            //
             // label2
-            // 
+            //
             label2.AutoSize = true;
             label2.Font = new Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             label2.Location = new Point(75, 122);
@@ -72,18 +72,17 @@ namespace WinForms_Demo.Exercise.MIS
             label2.Size = new Size(80, 17);
             label2.TabIndex = 2;
             label2.Text = "管理员账号：";
-            // 
+            //
             // textBox1
-            // 
+            //
             textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Location = new Point(157, 119);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(160, 23);
             textBox1.TabIndex = 3;
-            textBox1.Text = " ";
-            // 
+            //
             // label3
-            // 
+            //
             label3.AutoSize = true;
             label3.Font = new Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             label3.Location = new Point(75, 159);
@@ -91,19 +90,18 @@ namespace WinForms_Demo.Exercise.MIS
             label3.Size = new Size(80, 17);
             label3.TabIndex = 2;
             label3.Text = "管理员密码：";
-            // 
+            //
             // textBox2
-            // 
+            //
             textBox2.BorderStyle = BorderStyle.FixedSingle;
             textBox2.Location = new Point(157, 156);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(160, 23);
             textBox2.TabIndex = 3;
-            textBox2.Text = " ";
             textBox2.UseSystemPasswordChar = true;
-            // 
+            //
             // checkBox1
-            // 
+            //
             checkBox1.AutoSize = true;
             checkBox1.FlatStyle = FlatStyle.Flat;
             checkBox1.Font = new Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
@@ -113,9 +111,9 @@ namespace WinForms_Demo.Exercise.MIS
             checkBox1.TabIndex = 4;
             checkBox1.Text = "记住密码（10天内保存）";
             checkBox1.UseVisualStyleBackColor = true;
-            // 
+            //
             // button1
-            // 
+            //
             button1.BackColor = Color.FromArgb(9, 163, 220);
             button1.FlatAppearance.BorderColor = Color.FromArgb(9, 163, 220);
             button1.FlatStyle = FlatStyle.Flat;
@@ -127,9 +125,9 @@ namespace WinForms_Demo.Exercise.MIS
             button1.TabIndex = 5;
             button1.Text = "登  录  系  统";
             button1.UseVisualStyleBackColor = false;
-            // 
+            //
             // BtnClose
-            // 
+            //
             BtnClose.BackColor = Color.FromArgb(0, 155, 213);
             BtnClose.FlatAppearance.BorderColor = Color.FromArgb(0, 155, 213);
             BtnClose.FlatStyle = FlatStyle.Flat;
@@ -142,9 +140,9 @@ namespace WinForms_Demo.Exercise.MIS
             BtnClose.Text = "×";
             BtnClose.UseVisualStyleBackColor = false;
             BtnClose.Click += BtnClose_Click;
-            // 
+            //
             // FrmAdminLogin
-            // 
+            //
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;

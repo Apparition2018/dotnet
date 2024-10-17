@@ -126,7 +126,7 @@ namespace WinForms_Demo.Exercise.MIS
             // 
             // label2
             // 
-            label2.Image = (Image)resources.GetObject("label2.Image");
+            label2.Image = Properties.Resources.Project_Image;
             label2.Location = new Point(0, 8);
             label2.Name = "label2";
             label2.Size = new Size(66, 25);
@@ -161,7 +161,7 @@ namespace WinForms_Demo.Exercise.MIS
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             button5.ForeColor = Color.White;
-            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.Image = Properties.Resources.Info_Image;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.Location = new Point(19, 160);
             button5.Name = "button5";
@@ -178,7 +178,7 @@ namespace WinForms_Demo.Exercise.MIS
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Image = Properties.Resources.Info_Image;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.Location = new Point(19, 120);
             button4.Name = "button4";
@@ -195,7 +195,7 @@ namespace WinForms_Demo.Exercise.MIS
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Image = Properties.Resources.Info_Image;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.Location = new Point(19, 55);
             button3.Name = "button3";
@@ -212,7 +212,7 @@ namespace WinForms_Demo.Exercise.MIS
             BtnProductManagement.FlatStyle = FlatStyle.Flat;
             BtnProductManagement.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             BtnProductManagement.ForeColor = Color.White;
-            BtnProductManagement.Image = (Image)resources.GetObject("BtnProductManagement.Image");
+            BtnProductManagement.Image = Properties.Resources.Info_Image;
             BtnProductManagement.ImageAlign = ContentAlignment.MiddleLeft;
             BtnProductManagement.Location = new Point(19, 15);
             BtnProductManagement.Name = "BtnProductManagement";

@@ -28,10 +28,9 @@ namespace WinForms_Demo.Exercise.MIS
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddProduct));
             label1 = new Label();
-            button2 = new Button();
-            BtnClose = new Button();
+            Save = new Button();
+            Close3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -42,40 +41,40 @@ namespace WinForms_Demo.Exercise.MIS
             label1.Size = new Size(1047, 1);
             label1.TabIndex = 0;
             // 
-            // button2
+            // Save
             // 
-            button2.BackColor = Color.FromArgb(34, 155, 252);
-            button2.FlatAppearance.BorderColor = Color.FromArgb(9, 163, 220);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(739, 10);
-            button2.Name = "button2";
-            button2.Size = new Size(140, 28);
-            button2.TabIndex = 1;
-            button2.Text = "      保存到数据库";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = false;
+            Save.BackColor = Color.FromArgb(34, 155, 252);
+            Save.FlatAppearance.BorderColor = Color.FromArgb(9, 163, 220);
+            Save.FlatStyle = FlatStyle.Flat;
+            Save.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            Save.ForeColor = Color.White;
+            Save.Image = Properties.Resources.Save_Image;
+            Save.ImageAlign = ContentAlignment.MiddleLeft;
+            Save.Location = new Point(739, 10);
+            Save.Name = "Save";
+            Save.Size = new Size(140, 28);
+            Save.TabIndex = 1;
+            Save.Text = "      保存到数据库";
+            Save.TextAlign = ContentAlignment.MiddleLeft;
+            Save.UseVisualStyleBackColor = false;
             // 
-            // BtnClose
+            // Close3
             // 
-            BtnClose.BackColor = Color.FromArgb(34, 155, 252);
-            BtnClose.FlatAppearance.BorderColor = Color.FromArgb(9, 163, 220);
-            BtnClose.FlatStyle = FlatStyle.Flat;
-            BtnClose.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            BtnClose.ForeColor = Color.White;
-            BtnClose.Image = (Image)resources.GetObject("BtnClose.Image");
-            BtnClose.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnClose.Location = new Point(935, 10);
-            BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(100, 28);
-            BtnClose.TabIndex = 1;
-            BtnClose.Text = "      关闭窗口";
-            BtnClose.TextAlign = ContentAlignment.MiddleLeft;
-            BtnClose.UseVisualStyleBackColor = false;
-            BtnClose.Click += BtnClose_Click;
+            Close3.BackColor = Color.FromArgb(34, 155, 252);
+            Close3.FlatAppearance.BorderColor = Color.FromArgb(9, 163, 220);
+            Close3.FlatStyle = FlatStyle.Flat;
+            Close3.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            Close3.ForeColor = Color.White;
+            Close3.Image = Properties.Resources.Close3_Image;
+            Close3.ImageAlign = ContentAlignment.MiddleLeft;
+            Close3.Location = new Point(935, 10);
+            Close3.Name = "Close3";
+            Close3.Size = new Size(100, 28);
+            Close3.TabIndex = 1;
+            Close3.Text = "      关闭窗口";
+            Close3.TextAlign = ContentAlignment.MiddleLeft;
+            Close3.UseVisualStyleBackColor = false;
+            Close3.Click += BtnClose_Click;
             // 
             // FrmAddProduct
             // 
@@ -83,8 +82,8 @@ namespace WinForms_Demo.Exercise.MIS
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(239, 255, 255);
             ClientSize = new Size(1047, 640);
-            Controls.Add(BtnClose);
-            Controls.Add(button2);
+            Controls.Add(Close3);
+            Controls.Add(Save);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmAddProduct";
@@ -95,7 +94,7 @@ namespace WinForms_Demo.Exercise.MIS
         #endregion
 
         private Label label1;
-        private Button button2;
-        private Button BtnClose;
+        private Button Save;
+        private Button Close3;
     }
 }
