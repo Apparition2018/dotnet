@@ -63,9 +63,9 @@ namespace WinForms_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap about2_Image {
+        internal static System.Drawing.Bitmap About2_Image {
             get {
-                object obj = ResourceManager.GetObject("about2.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("About2.Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +153,16 @@ namespace WinForms_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Exit_Image {
+            get {
+                object obj = ResourceManager.GetObject("Exit.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Info_Image {
             get {
                 object obj = ResourceManager.GetObject("Info.Image", resourceCulture);
@@ -203,9 +213,9 @@ namespace WinForms_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap people_Image {
+        internal static System.Drawing.Bitmap People_Image {
             get {
-                object obj = ResourceManager.GetObject("people.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("People.Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,6 +263,26 @@ namespace WinForms_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Random_Image {
+            get {
+                object obj = ResourceManager.GetObject("Random.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Random2_Image {
+            get {
+                object obj = ResourceManager.GetObject("Random2.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Save_Image {
             get {
                 object obj = ResourceManager.GetObject("Save.Image", resourceCulture);
@@ -263,9 +293,9 @@ namespace WinForms_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap student_Image {
+        internal static System.Drawing.Bitmap Student_Image {
             get {
-                object obj = ResourceManager.GetObject("student.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("Student.Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

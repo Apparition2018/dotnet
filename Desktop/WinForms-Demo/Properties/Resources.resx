@@ -219,7 +219,7 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="student.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Student.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAVhJREFUWEfVkFGSwyAMQ3P0HC03a6OAiDA2kIb9WM28UYtt2ZNtgT4PWCpvwSyv
@@ -231,7 +231,7 @@
         zrKsulB/AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="people.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="People.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJ9JREFUOE/N
         kMsNwzAMQz1aRutmHS3xU/sEwkjSSw4lQMgWKfozAu/JfXKr3QevbxVnngJGBCky4MpTIFGBU0QGXHlK
@@ -290,7 +290,7 @@
         iIiIiIiI
 </value>
   </data>
-  <data name="about2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="About2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         cQAAEnEB89x6jgAAAcBJREFUOE+lkd0rQ2Ecx8+1axf8AXLNv+CKFFeUXFBS5AIXYnkLNS8hCdkaoa1W
@@ -371,6 +371,28 @@
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAF5JREFUOE9j
         GEjgAKXJAiDNZBtAseYGCJN0ANK8H8IkD/wHYrKdDrKZbNtBfgbZThDAFCI7E8QGiREdcCBnIhsC45ME
         YJpgLiIr2mCGkGw7MgAZAsIUAbLjnUjAwAAA04YWrvrTjGMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Random.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAGpJREFUOE9j
+        GHlAAUqTDfYDMV5D5gMxSBGITgAJQEEDEN8HYpAcCBMFYDYhGwYyxAHCJA6ADAFpggGSwwBkM8j5ZAOQ
+        ZpKcjA6QnU8UANkGcjYo4JADDMQHuQYkhzccYAZgczZMbngBBgYAg34Rk6fcjToAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="Exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cwAAEnMBjCK5BwAAAFFJREFUOE+tjUEKACAIBP3/p4sOwkLrtpIDXdIZY5IFz+Haw4CKyDkG2FL1f8Ei
+        tpxgpC0nY3I7wiQ7wuTkGVFyUs5QVoEDnbuypCN/HZoiYgMIWTnHkOhl0gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="Random2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAKdJREFUOE+1
+        koENgCAMBBnFURzFUdzEURzFUbRnfPMiEkz0kw9I6bUI6U914Sm8hHsWWkXiGCaRcTjmwIhVRcJ6jK4c
+        WtQcZoNXoTqW/FgXEaBy3qrDPJm9Hts/VL3UKnM/mvaecgB/3EEkcjxXFYAEAuKdSE0AJAAwfwtVgIzy
+        DgR6BOgG5BzAWvEakRIIKskBjKVHdpODMDdAIpVfCZBep//AL5XSBiCMOpRi9SmhAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

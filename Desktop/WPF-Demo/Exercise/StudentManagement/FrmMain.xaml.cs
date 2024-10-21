@@ -18,9 +18,9 @@ namespace WPF_Demo.Exercise.StudentManagement
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Point point = e.GetPosition(this);
-            if (point.X >= 0 && point.X <= this.ActualWidth && point.Y >= 0 && point.Y <= this.ActualHeight)
+            if (point.X >= 0 && point.X <= ActualWidth && point.Y >= 0 && point.Y <= ActualHeight)
             {
-                this.DragMove();
+                DragMove();
             }
         }
         #endregion

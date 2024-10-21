@@ -28,38 +28,40 @@ namespace WinForms_Demo.Exercise.Lottery
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             panel1 = new Panel();
+            BtnPrint = new Button();
+            BtnWriteSelf = new Button();
+            BtnSelect = new Button();
+            BtnClear = new Button();
+            BtnDel = new Button();
+            BtnStart = new Button();
+            BtnGroupSelect = new Button();
             textBox8 = new TextBox();
             label8 = new Label();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            TxtNum7 = new TextBox();
+            TxtNum6 = new TextBox();
+            TxtNum5 = new TextBox();
+            TxtNum3 = new TextBox();
+            TxtNum4 = new TextBox();
+            TxtNum2 = new TextBox();
+            TxtNum1 = new TextBox();
             LbNumList = new ListBox();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            LbNum7 = new Label();
+            LbNum6 = new Label();
+            LbNum5 = new Label();
+            LbNum3 = new Label();
+            LbNum4 = new Label();
+            LbNum2 = new Label();
+            LbNum1 = new Label();
             Title = new Label();
             panel2 = new Panel();
             PbIcon = new PictureBox();
             BtnMin = new Button();
             BtnMax = new Button();
             BtnClose = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button7 = new Button();
-            button6 = new Button();
-            button1 = new Button();
-            button5 = new Button();
+            RandomTimer = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PbIcon).BeginInit();
@@ -68,30 +70,30 @@ namespace WinForms_Demo.Exercise.Lottery
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(41, 63, 123);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button7);
-            panel1.Controls.Add(button6);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(BtnPrint);
+            panel1.Controls.Add(BtnWriteSelf);
+            panel1.Controls.Add(BtnSelect);
+            panel1.Controls.Add(BtnClear);
+            panel1.Controls.Add(BtnDel);
+            panel1.Controls.Add(BtnStart);
+            panel1.Controls.Add(BtnGroupSelect);
             panel1.Controls.Add(textBox8);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(textBox7);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(TxtNum7);
+            panel1.Controls.Add(TxtNum6);
+            panel1.Controls.Add(TxtNum5);
+            panel1.Controls.Add(TxtNum3);
+            panel1.Controls.Add(TxtNum4);
+            panel1.Controls.Add(TxtNum2);
+            panel1.Controls.Add(TxtNum1);
             panel1.Controls.Add(LbNumList);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(LbNum7);
+            panel1.Controls.Add(LbNum6);
+            panel1.Controls.Add(LbNum5);
+            panel1.Controls.Add(LbNum3);
+            panel1.Controls.Add(LbNum4);
+            panel1.Controls.Add(LbNum2);
+            panel1.Controls.Add(LbNum1);
             panel1.Controls.Add(Title);
             panel1.Font = new Font("Microsoft YaHei UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 134);
             panel1.ForeColor = Color.White;
@@ -99,6 +101,105 @@ namespace WinForms_Demo.Exercise.Lottery
             panel1.Name = "panel1";
             panel1.Size = new Size(630, 415);
             panel1.TabIndex = 0;
+            // 
+            // BtnPrint
+            // 
+            BtnPrint.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            BtnPrint.ForeColor = Color.Black;
+            BtnPrint.Image = Properties.Resources.Print_Image;
+            BtnPrint.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnPrint.Location = new Point(507, 280);
+            BtnPrint.Name = "BtnPrint";
+            BtnPrint.Size = new Size(94, 114);
+            BtnPrint.TabIndex = 6;
+            BtnPrint.Text = "打印彩票";
+            BtnPrint.TextAlign = ContentAlignment.MiddleRight;
+            BtnPrint.UseVisualStyleBackColor = true;
+            // 
+            // BtnWriteSelf
+            // 
+            BtnWriteSelf.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            BtnWriteSelf.ForeColor = Color.Black;
+            BtnWriteSelf.Image = Properties.Resources.Modify_Image;
+            BtnWriteSelf.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnWriteSelf.Location = new Point(507, 211);
+            BtnWriteSelf.Name = "BtnWriteSelf";
+            BtnWriteSelf.Size = new Size(94, 45);
+            BtnWriteSelf.TabIndex = 6;
+            BtnWriteSelf.Text = "手写号码";
+            BtnWriteSelf.TextAlign = ContentAlignment.MiddleRight;
+            BtnWriteSelf.UseVisualStyleBackColor = true;
+            // 
+            // BtnSelect
+            // 
+            BtnSelect.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            BtnSelect.ForeColor = Color.Black;
+            BtnSelect.Image = Properties.Resources.CheckMark_Image;
+            BtnSelect.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnSelect.Location = new Point(398, 280);
+            BtnSelect.Name = "BtnSelect";
+            BtnSelect.Size = new Size(94, 45);
+            BtnSelect.TabIndex = 6;
+            BtnSelect.Text = "确认选号";
+            BtnSelect.TextAlign = ContentAlignment.MiddleRight;
+            BtnSelect.UseVisualStyleBackColor = true;
+            // 
+            // BtnClear
+            // 
+            BtnClear.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            BtnClear.ForeColor = Color.Black;
+            BtnClear.Image = Properties.Resources.Delete_Image;
+            BtnClear.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnClear.Location = new Point(398, 349);
+            BtnClear.Name = "BtnClear";
+            BtnClear.Size = new Size(94, 45);
+            BtnClear.TabIndex = 6;
+            BtnClear.Text = "清空选号";
+            BtnClear.TextAlign = ContentAlignment.MiddleRight;
+            BtnClear.UseVisualStyleBackColor = true;
+            // 
+            // BtnDel
+            // 
+            BtnDel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            BtnDel.ForeColor = Color.Black;
+            BtnDel.Image = Properties.Resources.Exit_Image;
+            BtnDel.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnDel.Location = new Point(290, 349);
+            BtnDel.Name = "BtnDel";
+            BtnDel.Size = new Size(94, 45);
+            BtnDel.TabIndex = 6;
+            BtnDel.Text = "删除选号";
+            BtnDel.TextAlign = ContentAlignment.MiddleRight;
+            BtnDel.UseVisualStyleBackColor = true;
+            // 
+            // BtnStart
+            // 
+            BtnStart.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            BtnStart.ForeColor = Color.Black;
+            BtnStart.Image = Properties.Resources.Random2_Image;
+            BtnStart.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnStart.Location = new Point(290, 280);
+            BtnStart.Name = "BtnStart";
+            BtnStart.Size = new Size(94, 45);
+            BtnStart.TabIndex = 6;
+            BtnStart.Text = "随机选号";
+            BtnStart.TextAlign = ContentAlignment.MiddleRight;
+            BtnStart.UseVisualStyleBackColor = true;
+            BtnStart.Click += BtnStart_Click;
+            // 
+            // BtnGroupSelect
+            // 
+            BtnGroupSelect.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            BtnGroupSelect.ForeColor = Color.Black;
+            BtnGroupSelect.Image = Properties.Resources.Random_Image;
+            BtnGroupSelect.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnGroupSelect.Location = new Point(398, 211);
+            BtnGroupSelect.Name = "BtnGroupSelect";
+            BtnGroupSelect.Size = new Size(94, 45);
+            BtnGroupSelect.TabIndex = 6;
+            BtnGroupSelect.Text = "随机组选";
+            BtnGroupSelect.TextAlign = ContentAlignment.MiddleRight;
+            BtnGroupSelect.UseVisualStyleBackColor = true;
             // 
             // textBox8
             // 
@@ -121,76 +222,76 @@ namespace WinForms_Demo.Exercise.Lottery
             label8.TabIndex = 3;
             label8.Text = "组个数：";
             // 
-            // textBox7
+            // TxtNum7
             // 
-            textBox7.BackColor = Color.FromArgb(255, 128, 0);
-            textBox7.ForeColor = Color.White;
-            textBox7.Location = new Point(566, 150);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(35, 37);
-            textBox7.TabIndex = 2;
-            textBox7.Text = "0";
-            textBox7.TextAlign = HorizontalAlignment.Center;
+            TxtNum7.BackColor = Color.FromArgb(255, 128, 0);
+            TxtNum7.ForeColor = Color.White;
+            TxtNum7.Location = new Point(566, 150);
+            TxtNum7.Name = "TxtNum7";
+            TxtNum7.Size = new Size(35, 37);
+            TxtNum7.TabIndex = 2;
+            TxtNum7.Text = "0";
+            TxtNum7.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox6
+            // TxtNum6
             // 
-            textBox6.BackColor = Color.FromArgb(224, 224, 224);
-            textBox6.Location = new Point(510, 150);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(35, 37);
-            textBox6.TabIndex = 2;
-            textBox6.Text = "0";
-            textBox6.TextAlign = HorizontalAlignment.Center;
+            TxtNum6.BackColor = Color.FromArgb(224, 224, 224);
+            TxtNum6.Location = new Point(510, 150);
+            TxtNum6.Name = "TxtNum6";
+            TxtNum6.Size = new Size(35, 37);
+            TxtNum6.TabIndex = 2;
+            TxtNum6.Text = "0";
+            TxtNum6.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox5
+            // TxtNum5
             // 
-            textBox5.BackColor = Color.FromArgb(224, 224, 224);
-            textBox5.Location = new Point(466, 150);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(35, 37);
-            textBox5.TabIndex = 2;
-            textBox5.Text = "0";
-            textBox5.TextAlign = HorizontalAlignment.Center;
+            TxtNum5.BackColor = Color.FromArgb(224, 224, 224);
+            TxtNum5.Location = new Point(466, 150);
+            TxtNum5.Name = "TxtNum5";
+            TxtNum5.Size = new Size(35, 37);
+            TxtNum5.TabIndex = 2;
+            TxtNum5.Text = "0";
+            TxtNum5.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox3
+            // TxtNum3
             // 
-            textBox3.BackColor = Color.FromArgb(224, 224, 224);
-            textBox3.Location = new Point(378, 150);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(35, 37);
-            textBox3.TabIndex = 2;
-            textBox3.Text = "0";
-            textBox3.TextAlign = HorizontalAlignment.Center;
+            TxtNum3.BackColor = Color.FromArgb(224, 224, 224);
+            TxtNum3.Location = new Point(378, 150);
+            TxtNum3.Name = "TxtNum3";
+            TxtNum3.Size = new Size(35, 37);
+            TxtNum3.TabIndex = 2;
+            TxtNum3.Text = "0";
+            TxtNum3.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox4
+            // TxtNum4
             // 
-            textBox4.BackColor = Color.FromArgb(224, 224, 224);
-            textBox4.Location = new Point(422, 150);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(35, 37);
-            textBox4.TabIndex = 2;
-            textBox4.Text = "0";
-            textBox4.TextAlign = HorizontalAlignment.Center;
+            TxtNum4.BackColor = Color.FromArgb(224, 224, 224);
+            TxtNum4.Location = new Point(422, 150);
+            TxtNum4.Name = "TxtNum4";
+            TxtNum4.Size = new Size(35, 37);
+            TxtNum4.TabIndex = 2;
+            TxtNum4.Text = "0";
+            TxtNum4.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox2
+            // TxtNum2
             // 
-            textBox2.BackColor = Color.FromArgb(224, 224, 224);
-            textBox2.Location = new Point(334, 150);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(35, 37);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "0";
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            TxtNum2.BackColor = Color.FromArgb(224, 224, 224);
+            TxtNum2.Location = new Point(334, 150);
+            TxtNum2.Name = "TxtNum2";
+            TxtNum2.Size = new Size(35, 37);
+            TxtNum2.TabIndex = 2;
+            TxtNum2.Text = "0";
+            TxtNum2.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox1
+            // TxtNum1
             // 
-            textBox1.BackColor = Color.FromArgb(224, 224, 224);
-            textBox1.Location = new Point(290, 150);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(35, 37);
-            textBox1.TabIndex = 2;
-            textBox1.Text = "0";
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            TxtNum1.BackColor = Color.FromArgb(224, 224, 224);
+            TxtNum1.Location = new Point(290, 150);
+            TxtNum1.Name = "TxtNum1";
+            TxtNum1.Size = new Size(35, 37);
+            TxtNum1.TabIndex = 2;
+            TxtNum1.Text = "0";
+            TxtNum1.TextAlign = HorizontalAlignment.Center;
             // 
             // LbNumList
             // 
@@ -205,96 +306,96 @@ namespace WinForms_Demo.Exercise.Lottery
             LbNumList.Size = new Size(245, 245);
             LbNumList.TabIndex = 1;
             // 
-            // label7
+            // LbNum7
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.FromArgb(255, 128, 0);
-            label7.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(559, 75);
-            label7.Name = "label7";
-            label7.Size = new Size(42, 48);
-            label7.TabIndex = 0;
-            label7.Text = "0";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            LbNum7.AutoSize = true;
+            LbNum7.BackColor = Color.FromArgb(255, 128, 0);
+            LbNum7.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            LbNum7.ForeColor = Color.White;
+            LbNum7.Location = new Point(559, 75);
+            LbNum7.Name = "LbNum7";
+            LbNum7.Size = new Size(42, 48);
+            LbNum7.TabIndex = 0;
+            LbNum7.Text = "0";
+            LbNum7.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // LbNum6
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(224, 224, 224);
-            label6.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(430, 75);
-            label6.Name = "label6";
-            label6.Size = new Size(42, 48);
-            label6.TabIndex = 0;
-            label6.Text = "0";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            LbNum6.AutoSize = true;
+            LbNum6.BackColor = Color.FromArgb(224, 224, 224);
+            LbNum6.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            LbNum6.ForeColor = Color.Black;
+            LbNum6.Location = new Point(450, 75);
+            LbNum6.Name = "LbNum6";
+            LbNum6.Size = new Size(42, 48);
+            LbNum6.TabIndex = 0;
+            LbNum6.Text = "0";
+            LbNum6.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // LbNum5
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(224, 224, 224);
-            label5.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(349, 75);
-            label5.Name = "label5";
-            label5.Size = new Size(42, 48);
-            label5.TabIndex = 0;
-            label5.Text = "0";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            LbNum5.AutoSize = true;
+            LbNum5.BackColor = Color.FromArgb(224, 224, 224);
+            LbNum5.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            LbNum5.ForeColor = Color.Black;
+            LbNum5.Location = new Point(365, 75);
+            LbNum5.Name = "LbNum5";
+            LbNum5.Size = new Size(42, 48);
+            LbNum5.TabIndex = 0;
+            LbNum5.Text = "0";
+            LbNum5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // LbNum3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(224, 224, 224);
-            label3.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(187, 75);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 48);
-            label3.TabIndex = 0;
-            label3.Text = "0";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            LbNum3.AutoSize = true;
+            LbNum3.BackColor = Color.FromArgb(224, 224, 224);
+            LbNum3.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            LbNum3.ForeColor = Color.Black;
+            LbNum3.Location = new Point(195, 75);
+            LbNum3.Name = "LbNum3";
+            LbNum3.Size = new Size(42, 48);
+            LbNum3.TabIndex = 0;
+            LbNum3.Text = "0";
+            LbNum3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // LbNum4
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(224, 224, 224);
-            label4.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(268, 75);
-            label4.Name = "label4";
-            label4.Size = new Size(42, 48);
-            label4.TabIndex = 0;
-            label4.Text = "0";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            LbNum4.AutoSize = true;
+            LbNum4.BackColor = Color.FromArgb(224, 224, 224);
+            LbNum4.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            LbNum4.ForeColor = Color.Black;
+            LbNum4.Location = new Point(280, 75);
+            LbNum4.Name = "LbNum4";
+            LbNum4.Size = new Size(42, 48);
+            LbNum4.TabIndex = 0;
+            LbNum4.Text = "0";
+            LbNum4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // LbNum2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(224, 224, 224);
-            label2.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(106, 75);
-            label2.Name = "label2";
-            label2.Size = new Size(42, 48);
-            label2.TabIndex = 0;
-            label2.Text = "0";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            LbNum2.AutoSize = true;
+            LbNum2.BackColor = Color.FromArgb(224, 224, 224);
+            LbNum2.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            LbNum2.ForeColor = Color.Black;
+            LbNum2.Location = new Point(110, 75);
+            LbNum2.Name = "LbNum2";
+            LbNum2.Size = new Size(42, 48);
+            LbNum2.TabIndex = 0;
+            LbNum2.Text = "0";
+            LbNum2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // LbNum1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(224, 224, 224);
-            label1.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(25, 75);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 48);
-            label1.TabIndex = 0;
-            label1.Text = "0";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            LbNum1.AutoSize = true;
+            LbNum1.BackColor = Color.FromArgb(224, 224, 224);
+            LbNum1.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            LbNum1.ForeColor = Color.Black;
+            LbNum1.Location = new Point(25, 75);
+            LbNum1.Name = "LbNum1";
+            LbNum1.Size = new Size(42, 48);
+            LbNum1.TabIndex = 0;
+            LbNum1.Text = "0";
+            LbNum1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Title
             // 
@@ -374,88 +475,10 @@ namespace WinForms_Demo.Exercise.Lottery
             BtnClose.UseVisualStyleBackColor = true;
             BtnClose.Click += BtnClose_Click;
             // 
-            // button2
+            // RandomTimer
             // 
-            button2.Location = new Point(507, 280);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 114);
-            button2.TabIndex = 6;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button3.ForeColor = Color.Black;
-            button3.Image = Properties.Resources.CheckMark_Image;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(398, 211);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 45);
-            button3.TabIndex = 6;
-            button3.Text = "随机组选";
-            button3.TextAlign = ContentAlignment.MiddleRight;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(398, 349);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 45);
-            button4.TabIndex = 6;
-            button4.Text = "button2";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(290, 349);
-            button7.Name = "button7";
-            button7.Size = new Size(94, 45);
-            button7.TabIndex = 6;
-            button7.Text = "button2";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button6.ForeColor = Color.Black;
-            button6.Image = Properties.Resources.Modify_Image;
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(507, 211);
-            button6.Name = "button6";
-            button6.Size = new Size(94, 45);
-            button6.TabIndex = 6;
-            button6.Text = "手写号码";
-            button6.TextAlign = ContentAlignment.MiddleRight;
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button1.ForeColor = Color.Black;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(290, 280);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 45);
-            button1.TabIndex = 6;
-            button1.Text = "随机选号";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button5.ForeColor = Color.Black;
-            button5.Image = Properties.Resources.CheckMark_Image;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(398, 280);
-            button5.Name = "button5";
-            button5.Size = new Size(94, 45);
-            button5.TabIndex = 6;
-            button5.Text = "确认选号";
-            button5.TextAlign = ContentAlignment.MiddleRight;
-            button5.UseVisualStyleBackColor = true;
+            RandomTimer.Interval = 50;
+            RandomTimer.Tick += RandomTimer_Tick;
             // 
             // FrmMain
             // 
@@ -488,29 +511,30 @@ namespace WinForms_Demo.Exercise.Lottery
         private Button BtnMax;
         private PictureBox PbIcon;
         private Label Title;
-        private Label label1;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label3;
-        private Label label4;
-        private Label label2;
+        private Label LbNum1;
+        private Label LbNum7;
+        private Label LbNum6;
+        private Label LbNum5;
+        private Label LbNum3;
+        private Label LbNum4;
+        private Label LbNum2;
         private ListBox LbNumList;
-        private TextBox textBox1;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox2;
-        private TextBox textBox7;
+        private TextBox TxtNum1;
+        private TextBox TxtNum6;
+        private TextBox TxtNum5;
+        private TextBox TxtNum3;
+        private TextBox TxtNum4;
+        private TextBox TxtNum2;
+        private TextBox TxtNum7;
         private Label label8;
         private TextBox textBox8;
-        private Button button2;
-        private Button button4;
-        private Button button3;
-        private Button button7;
-        private Button button6;
-        private Button button1;
-        private Button button5;
+        private Button BtnPrint;
+        private Button BtnGroupSelect;
+        private Button BtnWriteSelf;
+        private Button BtnStart;
+        private Button BtnSelect;
+        private Button BtnDel;
+        private Button BtnClear;
+        private System.Windows.Forms.Timer RandomTimer;
     }
 }
