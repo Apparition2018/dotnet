@@ -38,7 +38,7 @@ namespace WinForms_Demo.Exercise.Lottery
             BtnDel = new Button();
             BtnStart = new Button();
             BtnGroupSelect = new Button();
-            textBox8 = new TextBox();
+            TxtGroup = new TextBox();
             label8 = new Label();
             TxtNum7 = new TextBox();
             TxtNum6 = new TextBox();
@@ -77,7 +77,7 @@ namespace WinForms_Demo.Exercise.Lottery
             panel1.Controls.Add(BtnDel);
             panel1.Controls.Add(BtnStart);
             panel1.Controls.Add(BtnGroupSelect);
-            panel1.Controls.Add(textBox8);
+            panel1.Controls.Add(TxtGroup);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(TxtNum7);
             panel1.Controls.Add(TxtNum6);
@@ -129,6 +129,7 @@ namespace WinForms_Demo.Exercise.Lottery
             BtnWriteSelf.Text = "手写号码";
             BtnWriteSelf.TextAlign = ContentAlignment.MiddleRight;
             BtnWriteSelf.UseVisualStyleBackColor = true;
+            BtnWriteSelf.Click += BtnWriteSelf_Click;
             // 
             // BtnSelect
             // 
@@ -143,6 +144,7 @@ namespace WinForms_Demo.Exercise.Lottery
             BtnSelect.Text = "确认选号";
             BtnSelect.TextAlign = ContentAlignment.MiddleRight;
             BtnSelect.UseVisualStyleBackColor = true;
+            BtnSelect.Click += BtnSelect_Click;
             // 
             // BtnClear
             // 
@@ -157,6 +159,7 @@ namespace WinForms_Demo.Exercise.Lottery
             BtnClear.Text = "清空选号";
             BtnClear.TextAlign = ContentAlignment.MiddleRight;
             BtnClear.UseVisualStyleBackColor = true;
+            BtnClear.Click += BtnClear_Click;
             // 
             // BtnDel
             // 
@@ -171,6 +174,7 @@ namespace WinForms_Demo.Exercise.Lottery
             BtnDel.Text = "删除选号";
             BtnDel.TextAlign = ContentAlignment.MiddleRight;
             BtnDel.UseVisualStyleBackColor = true;
+            BtnDel.Click += BtnDel_Click;
             // 
             // BtnStart
             // 
@@ -200,17 +204,18 @@ namespace WinForms_Demo.Exercise.Lottery
             BtnGroupSelect.Text = "随机组选";
             BtnGroupSelect.TextAlign = ContentAlignment.MiddleRight;
             BtnGroupSelect.UseVisualStyleBackColor = true;
+            BtnGroupSelect.Click += BtnGroupSelect_Click;
             // 
-            // textBox8
+            // TxtGroup
             // 
-            textBox8.BackColor = Color.FromArgb(224, 224, 224);
-            textBox8.Location = new Point(349, 215);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(35, 37);
-            textBox8.TabIndex = 4;
-            textBox8.Tag = "";
-            textBox8.Text = "5";
-            textBox8.TextAlign = HorizontalAlignment.Center;
+            TxtGroup.BackColor = Color.FromArgb(224, 224, 224);
+            TxtGroup.Location = new Point(349, 215);
+            TxtGroup.Name = "TxtGroup";
+            TxtGroup.Size = new Size(35, 37);
+            TxtGroup.TabIndex = 4;
+            TxtGroup.Tag = "";
+            TxtGroup.Text = "5";
+            TxtGroup.TextAlign = HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -230,7 +235,6 @@ namespace WinForms_Demo.Exercise.Lottery
             TxtNum7.Name = "TxtNum7";
             TxtNum7.Size = new Size(35, 37);
             TxtNum7.TabIndex = 2;
-            TxtNum7.Text = "0";
             TxtNum7.TextAlign = HorizontalAlignment.Center;
             // 
             // TxtNum6
@@ -240,7 +244,6 @@ namespace WinForms_Demo.Exercise.Lottery
             TxtNum6.Name = "TxtNum6";
             TxtNum6.Size = new Size(35, 37);
             TxtNum6.TabIndex = 2;
-            TxtNum6.Text = "0";
             TxtNum6.TextAlign = HorizontalAlignment.Center;
             // 
             // TxtNum5
@@ -250,7 +253,6 @@ namespace WinForms_Demo.Exercise.Lottery
             TxtNum5.Name = "TxtNum5";
             TxtNum5.Size = new Size(35, 37);
             TxtNum5.TabIndex = 2;
-            TxtNum5.Text = "0";
             TxtNum5.TextAlign = HorizontalAlignment.Center;
             // 
             // TxtNum3
@@ -260,7 +262,6 @@ namespace WinForms_Demo.Exercise.Lottery
             TxtNum3.Name = "TxtNum3";
             TxtNum3.Size = new Size(35, 37);
             TxtNum3.TabIndex = 2;
-            TxtNum3.Text = "0";
             TxtNum3.TextAlign = HorizontalAlignment.Center;
             // 
             // TxtNum4
@@ -270,7 +271,6 @@ namespace WinForms_Demo.Exercise.Lottery
             TxtNum4.Name = "TxtNum4";
             TxtNum4.Size = new Size(35, 37);
             TxtNum4.TabIndex = 2;
-            TxtNum4.Text = "0";
             TxtNum4.TextAlign = HorizontalAlignment.Center;
             // 
             // TxtNum2
@@ -280,7 +280,6 @@ namespace WinForms_Demo.Exercise.Lottery
             TxtNum2.Name = "TxtNum2";
             TxtNum2.Size = new Size(35, 37);
             TxtNum2.TabIndex = 2;
-            TxtNum2.Text = "0";
             TxtNum2.TextAlign = HorizontalAlignment.Center;
             // 
             // TxtNum1
@@ -290,7 +289,6 @@ namespace WinForms_Demo.Exercise.Lottery
             TxtNum1.Name = "TxtNum1";
             TxtNum1.Size = new Size(35, 37);
             TxtNum1.TabIndex = 2;
-            TxtNum1.Text = "0";
             TxtNum1.TextAlign = HorizontalAlignment.Center;
             // 
             // LbNumList
@@ -527,7 +525,7 @@ namespace WinForms_Demo.Exercise.Lottery
         private TextBox TxtNum2;
         private TextBox TxtNum7;
         private Label label8;
-        private TextBox textBox8;
+        private TextBox TxtGroup;
         private Button BtnPrint;
         private Button BtnGroupSelect;
         private Button BtnWriteSelf;
