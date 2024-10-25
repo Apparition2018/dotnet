@@ -115,6 +115,7 @@ namespace WinForms_Demo.Exercise.Lottery
             BtnPrint.Text = "打印彩票";
             BtnPrint.TextAlign = ContentAlignment.MiddleRight;
             BtnPrint.UseVisualStyleBackColor = true;
+            BtnPrint.Click += BtnPrint_Click;
             // 
             // BtnWriteSelf
             // 

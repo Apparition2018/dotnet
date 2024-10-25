@@ -1,3 +1,4 @@
+using System.Drawing.Printing;
 using WinForms_Demo.Exercise.Lottery.Models;
 
 namespace WinForms_Demo.Exercise.Lottery;
@@ -6,10 +7,13 @@ public partial class FrmMain : Form
 {
     private readonly Selector _selector = new();
 
+    private readonly PrintDocument _printDocument = new();
+
     public FrmMain()
     {
         InitializeComponent();
-        DisableAllBtn();
+        DisableBtn();
+        _printDocument.PrintPage += LotteryPrintPage;
     }
 
     private void BtnMin_Click(object sender, EventArgs e)
@@ -89,13 +93,21 @@ public partial class FrmMain : Form
     /// <summary>
     /// 清空选号
     /// </summary>
-    private void BtnClear_Click(object sender, EventArgs e)
+    private void BtnClear_Click(object? sender, EventArgs? e)
     {
         LbNumList.Items.Clear();
         _selector.SelectedNums.Clear();
-        LbNum1.Text = LbNum2.Text = LbNum3.Text = LbNum4.Text = LbNum5.Text = LbNum6.Text = LbNum7.Text = "0";
+        LbNum1.Text = LbNum2.Text = LbNum3.Text = LbNum4.Text = LbNum5.Text = LbNum6.Text = LbNum7.Text = @"0";
         TxtNum1.Text = TxtNum2.Text = TxtNum3.Text = TxtNum4.Text = TxtNum5.Text = TxtNum6.Text = TxtNum7.Text = "";
-        DisableAllBtn();
+        DisableBtn();
+    }
+
+    /// <summary>
+    /// 打印彩票
+    /// </summary>
+    private void BtnPrint_Click(object sender, EventArgs e)
+    {
+        _printDocument.Print();
     }
 
     #region 拖动窗体的实现
@@ -153,11 +165,25 @@ public partial class FrmMain : Form
         BtnStart.Enabled = BtnDel.Enabled = BtnClear.Enabled = BtnPrint.Enabled = true;
     }
 
-    private void DisableAllBtn()
+    /// <summary>
+    /// 禁用按钮
+    /// </summary>
+    private void DisableBtn()
     {
         BtnSelect.Enabled = false;
         BtnClear.Enabled = false;
         BtnDel.Enabled = false;
         BtnPrint.Enabled = false;
+    }
+
+    /// <summary>
+    /// 具体打印实现过程
+    /// </summary>
+    private void LotteryPrintPage(object sender, PrintPageEventArgs e)
+    {
+        string serialNum = DateTime.Now.ToString("yyyyMMddHHmmssms");
+        _selector.PrintLottery(e, serialNum, _selector.GetPrintedNums());
+        _selector.Save(serialNum);
+        BtnClear_Click(null, null);
     }
 }
