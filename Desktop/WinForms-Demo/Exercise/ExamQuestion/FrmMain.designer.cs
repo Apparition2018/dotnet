@@ -49,16 +49,13 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             lblInfo = new Label();
             btnExtract = new Button();
             panel3 = new Panel();
-            label3 = new Label();
-            label2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panelPaper.SuspendLayout();
-            panel3.SuspendLayout();
             SuspendLayout();
-            //
+            // 
             // lblTitle
-            //
+            // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Microsoft YaHei", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             lblTitle.ForeColor = Color.Navy;
@@ -68,9 +65,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             lblTitle.Size = new Size(168, 19);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "题目：等待开始答题......";
-            //
+            // 
             // lblA
-            //
+            // 
             lblA.AutoSize = true;
             lblA.Font = new Font("Microsoft YaHei", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             lblA.ForeColor = Color.Navy;
@@ -80,9 +77,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             lblA.Size = new Size(20, 19);
             lblA.TabIndex = 0;
             lblA.Text = "A";
-            //
+            // 
             // btnPre
-            //
+            // 
             btnPre.BackColor = Color.FromArgb(87, 193, 253);
             btnPre.FlatStyle = FlatStyle.Flat;
             btnPre.ForeColor = Color.White;
@@ -96,9 +93,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             btnPre.Text = "  上一题";
             btnPre.UseVisualStyleBackColor = false;
             btnPre.Click += btnPre_Click;
-            //
+            // 
             // ckbA
-            //
+            // 
             ckbA.AutoSize = true;
             ckbA.FlatStyle = FlatStyle.Popup;
             ckbA.Font = new Font("Microsoft YaHei", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
@@ -108,9 +105,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             ckbA.Size = new Size(15, 14);
             ckbA.TabIndex = 0;
             ckbA.UseVisualStyleBackColor = true;
-            //
+            // 
             // ckbB
-            //
+            // 
             ckbB.AutoSize = true;
             ckbB.FlatStyle = FlatStyle.Popup;
             ckbB.Font = new Font("Microsoft YaHei", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
@@ -120,9 +117,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             ckbB.Size = new Size(15, 14);
             ckbB.TabIndex = 1;
             ckbB.UseVisualStyleBackColor = true;
-            //
+            // 
             // ckbC
-            //
+            // 
             ckbC.AutoSize = true;
             ckbC.FlatStyle = FlatStyle.Popup;
             ckbC.Font = new Font("Microsoft YaHei", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
@@ -132,9 +129,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             ckbC.Size = new Size(15, 14);
             ckbC.TabIndex = 2;
             ckbC.UseVisualStyleBackColor = true;
-            //
+            // 
             // ckbD
-            //
+            // 
             ckbD.AutoSize = true;
             ckbD.FlatStyle = FlatStyle.Popup;
             ckbD.Font = new Font("Microsoft YaHei", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
@@ -144,9 +141,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             ckbD.Size = new Size(15, 14);
             ckbD.TabIndex = 3;
             ckbD.UseVisualStyleBackColor = true;
-            //
+            // 
             // lblB
-            //
+            // 
             lblB.AutoSize = true;
             lblB.Font = new Font("Microsoft YaHei", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             lblB.ForeColor = Color.Navy;
@@ -156,9 +153,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             lblB.Size = new Size(19, 19);
             lblB.TabIndex = 0;
             lblB.Text = "B";
-            //
+            // 
             // lblC
-            //
+            // 
             lblC.AutoSize = true;
             lblC.Font = new Font("Microsoft YaHei", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             lblC.ForeColor = Color.Navy;
@@ -168,9 +165,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             lblC.Size = new Size(19, 19);
             lblC.TabIndex = 0;
             lblC.Text = "C";
-            //
+            // 
             // lblD
-            //
+            // 
             lblD.AutoSize = true;
             lblD.Font = new Font("Microsoft YaHei", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             lblD.ForeColor = Color.Navy;
@@ -180,9 +177,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             lblD.Size = new Size(21, 19);
             lblD.TabIndex = 0;
             lblD.Text = "D";
-            //
+            // 
             // btnNext
-            //
+            // 
             btnNext.BackColor = Color.FromArgb(87, 193, 253);
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.ForeColor = Color.White;
@@ -196,9 +193,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             btnNext.Text = "  下一题";
             btnNext.UseVisualStyleBackColor = false;
             btnNext.Click += btnNext_Click;
-            //
+            // 
             // btnSubmit
-            //
+            // 
             btnSubmit.BackColor = Color.FromArgb(87, 193, 253);
             btnSubmit.FlatStyle = FlatStyle.Flat;
             btnSubmit.ForeColor = Color.White;
@@ -212,9 +209,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             btnSubmit.Text = "   提交试卷";
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
-            //
+            // 
             // panel1
-            //
+            // 
             panel1.BackColor = Color.FromArgb(70, 135, 248);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnClose);
@@ -225,9 +222,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             panel1.Name = "panel1";
             panel1.Size = new Size(921, 63);
             panel1.TabIndex = 1;
-            //
+            // 
             // label1
-            //
+            // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 134);
             label1.ForeColor = Color.White;
@@ -237,9 +234,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             label1.Size = new Size(277, 29);
             label1.TabIndex = 0;
             label1.Text = "计算机等级考试模拟练习";
-            //
+            // 
             // btnClose
-            //
+            // 
             btnClose.BackColor = Color.FromArgb(87, 193, 253);
             btnClose.FlatAppearance.BorderColor = Color.FromArgb(87, 193, 253);
             btnClose.FlatStyle = FlatStyle.Flat;
@@ -252,9 +249,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             btnClose.TabIndex = 1;
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
-            //
+            // 
             // panel2
-            //
+            // 
             panel2.BackColor = Color.FromArgb(246, 246, 246);
             panel2.Controls.Add(panelPaper);
             panel2.Controls.Add(lblTitle);
@@ -274,9 +271,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             panel2.Name = "panel2";
             panel2.Size = new Size(894, 425);
             panel2.TabIndex = 0;
-            //
+            // 
             // panelPaper
-            //
+            // 
             panelPaper.BorderStyle = BorderStyle.FixedSingle;
             panelPaper.Controls.Add(lblInfo);
             panelPaper.Controls.Add(btnExtract);
@@ -285,9 +282,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             panelPaper.Name = "panelPaper";
             panelPaper.Size = new Size(812, 370);
             panelPaper.TabIndex = 8;
-            //
+            // 
             // lblInfo
-            //
+            // 
             lblInfo.AutoSize = true;
             lblInfo.Font = new Font("Microsoft YaHei", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 134);
             lblInfo.ForeColor = Color.FromArgb(0, 0, 192);
@@ -297,9 +294,9 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             lblInfo.Size = new Size(327, 35);
             lblInfo.TabIndex = 8;
             lblInfo.Text = "试卷密封中！等待抽题......";
-            //
+            // 
             // btnExtract
-            //
+            // 
             btnExtract.BackColor = Color.FromArgb(87, 193, 253);
             btnExtract.FlatStyle = FlatStyle.Flat;
             btnExtract.ForeColor = Color.White;
@@ -313,45 +310,19 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             btnExtract.Text = "    抽取试题";
             btnExtract.UseVisualStyleBackColor = false;
             btnExtract.Click += btnExtract_Click;
-            //
+            // 
             // panel3
-            //
+            // 
             panel3.BackColor = Color.FromArgb(0, 122, 204);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(label2);
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 520);
             panel3.Margin = new Padding(4, 5, 4, 5);
             panel3.Name = "panel3";
             panel3.Size = new Size(921, 52);
             panel3.TabIndex = 2;
-            //
-            // label3
-            //
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(688, 15);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(220, 20);
-            label3.TabIndex = 0;
-            label3.Text = "机构网址: xiketang.ke.qq.com";
-            //
-            // label2
-            //
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(556, 15);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(124, 20);
-            label2.TabIndex = 0;
-            label2.Text = "[喜科堂互联教育]";
-            //
+            // 
             // FrmMain
-            //
+            // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(41, 57, 85);
@@ -371,8 +342,6 @@ namespace WinForms_Demo.Exercise.ExamQuestion
             panel2.PerformLayout();
             panelPaper.ResumeLayout(false);
             panelPaper.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -396,8 +365,6 @@ namespace WinForms_Demo.Exercise.ExamQuestion
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnExtract;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelPaper;
         private System.Windows.Forms.Label lblInfo;
     }

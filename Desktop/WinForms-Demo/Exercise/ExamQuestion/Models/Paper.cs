@@ -17,6 +17,7 @@ public class Paper
     /// </summary>
     public void ExtractQuestions()
     {
+        // questions.txt 放在 bin/Debug/net8.0-windows/
         using FileStream fs = new FileStream("questions.txt", FileMode.Open);
         using StreamReader sr = new StreamReader(fs, Encoding.Default);
         string content = sr.ReadToEnd();
@@ -35,6 +36,7 @@ public class Paper
             });
         }
     }
+
     [Obsolete("Obsolete")]
     private void SavePaper()
     {
@@ -48,7 +50,7 @@ public class Paper
     {
         using FileStream fs = new FileStream("questions.obj", FileMode.Open);
         BinaryFormatter bf = new BinaryFormatter();
-        _questions = (List<Question>) bf.Deserialize(fs);
+        _questions = (List<Question>)bf.Deserialize(fs);
     }
 
     public int SubmitPaper()

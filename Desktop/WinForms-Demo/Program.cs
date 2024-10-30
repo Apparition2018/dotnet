@@ -1,4 +1,4 @@
-using WinForms_Demo.Exercise.Lottery;
+using WinForms_Demo.Exercise.ExamQuestion;
 
 namespace WinForms_Demo
 
