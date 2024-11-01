@@ -163,6 +163,16 @@ namespace WinForms_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_Image {
+            get {
+                object obj = ResourceManager.GetObject("Icon.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Info_Image {
             get {
                 object obj = ResourceManager.GetObject("Info.Image", resourceCulture);

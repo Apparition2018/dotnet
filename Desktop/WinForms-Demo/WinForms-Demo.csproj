@@ -10,11 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ThoughtWorks.QRCode" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="BarcodeX">
       <HintPath>Exercise\Lottery\DLL\BarcodeX.dll</HintPath>
-    </Reference>
-    <Reference Include="ThoughtWorks.QRCode">
-      <HintPath>Exercise\Lottery\DLL\ThoughtWorks.QRCode.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -27,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx"> 
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>

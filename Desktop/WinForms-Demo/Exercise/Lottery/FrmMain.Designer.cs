@@ -29,7 +29,6 @@ namespace WinForms_Demo.Exercise.Lottery
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             panel1 = new Panel();
             BtnPrint = new Button();
             BtnWriteSelf = new Button();
@@ -425,7 +424,7 @@ namespace WinForms_Demo.Exercise.Lottery
             // 
             // PbIcon
             // 
-            PbIcon.Image = (Image)resources.GetObject("PbIcon.Image");
+            PbIcon.Image = Properties.Resources.Icon_Image;
             PbIcon.Location = new Point(10, 5);
             PbIcon.Name = "PbIcon";
             PbIcon.Size = new Size(30, 30);
