@@ -2,7 +2,7 @@ using System.Drawing.Printing;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
-namespace WinForms_Demo.Exercise.Lottery.Models;
+namespace WinForms_Demo.Exercise.Lottery.Util;
 
 /// <summary>
 /// 选号器

@@ -1,7 +1,7 @@
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
-namespace WinForms_Demo.Exercise.ExamQuestion.Models;
+namespace WinForms_Demo.Exercise.ExamQuestion.Model;
 
 /// <summary>
 /// 试卷类

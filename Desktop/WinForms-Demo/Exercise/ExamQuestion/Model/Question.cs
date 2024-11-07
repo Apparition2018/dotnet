@@ -1,4 +1,4 @@
-namespace WinForms_Demo.Exercise.ExamQuestion.Models;
+namespace WinForms_Demo.Exercise.ExamQuestion.Model;
 
 /// <summary>
 /// 试题类

@@ -1,4 +1,4 @@
-namespace WinForms_Demo.Exercise.QRCodeAndVCard
+namespace WinForms_Demo.Function.QRCodeAndVCard
 {
     partial class FrmMain
     {

@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NPOI" Version="2.7.1" />
     <PackageReference Include="ThoughtWorks.QRCode" Version="1.1.0" />
   </ItemGroup>
 

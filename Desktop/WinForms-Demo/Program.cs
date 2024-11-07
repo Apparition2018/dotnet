@@ -1,4 +1,4 @@
-using WinForms_Demo.Exercise.QRCodeAndVCard;
+using WinForms_Demo.Function.QRCodeAndVCard;
 
 namespace WinForms_Demo
 

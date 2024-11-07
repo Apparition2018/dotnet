@@ -1,4 +1,4 @@
-using WinForms_Demo.Exercise.ExamQuestion.Models;
+using WinForms_Demo.Exercise.ExamQuestion.Model;
 
 namespace WinForms_Demo.Exercise.ExamQuestion;
 

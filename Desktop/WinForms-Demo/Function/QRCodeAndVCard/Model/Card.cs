@@ -1,4 +1,4 @@
-namespace WinForms_Demo.Exercise.QRCodeAndVCard;
+namespace WinForms_Demo.Function.QRCodeAndVCard.Model;
 
 /// <summary>
 /// 名片数据类

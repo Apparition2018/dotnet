@@ -1,5 +1,5 @@
 using System.Drawing.Printing;
-using WinForms_Demo.Exercise.Lottery.Models;
+using WinForms_Demo.Exercise.Lottery.Util;
 
 namespace WinForms_Demo.Exercise.Lottery;
 

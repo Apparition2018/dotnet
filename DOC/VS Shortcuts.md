@@ -143,8 +143,8 @@ Ctrl + . | Alt + Enter          QuickActions                        快速操作
 Ctrl + -                        NavigateBackward                    向后导航
 Ctrl + Shift + -                NavigateForward                     向前导航
 Ctrl + Shift + F12              NextError                           下一次错误
-Ctrl + Shift + .                ZoomIn                              缩小
-Ctrl + Shift + ,                ZoomOut                             放大
+Ctrl + Shift + ,                ZoomOut                             缩小
+Ctrl + Shift + .                ZoomIn                              放大
 Shift + Alt + Enter             FullScreen                          全屏幕
 
 F4                              PropertiesWindow                    属性窗口
@@ -171,6 +171,7 @@ Ctrl + Shift + C				ClassView                           类视图
 ```
 Alt + `                         WindowSearch                        窗口搜索
 Ctrl + K, H                     HideShowAllToolWindows (user)       隐藏显示所有工具窗口
+Ctrl + K, Ctrl + Z              RestoreClosedTab                    还原关闭的选项卡
 Ctrl + Q                        QuickLaunch                         快速启动
 Ctrl + ;                        SolutionExplorerSearch              解决方案资源管理器搜索
 Ctrl + Tab                      NextDocumentWindowNav               下一个文档窗口导航栏
@@ -187,7 +188,7 @@ Win + ←/→                       Move/dock floating windows          移动/�
 ```
 ---
 ## [ACCESS TOOLBARS](https://learn.microsoft.com/zh-cn/visualstudio/ide/reference/accessibility-tips-and-tricks#access-toolbars-by-using-keyboard-shortcuts)（访问工具栏）
-```         
+```
 Alt                             IDE toolbars                        选择“标准”工具栏上的第一个按钮
 Shift + Alt                     Tool window toolbars                将焦点移动到工具窗口中的工具栏
 Ctrl + Tab                      Toolbars                            转到下一工具栏中的第一项
@@ -195,6 +196,6 @@ Ctrl + Tab                      Toolbars                            转到下一
 ## [Other](https://learn.microsoft.com/zh-cn/visualstudio/ide/reference/accessibility-tips-and-tricks#other-useful-keyboard-shortcuts)（其他）
 ```
 Shift + F10                     Context menus                       打开上下文菜单（右键单击）
-Ctrl + E, Ctrl + C              Network Operations Menu             
+Ctrl + E, Ctrl + C              Network Operations Menu
 ```
 ---

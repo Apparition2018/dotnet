@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using WinForms_Demo.Function.QRCodeAndVCard.Model;
+using WinForms_Demo.Function.QRCodeAndVCard.Util;
 
-namespace WinForms_Demo.Exercise.QRCodeAndVCard
+namespace WinForms_Demo.Function.QRCodeAndVCard
 {
     public partial class FrmMain : Form
     {
-        private QRCodeCreator qrCodeCreator = new QRCodeCreator();
+        private readonly QRCodeCreator _qrCodeCreator = new();
         public FrmMain()
         {
             InitializeComponent();
@@ -32,7 +25,7 @@ namespace WinForms_Demo.Exercise.QRCodeAndVCard
                 Email = tbEmail.Text.Trim(),
                 Url = tbUrl.Text.Trim(),
             };
-            pbQRCode.Image = qrCodeCreator.CreateQRCodeImage(card, pbQRCode.Width, pbQRCode.Height);
+            pbQRCode.Image = _qrCodeCreator.CreateQRCodeImage(card, pbQRCode.Width, pbQRCode.Height);
         }
     }
 }

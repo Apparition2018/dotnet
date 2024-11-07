@@ -1,8 +1,9 @@
 using System.Text;
 using ThoughtWorks.QRCode.Codec;
+using WinForms_Demo.Function.QRCodeAndVCard.Model;
 using WinForms_Demo.Properties;
 
-namespace WinForms_Demo.Exercise.QRCodeAndVCard;
+namespace WinForms_Demo.Function.QRCodeAndVCard.Util;
 public class QRCodeCreator
 {
     /// <summary>
@@ -22,7 +23,7 @@ public class QRCodeCreator
         sb.Append("\r\nEMAIL:" + card.Email);
         sb.Append("\r\nPHOTO;ENCODING=b;TYPE=JPEG:");
         sb.Append("\r\nEND:VCARD\r\n");
-        return card.ToString() ?? string.Empty  ;
+        return sb.ToString();
     }
 
     /// <summary>
@@ -35,7 +36,7 @@ public class QRCodeCreator
         QRCodeEncoder qrCodeEncoder = new QRCodeEncoder
         {
             QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE,
-            QRCodeScale = 9,
+            QRCodeScale = 4,
             QRCodeVersion = 0,
             QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M
         };
@@ -47,7 +48,9 @@ public class QRCodeCreator
         Graphics g = Graphics.FromImage(bmp);
         g.FillRectangle(Brushes.White, 0, 0, bmp.Width, bmp.Height);
         g.DrawImage(image, new Point((imageWith - image.Width) / 2, (imageHeight - image.Height) / 2));
-        g.DrawImage(logo, new Point((imageWith - logo.Width) / 2, (imageHeight - logo.Height) / 2));
+        // DpiX 当前系统水平分辨率；图像默认分辨率 72
+        float scalingRatio = g.DpiX / 72f;
+        g.DrawImage(logo, new Point((int)((imageWith - logo.Width * scalingRatio) / 2), (int)((imageHeight - logo.Height * scalingRatio) / 2)));
 
         return bmp;
     }

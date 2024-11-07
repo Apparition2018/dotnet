@@ -1,6 +1,6 @@
 using ThoughtWorks.QRCode.Codec;
 
-namespace WinForms_Demo.Exercise.Lottery.Models;
+namespace WinForms_Demo.Exercise.Lottery.Util;
 
 public class QRCodeCreator
 {
