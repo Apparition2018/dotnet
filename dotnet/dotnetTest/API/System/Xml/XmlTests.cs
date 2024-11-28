@@ -86,4 +86,11 @@ public class XmlTests : Demo
 
         Console.WriteLine(info);
     }
+
+    [TearDown]
+    public void TearDown()
+    {
+        _stream?.Dispose();
+        _stream = null;
+    }
 }

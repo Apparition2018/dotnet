@@ -8,7 +8,6 @@ namespace dotnetTest.Guide.ProgrammingGuide;
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/delegates/">委托</a><br/>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/delegates-overview">委托简介</a><br/>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/delegates-lambdas">委托和 lambda</a><br/>
-/// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/generics/generic-delegates">泛型委托</a><br/>
 /// <list type="bullet">
 /// <item>委托是一种引用类型，表示对具有特定参数列表和返回类型的方法的引用</item>
 /// <item>委托类似于 C++ 函数指针。不同的是，委托是面向对象的、类型安全的和可靠的</item>
@@ -62,28 +61,58 @@ public class Delegates : Demo
     }
 
     /// <summary>
-    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/delegates-strongly-typed">强类型委托</a>
-    /// .NET Core 框架包含的，在需要委托类型时可重用的类型
-    /// <list type="bullet">
-    /// <item>Action：封装方法返回值为 void，用于使用委托参数执行操作的情况</item>
-    /// <item>Func：封装的方法返回指定类型，用于将委托参数转换为其他结果的情况</item>
-    /// <item>Predicate：封装的方法返回 bool，用于需要确定参数是否满足委托条件的情况</item>
-    /// </list>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/generics/generic-delegates">泛型委托</a><br/>
     /// </summary>
-    [Test]
-    public void StronglyTypedDelegates()
+    class GenericDelegates
     {
-        /* Action */
-        Action<string, int> printPersonInfo = (name, age) => { Console.WriteLine($"Name: {name}, Age: {age}"); };
-        printPersonInfo("Alice", 30);
+        delegate T Operator<T>(T o1, T o2);
 
-        /* Func */
-        Func<int, int, int> add = (x, y) => x + y;
-        Console.WriteLine(add(5, 3));
+        static int Add(int a, int b)
+        {
+            return a + b;
+        }
 
-        /* Predicate */
-        Predicate<int> isEven = x => x % 2 == 0;
-        var evenNumbers = Ints.ToList().FindAll(isEven);
-        evenNumbers.ForEach(Console.WriteLine);
+        static double Sub(double a, double b)
+        {
+            return a - b;
+        }
+
+        [Test]
+        public void Test()
+        {
+            Operator<int> operator1 = Add;
+            Operator<double> operator2 = Sub;
+            Assert.That(operator1(1, 2), Is.EqualTo(3));
+            Assert.That(operator2(2, 1), Is.EqualTo(1));
+        }
+
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/delegates-strongly-typed">强类型委托</a>
+        /// .NET Core 框架包含的，在需要委托类型时可重用的类型
+        /// <list type="bullet">
+        /// <item>Action：封装方法返回值为 void，用于使用委托参数执行操作的情况</item>
+        /// <item>Func：封装的方法返回指定类型，用于将委托参数转换为其他结果的情况</item>
+        /// <item>Predicate：封装的方法返回 bool，用于需要确定参数是否满足委托条件的情况</item>
+        /// </list>
+        /// </summary>
+        [Test]
+        public void StronglyTypedDelegates()
+        {
+            #region Action
+            Action<string, int> printPersonInfo = (name, age) => { Console.WriteLine($"Name: {name}, Age: {age}"); };
+            printPersonInfo("Alice", 30);
+            #endregion
+
+            #region Func
+            Func<int, int, int> add = (x, y) => x + y;
+            Assert.That(add(5, 3), Is.EqualTo(8));
+            #endregion
+
+            #region Predicate
+            Predicate<int> isEven = x => x % 2 == 0;
+            var evenNumbers = Ints.ToList().FindAll(isEven);
+            evenNumbers.ForEach(Console.WriteLine);
+            #endregion
+        }
     }
 }

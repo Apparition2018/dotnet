@@ -1,3 +1,5 @@
+using dotnetTest.Guide.LanguageReference.BuiltinTypes;
+
 namespace dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 
 /// <summary>
@@ -20,80 +22,90 @@ public class BooleanLogicalOperators
     [Test]
     public void LogicOperators()
     {
-        /* 逻辑与 */
+        #region 逻辑与
         Assert.That(true & true, Is.EqualTo(true));
         Assert.That(true & false, Is.EqualTo(false));
         Assert.That(false & true, Is.EqualTo(false));
         Assert.That(false & false, Is.EqualTo(false));
+        #endregion
 
-        /* 逻辑或 */
+        #region 逻辑或
         Assert.That(true | true, Is.EqualTo(true));
         Assert.That(true | false, Is.EqualTo(true));
         Assert.That(false | true, Is.EqualTo(true));
         Assert.That(false | false, Is.EqualTo(false));
+        #endregion
 
-        /* 条件逻辑异或
-         * 计算结果与不等运算符 != 相同 */
+        #region 条件逻辑异或（计算结果与不等运算符 != 相同）
         Assert.That(true ^ true, Is.EqualTo(false));
         Assert.That(true ^ false, Is.EqualTo(true));
         Assert.That(false ^ true, Is.EqualTo(true));
         Assert.That(false ^ false, Is.EqualTo(false));
+        #endregion
 
-        // 始终计算两个操作数
+        #region 始终计算两个操作数
         Assert.That(false & SecondOperand(), Is.EqualTo(false));
         Assert.That(true | SecondOperand(), Is.EqualTo(true));
+        #endregion
     }
 
     /// <summary>条件逻辑运算符</summary>
     [Test]
     public void ConditionalLogicOperators()
     {
-        /* 条件逻辑与 */
+        #region 条件逻辑与
         Assert.That(true && true, Is.EqualTo(true));
         Assert.That(true && false, Is.EqualTo(false));
         Assert.That(false && true, Is.EqualTo(false));
         Assert.That(false && false, Is.EqualTo(false));
+        #endregion
 
-        /* 条件逻辑或 */
+        #region 条件逻辑或
         Assert.That(true || true, Is.EqualTo(true));
         Assert.That(true || false, Is.EqualTo(true));
         Assert.That(false || true, Is.EqualTo(true));
         Assert.That(false || false, Is.EqualTo(false));
+        #endregion
 
-        // 不计算右侧操作数
+        #region 不计算右侧操作数
         Assert.That(false && SecondOperand(), Is.EqualTo(false));
         Assert.That(true || SecondOperand(), Is.EqualTo(true));
+        #endregion
     }
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/boolean-logical-operators#nullable-boolean-logical-operators">可为 null 的布尔逻辑运算符</a><br/>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/bool#three-valued-boolean-logic">三值布尔逻辑</a>
     /// </summary>
+    /// <seealso cref="ValueTypes.NullableValueTypes.LiftedOperators">提升的运算符</seealso>
     [Test]
     public void NullableBooleanLogicalOperators()
     {
         bool? @null = null;
 
-        /* 逻辑与 */
+        #region 逻辑与
         Assert.That(true & null, Is.EqualTo(null));
         Assert.That(false & null, Is.EqualTo(false));
         Assert.That(null & true, Is.EqualTo(null));
         Assert.That(null & false, Is.EqualTo(false));
         Assert.That(@null & @null, Is.EqualTo(null));
+        #endregion
 
-        /* 逻辑或 */
+        #region 逻辑或
         Assert.That(true | null, Is.EqualTo(true));
         Assert.That(false | null, Is.EqualTo(null));
         Assert.That(null | true, Is.EqualTo(true));
         Assert.That(null | false, Is.EqualTo(null));
         Assert.That(@null | @null, Is.EqualTo(null));
+        #endregion
 
-        // 上述行为不同于可为 null 的值类型的典型运算符行为
-        // 提升运算符 @see ValueType.NullableValueTypes#LiftedOperators
+        #region 可为 null 的值类型
         int? @null2 = null;
         Assert.That(0 & @null2, Is.EqualTo(null));
         Assert.That(@null2 & 0, Is.EqualTo(null));
         Assert.That(1 & @null2, Is.EqualTo(null));
         Assert.That(@null2 & 1, Is.EqualTo(null));
+        Assert.That(@null2 & @null2, Is.EqualTo(null));
+        #endregion
     }
 }

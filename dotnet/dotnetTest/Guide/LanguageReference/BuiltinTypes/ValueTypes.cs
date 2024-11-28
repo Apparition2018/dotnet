@@ -375,22 +375,26 @@ public class ValueTypes
         }
 
         /// <summary>
-        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types#lifted-operators">提升运算符</a>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/nullable-value-types#lifted-operators">提升的运算符</a>
         /// </summary>
         [Test]
         public void LiftedOperators()
         {
-            int? a = 10;
-            int? b = null;
+            int? @null = null;
 
             // 一元运算符、二元运算符、值类型 T 支持的任何重载运算符
             // 如果一个或全部两个操作数为 null ，结果为 null
-            Assert.That(0 & b, Is.EqualTo(null));
-            Assert.That(a | b, Is.EqualTo(null));
+            Assert.That(0 & @null, Is.EqualTo(null));
+            Assert.That(1 | @null, Is.EqualTo(null));
 
             // <、>、<=、>=，如果一个或全部两个操作数为 null ，结果为 false
-            Assert.That(a >= null, Is.EqualTo(false));
-            Assert.That(a < null, Is.EqualTo(false));
+            Assert.That(0 >= @null, Is.EqualTo(false));
+            Assert.That(0 < @null, Is.EqualTo(false));
+
+            // =
+            Assert.That(null != @null, Is.EqualTo(false));
+            // !=
+            Assert.That(null == @null, Is.EqualTo(true));
         }
 
 
