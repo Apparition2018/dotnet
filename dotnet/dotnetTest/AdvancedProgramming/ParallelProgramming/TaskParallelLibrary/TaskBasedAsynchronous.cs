@@ -2,6 +2,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Drawing;
 using dotnet.L.Demo;
+using dotnetTest.AdvancedProgramming.AsynchronousProgrammingPatterns;
 using dotnetTest.API.System.Threading.Tasks;
 using dotnetTest.Guide.AsynchronousPrograming;
 
@@ -10,6 +11,7 @@ namespace dotnetTest.AdvancedProgramming.ParallelProgramming.TaskParallelLibrary
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/parallel-programming/task-based-asynchronous-programming">基于任务的异步编程</a>
 /// </summary>
+/// <seealso cref="TaskBasedAsynchronousPattern"/>
 public class TaskBasedAsynchronous
 {
     /// <summary>
