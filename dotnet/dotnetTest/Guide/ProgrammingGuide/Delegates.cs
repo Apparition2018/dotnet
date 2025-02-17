@@ -1,4 +1,5 @@
 using dotnet.L.Demo;
+using dotnetTest.AdvancedProgramming.AsynchronousProgrammingPatterns;
 using dotnetTest.Guide.LanguageReference.BuiltinTypes;
 using dotnetTest.Guide.LanguageReference.OperatorsAndExpressions;
 
@@ -18,6 +19,7 @@ namespace dotnetTest.Guide.ProgrammingGuide;
 /// </summary>
 /// <seealso cref="Events"/>
 /// <seealso cref="ReferenceTypes.BuiltInReferenceTypes.DelegateType">委托类型</seealso>
+/// <seealso cref="AsynchronousProgrammingModel.UsingDelegates">使用委托进行异步编程</seealso>
 public class Delegates : Demo
 {
     delegate void NotifyCallback(string str);

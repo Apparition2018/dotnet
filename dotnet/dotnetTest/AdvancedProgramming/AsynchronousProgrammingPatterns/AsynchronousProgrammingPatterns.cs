@@ -5,7 +5,7 @@ namespace dotnetTest.AdvancedProgramming.AsynchronousProgrammingPatterns;
 /// <list type="number">
 /// <item><see cref="TaskBasedAsynchronousPattern">基于任务的异步模式 (TAP)，推荐使用</see></item>
 /// <item>基于事件的异步模式 (EAP)，不建议使用</item>
-/// <item>异步编程模型 (APM)，不建议使用</item>
+/// <item><see cref="AsynchronousProgrammingModel">异步编程模型 (APM)，不建议使用</see></item>
 /// </list>
 /// </summary>
 public class AsynchronousProgrammingPatterns;

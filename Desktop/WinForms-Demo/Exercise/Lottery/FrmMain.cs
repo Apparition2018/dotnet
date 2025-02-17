@@ -98,7 +98,7 @@ public partial class FrmMain : Form
         LbNumList.Items.Clear();
         _selector.SelectedNums.Clear();
         LbNum1.Text = LbNum2.Text = LbNum3.Text = LbNum4.Text = LbNum5.Text = LbNum6.Text = LbNum7.Text = @"0";
-        TxtNum1.Text = TxtNum2.Text = TxtNum3.Text = TxtNum4.Text = TxtNum5.Text = TxtNum6.Text = TxtNum7.Text = "";
+        TxtNum1.Text = TxtNum2.Text = TxtNum3.Text = TxtNum4.Text = TxtNum5.Text = TxtNum6.Text = TxtNum7.Text = string.Empty;
         DisableBtn();
     }
 

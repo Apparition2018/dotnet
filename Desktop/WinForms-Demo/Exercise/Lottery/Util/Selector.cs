@@ -54,7 +54,7 @@ public class Selector
         for (int i = 0; i < SelectedNums.Count; i++)
         {
             StringBuilder printedNum = new StringBuilder();
-            printedNum.Append($"第{(i < 9 ? "0" : "")}{i + 1}组：");
+            printedNum.Append($"第{(i < 9 ? "0" : string.Empty)}{i + 1}组：");
             for (int j = 0; j < SelectedNums[i].Length; j++)
             {
                 printedNum.Append(SelectedNums[i][j]);
