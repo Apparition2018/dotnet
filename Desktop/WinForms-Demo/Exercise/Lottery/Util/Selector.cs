@@ -1,6 +1,7 @@
 using System.Drawing.Printing;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using Fath;
 
 namespace WinForms_Demo.Exercise.Lottery.Util;
 
@@ -11,7 +12,7 @@ public class Selector
 {
     private readonly Random _rnd = new();
 
-    private readonly Fath.BarcodeX _barcodeX = new();
+    private readonly BarcodeX _barcodeX = new();
 
     /// <summary>
     /// 选择的号码
@@ -74,7 +75,7 @@ public class Selector
     {
         // 生成条形码
         _barcodeX.Text = serialNum;
-        _barcodeX.Symbology = Fath.bcType.Code128;
+        _barcodeX.Symbology = bcType.Code128;
         _barcodeX.ShowText = true;
         e.Graphics!.DrawImage(_barcodeX.Image(240, 50), new Point(20, 5));
 

@@ -4,8 +4,12 @@
 ---
 ## Code Style (-n)
     1. Settings → Editor → Code Style
-    2. HTML → Other
-        2.1 Do not indent children of: 取调 body
+    2. C#
+        2.1 Blank Lines in Code
+            2.1.1 Before statments with control transfer: 0
+            2.1.2 After statments with child blocks: 0
+    3. HTML → Other
+        3.1 Do not indent children of: 取调 body
 ---
 ## TODO (-n)
     1. Settings → Editor → TODO

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BankyStuffLibrary
@@ -16,16 +17,7 @@ namespace BankyStuffLibrary
         /// <summary>余额</summary>
         public decimal Balance
         {
-            get
-            {
-                decimal balance = 0;
-                foreach (var transaction in _allTransactions)
-                {
-                    balance += transaction.Amount;
-                }
-
-                return balance;
-            }
+            get { return _allTransactions.Sum(transaction => transaction.Amount); }
         }
 
         private static long _accountNumberSeed = 1234567890;

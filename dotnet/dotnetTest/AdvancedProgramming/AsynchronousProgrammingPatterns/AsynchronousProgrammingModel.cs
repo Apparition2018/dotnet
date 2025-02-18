@@ -58,7 +58,13 @@ public abstract class AsynchronousProgrammingModel
         public async Task UseAsyncCallbackDelegateToEndAsyncOperation()
         {
             var tcs = new TaskCompletionSource<IPHostEntry>();
-            AsyncCallback callBack = ar =>
+            Dns.BeginGetHostEntry(Demo.BaiDuHost, CallBack, null);
+            IPHostEntry hostEntry = await tcs.Task;
+            WriteLineAddresses(hostEntry);
+
+            return;
+
+            void CallBack(IAsyncResult ar)
             {
                 try
                 {
@@ -69,10 +75,7 @@ public abstract class AsynchronousProgrammingModel
                 {
                     tcs.SetException(ex);
                 }
-            };
-            Dns.BeginGetHostEntry(Demo.BaiDuHost, callBack, null);
-            IPHostEntry hostEntry = await tcs.Task;
-            WriteLineAddresses(hostEntry);
+            }
         }
 
         [Test]
@@ -88,38 +91,43 @@ public abstract class AsynchronousProgrammingModel
             IPAddress[] addresses = host.AddressList;
             addresses.ToList().ForEach(address => Console.WriteLine("{0}", address.ToString()));
         }
-
-        private delegate string AsyncMethodCaller(int callDuration, out int threadId);
-
-        /// <summary>
-        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-using-delegates">使用委托进行异步编程</a>
-        /// <list type="number">
-        /// <item>使用 .NET 可以以异步方式调用任何方法。 为此，请定义一个委托，该委托具有与你要调用的方法相同的签名。
-        /// 公共语言运行时将自动用适当的签名为此委托定义 BeginInvoke 和 EndInvoke 方法。</item>
-        /// <item>BeginInvoke 和 EndInvoke 在 .NET Core 及以上版本中不受支持</item>
-        /// </list>
-        /// </summary>
-        [Test]
-        public void AsynchronousProgrammingUsingDelegates()
-        {
-            AsyncMethodCaller caller = (int callDuration, out int threadId) =>
-            {
-                Console.WriteLine("Test method begins.");
-                Thread.Sleep(callDuration);
-                threadId = Thread.CurrentThread.ManagedThreadId;
-                return $"My call time was {callDuration}.";
-            };
-            int tId;
-            IAsyncResult result = caller.BeginInvoke(3000, out tId, null, null);
-            Thread.Sleep(0);
-            Console.WriteLine("Main thread {0} does some work.", Environment.CurrentManagedThreadId);
-            string returnValue = caller.EndInvoke(out tId, result);
-            Console.WriteLine("The call executed on thread {0}, with return value \"{1}\".", tId, returnValue);
-        }
     }
 
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-using-delegates">使用委托进行异步编程</a>
+    /// <list type="bullet">
+    /// <item>使用 .NET 可以以异步方式调用任何方法。 为此，请定义一个委托，该委托具有与你要调用的方法相同的签名。
+    /// 公共语言运行时将自动用适当的签名为此委托定义 BeginInvoke 和 EndInvoke 方法。</item>
+    /// <item>BeginInvoke 和 EndInvoke 在 .NET Core 及以上版本中不受支持</item>
+    /// </list>
     /// </summary>
-    private class UsingDelegates;
+    private class UsingDelegates
+    {
+        private delegate string AsyncMethodCaller(int callDuration);
+
+        private string CallerMethod(int callDuration)
+        {
+            Console.WriteLine("Test method begins.");
+            Thread.Sleep(callDuration);
+
+            return $"My call time was {callDuration}.";
+        }
+
+        [Test]
+        public void Test()
+        {
+            AsyncMethodCaller caller = CallerMethod;
+            Random random = new Random();
+            for (int i = 1; i <= 10; i++)
+                caller.BeginInvoke(random.Next(0, 100), CallBack, i);
+
+            return;
+
+            void CallBack(IAsyncResult result)
+            {
+                string returnValue = caller.EndInvoke(result);
+                Console.WriteLine("The call executed on task {0}, on task with return value \"{1}\".", result.AsyncState, returnValue);
+            }
+        }
+    }
 }
