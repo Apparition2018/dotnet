@@ -13,18 +13,16 @@ public class StudentClassService
     public List<StudentClass> GetAllClasses()
     {
         string sql = "select className,classId from StudentClass";
-        SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
+        using SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
         List<StudentClass> list = [];
         while (reader.Read())
         {
-            list.Add(new StudentClass()
+            list.Add(new StudentClass
             {
                 ClassId = Convert.ToInt32(reader["ClassId"]),
                 ClassName = reader["ClassName"].ToString()!
             });
         }
-
-        reader.Close();
         return list;
     }
 

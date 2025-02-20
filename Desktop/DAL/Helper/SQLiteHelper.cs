@@ -17,17 +17,10 @@ public class SQLiteHelper
     /// </summary>
     public static int Update(string sql)
     {
-        SQLiteConnection conn = new SQLiteConnection(ConnString);
-        SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteNonQuery();
-        }
-        finally
-        {
-            conn.Close();
-        }
+        using SQLiteConnection conn = new SQLiteConnection(ConnString);
+        conn.Open();
+        using SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+        return cmd.ExecuteNonQuery();
     }
 
     /// <summary>
@@ -35,17 +28,10 @@ public class SQLiteHelper
     /// </summary>
     public static object GetSingleResult(string sql)
     {
-        SQLiteConnection conn = new SQLiteConnection(ConnString);
+        using SQLiteConnection conn = new SQLiteConnection(ConnString);
+        conn.Open();
         SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteScalar() ?? throw new InvalidOperationException();
-        }
-        finally
-        {
-            conn.Close();
-        }
+        return cmd.ExecuteScalar() ?? throw new InvalidOperationException();
     }
 
     /// <summary>
@@ -53,18 +39,10 @@ public class SQLiteHelper
     /// </summary>
     public static SQLiteDataReader GetReader(string sql)
     {
-        SQLiteConnection conn = new SQLiteConnection(ConnString);
+        using SQLiteConnection conn = new SQLiteConnection(ConnString);
+        conn.Open();
         SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
-        }
-        catch (Exception)
-        {
-            conn.Close();
-            throw;
-        }
+        return cmd.ExecuteReader(CommandBehavior.CloseConnection);
     }
 
     /// <summary>
@@ -72,20 +50,13 @@ public class SQLiteHelper
     /// </summary>
     public static DataSet GetDataSet(string sql)
     {
-        SQLiteConnection conn = new SQLiteConnection(ConnString);
+        using SQLiteConnection conn = new SQLiteConnection(ConnString);
+        conn.Open();
         SQLiteCommand cmd = new SQLiteCommand(sql, conn);
         SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(cmd);
         DataSet dataSet = new DataSet();
-        try
-        {
-            conn.Open();
-            dataAdapter.Fill(dataSet);
-            return dataSet;
-        }
-        finally
-        {
-            conn.Close();
-        }
+        dataAdapter.Fill(dataSet);
+        return dataSet;
     }
 
     /// <summary>
@@ -93,12 +64,12 @@ public class SQLiteHelper
     /// </summary>
     public static bool UpdateByTran(List<string> sqlList)
     {
-        SQLiteConnection conn = new SQLiteConnection(ConnString);
-        SQLiteCommand cmd = new SQLiteCommand();
+        using SQLiteConnection conn = new SQLiteConnection(ConnString);
+        conn.Open();
+        using SQLiteCommand cmd = new SQLiteCommand();
         cmd.Connection = conn;
         try
         {
-            conn.Open();
             cmd.Transaction = conn.BeginTransaction();
             foreach (string itemSql in sqlList)
             {
@@ -117,7 +88,6 @@ public class SQLiteHelper
         finally
         {
             cmd.Transaction = null;
-            conn.Close();
         }
     }
 

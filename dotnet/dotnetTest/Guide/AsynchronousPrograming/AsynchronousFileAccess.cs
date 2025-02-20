@@ -18,7 +18,6 @@ public abstract class AsynchronousFileAccess
         public async Task SimpleWriteAsync()
         {
             string text = "Hello World";
-
             await File.WriteAllTextAsync(FilePath, text);
         }
 
@@ -27,7 +26,6 @@ public abstract class AsynchronousFileAccess
         public async Task ProcessWriteAsync()
         {
             string text = $"Hello World{Environment.NewLine}";
-
             await WriteTextAsync(FilePath, text);
         }
 
@@ -53,7 +51,6 @@ public abstract class AsynchronousFileAccess
         public async Task SimpleReadAsync()
         {
             string text = await File.ReadAllTextAsync(FilePath);
-
             Console.WriteLine(text);
         }
 
@@ -111,7 +108,7 @@ public abstract class AsynchronousFileAccess
             string folder = Directory.CreateDirectory(TempFolderPath).Name;
             IList<Task> writeTaskList = new List<Task>();
 
-            for (int index = 11; index <= 20; ++ index)
+            for (int index = 11; index <= 20; ++index)
             {
                 string fileName = $"file-{index:00}.txt";
                 string filePath = $"{folder}/{fileName}";
@@ -127,42 +124,29 @@ public abstract class AsynchronousFileAccess
         [Test]
         public async Task ProcessMultipleWritesAsync()
         {
-            IList<FileStream> sourceStreams = new List<FileStream>();
+            string folder = Directory.CreateDirectory(TempFolderPath).Name;
+            IList<Task> writeTaskList = new List<Task>();
 
-            try
+            for (int index = 1; index <= 10; ++index)
             {
-                string folder = Directory.CreateDirectory(TempFolderPath).Name;
-                IList<Task> writeTaskList = new List<Task>();
+                string fileName = $"file-{index:00}.txt";
+                string filePath = $"{folder}/{fileName}";
+                string text = $"In file {index}{Environment.NewLine}";
+                byte[] encodedText = Encoding.Unicode.GetBytes(text);
 
-                for (int index = 1; index <= 10; ++ index)
-                {
-                    string fileName = $"file-{index:00}.txt";
-                    string filePath = $"{folder}/{fileName}";
-
-                    string text = $"In file {index}{Environment.NewLine}";
-                    byte[] encodedText = Encoding.Unicode.GetBytes(text);
-
-                    var sourceStream =
-                        new FileStream(
-                            filePath,
-                            FileMode.Create, FileAccess.Write, FileShare.None,
-                            bufferSize: 4096, useAsync: true);
-
-                    Task writeTask = sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
-                    sourceStreams.Add(sourceStream);
-
-                    writeTaskList.Add(writeTask);
-                }
-
-                await Task.WhenAll(writeTaskList);
+                writeTaskList.Add(WriteToFileAsync(filePath, encodedText));
             }
-            finally
-            {
-                foreach (FileStream sourceStream in sourceStreams)
-                {
-                    sourceStream.Close();
-                }
-            }
+
+            await Task.WhenAll(writeTaskList);
+        }
+
+        private async Task WriteToFileAsync(string filePath, byte[] data)
+        {
+            await using FileStream sourceStream = new FileStream(
+                filePath,
+                FileMode.Create, FileAccess.Write, FileShare.None,
+                bufferSize: 4096, useAsync: true);
+            await sourceStream.WriteAsync(data, 0, data.Length);
         }
     }
 }

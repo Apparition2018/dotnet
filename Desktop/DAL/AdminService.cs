@@ -1,4 +1,3 @@
-using System.Data.SqlClient;
 using System.Data.SQLite;
 using DAL.Helper;
 using Models;
@@ -18,22 +17,20 @@ public class AdminService
         string sql = $"select LoginId,LoginPwd,AdminName from Admin where loginId={admin.LoginId} and loginPwd={admin.LoginPwd}";
         try
         {
-            SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
+            using SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
             if (reader.Read())
             {
                 admin.AdminName = reader["AdminName"].ToString()!;
-                reader.Close();
             }
             else
             {
                 admin = null;
             }
         }
-        catch (SqlException)
+        catch (SQLiteException ex)
         {
-            throw new Exception("应用程序和数据库连接出现问题！");
+            throw new Exception("应用程序和数据库连接出现问题！", ex);
         }
-
         return admin;
     }
 
@@ -47,9 +44,9 @@ public class AdminService
         {
             return SQLiteHelper.Update(sql);
         }
-        catch (SqlException)
+        catch (SQLiteException ex)
         {
-            throw new Exception("应用程序和数据库连接出现问题！");
+            throw new Exception("应用程序和数据库连接出现问题！", ex);
         }
     }
 }

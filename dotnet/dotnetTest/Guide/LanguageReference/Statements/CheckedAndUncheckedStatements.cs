@@ -18,7 +18,7 @@ public class CheckedAndUncheckedStatements
             {
                 Console.WriteLine(i + 3);
             }
-            Console.WriteLine(checked((int) d));
+            Console.WriteLine(checked((int)d));
         }
         catch (OverflowException e)
         {
@@ -30,6 +30,6 @@ public class CheckedAndUncheckedStatements
         {
             Assert.That(i + 3, Is.EqualTo(2));
         }
-        Assert.That(unchecked((int) d), Is.EqualTo(-2147483648));
+        Assert.That(unchecked((int)d), Is.EqualTo(-2147483648));
     }
 }

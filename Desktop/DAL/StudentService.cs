@@ -55,9 +55,9 @@ public class StudentService
             //【3】执行SQL语句，返回结果
             return Convert.ToInt32(SQLiteHelper.GetSingleResult(sql));
         }
-        catch (SqlException ex)
+        catch (SQLiteException ex)
         {
-            throw new Exception("数据库操作出现异常！具体信息：\r\n" + ex.Message);
+            throw new Exception("数据库操作出现异常！具体信息：\r\n" + ex.Message, ex);
         }
     }
 
@@ -74,7 +74,7 @@ public class StudentService
         sql += " inner join StudentClass on Student.ClassId=StudentClass.ClassId ";
         sql += " where ClassName='{0}'";
         sql = string.Format(sql, className);
-        SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
+        using SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
         List<StudentExt> list = [];
         while (reader.Read())
         {
@@ -89,8 +89,6 @@ public class StudentService
                 ClassName = reader["ClassName"].ToString()!
             });
         }
-
-        reader.Close();
         return list;
     }
 
@@ -116,7 +114,7 @@ public class StudentService
         sql += "StudentIdNo,PhoneNumber,StudentAddress,CardNo,StuImage from Student";
         sql += " inner join StudentClass on Student.ClassId=StudentClass.ClassId ";
         sql += whereSql;
-        SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
+        using SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
         StudentExt? objStudent = null;
         if (reader.Read())
         {
@@ -134,8 +132,6 @@ public class StudentService
                 StuImage = reader["StuImage"].ToString() ?? string.Empty
             };
         }
-
-        reader.Close();
         return objStudent;
     }
 
@@ -174,9 +170,9 @@ public class StudentService
             //【3】执行SQL语句，返回结果
             return Convert.ToInt32(SQLiteHelper.Update(sql));
         }
-        catch (SqlException ex)
+        catch (SQLiteException ex)
         {
-            throw new Exception("数据库操作出现异常！具体信息：\r\n" + ex.Message);
+            throw new Exception("数据库操作出现异常！具体信息：\r\n" + ex.Message, ex);
         }
     }
 
@@ -191,10 +187,10 @@ public class StudentService
         {
             return SQLiteHelper.Update(sql);
         }
-        catch (SqlException ex)
+        catch (SQLiteException ex)
         {
-            if (ex.Number == 547) throw new Exception("该学号被其他实体引用，不能直接删除该学员对象！");
-            throw new Exception("数据库操作出现异常！具体信息：\r\n" + ex.Message);
+            if (ex.ErrorCode == 19) throw new Exception("该学号被其他实体引用，不能直接删除该学员对象！");
+            throw new Exception("数据库操作出现异常！具体信息：\r\n" + ex.Message, ex);
         }
     }
 
@@ -221,24 +217,28 @@ public class StudentService
         List<String> sqlList = new List<string>();
         foreach (StudentExt s in studentList)
         {
-            if (s.OperateStatus == OperateStatus.Insert)
+            switch (s.OperateStatus)
             {
-                string sql = string.Format(insertSql.ToString(), s.StudentName, s.Gender, s.Birthday.ToString("yyyy-MM-dd"),
-                    s.StudentIdNo, s.Age, s.PhoneNumber, s.StudentAddress, s.CardNo, s.ClassId, s.StuImage);
-                sqlList.Add(sql);
-            }
-
-            if (s.OperateStatus == OperateStatus.Update)
-            {
-                string sql = string.Format(updateSql.ToString(), s.StudentName, s.Gender, s.Birthday.ToString("yyyy-MM-dd"),
-                    s.StudentIdNo, s.Age, s.PhoneNumber, s.StudentAddress, s.CardNo, s.ClassId, s.StuImage, s.StudentId);
-                sqlList.Add(sql);
-            }
-
-            if (s.OperateStatus == OperateStatus.Delete)
-            {
-                string sql = string.Format(deleteSql, s.StudentId);
-                sqlList.Add(sql);
+                case OperateStatus.Insert:
+                {
+                    string sql = string.Format(insertSql.ToString(), s.StudentName, s.Gender, s.Birthday.ToString("yyyy-MM-dd"),
+                        s.StudentIdNo, s.Age, s.PhoneNumber, s.StudentAddress, s.CardNo, s.ClassId, s.StuImage);
+                    sqlList.Add(sql);
+                    break;
+                }
+                case OperateStatus.Update:
+                {
+                    string sql = string.Format(updateSql.ToString(), s.StudentName, s.Gender, s.Birthday.ToString("yyyy-MM-dd"),
+                        s.StudentIdNo, s.Age, s.PhoneNumber, s.StudentAddress, s.CardNo, s.ClassId, s.StuImage, s.StudentId);
+                    sqlList.Add(sql);
+                    break;
+                }
+                case OperateStatus.Delete:
+                {
+                    string sql = string.Format(deleteSql, s.StudentId);
+                    sqlList.Add(sql);
+                    break;
+                }
             }
         }
 

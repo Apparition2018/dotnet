@@ -46,7 +46,6 @@ public abstract class AsynchronousProgrammingModel
             {
                 Thread.Sleep(100);
             }
-
             IPHostEntry hostEntry = Dns.EndGetHostEntry(result);
             WriteLineAddresses(hostEntry);
         }
@@ -61,7 +60,6 @@ public abstract class AsynchronousProgrammingModel
             Dns.BeginGetHostEntry(Demo.BaiDuHost, CallBack, null);
             IPHostEntry hostEntry = await tcs.Task;
             WriteLineAddresses(hostEntry);
-
             return;
 
             void CallBack(IAsyncResult ar)
@@ -105,11 +103,10 @@ public abstract class AsynchronousProgrammingModel
     {
         private delegate string AsyncMethodCaller(int callDuration);
 
-        private string CallerMethod(int callDuration)
+        private static string CallerMethod(int callDuration)
         {
             Console.WriteLine("Test method begins.");
             Thread.Sleep(callDuration);
-
             return $"My call time was {callDuration}.";
         }
 
@@ -119,8 +116,9 @@ public abstract class AsynchronousProgrammingModel
             AsyncMethodCaller caller = CallerMethod;
             Random random = new Random();
             for (int i = 1; i <= 10; i++)
+            {
                 caller.BeginInvoke(random.Next(0, 100), CallBack, i);
-
+            }
             return;
 
             void CallBack(IAsyncResult result)

@@ -20,17 +20,10 @@ public static class OleDbHelper
     /// </summary>
     public static int Update(string sql)
     {
-        OleDbConnection conn = new OleDbConnection(ConnString);
-        OleDbCommand cmd = new OleDbCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteNonQuery();
-        }
-        finally
-        {
-            conn.Close();
-        }
+        using OleDbConnection conn = new OleDbConnection(ConnString);
+        using OleDbCommand cmd = new OleDbCommand(sql, conn);
+        conn.Open();
+        return cmd.ExecuteNonQuery();
     }
 
     /// <summary>
@@ -38,17 +31,10 @@ public static class OleDbHelper
     /// </summary>
     public static object GetSingleResult(string sql)
     {
-        OleDbConnection conn = new OleDbConnection(ConnString);
-        OleDbCommand cmd = new OleDbCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteScalar() ?? throw new InvalidOperationException();
-        }
-        finally
-        {
-            conn.Close();
-        }
+        using OleDbConnection conn = new OleDbConnection(ConnString);
+        using OleDbCommand cmd = new OleDbCommand(sql, conn);
+        conn.Open();
+        return cmd.ExecuteScalar() ?? throw new InvalidOperationException();
     }
 
     /// <summary>
@@ -56,18 +42,10 @@ public static class OleDbHelper
     /// </summary>
     public static OleDbDataReader GetReader(string sql)
     {
-        OleDbConnection conn = new OleDbConnection(ConnString);
-        OleDbCommand cmd = new OleDbCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
-        }
-        catch (Exception)
-        {
-            conn.Close();
-            throw;
-        }
+        using OleDbConnection conn = new OleDbConnection(ConnString);
+        using OleDbCommand cmd = new OleDbCommand(sql, conn);
+        conn.Open();
+        return cmd.ExecuteReader(CommandBehavior.CloseConnection);
     }
 
     /// <summary>
@@ -75,20 +53,13 @@ public static class OleDbHelper
     /// </summary>
     public static DataSet GetDataSet(string sql)
     {
-        OleDbConnection conn = new OleDbConnection(ConnString);
-        OleDbCommand cmd = new OleDbCommand(sql, conn);
+        using OleDbConnection conn = new OleDbConnection(ConnString);
+        using OleDbCommand cmd = new OleDbCommand(sql, conn);
         OleDbDataAdapter dataAdapter = new OleDbDataAdapter(cmd);
         DataSet dataSet = new DataSet();
-        try
-        {
-            conn.Open();
-            dataAdapter.Fill(dataSet);
-            return dataSet;
-        }
-        finally
-        {
-            conn.Close();
-        }
+        conn.Open();
+        dataAdapter.Fill(dataSet);
+        return dataSet;
     }
 
     /// <summary>
@@ -96,19 +67,12 @@ public static class OleDbHelper
     /// </summary>
     public static DataSet GetDataSet(string sql, string path)
     {
-        OleDbConnection conn = new OleDbConnection(string.Format(ConnString, path));
-        OleDbCommand cmd = new OleDbCommand(sql, conn);
+        using OleDbConnection conn = new OleDbConnection(string.Format(ConnString, path));
+        using OleDbCommand cmd = new OleDbCommand(sql, conn);
         OleDbDataAdapter dataAdapter = new OleDbDataAdapter(cmd);
         DataSet dataSet = new DataSet();
-        try
-        {
-            conn.Open();
-            dataAdapter.Fill(dataSet);
-            return dataSet;
-        }
-        finally
-        {
-            conn.Close();
-        }
+        conn.Open();
+        dataAdapter.Fill(dataSet);
+        return dataSet;
     }
 }

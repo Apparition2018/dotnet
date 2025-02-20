@@ -19,17 +19,10 @@ public static class SqlHelper
     /// </summary>
     public static int Update(string sql)
     {
-        SqlConnection conn = new SqlConnection(ConnString);
-        SqlCommand cmd = new SqlCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteNonQuery();
-        }
-        finally
-        {
-            conn.Close();
-        }
+        using SqlConnection conn = new SqlConnection(ConnString);
+        using SqlCommand cmd = new SqlCommand(sql, conn);
+        conn.Open();
+        return cmd.ExecuteNonQuery();
     }
 
     /// <summary>
@@ -37,17 +30,10 @@ public static class SqlHelper
     /// </summary>
     public static object GetSingleResult(string sql)
     {
-        SqlConnection conn = new SqlConnection(ConnString);
-        SqlCommand cmd = new SqlCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteScalar() ?? throw new InvalidOperationException();
-        }
-        finally
-        {
-            conn.Close();
-        }
+        using SqlConnection conn = new SqlConnection(ConnString);
+        using SqlCommand cmd = new SqlCommand(sql, conn);
+        conn.Open();
+        return cmd.ExecuteScalar() ?? throw new InvalidOperationException();
     }
 
     /// <summary>
@@ -55,18 +41,10 @@ public static class SqlHelper
     /// </summary>
     public static SqlDataReader GetReader(string sql)
     {
-        SqlConnection conn = new SqlConnection(ConnString);
-        SqlCommand cmd = new SqlCommand(sql, conn);
-        try
-        {
-            conn.Open();
-            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
-        }
-        catch (Exception)
-        {
-            conn.Close();
-            throw;
-        }
+        using SqlConnection conn = new SqlConnection(ConnString);
+        using SqlCommand cmd = new SqlCommand(sql, conn);
+        conn.Open();
+        return cmd.ExecuteReader(CommandBehavior.CloseConnection);
     }
 
     /// <summary>
@@ -74,20 +52,13 @@ public static class SqlHelper
     /// </summary>
     public static DataSet GetDataSet(string sql)
     {
-        SqlConnection conn = new SqlConnection(ConnString);
-        SqlCommand cmd = new SqlCommand(sql, conn);
+        using SqlConnection conn = new SqlConnection(ConnString);
+        using SqlCommand cmd = new SqlCommand(sql, conn);
         SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
         DataSet dataSet = new DataSet();
-        try
-        {
-            conn.Open();
-            dataAdapter.Fill(dataSet);
-            return dataSet;
-        }
-        finally
-        {
-            conn.Close();
-        }
+        conn.Open();
+        dataAdapter.Fill(dataSet);
+        return dataSet;
     }
 
     /// <summary>
@@ -95,8 +66,8 @@ public static class SqlHelper
     /// </summary>
     public static bool UpdateByTran(List<string> sqlList)
     {
-        SqlConnection conn = new SqlConnection(ConnString);
-        SqlCommand cmd = new SqlCommand();
+        using SqlConnection conn = new SqlConnection(ConnString);
+        using SqlCommand cmd = new SqlCommand();
         cmd.Connection = conn;
         try
         {
@@ -119,7 +90,6 @@ public static class SqlHelper
         finally
         {
             cmd.Transaction = null;
-            conn.Close();
         }
     }
 

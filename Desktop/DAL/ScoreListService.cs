@@ -27,7 +27,7 @@ public class ScoreListService
             sql = string.Format(sql, classId, classId);
         }
 
-        SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
+        using SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
         Dictionary<string, string?>? scoreInfo = null;
         if (reader.Read())
         {
@@ -39,15 +39,13 @@ public class ScoreListService
             };
         }
 
-        if (reader.NextResult())
+        if (!reader.NextResult())
+            return scoreInfo;
+        if (reader.Read())
         {
-            if (reader.Read())
-            {
-                scoreInfo?.Add("absentCount", reader["absentCount"].ToString());
-            }
+            scoreInfo?.Add("absentCount", reader["absentCount"].ToString());
         }
 
-        reader.Close();
         return scoreInfo;
     }
 
@@ -65,14 +63,13 @@ public class ScoreListService
             sql = string.Format(sql, classId);
         }
 
-        SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
+        using SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
         List<string?> list = [];
         while (reader.Read())
         {
             list.Add(reader["StudentName"].ToString());
         }
 
-        reader.Close();
         return list;
     }
 
@@ -91,11 +88,11 @@ public class ScoreListService
             sql += " where ClassName='" + className + "'";
         }
 
-        SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
-        List<StudentExt> list = new List<StudentExt>();
+        using SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
+        List<StudentExt> list = [];
         while (reader.Read())
         {
-            list.Add(new StudentExt()
+            list.Add(new StudentExt
             {
                 StudentId = Convert.ToInt32(reader["StudentId"]),
                 StudentName = reader["StudentName"].ToString()!,
@@ -108,7 +105,6 @@ public class ScoreListService
             });
         }
 
-        reader.Close();
         return list;
     }
 
@@ -125,20 +121,20 @@ public class ScoreListService
             sql += " where ClassName='" + className + "'";
         }
 
-        SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
+        using SQLiteDataReader reader = SQLiteHelper.GetReader(sql);
         List<ExtStudent> list = [];
         while (reader.Read())
         {
-            list.Add(new ExtStudent()
+            list.Add(new ExtStudent
             {
-                ObjStudent = new Student()
+                ObjStudent = new Student
                 {
                     StudentId = Convert.ToInt32(reader["StudentId"]),
                     StudentName = reader["StudentName"].ToString()!,
                     Gender = reader["Gender"].ToString()!,
                     PhoneNumber = reader["PhoneNumber"].ToString()!,
                 },
-                ObjScore = new ScoreList()
+                ObjScore = new ScoreList
                 {
                     CSharp = Convert.ToInt32(reader["CSharp"]),
                     SQLServerDB = Convert.ToInt32(reader["SQLServerDB"]),
@@ -148,7 +144,6 @@ public class ScoreListService
             });
         }
 
-        reader.Close();
         return list;
     }
 
