@@ -22,14 +22,14 @@ public class NPOIService
         IWorkbook workbook = version == 0 ? new HSSFWorkbook() : new XSSFWorkbook();
         ISheet sheet = workbook.CreateSheet("sheet1");
         Type type = typeof(T);
-        PropertyInfo[] propertyinfos = type.GetProperties();
+        PropertyInfo[] propertyInfos = type.GetProperties();
 
         // 标题
         IRow headerRow = sheet.CreateRow(0);
-        for (int i = 0; i < propertyinfos.Length; i++)
+        for (int i = 0; i < propertyInfos.Length; i++)
         {
             ICell cell = headerRow.CreateCell(i);
-            cell.SetCellValue(columnNames[propertyinfos[i].Name]);
+            cell.SetCellValue(columnNames[propertyInfos[i].Name]);
             SetCellStyle(workbook, cell);
             SetColumnWith(sheet, i, 20);
         }
@@ -39,10 +39,10 @@ public class NPOIService
         {
             IRow row = sheet.CreateRow(i + 1);
             T model = dataList[i];
-            for (int j = 0; j < propertyinfos.Length; j++)
+            for (int j = 0; j < propertyInfos.Length; j++)
             {
                 ICell cell = row.CreateCell(j);
-                string value = propertyinfos[j].GetValue(model, null).ToString();
+                string value = propertyInfos[j].GetValue(model, null)?.ToString() ?? string.Empty;
                 cell.SetCellValue(value);
                 SetCellStyle(workbook, cell);
             }

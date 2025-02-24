@@ -72,3 +72,6 @@
 | Join        | join … in … on … equals …        |
 | GroupJoin   | join … in … on … equals … into … |
 ---
+## [并行 LINQ (PLINQ)](https://learn.microsoft.com/zh-cn/dotnet/standard/parallel-programming/introduction-to-plinq)
+
+---
