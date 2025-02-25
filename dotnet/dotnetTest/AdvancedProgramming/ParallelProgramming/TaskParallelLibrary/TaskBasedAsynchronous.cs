@@ -3,8 +3,10 @@ using System.Diagnostics;
 using System.Drawing;
 using dotnet.L.Demo;
 using dotnetTest.AdvancedProgramming.AsynchronousProgrammingPatterns;
+using dotnetTest.AdvancedProgramming.Threading;
 using dotnetTest.API.System.Threading.Tasks;
 using dotnetTest.Guide.AsynchronousPrograming;
+using dotnetTest.Guide.ProgrammingGuide.ClassesStructsRecords;
 
 namespace dotnetTest.AdvancedProgramming.ParallelProgramming.TaskParallelLibrary;
 
@@ -12,6 +14,7 @@ namespace dotnetTest.AdvancedProgramming.ParallelProgramming.TaskParallelLibrary
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/parallel-programming/task-based-asynchronous-programming">基于任务的异步编程</a>
 /// </summary>
 /// <seealso cref="TaskBasedAsynchronousPattern"/>
+/// <seealso cref="TaskTests"/>
 public class TaskBasedAsynchronous
 {
     /// <summary>
@@ -30,12 +33,12 @@ public class TaskBasedAsynchronous
     public void CreatingAndRunningTasksExplicitly()
     {
         // new Task()
-        Task taskA = new Task(() => { Console.WriteLine("taskA from thread '{0}'.", Thread.CurrentThread.ManagedThreadId); });
+        Task taskA = new Task(() => { Console.WriteLine("taskA from thread '{0}'.", Environment.CurrentManagedThreadId); });
         taskA.Start();
         taskA.Wait();
 
         // Task.Run
-        Task taskB = Task.Run(() => { Console.WriteLine("taskB from thread '{0}'.", Thread.CurrentThread.ManagedThreadId); });
+        Task taskB = Task.Run(() => { Console.WriteLine("taskB from thread '{0}'.", Environment.CurrentManagedThreadId); });
         taskB.Wait();
 
         // Task.Factory.StartNew
@@ -47,7 +50,7 @@ public class TaskBasedAsynchronous
             taskArray[i] = Task.Factory.StartNew(obj =>
                 {
                     Product data = (obj as Product)!;
-                    Console.WriteLine("task{0} from thread '{1}'.", data.ID, Thread.CurrentThread.ManagedThreadId);
+                    Console.WriteLine("task{0} from thread '{1}'.", data.ID, Environment.CurrentManagedThreadId);
                 },
                 // 状态，作为参数传递给任务委托
                 new Product(i, color.ToString()));
@@ -168,7 +171,7 @@ public class TaskBasedAsynchronous
     /// <item><see cref="CreatePreComputedTasks">Task(T).FromResult</see></item>
     /// </list>
     /// </summary>
-    class ComposingTasks
+    private class ComposingTasks
     {
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/parallel-programming/how-to-create-pre-computed-tasks">创建预先计算的任务</a>
@@ -213,11 +216,44 @@ public class TaskBasedAsynchronous
     }
 
     /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/parallel-programming/task-cancellation">任务取消</a>
+    /// 使用 CancellationTokenSource 进行协作取消
+    /// </summary>
+    /// <seealso cref="UsingThreadsAndThreading.CancelThreads">取消线程</seealso>
+    [Test]
+    public async Task TaskCancellation()
+    {
+        using CancellationTokenSource tokenSource = new CancellationTokenSource();
+        CancellationToken ct = tokenSource.Token;
+
+        var task = Task.Run(() =>
+        {
+            bool moreToDo = true;
+            while (moreToDo)
+            {
+                // 如果此令牌已请求取消，则引发 OperationCanceledException
+                ct.ThrowIfCancellationRequested();
+            }
+        }, ct);
+
+        tokenSource.Cancel();
+
+        try
+        {
+            await task;
+        }
+        catch (OperationCanceledException e) when (e.CancellationToken == ct)
+        {
+            Console.WriteLine($"{nameof(OperationCanceledException)} thrown with message: {e.Message}");
+        }
+    }
+
+    /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/parallel-programming/task-based-asynchronous-programming#custom-task-types">自定义任务类型</a>
     /// <list type="bullet">
     /// <item>不要从 Task 继承</item>
     /// <item>使用 AsyncState 属性将其他数据或状态与 Task 对象相关联</item>
-    /// <item>使用扩展方法扩展 Task 类的功能</item>
+    /// <item>使用<see cref="Method.ExtensionMethods">扩展方法</see>扩展 Task 类的功能</item>
     /// </list>
     /// </summary>
     [Test]

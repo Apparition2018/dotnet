@@ -25,3 +25,18 @@
 ## [使用线程和线程处理](./UsingThreadsAndThreading.cs)
 
 ---
+## [最佳实践](./ManagedThreadingBestPractices.cs)
+- 一般性建议
+
+|   操作   |                      建议                      |             不建议              |
+|:------:|:--------------------------------------------:|:----------------------------:|
+| 终止其他线程 |                                              |         Thread.Abort         |
+| 同步多个线程 | Mutex、ManualRestEvent、AutoResetEvent、Monitor | Thread.Suspend、Thread.Resume |
+| 简单状态更改 |                 Interlocked                  |             lock             |
+---
+## [线程处理对象和功能](./ThreadingObjectsAndFeatures)
+- [ThreadPool](../../API/System/Threading/ThreadPoolTests.cs)
+- Timer
+- 同步基元 (Synchronization Primitives)
+- 线程安全集合
+---

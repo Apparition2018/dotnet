@@ -61,7 +61,9 @@ public class UsingThreadsAndThreading
         /// <list type="bullet">
         /// <item>调用 Thread.Sleep 方法会导致当前线程立即受阻止</item>
         /// <item>直到另一个对睡眠线程调用 Thread.Interrupt 方法的线程中断它，或直到 Thread.Abort 方法调用终止它</item>
-        /// <item>.NET 5+（包括 .NET Core）不再支持 Thread.Abort，可以使用 CancellationToken 来请求协作式取消操作</item>
+        /// <item>.NET 5+（包括 .NET Core）不再支持 Thread.Abort，
+        /// 可以使用 <see cref="UsingThreadsAndThreading.CancelThreads">CancellationTokenSource</see> 来请求协作式取消操作，
+        /// 或在单独的进程中使用 Process.Kill 强制终止第三方代码的执行</item>
         /// </list>
         /// </summary>
         [Test]
@@ -107,7 +109,7 @@ public class UsingThreadsAndThreading
     public void CancelThreads()
     {
         // 1.实例化 CancellationTokenSource 对象，此对象管理取消通知并将其发送给单个取消标记
-        CancellationTokenSource cts = new CancellationTokenSource();
+        using CancellationTokenSource cts = new CancellationTokenSource();
 
         // 2.将 CancellationTokenSource.Token 属性返回的标记传递给每个侦听取消的任务或线程
         ThreadPool.QueueUserWorkItem(new WaitCallback(DoSomeWork), cts.Token);
@@ -118,7 +120,6 @@ public class UsingThreadsAndThreading
         Console.WriteLine("Cancellation set in token source...");
         Thread.Sleep(250);
 
-        cts.Dispose();
         return;
 
         void DoSomeWork(object? obj)

@@ -1,4 +1,5 @@
 using dotnetTest.AdvancedProgramming.ParallelProgramming.TaskParallelLibrary;
+using dotnetTest.API.System.Threading.Tasks;
 using dotnetTest.Guide.LanguageReference.Keywords;
 
 namespace dotnetTest.AdvancedProgramming.AsynchronousProgrammingPatterns;
@@ -26,4 +27,5 @@ namespace dotnetTest.AdvancedProgramming.AsynchronousProgrammingPatterns;
 /// </para>
 /// </summary>
 /// <seealso cref="TaskBasedAsynchronous"/>
+/// <seealso cref="TaskTests"/>
 public class TaskBasedAsynchronousPattern;

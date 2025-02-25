@@ -1,8 +1,13 @@
+using dotnetTest.AdvancedProgramming.AsynchronousProgrammingPatterns;
+using dotnetTest.AdvancedProgramming.ParallelProgramming.TaskParallelLibrary;
+
 namespace dotnetTest.API.System.Threading.Tasks;
 
 /// <summary>
 /// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.threading.tasks.task">Task</a>
 /// </summary>
+/// <seealso cref="TaskBasedAsynchronousPattern"/>
+/// <seealso cref="TaskBasedAsynchronous"/>
 public class TaskTests
 {
     /// <summary>
