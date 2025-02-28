@@ -5,9 +5,9 @@
 - 动态缩放并发的程度以最有效地使用所有可用的处理器
 - 处理工作分区、ThreadPool 上的线程调度、取消支持、状态管理以及其他低级别的细节操作
 ---
-## [数据并行](./DataParallelism.cs)
+## [数据并行](DataParallelism.cs)
 
 ---
-## [基于任务的异步编程](./TaskBasedAsynchronous.cs)
+## [基于任务的异步编程](TaskBasedAsynchronous.cs)
 
 ---
