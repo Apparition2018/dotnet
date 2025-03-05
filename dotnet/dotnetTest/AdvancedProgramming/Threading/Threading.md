@@ -49,6 +49,6 @@
 | 资源管理  |       Dispose()        | Enabled=false 或 Dispose() |   CancellationToken 或 using    |
 | 重复触发  |    通过 Change() 动态调整    |   AutoReset 属性控制是否自动重复    | 循环调用 WaitForNextTickAsync 实现重复 |
 | 使用场景  |         轻量级任务          |      复杂事件逻辑 或 UI 交互       |            异步高并发轮询             |
-- 同步基元 (Synchronization Primitives)
+- [同步基元](ThreadingObjectsAndFeatures/SynchronizationPrimitives.cs)
 - 线程安全集合
 ---
