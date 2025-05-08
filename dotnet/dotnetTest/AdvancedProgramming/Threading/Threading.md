@@ -26,7 +26,7 @@
 
 ---
 ## [最佳实践](ManagedThreadingBestPractices.cs)
-- 一般性建议
+- [一般性建议](https://learn.microsoft.com/zh-cn/dotnet/standard/threading/managed-threading-best-practices#general-recommendations)
 
 |   操作   |                      建议                      |             不建议              |
 |:------:|:--------------------------------------------:|:----------------------------:|

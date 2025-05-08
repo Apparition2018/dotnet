@@ -23,7 +23,6 @@ public abstract class SynchronizeDataForMultithreading
         {
             private int _balance;
 
-            /// 锁对象
             private readonly object _lockObject = new();
 
             /// <summary>
@@ -35,9 +34,7 @@ public abstract class SynchronizeDataForMultithreading
                 Monitor.Enter(_lockObject);
                 try
                 {
-                    Console.WriteLine($"正在存款 {amount} 到账户，当前余额: {_balance}");
-                    _balance += amount;
-                    Console.WriteLine($"存款完成，新的余额: {_balance}");
+                    Deposit(amount);
                 }
                 finally
                 {
@@ -51,27 +48,70 @@ public abstract class SynchronizeDataForMultithreading
                 // 使用 lock 简化 Monitor.Enter 和 Monitor.Exit 的使用
                 lock (_lockObject)
                 {
-                    Console.WriteLine($"正在存款 {amount} 到账户，当前余额: {_balance}");
-                    _balance += amount;
-                    Console.WriteLine($"存款完成，新的余额: {_balance}");
+                    Deposit(amount);
                 }
+            }
+
+            // 使用全局命名 Mutex，其他进程可以通过相同名称访问这个 Mutex
+            private readonly Mutex _mutex = new(false, "Global\\MyMutex");
+
+            public void MutexDeposit(int amount)
+            {
+                _mutex.WaitOne();
+                try
+                {
+                    Deposit(amount);
+                }
+                finally
+                {
+                    _mutex.ReleaseMutex();
+                }
+            }
+
+            private SpinLock _spinLock;
+
+            public void SpinLockDeposit(int amount)
+            {
+                bool gotLock = false;
+                try
+                {
+                    _spinLock.Enter(ref gotLock);
+                    Deposit(amount);
+                }
+                finally
+                {
+                    if (gotLock)
+                    {
+                        _spinLock.Exit();
+                    }
+                }
+            }
+
+            private void Deposit(int amount)
+            {
+                Console.WriteLine($"正在存款 {amount} 到账户，当前余额: {_balance}");
+                _balance += amount;
+                Console.WriteLine($"存款完成，新的余额: {_balance}");
             }
         }
 
         [Test]
         public void Test()
         {
-            var account = new BankAccount();
+            BankAccount account = new BankAccount();
 
-            // 创建两个线程来模拟同时向账户存款
-            Thread thread1 = new Thread(() => account.MonitorDeposit(100));
-            Thread thread2 = new Thread(() => account.LockDeposit(200));
+            List<Thread> threads = new[]
+                {
+                    account.MonitorDeposit,
+                    account.LockDeposit,
+                    account.MutexDeposit,
+                    account.SpinLockDeposit
+                }
+                .Select(m => new Thread(() => m(100)))
+                .ToList();
 
-            thread1.Start();
-            thread2.Start();
-
-            thread1.Join();
-            thread2.Join();
+            threads.ForEach(t => t.Start());
+            threads.ForEach(t => t.Join());
 
             Console.WriteLine("所有存款操作已完成");
         }
