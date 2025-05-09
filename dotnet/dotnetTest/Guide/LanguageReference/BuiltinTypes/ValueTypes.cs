@@ -212,7 +212,7 @@ public class ValueTypes
     /// </list>
     /// </para>
     /// </summary>
-    /// <remarks>BaseTypes.md 在匿名类型和元组类型之间进行选择</remarks>
+    /// <remarks>BaseTypes.md#在匿名类型和元组类型之间进行选择</remarks>
     class TupleTypes
     {
         [Test]

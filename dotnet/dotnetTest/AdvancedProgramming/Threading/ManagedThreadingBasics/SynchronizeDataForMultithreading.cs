@@ -1,3 +1,5 @@
+using dotnetTest.AdvancedProgramming.Threading.ThreadingObjectsAndFeatures;
+
 namespace dotnetTest.AdvancedProgramming.Threading.ManagedThreadingBasics;
 
 /// <summary>
@@ -17,6 +19,7 @@ public abstract class SynchronizeDataForMultithreading
     /// <item><see cref="SynchronizationCodeRegions.BankAccount.LockDeposit">lock</see> (编译器提供的语法糖，背后自动调用了 Monitor.Enter 和 Monitor.Exit)</item>
     /// </list>
     /// </summary>
+    /// <seealso cref="SynchronizationPrimitives"/>
     private class SynchronizationCodeRegions
     {
         private class BankAccount
@@ -25,9 +28,6 @@ public abstract class SynchronizeDataForMultithreading
 
             private readonly object _lockObject = new();
 
-            /// <summary>
-            /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/overview-of-synchronization-primitives#monitor-class">Monitor</a>
-            /// </summary>
             public void MonitorDeposit(int amount)
             {
                 // 进入临界区
@@ -52,7 +52,7 @@ public abstract class SynchronizeDataForMultithreading
                 }
             }
 
-            // 使用全局命名 Mutex，其他进程可以通过相同名称访问这个 Mutex
+            // 全局命名 Mutex，支持跨进程同步
             private readonly Mutex _mutex = new(false, "Global\\MyMutex");
 
             public void MutexDeposit(int amount)
@@ -87,6 +87,56 @@ public abstract class SynchronizeDataForMultithreading
                 }
             }
 
+            // 命名信号量，支持跨进程同步
+            private readonly Semaphore _semaphore = new(2, 2, "Global/MySemaphore");
+
+            public void SemaphoreDeposit(int amount)
+            {
+                // 如果 Semaphore initialCount 为 0，需要先调用 Release(int releaseCount) 释放信号量
+                // _semaphore.Release(2);
+                _semaphore.WaitOne();
+                try
+                {
+                    Deposit(amount);
+                }
+                finally
+                {
+                    _semaphore.Release();
+                }
+            }
+
+            private readonly SemaphoreSlim _semaphoreSlim = new(2, 2);
+
+            public void SemaphoreSlimDeposit(int amount)
+            {
+                // 如果 SemaphoreSlim initialCount 为 0，需要先调用 Release(int releaseCount) 释放信号量
+                // _semaphoreSlim.Release(2);
+                _semaphoreSlim.WaitAsync();
+                try
+                {
+                    Deposit(amount);
+                }
+                finally
+                {
+                    _semaphoreSlim.Release();
+                }
+            }
+
+            private readonly EventWaitHandle _autoResetEvent = new AutoResetEvent(true);
+
+            public void AutoResetEventDeposit(int amount)
+            {
+                try
+                {
+                    _autoResetEvent.WaitOne();
+                    Deposit(amount);
+                }
+                finally
+                {
+                    _autoResetEvent.Set();
+                }
+            }
+
             private void Deposit(int amount)
             {
                 Console.WriteLine($"正在存款 {amount} 到账户，当前余额: {_balance}");
@@ -105,7 +155,10 @@ public abstract class SynchronizeDataForMultithreading
                     account.MonitorDeposit,
                     account.LockDeposit,
                     account.MutexDeposit,
-                    account.SpinLockDeposit
+                    account.SpinLockDeposit,
+                    account.SemaphoreDeposit,
+                    account.SemaphoreSlimDeposit,
+                    account.AutoResetEventDeposit
                 }
                 .Select(m => new Thread(() => m(100)))
                 .ToList();

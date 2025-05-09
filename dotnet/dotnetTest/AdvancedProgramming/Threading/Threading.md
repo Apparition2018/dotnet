@@ -35,8 +35,8 @@
 | 简单状态更改 |                 Interlocked                  |             lock             |
 ---
 ## [线程处理对象和功能](ThreadingObjectsAndFeatures)
-- [ThreadPool](../../API/System/Threading/ThreadPoolTests.cs)
-- [Timer](ThreadingObjectsAndFeatures/Timers.cs)
+### [ThreadPool](../../API/System/Threading/ThreadPoolTests.cs)
+### [Timer](ThreadingObjectsAndFeatures/Timers.cs)
 
 |       | System.Threading.Timer |    System.Timers.Timer    | System.Threading.PeriodicTimer |
 |:-----:|:----------------------:|:-------------------------:|:------------------------------:|
@@ -49,6 +49,21 @@
 | 资源管理  |       Dispose()        | Enabled=false 或 Dispose() |   CancellationToken 或 using    |
 | 重复触发  |    通过 Change() 动态调整    |   AutoReset 属性控制是否自动重复    | 循环调用 WaitForNextTickAsync 实现重复 |
 | 使用场景  |         轻量级任务          |      复杂事件逻辑 或 UI 交互       |            异步高并发轮询             |
-- [同步基元](ThreadingObjectsAndFeatures/SynchronizationPrimitives.cs)
-- 线程安全集合
+### [同步基元](ThreadingObjectsAndFeatures/SynchronizationPrimitives.cs)
+- 同步对共享资源的访问
+
+|      |    Monitor    |   SpinLock    | ReaderWriterLockSlim |  SemaphoreSlim  | Semaphore |   Mutex   | AutoResetEvent |
+|:----:|:-------------:|:-------------:|:--------------------:|:---------------:|:---------:|:---------:|:--------------:|
+| 实现层级 |  基于对象头同步块索引   |     自旋等待      |      基于轻量级队列管理       |     轻量级信号量      | 依赖操作系统信号量 | 依赖操作系统互斥体 |    依赖内核事件对象    |
+| Mode |      用户态      |      用户态      |         用户态          |       用户态       |    内核态    |    内核态    |      内核态       |
+| 跨进程  |      不支持      |      不支持      |         不支持          |       不支持       | 支持（命名信号量） | 支持（命名互斥体） |    支持（命名事件）    |
+| 锁类型  |      独占锁      |      独占锁      |        读写分离锁         |    轻量级计数信号量     |   计数信号量   |    独占锁    |   事件信号（单唤醒）    |
+| 锁升级  | 偏向锁→轻量级锁→重量级锁 |       /       |    支持可升级读锁（读锁→写锁）    |        /        |     /     |     /     |       /        |
+|  异步  |      不支持      |      不支持      |         不支持          | 支持（WaitAsync()） |    不支持    |    不支持    |      不支持       |
+| 阻塞方式 |  用户态自旋→内核态休眠  |  用户态自旋（忙等待）   |    写锁用户态队列 + 自旋等待    | 用户态自旋 + 用户态异步队列 |   内核态休眠   |   内核态休眠   |     内核态休眠      |
+| 性能开销 |   低（用户态优先）    |  极低（无上下文切换）   |      次高（读写队列管理）      | 中（用户态计数器+异步队列）  |  高（涉及内核）  |  高（涉及内核）  |    高（涉及内核）     |
+| 轻量级  |  中（需维护同步块索引）  | 最轻（无内存分配，仅自旋） |      中（需维护读写队列）      | 次轻（用户态计数器+异步队列） |  重（依赖内核）  |  重（依赖内核）  |    重（依赖内核）     |
+| 适用场景 |     高频短锁      |     极短临界区     |      读多写少的高并发读取      |     进程内异步限流     |  跨进程资源池   |  跨进程独占资源  |     单次线程唤醒     |
+### 线程安全集合
+
 ---

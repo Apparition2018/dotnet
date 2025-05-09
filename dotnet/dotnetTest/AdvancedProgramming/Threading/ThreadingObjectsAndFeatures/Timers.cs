@@ -11,6 +11,7 @@ namespace dotnetTest.AdvancedProgramming.Threading.ThreadingObjectsAndFeatures;
 /// <item><see cref="PeriodicTimer">System.Threading.PeriodicTimer</see></item>
 /// </list>
 /// </summary>
+/// <remarks>Threading.md#Timer</remarks>
 public abstract class Timers
 {
     private const int InitialIntervalMs = 250;
