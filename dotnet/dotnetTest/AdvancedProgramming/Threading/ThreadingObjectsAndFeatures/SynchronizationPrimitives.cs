@@ -1,5 +1,4 @@
 using dotnetTest.AdvancedProgramming.Threading.ManagedThreadingBasics;
-using Microsoft.Win32.SafeHandles;
 
 namespace dotnetTest.AdvancedProgramming.Threading.ThreadingObjectsAndFeatures;
 
@@ -28,7 +27,9 @@ public class SynchronizationPrimitives
     /// 线程必须等待来自一个或多个线程的通知或信号才能继续
     /// <para>
     /// <list type="bullet">
-    /// <item><see cref="EventWaitHandleTests">EventWaitHandle</see></item>
+    /// <item><see cref="EventWaitHandleTests">EventWaitHandle</see>、AutoResetEvent、ManualResetEvent</item>
+    /// <item>ManualResetEventSlim：ManualResetEvent 的轻量级替代</item>
+    /// <item><see cref="CountdownEventTests">CountdownEvent</see></item>
     /// <item></item>
     /// </list>
     /// </para>
@@ -41,47 +42,49 @@ public class SynchronizationPrimitives
         /// <para>
         /// 重置模式：
         /// <list type="bullet">
-        /// <item>自动重置：EventResetMode.AutoReset，释放单个等待线程后，标志会自动重置；派生类 AutoResetEvent；适用于互斥或单次通知</item>
-        /// <item>手动重置：EventResetMode.ManualReset，将保持信号状态，直到调用其 Reset 方法；派生类 ManualResetEvent；适用于广播通知</item>
+        /// <item>自动重置：EventResetMode.AutoReset，set() 释放单个等待线程后，标志会自动重置；派生类 AutoResetEvent，适用于互斥或单次通知</item>
+        /// <item>手动重置：EventResetMode.ManualReset，set() 释放所有等待线程后，保持信号状态，直到调用其 Reset 方法；派生类 ManualResetEvent，适用于广播通知</item>
         /// </list>
         /// </para>
         /// </summary>
-        private class EventWaitHandleTests
-        {
-            private static readonly WaitHandle[] WaitHandles =
-            [
-                new EventWaitHandle(false, EventResetMode.AutoReset),
-                new EventWaitHandle(false, EventResetMode.AutoReset)
-            ];
+        private class EventWaitHandleTests;
 
-            private static readonly Random R = new();
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/countdownevent">CountdownEvent</a>
+        /// <list type="bullet">
+        /// <item>在收到信号特定次数后取消阻止等待线程</item>
+        /// <item>使用场景：使用 ManualResetEvent 或 ManualResetEventSlim 并手动递减变量，然后再向事件发送信号</item>
+        /// <item>
+        /// 其它功能：
+        /// <list type="bullet">
+        /// <item>可以使用取消令牌取消等待操作</item>
+        /// <item>创建实例后，可以递增信号计数</item>
+        /// <item>在 Wait() 后调用 Reset()，可以重用实例</item>
+        /// <item>实例公开了一个WaitHandle，以便与其他实例 .NET 同步API 集成</item>
+        /// </list>
+        /// </item>
+        /// </list>
+        /// </summary>
+        private class CountdownEventTests
+        {
+            private static readonly ManualResetEvent Mre = new(false);
+            private static readonly CountdownEvent  Countdown = new(3);
 
             [Test]
             public void Test()
             {
-                DateTime dt = DateTime.Now;
-                Console.WriteLine("主线程正在等待两个任务完成");
-                ThreadPool.QueueUserWorkItem(DoTask, WaitHandles[0]);
-                ThreadPool.QueueUserWorkItem(DoTask, WaitHandles[1]);
-                WaitHandle.WaitAll(WaitHandles);
-                Console.WriteLine("两项任务均已完成（{0}）", (DateTime.Now - dt).TotalMilliseconds);
-                Console.WriteLine();
-
-                dt = DateTime.Now;
-                Console.WriteLine("主线程正在等待任一任务完成");
-                ThreadPool.QueueUserWorkItem(DoTask, WaitHandles[0]);
-                ThreadPool.QueueUserWorkItem(DoTask, WaitHandles[1]);
-                int index = WaitHandle.WaitAny(WaitHandles);
-                Console.WriteLine("任务 {0} 首先完成（{1}）", index + 1, (DateTime.Now - dt).TotalMilliseconds);
-            }
-
-            private static void DoTask(object? state)
-            {
-                EventWaitHandle handle = (EventWaitHandle)state!;
-                int time = 100 * R.Next(2, 9);
-                Console.WriteLine("执行任务 {0} 毫秒", time);
-                Thread.Sleep(time);
-                handle.Set();
+                List<Task> tasks = Enumerable.Range(0, 3)
+                    .Select(_ => Task.Run(() =>
+                    {
+                        Console.WriteLine($"线程 {Thread.CurrentThread.ManagedThreadId} 等待执行...");
+                        Countdown.Signal();
+                        Mre.WaitOne();
+                        Console.WriteLine($"线程 {Thread.CurrentThread.ManagedThreadId} 开始执行");
+                    }))
+                    .ToList();
+                Countdown.Wait();
+                Mre.Set();
+                Task.WaitAll(tasks.ToArray());
             }
         }
     }
@@ -100,5 +103,42 @@ public class SynchronizationPrimitives
     /// </list>
     /// </para>
     /// </summary>
-    private class WaitHandleTests;
+    private class WaitHandleTests
+    {
+        private static readonly WaitHandle[] WaitHandles =
+        [
+            new EventWaitHandle(false, EventResetMode.AutoReset),
+            new EventWaitHandle(false, EventResetMode.AutoReset)
+        ];
+
+        private static readonly Random R = new();
+
+        [Test]
+        public void Test()
+        {
+            DateTime dt = DateTime.Now;
+            Console.WriteLine("主线程正在等待两个任务完成");
+            ThreadPool.QueueUserWorkItem(DoTask, WaitHandles[0]);
+            ThreadPool.QueueUserWorkItem(DoTask, WaitHandles[1]);
+            WaitHandle.WaitAll(WaitHandles);
+            Console.WriteLine("两项任务均已完成（{0}）", (DateTime.Now - dt).TotalMilliseconds);
+            Console.WriteLine();
+
+            dt = DateTime.Now;
+            Console.WriteLine("主线程正在等待任一任务完成");
+            ThreadPool.QueueUserWorkItem(DoTask, WaitHandles[0]);
+            ThreadPool.QueueUserWorkItem(DoTask, WaitHandles[1]);
+            int index = WaitHandle.WaitAny(WaitHandles);
+            Console.WriteLine("任务 {0} 首先完成（{1}）", index + 1, (DateTime.Now - dt).TotalMilliseconds);
+        }
+
+        private static void DoTask(object? state)
+        {
+            EventWaitHandle handle = (EventWaitHandle)state!;
+            int time = 100 * R.Next(2, 9);
+            Console.WriteLine("执行任务 {0} 毫秒", time);
+            Thread.Sleep(time);
+            handle.Set();
+        }
+    }
 }

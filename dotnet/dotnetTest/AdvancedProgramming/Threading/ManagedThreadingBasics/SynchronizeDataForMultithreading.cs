@@ -122,6 +122,7 @@ public abstract class SynchronizeDataForMultithreading
                 }
             }
 
+            // true 将初始状态设为 signaled，首次调用 WaitOne() 的线程不会倍阻塞
             private readonly EventWaitHandle _autoResetEvent = new AutoResetEvent(true);
 
             public void AutoResetEventDeposit(int amount)
@@ -150,7 +151,7 @@ public abstract class SynchronizeDataForMultithreading
         {
             BankAccount account = new BankAccount();
 
-            List<Thread> threads = new[]
+            Task[] tasks = new[]
                 {
                     account.MonitorDeposit,
                     account.LockDeposit,
@@ -160,11 +161,10 @@ public abstract class SynchronizeDataForMultithreading
                     account.SemaphoreSlimDeposit,
                     account.AutoResetEventDeposit
                 }
-                .Select(m => new Thread(() => m(100)))
-                .ToList();
+                .Select(m => Task.Run(() => m(100)))
+                .ToArray();
 
-            threads.ForEach(t => t.Start());
-            threads.ForEach(t => t.Join());
+            Task.WhenAll(tasks);
 
             Console.WriteLine("所有存款操作已完成");
         }
