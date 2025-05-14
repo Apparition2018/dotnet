@@ -7,15 +7,15 @@ namespace dotnetTest.AdvancedProgramming.Threading.ThreadingObjectsAndFeatures;
 /// 同步对共享资源的访问、协调线程交互
 /// </summary>
 /// <seealso cref="SynchronizeDataForMultithreading.SynchronizationCodeRegions.BankAccount"/>
-public class SynchronizationPrimitives
+public abstract class SynchronizationPrimitives
 {
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/overview-of-synchronization-primitives#synchronization-of-access-to-a-shared-resource">同步对共享资源的访问</a>
     /// <list type="bullet">
-    /// <item>Monitor</item>
+    /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/fundamentals/runtime-libraries/system-threading-monitor">Monitor</a></item>
     /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/mutexes">Mutex</a>：授予对共享资源的独占访问</item>
     /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/spinlock">SpinLock</a>：根据锁的可用性授予对共享资源的独占访问，在等待获取锁时自旋；适用于 极短临界区（执行时间短、低争用度、高频率访问）</item>
-    /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.threading.readerwriterlockslim">ReaderWriterLockSlim</a>：用于管理对资源访问的锁，允许多个线程读取或独占访问写入</item>
+    /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/fundamentals/runtime-libraries/system-threading-readerwriterlockslim">ReaderWriterLockSlim</a>：用于管理对资源访问的锁，允许多个线程读取或独占访问写入</item>
     /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/semaphore-and-semaphoreslim">Semaphore 和 SemaphoreSlim</a>：限制可以同时访问资源或资源池的线程数量，SemaphoreSlim 是 Semaphore 的轻量级替代方案</item>
     /// </list>
     /// </summary>
@@ -28,13 +28,13 @@ public class SynchronizationPrimitives
     /// <para>
     /// <list type="bullet">
     /// <item><see cref="EventWaitHandleTests">EventWaitHandle</see>、AutoResetEvent、ManualResetEvent</item>
-    /// <item>ManualResetEventSlim：ManualResetEvent 的轻量级替代</item>
+    /// <item>ManualResetEventSlim：ManualResetEvent 的轻量级替代；内部已集成 SpinWait 机制，优先在用户态下自旋，超时后自动切换至内核态等待</item>
     /// <item><see cref="CountdownEventTests">CountdownEvent</see></item>
-    /// <item></item>
+    /// <item><see cref="BarrierTests">Barrier</see></item>
     /// </list>
     /// </para>
     /// </summary>
-    private class ThreadInteractionOrThreadSignaling
+    public abstract class ThreadInteractionOrThreadSignaling
     {
         /// <summary>
         /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/eventwaithandle">EventWaitHandle</a>
@@ -67,24 +67,72 @@ public class SynchronizationPrimitives
         /// </summary>
         private class CountdownEventTests
         {
+            private const int TaskCount = 3;
             private static readonly ManualResetEvent Mre = new(false);
-            private static readonly CountdownEvent  Countdown = new(3);
+            private static readonly CountdownEvent Countdown = new(TaskCount);
 
             [Test]
             public void Test()
             {
-                List<Task> tasks = Enumerable.Range(0, 3)
+                List<Task> tasks = Enumerable.Range(0, TaskCount)
                     .Select(_ => Task.Run(() =>
                     {
-                        Console.WriteLine($"线程 {Thread.CurrentThread.ManagedThreadId} 等待执行...");
+                        Console.WriteLine($"线程 {Environment.CurrentManagedThreadId} 等待执行...");
                         Countdown.Signal();
                         Mre.WaitOne();
-                        Console.WriteLine($"线程 {Thread.CurrentThread.ManagedThreadId} 开始执行");
+                        Console.WriteLine($"线程 {Environment.CurrentManagedThreadId} 开始执行");
                     }))
                     .ToList();
                 Countdown.Wait();
                 Mre.Set();
                 Task.WaitAll(tasks.ToArray());
+            }
+        }
+
+        /// <summary>
+        /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/barrier">Barrier</a>
+        /// 使多个任务能够通过多个阶段并行地协同处理算法
+        /// </summary>
+        private class BarrierTests
+        {
+            [Test]
+            public void Test()
+            {
+                int count = 0;
+
+                // 创建具有2个参与者的 Barrier
+                Barrier barrier = new(2, b =>
+                {
+                    Console.WriteLine("Post-Phase action: count={0}, phase={1}", count, b.CurrentPhaseNumber);
+                    if (b.CurrentPhaseNumber == 1) throw new Exception("😄");
+                });
+
+                // 增加2个参与者
+                barrier.AddParticipants(2);
+                // 移除1个参与者，最终参与者数为3
+                barrier.RemoveParticipant();
+
+                // 所有参与者运行的逻辑
+                Action action = () =>
+                {
+                    Enumerable.Range(0, 5).ToList().ForEach(_ =>
+                    {
+                        try
+                        {
+                            Interlocked.Increment(ref count);
+                            // 指示参与者达到 barrier，并等待所有其它参与者达到 barrier
+                            // 当所有参与者达到 barrier 后，执行一次 Post-Phase action
+                            barrier.SignalAndWait();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.InnerException?.Message);
+                        }
+                    });
+                };
+
+                // 启动3个并行动作服务3个参与者
+                Parallel.Invoke(action, action, action);
             }
         }
     }
@@ -139,6 +187,34 @@ public class SynchronizationPrimitives
             Console.WriteLine("执行任务 {0} 毫秒", time);
             Thread.Sleep(time);
             handle.Set();
+        }
+    }
+
+    /// <summary>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/threading/spinwait">SpinWait Struct</a>
+    /// 提供 spin-based 等待；可以在低级场景中使用，避免内核事件昂贵的上下文切换和内核转换
+    /// </summary>
+    private class SpinWaitTests
+    {
+        private const int TaskCount = 3;
+        private static readonly ManualResetEvent Mre = new(false);
+        private static int _counter = TaskCount;
+
+        [Test]
+        public void Test()
+        {
+            List<Task> tasks = Enumerable.Range(0, TaskCount)
+                .Select(_ => Task.Run(() =>
+                {
+                    Console.WriteLine($"线程 {Environment.CurrentManagedThreadId} 等待执行...");
+                    Interlocked.Decrement(ref _counter);
+                    Mre.WaitOne();
+                    Console.WriteLine($"线程 {Environment.CurrentManagedThreadId} 开始执行");
+                }))
+                .ToList();
+            SpinWait.SpinUntil(() => Volatile.Read(ref _counter) <= 0);
+            Mre.Set();
+            Task.WaitAll(tasks.ToArray());
         }
     }
 }
