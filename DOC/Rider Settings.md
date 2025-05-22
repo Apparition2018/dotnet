@@ -40,7 +40,10 @@
 ---
 ## NuGet (-e)
     1. Alt + Shift + 7
-    2. Sources → Properties
-        2.1 Global packages folder: D:\dev\.nuget\packages
-        2.2 Local packages folder: D:\dev\.nuget\packages
+    2. Sources →
+        2.1 NuGet.Config → Properties
+            2.2.1 Global packages folder: D:\dev\.nuget\packages
+            2.2.2 Local packages folder: D:\dev\.nuget\packages
+        2.1 Microsoft.VisualStudio.Offline.config → Feeds
+            2.1.1 Microsoft Visual Studio Offline Packages：D:\dev\.nuget\offline_packages
 ---
