@@ -1,7 +1,5 @@
 using System.Collections.Concurrent;
 using System.Diagnostics;
-using System.Drawing;
-using dotnet.L.Demo;
 using dotnetTest.AdvancedProgramming.AsynchronousProgrammingPatterns;
 using dotnetTest.AdvancedProgramming.Threading;
 using dotnetTest.API.System.Threading.Tasks;
@@ -29,40 +27,27 @@ public class TaskBasedAsynchronous
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/parallel-programming/task-based-asynchronous-programming#creating-and-running-tasks-implicitly">显式创建和运行任务</a>
     /// </summary>
+    /// <remarks>
+    /// <a href="https://learn.microsoft.com/zh-cn/dotnet/fundamentals/runtime-libraries/system-threading-tasks-task#task-instantiation">任务实例化</a>
+    /// </remarks>
     [Test]
     public void CreatingAndRunningTasksExplicitly()
     {
-        // new Task()
-        Task taskA = new Task(() => { Console.WriteLine("taskA from thread '{0}'.", Environment.CurrentManagedThreadId); });
-        taskA.Start();
-        taskA.Wait();
+        Console.WriteLine("Main   Thread={0}", Environment.CurrentManagedThreadId);
+        Action<object> action = method => Console.WriteLine("Task={0} Thread={1, -2} method={2} ", Task.CurrentId, Environment.CurrentManagedThreadId, method);
 
-        // Task.Run
-        Task taskB = Task.Run(() => { Console.WriteLine("taskB from thread '{0}'.", Environment.CurrentManagedThreadId); });
-        taskB.Wait();
+        Task t1 = new Task(action!, "new+start");
+        t1.Start();
+        t1.Wait();
 
-        // Task.Factory.StartNew
-        Task[] taskArray = new Task[3];
-        KnownColor[] knownColors = Enum.GetValues(typeof(KnownColor)).Cast<KnownColor>().ToArray();
-        for (int i = 0; i < taskArray.Length; i++)
-        {
-            KnownColor color = knownColors[i];
-            taskArray[i] = Task.Factory.StartNew(obj =>
-                {
-                    Product data = (obj as Product)!;
-                    Console.WriteLine("task{0} from thread '{1}'.", data.ID, Environment.CurrentManagedThreadId);
-                },
-                // 状态，作为参数传递给任务委托
-                new Product(i, color.ToString()));
-        }
+        Task t2 = Task.Factory.StartNew(action!, "Task.Factory.StartNew");
+        t2.Wait();
 
-        Task.WaitAll(taskArray);
-        for (int i = 0; i < taskArray.Length; i++)
-        {
-            // 访问传递的状态
-            if (taskArray[i].AsyncState is Product data)
-                Console.WriteLine("task{0} asyncState {1}.", i, data.Name);
-        }
+        Task t3 = Task.Run(() => Console.WriteLine("Task={0} Thread={1, -2} method={2}", Task.CurrentId, Environment.CurrentManagedThreadId, "Task.Run"));
+        t3.Wait();
+
+        Task t4 = new Task(action!, "new+runSync");
+        t4.RunSynchronously();
     }
 
     /// <summary>

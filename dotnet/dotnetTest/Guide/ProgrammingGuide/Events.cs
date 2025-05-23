@@ -16,7 +16,7 @@ namespace dotnetTest.Guide.ProgrammingGuide;
 /// .NET 提供了委托来支持大部分事件场景：
 /// <list type="number">
 /// <item>使用 EventHandler 委托处理不包含事件数据的事件</item>
-/// <item>使用 EventHandler&lt;TEventArgs> 委托处理包含事件相关数据的事件</item>
+/// <item>使用 <see cref="EventHandler{TEventArgs}"/> 委托处理包含事件相关数据的事件</item>
 /// </list>
 /// </para>
 /// <para>

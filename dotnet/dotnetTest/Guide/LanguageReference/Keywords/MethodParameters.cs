@@ -60,9 +60,9 @@ public class MethodParameters
 
         var product = new Product(1, "toy1");
         RefChangeByVal(product);
-        Assert.That(product.ID, Is.EqualTo(1));
+        Assert.That(product.Id, Is.EqualTo(1));
         RefChangeByRef(ref product);
-        Assert.That(product.ID, Is.EqualTo(2));
+        Assert.That(product.Id, Is.EqualTo(2));
     }
 
     /// <summary>

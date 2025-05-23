@@ -12,7 +12,7 @@ public class Method
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/local-functions">局部函数</a>
     /// <list type="bullet">
     /// <item>一种嵌套在另一成员中的一种类型的方法：方法、构造函数、属性访问器、事件访问器、匿名方法、Lambda 表达式、终结器、其他局部函数</item>
-    /// <item>语法：<c>&lt;modifiers> &lt;return-type> &lt;method-name> &lt;parameter-list></c></item>
+    /// <item>语法：<![CDATA[<modifiers> <return-type> <method-name> <parameter-list>]]></item>
     /// <item>modifiers：async、<see cref="Modifiers.Unsafe">unsafe</see>、static、<see cref="Modifiers.Extern">extern</see>（外部局部函数必须为 static）</item>
     /// <item><a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/local-functions#local-functions-and-exceptions">可以使异常立即出现</a></item>
     /// </list>

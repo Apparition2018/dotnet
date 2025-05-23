@@ -269,7 +269,7 @@ public class ReferenceTypes
     /// <para>
     /// 设置可为 null 的上下文：
     /// <list type="number">
-    /// <item>项目级别：<c>&lt;Nullable>enable&lt;/Nullable></c></item>
+    /// <item>项目级别：<![CDATA[<Nullable>enable</Nullable>]]></item>
     /// <item>单个源文件：#nullable enable</item>
     /// </list>
     /// </para>
@@ -310,7 +310,7 @@ public class ReferenceTypes
     /// <item>数组可以是一维、多维、交错</item>
     /// <item>声明数组变量时设置维度数。每个维度的长度都是在创建实例时确定的，在实例的生存期内无法改变</item>
     /// <item>交错数组每个成员数组的默认值为 null</item>
-    /// <item>从 Array 派生的，所有数组都实现 IList 和 IEnumerable。一维数组还实现了 IList&lt;T> 和 IEnumerable&lt;T></item>
+    /// <item>从 Array 派生的，所有数组都实现 IList 和 IEnumerable。一维数组还实现了 <see cref="IList{T}"/> 和 <see cref="IEnumerable{T}"/></item>
     /// </list>
     /// </summary>
     [Test]
