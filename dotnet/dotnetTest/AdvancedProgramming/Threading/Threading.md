@@ -67,3 +67,6 @@
 ### [线程安全集合](https://learn.microsoft.com/zh-cn/dotnet/standard/collections/thread-safe/)
 - System.Collections.Concurrent
 ---
+## [补充 API 说明](SupplementalAPI)
+
+---
