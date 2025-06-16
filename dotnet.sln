@@ -172,9 +172,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "Desktop\DAL\DAL.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Desktop\Models\Models.csproj", "{1A32943A-8ACE-4568-9BC8-2900825617EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF-Demo", "Desktop\WPF-Demo\WPF-Demo.csproj", "{13884388-9BFD-4B20-BE4B-DF84DC2B8B91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF", "Desktop\WPF\WPF.csproj", "{13884388-9BFD-4B20-BE4B-DF84DC2B8B91}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForms-Demo", "Desktop\WinForms-Demo\WinForms-Demo.csproj", "{5959334B-3EFF-4F45-98A6-282BFF80AAD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForms", "Desktop\WinForms\WinForms.csproj", "{5959334B-3EFF-4F45-98A6-282BFF80AAD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

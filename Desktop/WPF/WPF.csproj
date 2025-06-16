@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>WPF</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Common\Images\auto-save.png" />
+    <None Remove="Common\Images\new.png" />
+    <None Remove="Common\Images\save.png" />
+    <None Remove="Exercise\MahjongSolitaire\Images\copper.png" />
+    <None Remove="Exercise\MahjongSolitaire\Images\gold.png" />
+    <None Remove="Exercise\MahjongSolitaire\Images\silver.png" />
+    <None Remove="Exercise\StudentManagement\Images\addStudent.png" />
+    <None Remove="Exercise\StudentManagement\Images\administrator.png" />
+    <None Remove="Exercise\StudentManagement\Images\adminLoginBg.png" />
+    <None Remove="Exercise\StudentManagement\Images\asc.png" />
+    <None Remove="Exercise\StudentManagement\Images\attendance.png" />
+    <None Remove="Exercise\StudentManagement\Images\banner.png" />
+    <None Remove="Exercise\StudentManagement\Images\close.png" />
+    <None Remove="Exercise\StudentManagement\Images\delete.png" />
+    <None Remove="Exercise\StudentManagement\Images\desc.png" />
+    <None Remove="Exercise\StudentManagement\Images\edit.png" />
+    <None Remove="Exercise\StudentManagement\Images\export.png" />
+    <None Remove="Exercise\StudentManagement\Images\print.png" />
+    <None Remove="Exercise\StudentManagement\Images\query.png" />
+    <None Remove="Exercise\StudentManagement\Images\score.png" />
+    <None Remove="Exercise\UserLogin\Images\adminLogin.png" />
+    <None Remove="Exercise\UserLogin\Images\userRight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Common\Images\auto-save.png" />
+    <Resource Include="Common\Images\new.png" />
+    <Resource Include="Common\Images\save.png" />
+    <Resource Include="Exercise\MahjongSolitaire\Images\copper.png" />
+    <Resource Include="Exercise\MahjongSolitaire\Images\gold.png" />
+    <Resource Include="Exercise\MahjongSolitaire\Images\silver.png" />
+    <Resource Include="Exercise\StudentManagement\Images\addStudent.png" />
+    <Resource Include="Exercise\StudentManagement\Images\administrator.png" />
+    <Resource Include="Exercise\StudentManagement\Images\adminLoginBg.png" />
+    <Resource Include="Exercise\StudentManagement\Images\asc.png" />
+    <Resource Include="Exercise\StudentManagement\Images\attendance.png" />
+    <Resource Include="Exercise\StudentManagement\Images\banner.png" />
+    <Resource Include="Exercise\StudentManagement\Images\close.png" />
+    <Resource Include="Exercise\StudentManagement\Images\delete.png" />
+    <Resource Include="Exercise\StudentManagement\Images\desc.png" />
+    <Resource Include="Exercise\StudentManagement\Images\export.png" />
+    <Resource Include="Exercise\StudentManagement\Images\edit.png" />
+    <Resource Include="Exercise\StudentManagement\Images\print.png" />
+    <Resource Include="Exercise\StudentManagement\Images\query.png" />
+    <Resource Include="Exercise\StudentManagement\Images\score.png" />
+    <Resource Include="Exercise\UserLogin\Images\adminLogin.png" />
+    <Resource Include="Exercise\UserLogin\Images\userRight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+</Project>

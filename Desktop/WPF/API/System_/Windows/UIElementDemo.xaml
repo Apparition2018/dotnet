@@ -1,0 +1,22 @@
+<Window x:Class="WPF.API.System_.Windows.UIElementDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="UIElementDemo" Height="450" Width="500">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Common/DemoStyleRD.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Button x:Name="Ljh" Content="LJH" Margin="230,100,0,0" Width="40"/>
+        <Button x:Name="BtnVisibility" Content="Visibility" Margin="200,150,0,0" Click="BtnVisibility_Click"/>
+        <Button x:Name="BtnIsEnabled" Content="IsEnabled" Margin="200,200,0,0" Click="BtnIsEnabled_Click"/>
+        <Button x:Name="BtnBackground" Content="Background" Margin="200,250,0,0" Click="BtnBackground_Click"/>
+        <Button x:Name="BtnFontSize" Content="FontSize" Margin="200,300,0,0" Click="BtnFontSize_Click"/>
+    </Grid>
+</Window>

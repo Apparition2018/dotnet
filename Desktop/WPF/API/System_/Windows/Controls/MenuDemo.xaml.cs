@@ -1,0 +1,20 @@
+using System.Windows;
+
+namespace WPF.API.System_.Windows.Controls
+{
+    /// <summary>
+    /// Interaction logic for MenuDemo.xaml
+    /// </summary>
+    public partial class MenuDemo
+    {
+        public MenuDemo()
+        {
+            InitializeComponent();
+        }
+
+        private void MiOpen_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("打开");
+        }
+    }
+}
