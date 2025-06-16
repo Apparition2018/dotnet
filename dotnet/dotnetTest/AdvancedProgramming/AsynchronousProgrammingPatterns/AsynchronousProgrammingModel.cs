@@ -94,8 +94,7 @@ public abstract class AsynchronousProgrammingModel
     /// <summary>
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-using-delegates">使用委托进行异步编程</a>
     /// <list type="bullet">
-    /// <item>使用 .NET 可以以异步方式调用任何方法。 为此，请定义一个委托，该委托具有与你要调用的方法相同的签名。
-    /// 公共语言运行时将自动用适当的签名为此委托定义 BeginInvoke 和 EndInvoke 方法。</item>
+    /// <item>使用 .NET 可以以异步方式调用任何方法。为此，请定义一个委托，该委托具有与你要调用的方法相同的签名。公共语言运行时将自动用适当的签名为此委托定义 BeginInvoke 和 EndInvoke 方法。</item>
     /// <item>BeginInvoke 和 EndInvoke 在 .NET Core 及以上版本中不受支持</item>
     /// </list>
     /// </summary>
