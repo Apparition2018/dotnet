@@ -15,6 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="BarcodeX">
       <HintPath>Exercise\Lottery\DLL\BarcodeX.dll</HintPath>
     </Reference>

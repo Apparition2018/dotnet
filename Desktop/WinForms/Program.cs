@@ -1,4 +1,5 @@
-using WinForms.Function.ThreadInWinForm;
+using DAL.Helper;
+using WinForms.API.System.Windows.Forms;
 
 namespace WinForms
 
@@ -14,7 +15,8 @@ namespace WinForms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmMain());
+            SQLiteHelper.InitializeDatabase();
+            Application.Run(new ControlDemo());
         }
     }
 }

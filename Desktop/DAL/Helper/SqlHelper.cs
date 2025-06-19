@@ -10,9 +10,9 @@ namespace DAL.Helper;
 public static class SqlHelper
 {
     // private static readonly string connString = "Server=.;DataBase=StudentManageDB;Uid=sa;Pwd=password01!";
-    private static readonly string ConnString = ConfigurationManager.ConnectionStrings["connString"].ToString();
+    private static readonly string ConnString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
     // private static readonly string connString =
-    //     Common.StringSecurity.DESDecrypt(ConfigurationManager.ConnectionStrings["connString"].ToString());
+    //     Common.StringSecurity.DESDecrypt(ConfigurationManager.ConnectionStrings["connString"].ConnectionString);
 
     /// <summary>
     /// 执行增、删、改（insert/update/delete）
@@ -41,10 +41,20 @@ public static class SqlHelper
     /// </summary>
     public static SqlDataReader GetReader(string sql)
     {
-        using SqlConnection conn = new SqlConnection(ConnString);
-        using SqlCommand cmd = new SqlCommand(sql, conn);
-        conn.Open();
-        return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+        SqlConnection conn = new SqlConnection(ConnString);
+        SqlCommand cmd = new SqlCommand(sql, conn);
+        try
+        {
+            conn.Open();
+            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+        }
+        catch (Exception)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            cmd.Dispose();
+            throw;
+        }
     }
 
     /// <summary>

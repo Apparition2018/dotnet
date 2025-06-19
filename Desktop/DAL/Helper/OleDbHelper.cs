@@ -42,10 +42,20 @@ public static class OleDbHelper
     /// </summary>
     public static OleDbDataReader GetReader(string sql)
     {
-        using OleDbConnection conn = new OleDbConnection(ConnString);
-        using OleDbCommand cmd = new OleDbCommand(sql, conn);
-        conn.Open();
-        return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+        OleDbConnection conn = new OleDbConnection(ConnString);
+        OleDbCommand cmd = new OleDbCommand(sql, conn);
+        try
+        {
+            conn.Open();
+            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+        }
+        catch (Exception)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            cmd.Dispose();
+            throw;
+        }
     }
 
     /// <summary>
