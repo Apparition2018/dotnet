@@ -1,15 +1,14 @@
-namespace WinForms.Exercise.MIS
-{
-    public partial class FrmAddProduct : Form
-    {
-        public FrmAddProduct()
-        {
-            InitializeComponent();
-        }
+namespace WinForms.Exercise.MIS;
 
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+public partial class FrmAddProduct : Form
+{
+    public FrmAddProduct()
+    {
+        InitializeComponent();
+    }
+
+    private void BtnClose_Click(object sender, EventArgs e)
+    {
+        Close();
     }
 }

@@ -29,6 +29,26 @@ public class DiagnosticsTests : Demo
     [Test]
     public void Process_()
     {
-        Assert.That(Process.GetCurrentProcess().ProcessName, Is.EqualTo(Dotnet));
+        // 获取所有进程
+        Process[] processes = Process.GetProcesses();
+        Process process = processes[^1];
+        Console.WriteLine($"进程ID：{process.Id}");
+        Console.WriteLine($"进程名称：{process.ProcessName}");
+        Console.WriteLine($"进程本机句柄：{process.Handle}");
+        Console.WriteLine($"进程打开的句柄数：{process.HandleCount}");
+        Console.WriteLine($"进程基本优先级：{process.BasePriority}");
+        Console.WriteLine($"进程启动时间：{process.StartTime}");
+
+        // 获取进程加载的模块
+        ProcessModuleCollection processModuleCollection = process.Modules;
+        ProcessModule processModule = processModuleCollection[0];
+        Console.WriteLine($"模块完整路径：{processModule.FileName}");
+
+        // 启动进程
+        Process baidu = Process.Start(@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", BaiDuHost);
+        // 停止进程
+        baidu.Kill();
+        // 释放资源
+        baidu.Close();
     }
 }

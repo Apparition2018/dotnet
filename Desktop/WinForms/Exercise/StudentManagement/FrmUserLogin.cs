@@ -1,10 +1,9 @@
-namespace WinForms.Exercise.StudentManagement
+namespace WinForms.Exercise.StudentManagement;
+
+public partial class FrmUserLogin : Form
 {
-    public partial class FrmUserLogin : Form
+    public FrmUserLogin()
     {
-        public FrmUserLogin()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

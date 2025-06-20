@@ -1,4 +1,6 @@
+using System.Runtime.CompilerServices;
 using dotnetTest.AdvancedProgramming.Threading.ThreadingObjectsAndFeatures;
+using dotnetTest.API.System.Runtime;
 
 namespace dotnetTest.AdvancedProgramming.Threading.ManagedThreadingBasics;
 
@@ -20,6 +22,7 @@ public abstract class SynchronizeDataForMultithreading
     /// </list>
     /// </summary>
     /// <seealso cref="SynchronizationPrimitives"/>
+    /// <seealso cref="CompilerServicesTests.MethodImplAttribute.SynchronizedOption"/>
     private class SynchronizationCodeRegions
     {
         private class BankAccount
@@ -50,6 +53,12 @@ public abstract class SynchronizeDataForMultithreading
                 {
                     Deposit(amount);
                 }
+            }
+
+            [MethodImpl(MethodImplOptions.Synchronized)]
+            public void MethodImplSyncDeposit(int amount)
+            {
+                Deposit(amount);
             }
 
             // 全局命名 Mutex，支持跨进程同步
@@ -155,6 +164,7 @@ public abstract class SynchronizeDataForMultithreading
                 {
                     account.MonitorDeposit,
                     account.LockDeposit,
+                    account.MethodImplSyncDeposit,
                     account.MutexDeposit,
                     account.SpinLockDeposit,
                     account.SemaphoreDeposit,

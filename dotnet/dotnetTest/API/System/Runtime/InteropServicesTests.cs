@@ -19,7 +19,7 @@ public class InteropServicesTests
     /// <a href="https://learn.microsoft.com/zh-cn/dotnet/api/system.runtime.interopservices.defaultparametervalueattribute">DefaultParameterValueAttribute</a>
     /// 设置当从支持默认参数的语言中调用参数时参数的默认值
     /// </summary>
-    class OptionalAttribute_DefaultParameterValueAttribute
+    private class OptionalAndDefaultParameterValueAttribute
     {
         [Test]
         public void Test()
@@ -37,7 +37,7 @@ public class InteropServicesTests
         /// <summary>
         /// 与<see cref="Method.NamedAndOptionalArguments.OptionalArguments">可选参数</see>的差异
         /// </summary>
-        class VsOptionalArguments
+        private class VsOptionalArguments
         {
             public static void MethodWithObjectDefaultAttr1([Optional, DefaultParameterValue(123)] object obj) { }
             public static void MethodWithObjectDefaultAttr2([Optional, DefaultParameterValue("abc")] object obj) { }

@@ -1,5 +1,5 @@
 using DAL.Helper;
-using WinForms.API.System.Windows.Forms;
+using WinForms.Function.CustomizedControl;
 
 namespace WinForms
 
@@ -16,7 +16,7 @@ namespace WinForms
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             SQLiteHelper.InitializeDatabase();
-            Application.Run(new ControlDemo());
+            Application.Run(new FrmMain());
         }
     }
 }
