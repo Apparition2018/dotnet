@@ -82,16 +82,13 @@ namespace WinForms.Function.CustomizedControl
             // 
             // progressBar
             // 
-            progressBar.IsShowPercent = true;
+            progressBar.BorderColor = SystemColors.ControlDark;
             progressBar.Location = new Point(25, 79);
             progressBar.Name = "progressBar";
-            progressBar.PBorderStyle = BorderStyle.FixedSingle;
-            progressBar.PColor = Color.Orchid;
-            progressBar.Percent = 0;
-            progressBar.PHeight = 20;
-            progressBar.PWidth = 400;
+            progressBar.ProgressColor = Color.Orchid;
             progressBar.Size = new Size(400, 20);
             progressBar.TabIndex = 3;
+            progressBar.TextColor = Color.Black;
             // 
             // FrmMain
             // 

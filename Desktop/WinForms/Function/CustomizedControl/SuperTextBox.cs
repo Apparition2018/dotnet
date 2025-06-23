@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 
 namespace WinForms.Function.CustomizedControl;
 
-// 新建组件，继承需要扩展的组件 TextBox
 public partial class SuperTextBox : TextBox
 {
     public SuperTextBox()

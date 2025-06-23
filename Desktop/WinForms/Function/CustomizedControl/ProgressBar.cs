@@ -1,138 +1,187 @@
-using NPOI.Util;
+using System.ComponentModel;
 
 namespace WinForms.Function.CustomizedControl;
 
-// 新建控件
+[ToolboxBitmap(typeof(System.Windows.Forms.ProgressBar))]
 public partial class ProgressBar : UserControl
 {
     public ProgressBar()
     {
         InitializeComponent();
-        lblLong.Paint += percent_Paint;
     }
 
-    private void percent_Paint(object? sender, PaintEventArgs e)
+    protected override void OnHandleCreated(EventArgs e)
     {
-        if (!IsShowPercent) return;
-        string text = $"{_percent}%";
-        SizeF size = e.Graphics.MeasureString(text, Font);
-        float x = (lblLong.Width - size.Width) / 2;
-        float y = (lblLong.Height - size.Height) / 2;
-        e.Graphics.DrawString(text, Font, Brushes.Black, x, y);
+        base.OnHandleCreated(e);
+        // 启用双缓冲，优化控件绘制性能、减少屏幕闪烁
+        // 相当于 SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+        DoubleBuffered = true;
+        SetStyle(ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
     }
 
-    /// <summary>
-    /// 进度条长度
-    /// </summary>
-    private int _pWidth = 400;
-
-    public int PWidth
+    protected override void OnPaint(PaintEventArgs e)
     {
-        get => _pWidth;
-        set
+        base.OnPaint(e);
+        Graphics g = e.Graphics;
+        Rectangle clientRect = ClientRectangle;
+
+        // 1. 绘制背景
+        using (var backBrush = new SolidBrush(BackColor))
         {
-            const int minWidth = 300;
-            const int maxWidth = 600;
-            if (value < minWidth | value > maxWidth)
-            {
-                MessageBox.Show($@"长度必须在{minWidth}~{maxWidth}之间", @"提示");
-                return;
-            }
-            _pWidth = value;
-            lblShort.Width = value;
+            g.FillRectangle(backBrush, clientRect);
+        }
+
+        // 2. 绘制进度条
+        if (Percent > 0)
+        {
+            int progressWidth = (int)(Percent / 100.0 * clientRect.Width);
+            Rectangle progressRect = new Rectangle(0, 0, progressWidth, clientRect.Height);
+
+            using var progressBrush = new SolidBrush(ProgressColor);
+            g.FillRectangle(progressBrush, progressRect);
+        }
+
+        // 3. 绘制边框
+        DrawBorder(g, clientRect);
+
+        // 4. 绘制百分比文本
+        if (ShowPercentage)
+        {
+            DrawPercentageText(g, clientRect);
         }
     }
 
-    /// <summary>
-    /// 进度条高度
-    /// </summary>
-    private int _pHeight = 20;
-
-    public int PHeight
+    private void DrawBorder(Graphics g, Rectangle rect)
     {
-        get => _pHeight;
-        set
+        switch (BorderStyle)
         {
-            const int minHeight = 10;
-            const int maxHeight = 30;
-            if (value < minHeight | value > maxHeight)
-            {
-                MessageBox.Show($@"高度必须在{minHeight}~{maxHeight}之间", @"提示");
-                return;
-            }
-            _pHeight = value;
-            lblLong.Height = value;
-            lblShort.Height = value;
+            case ProgressBarBorderStyle.Single:
+                using (var pen = new Pen(BorderColor, 1))
+                {
+                    g.DrawRectangle(pen, rect with { Width = rect.Width - 1, Height = rect.Height - 1 });
+                }
+                break;
+            case ProgressBarBorderStyle.ThreeD:
+                ControlPaint.DrawBorder3D(g, rect, Border3DStyle.Sunken);
+                break;
+            case ProgressBarBorderStyle.None:
+            default:
+                break;
         }
     }
 
-    /// <summary>
-    /// 百分比
-    /// </summary>
+    private void DrawPercentageText(Graphics g, Rectangle rect)
+    {
+        string text = $"{Percent}%";
+        using var format = new StringFormat();
+        format.Alignment = StringAlignment.Center;
+        format.LineAlignment = StringAlignment.Center;
+        using var brush = new SolidBrush(TextColor);
+        g.DrawString(text, Font, brush, rect, format);
+    }
+
+    #region 属性
+
     private int _percent;
 
+    [Category("Appearance")]
+    [DefaultValue(0)]
+    [Description("当前进度百分比")]
     public int Percent
     {
         get => _percent;
         set
         {
-            const int min = 0;
-            const int max = 100;
-            if (value is < min or > max)
-            {
-                MessageBox.Show($@"百分比必须在{min}~{max}之间", @"提示");
-                return;
-            }
-            _percent = value;
-            lblShort.Width = Convert.ToInt32(_pWidth * value / 100.0);
-            lblLong.Invalidate();
+            int newValue = Math.Max(0, Math.Min(100, value));
+            if (_percent == newValue) return;
+            _percent = newValue;
+            Invalidate();
         }
     }
 
-    /// <summary>
-    /// 是否显示百分比
-    /// </summary>
-    public bool IsShowPercent { get ; set; } = true;
+    private Color _progressColor = Color.Orchid;
 
-    /// <summary>
-    /// 进度条颜色
-    /// </summary>
-    private Color _pColor = Color.Orchid;
-
-    public Color PColor
+    [Category("Appearance")]
+    [Description("进度条颜色")]
+    public Color ProgressColor
     {
-        get => _pColor;
+        get => _progressColor;
         set
         {
-            _pColor = value;
-            lblShort.BackColor = value;
+            if (_progressColor == value) return;
+            _progressColor = value;
+            Invalidate();
         }
     }
 
-    /// <summary>
-    /// 进度条边框样式
-    /// </summary>
-    private BorderStyle _pBorderStyle = BorderStyle.FixedSingle;
+    private bool _showPercentage = true;
 
-    public BorderStyle PBorderStyle
+    [Category("Appearance")]
+    [DefaultValue(true)]
+    [Description("是否显示百分比")]
+    public bool ShowPercentage
     {
-        get => _pBorderStyle;
+        get => _showPercentage;
         set
         {
-            _pBorderStyle = value;
-            lblShort.BorderStyle = value;
-            switch (value)
-            {
-                case BorderStyle.FixedSingle:
-                    lblLong.BorderStyle = value;
-                    break;
-                case BorderStyle.Fixed3D:
-                    lblShort.BorderStyle = BorderStyle.None;
-                    break;
-                default:
-                    lblShort.BorderStyle = BorderStyle.None;
-                    break;
-            }
+            if (_showPercentage == value) return;
+            _showPercentage = value;
+            Invalidate();
         }
     }
+
+    private Color _textColor = Color.Black;
+
+    [Category("Appearance")]
+    [Description("文本颜色")]
+    public Color TextColor
+    {
+        get => _textColor;
+        set
+        {
+            if (_textColor == value) return;
+            _textColor = value;
+            Invalidate();
+        }
+    }
+
+    private Color _borderColor = SystemColors.ControlDark;
+
+    [Category("Appearance")]
+    [Description("边框颜色")]
+    public Color BorderColor
+    {
+        get => _borderColor;
+        set
+        {
+            if (_borderColor == value) return;
+            _borderColor = value;
+            Invalidate();
+        }
+    }
+
+    private ProgressBarBorderStyle _borderStyle = ProgressBarBorderStyle.Single;
+
+    [Category("Appearance")]
+    [DefaultValue(ProgressBarBorderStyle.Single)]
+    [Description("边框样式")]
+    public new ProgressBarBorderStyle BorderStyle
+    {
+        get => _borderStyle;
+        set
+        {
+            if (_borderStyle == value) return;
+            _borderStyle = value;
+            Invalidate();
+        }
+    }
+
+    #endregion
+}
+
+public enum ProgressBarBorderStyle
+{
+    None,
+    Single,
+    ThreeD
 }
