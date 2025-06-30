@@ -1,5 +1,5 @@
 using DAL.Helper;
-using WinForms.Function.CustomizedControl;
+using WinForms.Function.Paging;
 
 namespace WinForms
 
