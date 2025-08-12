@@ -150,13 +150,14 @@ public abstract class SynchronizeDataForMultithreading
             private void Deposit(int amount)
             {
                 Console.WriteLine($"正在存款 {amount} 到账户，当前余额: {_balance}");
+                Thread.Sleep(10);
                 _balance += amount;
                 Console.WriteLine($"存款完成，新的余额: {_balance}");
             }
         }
 
         [Test]
-        public void Test()
+        public async Task Test()
         {
             BankAccount account = new BankAccount();
 
@@ -174,7 +175,7 @@ public abstract class SynchronizeDataForMultithreading
                 .Select(m => Task.Run(() => m(100)))
                 .ToArray();
 
-            Task.WhenAll(tasks);
+            await Task.WhenAll(tasks);
 
             Console.WriteLine("所有存款操作已完成");
         }
